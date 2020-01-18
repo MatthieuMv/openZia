@@ -5,6 +5,20 @@
 ** Pipeline Abstraction
 */
 
+template<typename ModuleType>
+void oZ::APipeline::registerCallback(State state, Priority priority, ModuleType *target, void(ModuleType::*callback)(Context &))
+{
+    registerCallback(state, priority, [target, callback](Context &context) {
+        (target->*callback)(context);
+    });
+}
+
+template<typename Type, typename ...Args>
+void oZ::APipeline::addModule(Args &&...args)
+{
+    _modules.emplace_back(std::make_shared<Type>(std::forward<Args>(args)...));
+}
+
 template<typename Type>
 std::shared_ptr<Type> oZ::APipeline::findModule(void) const
 {

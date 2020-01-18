@@ -10,10 +10,15 @@
 
 using namespace oZ;
 
-Context::Context(APipeline &pipeline) : _pipeline(pipeline)
+void Context::nextState(void) noexcept
 {
-}
-
-Context::~Context(void)
-{
+    switch (_state) {
+    case State::Error:
+    case State::Completed:
+    case State::StateCount:
+        break;
+    default:
+        _state = static_cast<State>(static_cast<int>(_state) + 1);
+        break;
+    }
 }

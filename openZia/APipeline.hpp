@@ -24,6 +24,11 @@ class oZ::APipeline
 {
 public:
     /**
+     * @brief Callback handler that stores a bounded module's callback function
+     */
+    using CallbackHandler = std::function<void(Context &)>;
+
+    /**
      * @brief Simple vector of modules
      */
     using ModuleList = std::vector<ModulePtr>;
@@ -39,9 +44,22 @@ public:
     using LoggerList = std::vector<LoggerPtr>;
 
     /**
-     * @brief Construct a new Pipeline object
+     * @brief Construct a new APipeline object
+     * 
+     * @param moduleDir Directory containing modules to load
+     * @param configurationDir Directory containing configuration files of modules
      */
-    APipeline(void) = default;
+    APipeline(std::string &&moduleDir = "Modules", std::string &&configurationDir = "Modules/Configurations");
+
+    /**
+     * @brief Disable copy constructor to prevent useless huge copies
+     */
+    APipeline(const APipeline &other) = delete;
+
+    /**
+     * @brief Construct a new APipeline object by move
+     */
+    APipeline(APipeline &&other) = default;
 
     /**
      * @brief Destroy the Pipeline object
@@ -56,14 +74,27 @@ public:
      *      3) Build the internal pipeline with it.
      *      4) Load configuration files of each modules
      */
-    void loadModules(const std::string &directoryPath);
+    void loadModules(void);
+
+    /**
+     * @brief Inserts a callback handler into the pipeline with given state and priority
+     */
+    void registerCallback(State state, Priority priority, CallbackHandler &&handler);
+
+    /**
+     * @brief Inserts a callback handler into the pipeline with given state and priority
+     * 
+     *  This variant is using a pointer to an object and one of its function taking a Context&.
+     */
+    template<typename ModuleType>
+    void registerCallback(State state, Priority priority, ModuleType *target, void(ModuleType::*)(Context &));
 
     /**
      * @brief Process a context into the pipeline.
      * 
      * This function is thread-safe as long as modules are thread safe so keep it in mind when implementing your modules.
      */
-    void runPipeline(Context &&context);
+    void runPipeline(Context &context);
 
     /**
      * @brief Get internal loaded modules
@@ -76,17 +107,12 @@ public:
     [[nodiscard]] const ModuleList &getModules(void) const noexcept { return _modules; }
 
     /**
-     * @brief Trigger load callback for each module
-     */
-    void loadModulesConfigurations(const std::string &directoryPath);
-
-    /**
      * @brief Emplaces a new module in the pipeline.
      * 
      *  This function should be called by the onLoadModules callback of your derived pipeline.
      */
-    template<typename ...Args, typename Type>
-    void addModule(Args &&...args) { _modules.emplace_back(std::make_shared<Type>(std::forward<Args>(args)...)); }
+    template<typename Type, typename ...Args>
+    void addModule(Args &&...args);
 
     /**
      * @brief Find a module of Type in internal module list returning it as a shared pointer.
@@ -104,6 +130,7 @@ private:
     ModuleList _modules;
     PipelineMap _pipeline;
     LoggerList _loggers;
+    std::string _moduleDir, _configurationDir;
 
     /**
      * @brief Check if every modules dependencies are present.
@@ -124,11 +151,6 @@ private:
      * @brief Trigger every callback of a given context's state
      */
     void triggerContextStateCallbacks(Context &context);
-
-    /**
-     * @brief Inserts a callback handler into the pipeline with given state and priority
-     */
-    void onRegister(State state, Priority priority, CallbackHandler &&handler);
 };
 
 #include "APipeline.ipp"

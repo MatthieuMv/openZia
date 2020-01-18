@@ -6,13 +6,19 @@
 */
 
 #include <cinttypes>
+#include <string>
 
 namespace oZ::HTTP
 {
     /**
-     * @brief HTTP Version structure
+     * @brief HTTP URI (Request)
      */
-    struct Version { std::uint8_t major; std::uint8_t minor; };
+    using URI = std::string;
+
+    /**
+     * @brief HTTP Reason (Response)
+     */
+    using Reason = std::string;
 
     /**
      * @brief HTTP 1.1 Codes
@@ -83,9 +89,34 @@ namespace oZ::HTTP
     };
 
     /**
+     * @brief HTTP Version structure
+     */
+    struct Version
+    {
+        /**
+         * @brief Construct a new Version object
+         */
+        constexpr Version(std::uint8_t vMajor = 0, std::uint8_t vMinor = 0) : major(vMajor), minor(vMinor) {}
+
+        /**
+         * @brief Construct a new Version object by copy
+         */
+        Version(const Version &other) = default;
+
+        /**
+         * @brief Comparison operator 
+         */
+        bool operator==(const Version &other) const noexcept { return major == other.major && minor == other.minor; }
+
+        std::uint8_t major = 0; std::uint8_t minor = 0;
+    };
+
+    constexpr Version DefaultVersion = Version(1, 1);
+
+    /**
      * @brief Converts a Method enum case to a HTTP method name
      */
-    constexpr const char *MethodName(const Method method) noexcept {
+    [[nodiscard]] constexpr const char *MethodName(const Method method) noexcept {
         switch (method) {
         case Method::NullMethod:
             return "NULL_METHOD";

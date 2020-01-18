@@ -11,17 +11,32 @@
 
 using namespace oZ;
 
-void APipeline::loadModules(const std::string &directoryPath)
+APipeline::APipeline(std::string &&moduleDir, std::string &&configurationDir)
+    : _moduleDir(std::move(moduleDir)), _configurationDir(std::move(configurationDir))
+{   
+}
+
+void APipeline::loadModules(void)
 {
     for (auto &state : _pipeline)
         state.clear();
     _modules.clear();
-    onLoadModules(directoryPath);
+    onLoadModules(_moduleDir);
     checkModulesDependencies();
     createPipeline();
 }
 
-void APipeline::runPipeline(Context &&context)
+void APipeline::registerCallback(State state, Priority priority, CallbackHandler &&handler)
+{
+    auto &callbacks = _pipeline[state];
+    auto it = callbacks.cbegin();
+
+    while (it != callbacks.end() && it->first < priority)
+        ++it;
+    callbacks.insert(it, std::make_pair(priority, std::move(handler)));
+}
+
+void APipeline::runPipeline(Context &context)
 {
     while (!context.hasError() && !context.isCompleted()) {
         triggerContextStateCallbacks(context);
@@ -50,26 +65,16 @@ void APipeline::checkModuleDependency(const ModulePtr &module, const char *depen
 {
     auto it = std::find_if(_modules.begin(), _modules.end(),
                 [dependency](const auto &m) { return !std::strcmp(m->getName(), dependency); });
-    
+
     if (it == _modules.end())
         throw std::logic_error(std::string("Pipeline::checkModuleDependencies: ") + module->getName() + "' requires missing module '" + dependency + '\'');
 }
 
 void APipeline::createPipeline(void)
 {
-    const auto handler = std::bind(&APipeline::onRegister, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3);
-
     for (const auto &module : _modules) {
-        module->registerCallbacks(handler);
+        module->onRegisterCallbacks(*this);
+        module->onRetreiveDependencies(*this);
+        module->onLoadConfigurationFile(_configurationDir);
     }
-}
-
-void APipeline::onRegister(State state, Priority priority, CallbackHandler &&handler)
-{
-    auto &callbacks = _pipeline[state];
-    auto it = callbacks.cbegin();
-
-    while (it != callbacks.end() && it->first < priority)
-        ++it;
-    callbacks.insert(it, std::make_pair(priority, std::move(handler)));
 }

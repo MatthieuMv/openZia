@@ -8,12 +8,14 @@
 #pragma once
 
 #include <memory>
+#include <vector>
 
 #include "Context.hpp"
 
 namespace oZ
 {
     class IModule;
+    class APipeline;
 
     /**
      * @brief Priority enum, used to sort modules in the pipeline.
@@ -41,20 +43,6 @@ namespace oZ
      * to encapsulate it under an unique or a shared pointer.
      */
     using ModuleInstanceFunction = IModule*(*)(void);
-
-    /**
-     * @brief Callback handler that stores a bounded module's callback function
-     */
-    using CallbackHandler = std::function<void(Context &)>;
-
-    /**
-     * @brief RegisterHandler is a callback function which is used to register callbacks to the pipeline.
-     *  This function needs:
-     *      1) A pipeline state
-     *      2) A priority
-     *      3) A callback handler
-     */
-    using RegisterHandler = std::function<void(State, Priority, CallbackHandler &&)>;
 }
 
 /**
@@ -90,12 +78,32 @@ public:
     /**
      * @brief Register module's callbacks in the pipeline
      */
-    virtual void registerCallbacks(const RegisterHandler &) const = 0;
+    virtual void onRegisterCallbacks(APipeline &) = 0;
+
+    /**
+     * @brief This function is called once module registered their callbacks
+     * 
+     *  There you should (if needed) implement dependencies search
+     *  Be careful, at this point other modules may not have retreived their dependencies !
+     *  Use the pipeline only to find your dependencies and store their shared_ptr instances
+     * 
+     *  This function is not pure virtual because you may not need it 
+     */
+    virtual void onRetreiveDependencies(APipeline &pipeline);
+
+    /**
+     * @brief This function is called after module retreived its dependencies.
+     * 
+     *  The given directory is the path to configuration files
+     * 
+     *  This function is not pure virtual because you may not need it
+     */
+    virtual void onLoadConfigurationFile(const std::string &directory);
 
     /**
      * @brief Get the module dependencies
      * 
-     *  By default modules have no dependencies
+     *  By default a module has no dependencies
      */
-    virtual Dependencies getDependencies(void) const { return Dependencies(); }
+    virtual Dependencies getDependencies(void) const noexcept { return Dependencies(); }
 };

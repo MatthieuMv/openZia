@@ -15,9 +15,6 @@ namespace oZ
         // An error occured and the pipeline musn't continue its processing
         Error = 0,
 
-        // Initialization is a state used only to load configuration files
-        Initialization,
-
         // Analyze callbacks are used to preprocess a HTTP request
         BeforeAnalyze,
         Analyze,
@@ -60,7 +57,7 @@ public:
     /**
      * @brief Construct a new Context object
      */
-    Context(APipeline &pipeline);
+    Context(void) = default;
 
     /**
      * @brief Construct a new Context object by copy
@@ -75,7 +72,7 @@ public:
     /**
      * @brief Destroy the Context object
      */
-    ~Context(void);
+    ~Context(void) = default;
 
     /**
      * @brief Get the current context' state
@@ -85,7 +82,7 @@ public:
     /**
      * @brief Set internal state to the next one if the current state is neither Error nor Completed
      */
-    void nextState(void);
+    void nextState(void) noexcept;
 
     /**
      * @brief Set nternal state to Error
@@ -113,7 +110,6 @@ public:
     [[nodiscard]] bool isConstant(void) const noexcept { return _constant; }
 
 private:
-    APipeline &_pipeline;
-    State _state = State::Initialization;
+    State _state = State::BeforeAnalyze;
     bool _constant = true;
 };

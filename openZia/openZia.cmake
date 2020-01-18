@@ -19,12 +19,16 @@ set(OpenZiaIncludes ${OpenZiaSourcesDir}/..)
 set(OpenZiaSources
     ${OpenZiaSourcesDir}/BaseHTTP.hpp
     ${OpenZiaSourcesDir}/HTTP.hpp
-    ${OpenZiaSourcesDir}/HTTP.cpp
-    
+    ${OpenZiaSourcesDir}/HeaderHTTP.hpp
+    ${OpenZiaSourcesDir}/HeaderHTTP.cpp
+    ${OpenZiaSourcesDir}/RequestHTTP.hpp
+    ${OpenZiaSourcesDir}/ResponseHTTP.hpp
+
     ${OpenZiaSourcesDir}/Context.hpp
     ${OpenZiaSourcesDir}/Context.cpp
 
     ${OpenZiaSourcesDir}/IModule.hpp
+    ${OpenZiaSourcesDir}/IModule.cpp
     ${OpenZiaSourcesDir}/ILogger.hpp
     
     ${OpenZiaSourcesDir}/APipeline.hpp
