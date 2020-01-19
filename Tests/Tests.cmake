@@ -16,13 +16,10 @@ set(TestsSources
 )
 
 add_executable(${PROJECT_NAME} ${TestsSources} ${OpenZiaSources})
-target_link_libraries(${PROJECT_NAME} criterion gcov)
+target_link_libraries(${PROJECT_NAME} criterion)
 target_include_directories(${PROJECT_NAME} PRIVATE ${OpenZiaIncludes})
-target_compile_options(${PROJECT_NAME} PUBLIC --coverage)
 
-add_custom_command(
-    TARGET ${PROJECT_NAME}
-    POST_BUILD
-    COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}
-    COMMAND gcovr ARGS -r ${CMAKE_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} --exclude ${OpenZiaSourcesTestsDir}
-)
+if (DEFINED OPENZIA_COVERAGE)
+    target_link_libraries(${PROJECT_NAME} gcov)
+    target_compile_options(${PROJECT_NAME} PUBLIC --coverage)
+endif ()
