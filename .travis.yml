@@ -1,16 +1,18 @@
 dist: trusty
 language: cpp
+
 addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
+      - snaipewastaken
     packages:
-      - gcc-7
-      - g++-7
-      - criterion
+      - gcc-8
+      - g++-8
+      - gcovr
+      - criterion-dev
+
 script:
-  - export CC=gcc-7
-  - export CXX=g++-7
-  - add-apt-repository ppa:snaipewastaken/ppa && apt-get install criterion-dev
-  - gcovr
+  - export CC=gcc-8
+  - export CXX=g++-8
   - mkdir Build && cd Build && cmake .. && make
