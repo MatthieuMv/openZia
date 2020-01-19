@@ -101,7 +101,7 @@ namespace oZ::HTTP
         /**
          * @brief Construct a new Version object
          */
-        constexpr Version(std::uint8_t vMajor = 0, std::uint8_t vMinor = 0) : major(vMajor), minor(vMinor) {}
+        constexpr Version(std::uint8_t vMajor = 0, std::uint8_t vMinor = 0) : majorVersion(vMajor), minorVersion(vMinor) {}
 
         /**
          * @brief Construct a new Version object by copy
@@ -111,9 +111,9 @@ namespace oZ::HTTP
         /**
          * @brief Comparison operator 
          */
-        bool operator==(const Version &other) const noexcept { return major == other.major && minor == other.minor; }
+        bool operator==(const Version &other) const noexcept { return majorVersion == other.majorVersion && minorVersion == other.minorVersion; }
 
-        std::uint8_t major = 0; std::uint8_t minor = 0;
+        std::uint8_t majorVersion = 0; std::uint8_t minorVersion = 0;
     };
 
     constexpr Version DefaultVersion = Version(1, 1);
