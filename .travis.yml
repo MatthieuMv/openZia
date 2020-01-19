@@ -8,7 +8,6 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-9
-      - gcov
       - lcov
 
 before_install:
