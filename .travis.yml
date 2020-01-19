@@ -20,7 +20,9 @@ install:
   - sudo apt-get -y install criterion-dev
 
 script:
-  - ./run_tests.sh
+  - cmake . -DOPENZIA_TESTS=TRUE -DOPENZIA_COVERAGE=TRUE
+  - cmake --build .
+  - ./openZiaTests
 
-after_success:
-  - ./upload_coverage.sh
+  after_success:
+  - bash <(curl -s https://codecov.io/bash)
