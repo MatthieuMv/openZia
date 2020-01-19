@@ -21,6 +21,11 @@ namespace oZ::HTTP
     using Reason = std::string;
 
     /**
+     * @brief HTTP Body (Response)
+     */
+    using Body = std::string;
+
+    /**
      * @brief HTTP 1.1 Codes
      */
     enum class Code {

@@ -6,10 +6,10 @@
 */
 
 template<typename ModuleType>
-void oZ::APipeline::registerCallback(State state, Priority priority, ModuleType *target, void(ModuleType::*callback)(Context &))
+void oZ::APipeline::registerCallback(State state, Priority priority, ModuleType *target, bool(ModuleType::*callback)(Context &))
 {
     registerCallback(state, priority, [target, callback](Context &context) {
-        (target->*callback)(context);
+        return (target->*callback)(context);
     });
 }
 

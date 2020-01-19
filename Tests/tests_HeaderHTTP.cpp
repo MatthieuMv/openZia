@@ -24,7 +24,7 @@ Test(Header, Basics)
     header.getValue("def") = "24";
 
     cr_assert_eq(header.getValue("abc"), "42");
-    cr_assert_eq(header.getValue("def"), "24");
+    cr_assert_eq(hdr.getValue("def"), "24");
 
     cr_assert(CrashTest([&hdr] { const auto &var = hdr.getValue("azerty"); return var; }));
 }

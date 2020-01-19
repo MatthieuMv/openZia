@@ -13,18 +13,21 @@ using namespace oZ::HTTP;
 
 Test(Response, Basics)
 {
-    Response base(Code::OK, "hello", Version(1, 1)), res(base);
+    Response base(Code::OK, "all is", "hello", Version(1, 1)), res(base);
 
     cr_assert_eq(res.getCode(), Code::OK);
-    cr_assert_eq(res.getReason(), "hello");
+    cr_assert_eq(res.getReason(), "all is");
+    cr_assert_eq(res.getBody(), "hello");
     cr_assert_eq(res.getVersion(), Version(1, 1));
 
     res.setCode(Code::Accepted);
-    res.setReason("world");
+    res.setReason("good");
+    res.setBody("world");
     res.setVersion(Version(1, 0));
 
     cr_assert_eq(res.getCode(), Code::Accepted);
-    cr_assert_eq(res.getReason(), "world");
+    cr_assert_eq(res.getReason(), "good");
+    cr_assert_eq(res.getBody(), "world");
     cr_assert_eq(res.getVersion(), Version(1, 0));
 
     cr_assert_not(res.getHeader().valueExists("abc"));

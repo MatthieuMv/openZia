@@ -9,6 +9,8 @@
 
 #include <openZia/APipeline.hpp>
 
+#include "Utils.hpp"
+
 using namespace oZ;
 
 class Pipeline : public APipeline
@@ -52,7 +54,7 @@ public:
 
     virtual Dependencies getDependencies(void) const noexcept { return { "B", "C" }; }
 
-    void foo(Context &) { ++x; }
+    bool foo(Context &) { ++x; return true; }
 
     int x = 0;
     bool registered = false, configured = false;
@@ -66,7 +68,8 @@ public:
     virtual const char *getName(void) const { return "B"; }
 
     virtual void onRegisterCallbacks(APipeline &pipeline) {
-        pipeline.registerCallback(State::Parse, Priority::Independent, [this](Context &) { ++x; });
+        pipeline.registerCallback(State::Response, Priority::Critical, [this](Context &) { ++x; return false; });
+        pipeline.registerCallback(State::Send, Priority::Independent, [this](Context &ctx) { ctx.setErrorState(); return false; });
     }
     
     int x = 0;
@@ -78,7 +81,8 @@ public:
     virtual const char *getName(void) const { return "C"; }
 
     virtual void onRegisterCallbacks(APipeline &pipeline) {
-        pipeline.registerCallback(State::Response, Priority::Independent, [this](Context &) { ++x; });
+        pipeline.registerCallback(State::Parse, Priority::Independent, [this](Context &) { ++x; return true; });
+        pipeline.registerCallback(State::Response, Priority::Independent, [this](Context &) { ++x; return true; });
     }
     
     int x = 0;
@@ -106,7 +110,32 @@ Test(APipeline, ABC)
     cr_assert(a->b);
     cr_assert(a->c);
     pipeline.runPipeline(ctx);
+    cr_assert_eq(ctx.getState(), State::Error);
     cr_assert_eq(a->x, 1);
     cr_assert_eq(a->b->x, 1);
     cr_assert_eq(a->c->x, 1);
+}
+
+
+class Abis : public A
+{
+public:
+    virtual Dependencies getDependencies(void) const noexcept { return { "B", "E" }; }
+};
+
+class AbisPipeline : public APipeline
+{
+    virtual void onLoadModules(const std::string &) {
+        addModule<Abis>();
+        addModule<B>();
+    }
+};
+
+Test(APipeline, Abis)
+{
+    AbisPipeline pipeline;
+    Context ctx;
+
+    cr_assert(CrashTest([&pipeline] { pipeline.loadModules(); }));
+    cr_assert_not(pipeline.findModule<C>());
 }

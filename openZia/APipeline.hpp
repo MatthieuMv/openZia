@@ -25,8 +25,13 @@ class oZ::APipeline
 public:
     /**
      * @brief Callback handler that stores a bounded module's callback function
+     * 
+     *  If the callback returns false, the Pipeline will not continue to process
+     *  the current context state. It means that it will skip other modules.
+     *  This can be used to implement caching in the pipeline. You can implement your own
+     *  caching Module and process directly the current context to restore its cached version.
      */
-    using CallbackHandler = std::function<void(Context &)>;
+    using CallbackHandler = std::function<bool(Context &)>;
 
     /**
      * @brief Simple vector of modules
@@ -87,7 +92,7 @@ public:
      *  This variant is using a pointer to an object and one of its function taking a Context&.
      */
     template<typename ModuleType>
-    void registerCallback(State state, Priority priority, ModuleType *target, void(ModuleType::*)(Context &));
+    void registerCallback(State state, Priority priority, ModuleType *target, bool(ModuleType::*)(Context &));
 
     /**
      * @brief Process a context into the pipeline.

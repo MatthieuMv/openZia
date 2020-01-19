@@ -20,8 +20,8 @@ public:
     /**
      * @brief Construct a new Response object
      */
-    Response(Code code = Code::Undefined, Reason &&reason = Reason(), Version version = DefaultVersion)
-        : _code(code), _reason(std::move(reason)), _version(version) {}
+    Response(Code code = Code::Undefined, Reason &&reason = Reason(), Body &&body = Body(), Version version = DefaultVersion)
+        : _code(code), _reason(std::move(reason)), _body(std::move(body)), _version(version) {}
 
     /**
      * @brief Construct a new Response object by copy
@@ -59,6 +59,16 @@ public:
     void setReason(Reason reason) noexcept { _reason = reason; }
 
     /**
+     * @brief Get request's Body
+     */
+    [[nodiscard]] const Body &getBody(void) const noexcept { return _body; }
+
+    /**
+     * @brief Set request's Body
+     */
+    void setBody(Body body) noexcept { _body = body; }
+
+    /**
      * @brief Get request's version
      */
     [[nodiscard]] Version getVersion(void) const noexcept { return _version; }
@@ -81,6 +91,7 @@ public:
 private:
     Code _code = Code::Undefined;
     Reason _reason;
+    Body _body;
     Version _version;
     Header _header;
 };

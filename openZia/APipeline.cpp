@@ -31,7 +31,7 @@ void APipeline::registerCallback(State state, Priority priority, CallbackHandler
     auto &callbacks = _pipeline[state];
     auto it = callbacks.cbegin();
 
-    while (it != callbacks.end() && it->first < priority)
+    while (it != callbacks.end() && it->first > priority)
         ++it;
     callbacks.insert(it, std::make_pair(priority, std::move(handler)));
 }
@@ -49,7 +49,8 @@ void APipeline::runPipeline(Context &context)
 void APipeline::triggerContextStateCallbacks(Context &context)
 {
     for (const auto &callback : _pipeline[context.getState()]) {
-        callback.second(context);
+        if (!callback.second(context))
+            break;
     }
 }
 
