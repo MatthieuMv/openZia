@@ -7,7 +7,10 @@ addons:
     packages:
       - gcc-7
       - g++-7
+      - criterion
 script:
   - export CC=gcc-7
   - export CXX=g++-7
+  - add-apt-repository ppa:snaipewastaken/ppa && apt-get install criterion-dev
+  - gcovr
   - mkdir Build && cd Build && cmake .. && make
