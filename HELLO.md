@@ -46,6 +46,7 @@ Now you need to create your first module. Let's create two of them as a demonstr
 ```C++
 /* --- Hello.hpp --- */
 #pragma once
+
 #include <openZia/IModule.hpp>
 
 class Hello : public oZ::IModule
@@ -85,6 +86,7 @@ extern "C" {
 ```C++
 /* --- World.hpp --- */
 #pragma once
+
 #include <openZia/IModule.hpp>
 
 // Second module 'World'
