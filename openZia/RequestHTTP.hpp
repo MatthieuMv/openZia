@@ -46,14 +46,14 @@ public:
     void setMethod(Method method) noexcept { _method = method; }
 
     /**
-     * @brief Get request's URI
+     * @brief Get request's URI reference
      */
-    [[nodiscard]] const URI &getURI(void) const noexcept { return _uri; }
+    [[nodiscard]] URI &getURI(void) noexcept { return _uri; }
 
     /**
-     * @brief Set request's URI
+     * @brief Get request's URI constant reference
      */
-    void setURI(URI uri) noexcept { _uri = uri; }
+    [[nodiscard]] const URI &getURI(void) const noexcept { return _uri; }
 
     /**
      * @brief Get request's version
@@ -66,12 +66,12 @@ public:
     void setVersion(Version version) noexcept { _version = version; }
 
     /**
-     * @brief Get the response's header
+     * @brief Get the response's header reference
      */
     [[nodiscard]] Header &getHeader(void) noexcept { return _header; }
 
     /**
-     * @brief Get the response's header
+     * @brief Get the response's header constant reference
      */
     [[nodiscard]] const Header &getHeader(void) const noexcept { return _header; }
 

@@ -8,6 +8,7 @@
 #pragma once
 
 #include "HTTP.hpp"
+#include "Endpoint.hpp"
 
 namespace oZ
 {
@@ -30,16 +31,11 @@ namespace oZ
         Response,
         AfterResponse,
 
-        // Send callbacks are used to 
-        BeforeSend,
-        Send,
-        AfterSend,
-
         Completed,
         StateCount
     };
 
-    class APipeline;
+    class Pipeline;
 
     class Context;
 }
@@ -49,7 +45,7 @@ namespace oZ
  * 1) State is a state-machine code which indicates where the context
  * 2) Constant property should be set when an IModule want to specify that his process
  *    is constant and thus can be cached.
- * 3) 
+ * 3) Endpoint is the client who sent a message
  */
 class oZ::Context
 {
@@ -75,14 +71,45 @@ public:
     ~Context(void) = default;
 
     /**
+     * @brief Get the Request of the HTTP context
+     */
+    [[nodiscard]] HTTP::Request getRequest(void) noexcept { return _request; }
+
+    /**
+     * @brief Get the Request of the HTTP context (constant)
+     */
+    [[nodiscard]] const HTTP::Request getRequest(void) const noexcept { return _request; }
+
+    /**
+     * @brief Get the Response of the HTTP context
+     */
+    [[nodiscard]] HTTP::Response getResponse(void) noexcept { return _response; }
+
+    /**
+     * @brief Get the Response of the HTTP context (constant)
+     */
+    [[nodiscard]] const HTTP::Response getResponse(void) const noexcept { return _response; }
+
+    /**
+     * @brief Get the current context' state
+     */
+    [[nodiscard]] Endpoint getEndpoint(void) const noexcept { return _endpoint; }
+
+    /**
+     * @brief Set the Endpoint target
+     */
+    void setEndpoint(Endpoint endpoint) noexcept { _endpoint = endpoint; }
+
+    /**
      * @brief Get the current context' state
      */
     [[nodiscard]] State getState(void) const noexcept { return _state; }
 
     /**
-     * @brief Set internal state to the next one if the current state is neither Error nor Completed
+     * @brief Set internal state to the next one
+     *  Return true if the state has changed (and the current state is neither Error nor Completed)
      */
-    void nextState(void) noexcept;
+    bool nextState(void) noexcept;
 
     /**
      * @brief Set nternal state to Error
@@ -110,6 +137,9 @@ public:
     [[nodiscard]] bool isConstant(void) const noexcept { return _constant; }
 
 private:
+    HTTP::Request _request;
+    HTTP::Response _response;
+    Endpoint _endpoint;
     State _state = State::BeforeAnalyze;
     bool _constant = true;
 };

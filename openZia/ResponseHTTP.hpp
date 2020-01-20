@@ -49,24 +49,24 @@ public:
     void setCode(Code code) noexcept { _code = code; }
 
     /**
-     * @brief Get request's Reason
+     * @brief Get request's Reason reference
+     */
+    [[nodiscard]] Reason &getReason(void) noexcept { return _reason; }
+
+    /**
+     * @brief Get request's Reason constant reference
      */
     [[nodiscard]] const Reason &getReason(void) const noexcept { return _reason; }
 
     /**
-     * @brief Set request's Reason
+     * @brief Get request's Body reference
      */
-    void setReason(Reason reason) noexcept { _reason = reason; }
+    [[nodiscard]] Body &getBody(void) noexcept { return _body; }
 
     /**
-     * @brief Get request's Body
+     * @brief Get request's Body constant reference
      */
     [[nodiscard]] const Body &getBody(void) const noexcept { return _body; }
-
-    /**
-     * @brief Set request's Body
-     */
-    void setBody(Body body) noexcept { _body = body; }
 
     /**
      * @brief Get request's version
@@ -79,12 +79,12 @@ public:
     void setVersion(Version version) noexcept { _version = version; }
 
     /**
-     * @brief Get the response's header
+     * @brief Get the response's header reference
      */
     [[nodiscard]] Header &getHeader(void) noexcept { return _header; }
 
     /**
-     * @brief Get the response's header
+     * @brief Get the response's header constant reference
      */
     [[nodiscard]] const Header &getHeader(void) const noexcept { return _header; }
 

@@ -6,19 +6,19 @@
 */
 
 #include "Context.hpp"
-#include "APipeline.hpp"
+#include "Pipeline.hpp"
 
 using namespace oZ;
 
-void Context::nextState(void) noexcept
+bool Context::nextState(void) noexcept
 {
     switch (_state) {
     case State::Error:
     case State::Completed:
     case State::StateCount:
-        break;
+        return false;
     default:
         _state = static_cast<State>(static_cast<int>(_state) + 1);
-        break;
+        return true;
     }
 }

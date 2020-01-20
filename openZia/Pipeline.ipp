@@ -6,7 +6,7 @@
 */
 
 template<typename ModuleType>
-void oZ::APipeline::registerCallback(State state, Priority priority, ModuleType *target, bool(ModuleType::*callback)(Context &))
+void oZ::Pipeline::registerCallback(State state, Priority priority, ModuleType *target, bool(ModuleType::*callback)(Context &))
 {
     registerCallback(state, priority, [target, callback](Context &context) {
         return (target->*callback)(context);
@@ -14,13 +14,13 @@ void oZ::APipeline::registerCallback(State state, Priority priority, ModuleType 
 }
 
 template<typename Type, typename ...Args>
-void oZ::APipeline::addModule(Args &&...args)
+void oZ::Pipeline::addModule(Args &&...args)
 {
     _modules.emplace_back(std::make_shared<Type>(std::forward<Args>(args)...));
 }
 
 template<typename Type>
-std::shared_ptr<Type> oZ::APipeline::findModule(void) const
+std::shared_ptr<Type> oZ::Pipeline::findModule(void) const
 {
     for (auto &module : _modules)
         if (auto ptr = std::dynamic_pointer_cast<Type>(module); ptr)

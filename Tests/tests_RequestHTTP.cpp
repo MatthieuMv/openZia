@@ -20,12 +20,12 @@ Test(Request, Basics)
     cr_assert_eq(req.getVersion(), Version(1, 1));
 
     req.setMethod(Method::Post);
-    req.setURI("azerty");
+    req.getURI() = "azerty";
     req.setVersion(Version(1, 0));
 
     cr_assert_eq(req.getMethod(), Method::Post);
     cr_assert_eq(req.getURI(), "azerty");
     cr_assert_eq(req.getVersion(), Version(1, 0));
 
-    cr_assert_not(req.getHeader().valueExists("abc"));
+    cr_assert_not(req.getHeader().exists("abc"));
 }

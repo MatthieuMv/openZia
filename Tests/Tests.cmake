@@ -10,9 +10,12 @@ set(TestsSources
     ${OpenZiaSourcesTestsDir}/tests_HeaderHTTP.cpp
     ${OpenZiaSourcesTestsDir}/tests_ResponseHTTP.cpp
     ${OpenZiaSourcesTestsDir}/tests_RequestHTTP.cpp
+    ${OpenZiaSourcesTestsDir}/tests_Endpoint.cpp
     ${OpenZiaSourcesTestsDir}/tests_Context.cpp
     ${OpenZiaSourcesTestsDir}/tests_IModule.cpp
-    ${OpenZiaSourcesTestsDir}/tests_APipeline.cpp
+    ${OpenZiaSourcesTestsDir}/tests_ILogger.cpp
+    ${OpenZiaSourcesTestsDir}/tests_Pipeline.cpp
+    ${OpenZiaSourcesTestsDir}/tests_Log.cpp
 )
 
 add_executable(${PROJECT_NAME} ${TestsSources} ${OpenZiaSources})

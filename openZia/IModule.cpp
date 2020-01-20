@@ -5,15 +5,15 @@
 ** Module Interface
 */
 
-// APipeline forward declaration
+// Pipeline forward declaration
 #include "IModule.hpp"
 
-// APipeline declaration
-#include "APipeline.hpp"
+// Pipeline declaration
+#include "Pipeline.hpp"
 
 using namespace oZ;
 
-void IModule::onRetreiveDependencies(APipeline &)
+void IModule::onRetreiveDependencies(Pipeline &)
 {
 }
 

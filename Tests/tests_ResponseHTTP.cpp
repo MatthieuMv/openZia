@@ -21,8 +21,8 @@ Test(Response, Basics)
     cr_assert_eq(res.getVersion(), Version(1, 1));
 
     res.setCode(Code::Accepted);
-    res.setReason("good");
-    res.setBody("world");
+    res.getReason() = "good";
+    res.getBody() = "world";
     res.setVersion(Version(1, 0));
 
     cr_assert_eq(res.getCode(), Code::Accepted);
@@ -30,5 +30,5 @@ Test(Response, Basics)
     cr_assert_eq(res.getBody(), "world");
     cr_assert_eq(res.getVersion(), Version(1, 0));
 
-    cr_assert_not(res.getHeader().valueExists("abc"));
+    cr_assert_not(res.getHeader().exists("abc"));
 }

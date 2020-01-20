@@ -9,9 +9,9 @@
 
 using namespace oZ::HTTP;
 
-const std::string &Header::getValue(const std::string &key) const
+const std::string &Header::get(const std::string &key) const
 {
     if (auto it = _map.find(key); it == _map.end())
-        throw std::logic_error("Header::getValue: '" + key + "' not found");
+        throw std::logic_error("Header::get: '" + key + "' not found");
     return _map.at(key);
 }

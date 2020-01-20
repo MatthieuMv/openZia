@@ -14,13 +14,13 @@
 
 namespace oZ
 {
-    class APipeline;
+    class Pipeline;
 }
 
 /**
  * @brief The pileline abstracts the pipeline of modules.
  */
-class oZ::APipeline
+class oZ::Pipeline
 {
 public:
     /**
@@ -49,27 +49,27 @@ public:
     using LoggerList = std::vector<LoggerPtr>;
 
     /**
-     * @brief Construct a new APipeline object
+     * @brief Construct a new Pipeline object
      * 
      * @param moduleDir Directory containing modules to load
      * @param configurationDir Directory containing configuration files of modules
      */
-    APipeline(std::string &&moduleDir = "Modules", std::string &&configurationDir = "Modules/Configurations");
+    Pipeline(std::string &&moduleDir = "Modules", std::string &&configurationDir = "Modules/Configurations");
 
     /**
      * @brief Disable copy constructor to prevent useless huge copies
      */
-    APipeline(const APipeline &other) = delete;
+    Pipeline(const Pipeline &other) = delete;
 
     /**
-     * @brief Construct a new APipeline object by move
+     * @brief Construct a new Pipeline object by move
      */
-    APipeline(APipeline &&other) = default;
+    Pipeline(Pipeline &&other) = default;
 
     /**
      * @brief Destroy the Pipeline object
      */
-    virtual ~APipeline(void) = default;
+    virtual ~Pipeline(void) = default;
 
     /**
      * @brief Find modules and load them into the pipeline.
@@ -123,13 +123,15 @@ public:
      * @brief Find a module of Type in internal module list returning it as a shared pointer.
      */
     template<typename Type = IModule>
-    std::shared_ptr<Type> findModule(void) const;
+    [[nodiscard]] std::shared_ptr<Type> findModule(void) const;
 
 protected:
     /**
-     * @brief This callback should be redefined to load modules in given directory.
+     * @brief Callback which should load a set of module at runtime
+     * 
+     *  This callback can be redefined to implement a custom loader.
      */
-    virtual void onLoadModules(const std::string &directoryPath) = 0;
+    virtual void onLoadModules(const std::string &directoryPath);
 
 private:
     ModuleList _modules;
@@ -158,4 +160,4 @@ private:
     void triggerContextStateCallbacks(Context &context);
 };
 
-#include "APipeline.ipp"
+#include "Pipeline.ipp"

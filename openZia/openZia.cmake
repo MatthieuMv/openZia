@@ -24,6 +24,9 @@ set(OpenZiaSources
     ${OpenZiaSourcesDir}/RequestHTTP.hpp
     ${OpenZiaSourcesDir}/ResponseHTTP.hpp
 
+    ${OpenZiaSourcesDir}/Endpoint.hpp
+    ${OpenZiaSourcesDir}/Endpoint.cpp
+
     ${OpenZiaSourcesDir}/Context.hpp
     ${OpenZiaSourcesDir}/Context.cpp
 
@@ -31,9 +34,13 @@ set(OpenZiaSources
     ${OpenZiaSourcesDir}/IModule.cpp
     ${OpenZiaSourcesDir}/ILogger.hpp
     
-    ${OpenZiaSourcesDir}/APipeline.hpp
-    ${OpenZiaSourcesDir}/APipeline.cpp
-    ${OpenZiaSourcesDir}/APipeline.ipp
+    ${OpenZiaSourcesDir}/Pipeline.hpp
+    ${OpenZiaSourcesDir}/Pipeline.cpp
+    ${OpenZiaSourcesDir}/Pipeline.ipp
+    
+    ${OpenZiaSourcesDir}/Log.hpp
+    ${OpenZiaSourcesDir}/Log.cpp
+    ${OpenZiaSourcesDir}/Log.ipp
 )
 
 # Create openZia library

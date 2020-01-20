@@ -15,7 +15,7 @@
 namespace oZ
 {
     class IModule;
-    class APipeline;
+    class Pipeline;
 
     /**
      * @brief Priority enum, used to sort modules in the pipeline.
@@ -28,7 +28,7 @@ namespace oZ
         Low = 1000,
         Medium = 2000,
         High = 3000,
-        Critical = 4000
+        ASAP = 4000
     };
 
     /**
@@ -38,11 +38,11 @@ namespace oZ
 
     /**
      * @brief Function signature that each module should respect to get detected and instantied.
+     * It musts uses the name 'createModule'.
      * 
-     * This function returns a raw pointer to an IModule to let the implementer choose
-     * to encapsulate it under an unique or a shared pointer.
+     * Example : ModulePtr CreateModule(void) { return std::make_shared<MyModule>(); }
      */
-    using ModuleInstanceFunction = IModule*(*)(void);
+    using ModuleInstanceFunction = ModulePtr(*)(void);
 }
 
 /**
@@ -78,7 +78,7 @@ public:
     /**
      * @brief Register module's callbacks in the pipeline
      */
-    virtual void onRegisterCallbacks(APipeline &) = 0;
+    virtual void onRegisterCallbacks(Pipeline &) = 0;
 
     /**
      * @brief This function is called once module registered their callbacks
@@ -89,7 +89,7 @@ public:
      * 
      *  This function is not pure virtual because you may not need it 
      */
-    virtual void onRetreiveDependencies(APipeline &pipeline);
+    virtual void onRetreiveDependencies(Pipeline &pipeline);
 
     /**
      * @brief This function is called after module retreived its dependencies.

@@ -7,20 +7,20 @@
 
 #include <criterion/criterion.h>
 
-#include <openZia/APipeline.hpp>
+#include <openZia/Pipeline.hpp>
 
 #include "Utils.hpp"
 
 using namespace oZ;
 
-class Pipeline : public APipeline
+class MyPipeline : public Pipeline
 {
     virtual void onLoadModules(const std::string &) {}
 };
 
-Test(APipeline, Basics)
+Test(Pipeline, Basics)
 {
-    Pipeline pipeline;
+    MyPipeline pipeline;
 
     cr_assert(pipeline.getModules().empty());
 }
@@ -40,12 +40,12 @@ class A : public IModule
 public:
     virtual const char *getName(void) const { return "A"; }
 
-    virtual void onRegisterCallbacks(APipeline &pipeline) {
+    virtual void onRegisterCallbacks(Pipeline &pipeline) {
         pipeline.registerCallback(State::Analyze, Priority::Independent, this, &A::foo);
         registered = true;
     }
 
-    virtual void onRetreiveDependencies(APipeline &pipeline) {
+    virtual void onRetreiveDependencies(Pipeline &pipeline) {
         b = pipeline.findModule<B>();
         c = pipeline.findModule<C>();
     }
@@ -67,9 +67,9 @@ class B : public IModule
 public:
     virtual const char *getName(void) const { return "B"; }
 
-    virtual void onRegisterCallbacks(APipeline &pipeline) {
-        pipeline.registerCallback(State::Response, Priority::Critical, [this](Context &) { ++x; return false; });
-        pipeline.registerCallback(State::Send, Priority::Independent, [this](Context &ctx) { ctx.setErrorState(); return false; });
+    virtual void onRegisterCallbacks(Pipeline &pipeline) {
+        pipeline.registerCallback(State::Response, Priority::ASAP, [this](Context &) { ++x; return false; });
+        pipeline.registerCallback(State::AfterResponse, Priority::Independent, [this](Context &ctx) { ctx.setErrorState(); return false; });
     }
     
     int x = 0;
@@ -80,7 +80,7 @@ class C : public IModule
 public:
     virtual const char *getName(void) const { return "C"; }
 
-    virtual void onRegisterCallbacks(APipeline &pipeline) {
+    virtual void onRegisterCallbacks(Pipeline &pipeline) {
         pipeline.registerCallback(State::Parse, Priority::Independent, [this](Context &) { ++x; return true; });
         pipeline.registerCallback(State::Response, Priority::Independent, [this](Context &) { ++x; return true; });
     }
@@ -88,7 +88,7 @@ public:
     int x = 0;
 };
 
-class ABCPipeline : public APipeline
+class ABCPipeline : public Pipeline
 {
     virtual void onLoadModules(const std::string &) {
         addModule<A>();
@@ -97,7 +97,7 @@ class ABCPipeline : public APipeline
     }
 };
 
-Test(APipeline, ABC)
+Test(Pipeline, ABC)
 {
     ABCPipeline pipeline;
     Context ctx;
@@ -123,7 +123,7 @@ public:
     virtual Dependencies getDependencies(void) const noexcept { return { "B", "E" }; }
 };
 
-class AbisPipeline : public APipeline
+class AbisPipeline : public Pipeline
 {
     virtual void onLoadModules(const std::string &) {
         addModule<Abis>();
@@ -131,7 +131,7 @@ class AbisPipeline : public APipeline
     }
 };
 
-Test(APipeline, Abis)
+Test(Pipeline, Abis)
 {
     AbisPipeline pipeline;
     Context ctx;

@@ -2,21 +2,22 @@
 ** EPITECH PROJECT, 2020
 ** CPP_zia_2019
 ** File description:
-** APipeline template sources
+** Pipeline template sources
 */
 
 #include <cstring>
 
-#include "APipeline.hpp"
+#include "Pipeline.hpp"
 
 using namespace oZ;
 
-APipeline::APipeline(std::string &&moduleDir, std::string &&configurationDir)
+Pipeline::Pipeline(std::string &&moduleDir, std::string &&configurationDir)
     : _moduleDir(std::move(moduleDir)), _configurationDir(std::move(configurationDir))
-{   
+{
+    loadModules();
 }
 
-void APipeline::loadModules(void)
+void Pipeline::loadModules(void)
 {
     for (auto &state : _pipeline)
         state.clear();
@@ -26,7 +27,13 @@ void APipeline::loadModules(void)
     createPipeline();
 }
 
-void APipeline::registerCallback(State state, Priority priority, CallbackHandler &&handler)
+void Pipeline::onLoadModules(const std::string &directoryPath)
+{
+    (void)(directoryPath);
+}
+
+
+void Pipeline::registerCallback(State state, Priority priority, CallbackHandler &&handler)
 {
     auto &callbacks = _pipeline[state];
     auto it = callbacks.cbegin();
@@ -36,17 +43,16 @@ void APipeline::registerCallback(State state, Priority priority, CallbackHandler
     callbacks.insert(it, std::make_pair(priority, std::move(handler)));
 }
 
-void APipeline::runPipeline(Context &context)
+void Pipeline::runPipeline(Context &context)
 {
-    while (!context.hasError() && !context.isCompleted()) {
+    do {
         triggerContextStateCallbacks(context);
-        context.nextState();
-    }
+    } while (context.nextState());
     if (context.hasError())
         triggerContextStateCallbacks(context);
 }
 
-void APipeline::triggerContextStateCallbacks(Context &context)
+void Pipeline::triggerContextStateCallbacks(Context &context)
 {
     for (const auto &callback : _pipeline[context.getState()]) {
         if (!callback.second(context))
@@ -54,7 +60,7 @@ void APipeline::triggerContextStateCallbacks(Context &context)
     }
 }
 
-void APipeline::checkModulesDependencies(void)
+void Pipeline::checkModulesDependencies(void)
 {
     for (const auto &module : _modules) {
         for (const auto *dependencie : module->getDependencies())
@@ -62,7 +68,7 @@ void APipeline::checkModulesDependencies(void)
     }
 }
 
-void APipeline::checkModuleDependency(const ModulePtr &module, const char *dependency)
+void Pipeline::checkModuleDependency(const ModulePtr &module, const char *dependency)
 {
     auto it = std::find_if(_modules.begin(), _modules.end(),
                 [dependency](const auto &m) { return !std::strcmp(m->getName(), dependency); });
@@ -71,7 +77,7 @@ void APipeline::checkModuleDependency(const ModulePtr &module, const char *depen
         throw std::logic_error(std::string("Pipeline::checkModuleDependencies: ") + module->getName() + "' requires missing module '" + dependency + '\'');
 }
 
-void APipeline::createPipeline(void)
+void Pipeline::createPipeline(void)
 {
     for (const auto &module : _modules) {
         module->onRegisterCallbacks(*this);

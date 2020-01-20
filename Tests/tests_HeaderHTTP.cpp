@@ -18,13 +18,13 @@ Test(Header, Basics)
     Header header;
     const auto &hdr = header;
 
-    cr_assert_not(header.valueExists("abc"));
+    cr_assert_not(header.exists("abc"));
 
-    header.setValue("abc", "42");
-    header.getValue("def") = "24";
+    header.set("abc", "42");
+    header.get("def") = "24";
 
-    cr_assert_eq(header.getValue("abc"), "42");
-    cr_assert_eq(hdr.getValue("def"), "24");
+    cr_assert_eq(header.get("abc"), "42");
+    cr_assert_eq(hdr.get("def"), "24");
 
-    cr_assert(CrashTest([&hdr] { const auto &var = hdr.getValue("azerty"); return var; }));
+    cr_assert(CrashTest([&hdr] { const auto &var = hdr.get("azerty"); return var; }));
 }
