@@ -1,0 +1,153 @@
+\hypertarget{classo_z_1_1_pipeline}{}\section{oZ\+::Pipeline Class Reference}
+\label{classo_z_1_1_pipeline}\index{oZ::Pipeline@{oZ::Pipeline}}
+
+
+The pileline abstracts the pipeline of modules.  
+
+
+
+
+{\ttfamily \#include $<$Pipeline.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classo_z_1_1_pipeline_a5a71ea2f2d4be5b82589c1b8175722f4}{Callback\+Handler}} = std\+::function$<$ bool(\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&)$>$
+\begin{DoxyCompactList}\small\item\em Callback handler that stores a bounded module\textquotesingle{}s callback function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_pipeline_a3bb478d291a83763b269d8d27e186a47}\label{classo_z_1_1_pipeline_a3bb478d291a83763b269d8d27e186a47}} 
+using \mbox{\hyperlink{classo_z_1_1_pipeline_a3bb478d291a83763b269d8d27e186a47}{Module\+List}} = std\+::vector$<$ Module\+Ptr $>$
+\begin{DoxyCompactList}\small\item\em Simple vector of modules. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_pipeline_ae4082276a9a2bafefab47a1298feec67}\label{classo_z_1_1_pipeline_ae4082276a9a2bafefab47a1298feec67}} 
+using \mbox{\hyperlink{classo_z_1_1_pipeline_ae4082276a9a2bafefab47a1298feec67}{Pipeline\+Map}} = std\+::array$<$ std\+::vector$<$ std\+::pair$<$ Priority, \mbox{\hyperlink{classo_z_1_1_pipeline_a5a71ea2f2d4be5b82589c1b8175722f4}{Callback\+Handler}} $>$ $>$, State\+::\+State\+Count $>$
+\begin{DoxyCompactList}\small\item\em Array containing a vector of callback fo each state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_pipeline_aa1f26badb603f054e554e3ddf8b846b0}\label{classo_z_1_1_pipeline_aa1f26badb603f054e554e3ddf8b846b0}} 
+using \mbox{\hyperlink{classo_z_1_1_pipeline_aa1f26badb603f054e554e3ddf8b846b0}{Logger\+List}} = std\+::vector$<$ Logger\+Ptr $>$
+\begin{DoxyCompactList}\small\item\em Vector containing \mbox{\hyperlink{classo_z_1_1_i_logger}{I\+Logger}} modules. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classo_z_1_1_pipeline_a40ef016f523e714052118dc552f8176a}{Pipeline}} (std\+::string \&\&module\+Dir=\char`\"{}Modules\char`\"{}, std\+::string \&\&configuration\+Dir=\char`\"{}Modules/Configurations\char`\"{})
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_pipeline_ab1d6cd9a6b71cae2b5ebe0031b945237}\label{classo_z_1_1_pipeline_ab1d6cd9a6b71cae2b5ebe0031b945237}} 
+\mbox{\hyperlink{classo_z_1_1_pipeline_ab1d6cd9a6b71cae2b5ebe0031b945237}{Pipeline}} (const \mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Disable copy constructor to prevent useless huge copies. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_pipeline_a6f9e61063bafb53108f1058f3de8c56a}\label{classo_z_1_1_pipeline_a6f9e61063bafb53108f1058f3de8c56a}} 
+\mbox{\hyperlink{classo_z_1_1_pipeline_a6f9e61063bafb53108f1058f3de8c56a}{Pipeline}} (\mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} \&\&other)=default
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} object by move. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_pipeline_a91969687e5d9dccb384febbce62d5dd9}\label{classo_z_1_1_pipeline_a91969687e5d9dccb384febbce62d5dd9}} 
+virtual \mbox{\hyperlink{classo_z_1_1_pipeline_a91969687e5d9dccb384febbce62d5dd9}{$\sim$\+Pipeline}} (void)=default
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_pipeline_a2815743412c13100c68fee0d87283417}\label{classo_z_1_1_pipeline_a2815743412c13100c68fee0d87283417}} 
+void \mbox{\hyperlink{classo_z_1_1_pipeline_a2815743412c13100c68fee0d87283417}{load\+Modules}} (void)
+\begin{DoxyCompactList}\small\item\em Find modules and load them into the pipeline. This function will \+: 1) Trigger the on\+Load\+Modules callback that you should implement yourself 2) Check if modules dependencies are avaible 3) Build the internal pipeline with it. 4) Load configuration files of each modules. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_pipeline_a869b02b2b8953993ccfb882a3e1f3a0f}\label{classo_z_1_1_pipeline_a869b02b2b8953993ccfb882a3e1f3a0f}} 
+void \mbox{\hyperlink{classo_z_1_1_pipeline_a869b02b2b8953993ccfb882a3e1f3a0f}{register\+Callback}} (State state, Priority priority, \mbox{\hyperlink{classo_z_1_1_pipeline_a5a71ea2f2d4be5b82589c1b8175722f4}{Callback\+Handler}} \&\&handler)
+\begin{DoxyCompactList}\small\item\em Inserts a callback handler into the pipeline with given state and priority. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Module\+Type $>$ }\\void \mbox{\hyperlink{classo_z_1_1_pipeline_af6d96b2697aa6770a3f1dd205b12c1c3}{register\+Callback}} (State state, Priority priority, Module\+Type $\ast$target, bool(Module\+Type\+::$\ast$)(\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&))
+\begin{DoxyCompactList}\small\item\em Inserts a callback handler into the pipeline with given state and priority. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classo_z_1_1_pipeline_a90bddc5511acce66f2aa780c3bba29b4}{run\+Pipeline}} (\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&context)
+\begin{DoxyCompactList}\small\item\em Process a context into the pipeline. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_pipeline_a3886c29b903d2e359a853ea76711661b}\label{classo_z_1_1_pipeline_a3886c29b903d2e359a853ea76711661b}} 
+\mbox{\hyperlink{classo_z_1_1_pipeline_a3bb478d291a83763b269d8d27e186a47}{Module\+List}} \& \mbox{\hyperlink{classo_z_1_1_pipeline_a3886c29b903d2e359a853ea76711661b}{get\+Modules}} (void) noexcept
+\begin{DoxyCompactList}\small\item\em Get internal loaded modules. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_pipeline_a84358c4166a67aabc0d5811608727da9}\label{classo_z_1_1_pipeline_a84358c4166a67aabc0d5811608727da9}} 
+const \mbox{\hyperlink{classo_z_1_1_pipeline_a3bb478d291a83763b269d8d27e186a47}{Module\+List}} \& \mbox{\hyperlink{classo_z_1_1_pipeline_a84358c4166a67aabc0d5811608727da9}{get\+Modules}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Get internal loaded modules (const) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Type , typename ... Args$>$ }\\void \mbox{\hyperlink{classo_z_1_1_pipeline_a797f98947aace930fbb15cd6b2d9f726}{add\+Module}} (Args \&\&...args)
+\begin{DoxyCompactList}\small\item\em Emplaces a new module in the pipeline. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_pipeline_a4f1abc0f7c0985dbc859cd5b20082998}\label{classo_z_1_1_pipeline_a4f1abc0f7c0985dbc859cd5b20082998}} 
+{\footnotesize template$<$typename Type  = I\+Module$>$ }\\std\+::shared\+\_\+ptr$<$ Type $>$ \mbox{\hyperlink{classo_z_1_1_pipeline_a4f1abc0f7c0985dbc859cd5b20082998}{find\+Module}} (void) const
+\begin{DoxyCompactList}\small\item\em Find a module of Type in internal module list returning it as a shared pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classo_z_1_1_pipeline_a0265d90a5540e69b25069d5d96973c53}{on\+Load\+Modules}} (const std\+::string \&directory\+Path)
+\begin{DoxyCompactList}\small\item\em Callback which should load a set of module at runtime. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The pileline abstracts the pipeline of modules. 
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classo_z_1_1_pipeline_a5a71ea2f2d4be5b82589c1b8175722f4}\label{classo_z_1_1_pipeline_a5a71ea2f2d4be5b82589c1b8175722f4}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!CallbackHandler@{CallbackHandler}}
+\index{CallbackHandler@{CallbackHandler}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{CallbackHandler}{CallbackHandler}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classo_z_1_1_pipeline_a5a71ea2f2d4be5b82589c1b8175722f4}{o\+Z\+::\+Pipeline\+::\+Callback\+Handler}} =  std\+::function$<$bool(\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&)$>$}
+
+
+
+Callback handler that stores a bounded module\textquotesingle{}s callback function. 
+
+If the callback returns false, the \mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} will not continue to process the current context state. It means that it will skip other modules. This can be used to implement caching in the pipeline. You can implement your own caching Module and process directly the current context to restore its cached version. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classo_z_1_1_pipeline_a40ef016f523e714052118dc552f8176a}\label{classo_z_1_1_pipeline_a40ef016f523e714052118dc552f8176a}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!Pipeline@{Pipeline}}
+\index{Pipeline@{Pipeline}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{Pipeline()}{Pipeline()}}
+{\footnotesize\ttfamily Pipeline\+::\+Pipeline (\begin{DoxyParamCaption}\item[{std\+::string \&\&}]{module\+Dir = {\ttfamily \char`\"{}Modules\char`\"{}},  }\item[{std\+::string \&\&}]{configuration\+Dir = {\ttfamily \char`\"{}Modules/Configurations\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em module\+Dir} & Directory containing modules to load \\
+\hline
+{\em configuration\+Dir} & Directory containing configuration files of modules \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classo_z_1_1_pipeline_a797f98947aace930fbb15cd6b2d9f726}\label{classo_z_1_1_pipeline_a797f98947aace930fbb15cd6b2d9f726}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!addModule@{addModule}}
+\index{addModule@{addModule}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{addModule()}{addModule()}}
+{\footnotesize\ttfamily template$<$typename Type , typename ... Args$>$ \\
+void o\+Z\+::\+Pipeline\+::add\+Module (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args }\end{DoxyParamCaption})}
+
+
+
+Emplaces a new module in the pipeline. 
+
+This function should be called by the on\+Load\+Modules callback of your derived pipeline. \mbox{\Hypertarget{classo_z_1_1_pipeline_a0265d90a5540e69b25069d5d96973c53}\label{classo_z_1_1_pipeline_a0265d90a5540e69b25069d5d96973c53}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!onLoadModules@{onLoadModules}}
+\index{onLoadModules@{onLoadModules}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{onLoadModules()}{onLoadModules()}}
+{\footnotesize\ttfamily void Pipeline\+::on\+Load\+Modules (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{directory\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Callback which should load a set of module at runtime. 
+
+This callback can be redefined to implement a custom loader. \mbox{\Hypertarget{classo_z_1_1_pipeline_af6d96b2697aa6770a3f1dd205b12c1c3}\label{classo_z_1_1_pipeline_af6d96b2697aa6770a3f1dd205b12c1c3}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!registerCallback@{registerCallback}}
+\index{registerCallback@{registerCallback}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{registerCallback()}{registerCallback()}}
+{\footnotesize\ttfamily template$<$typename Module\+Type $>$ \\
+void o\+Z\+::\+Pipeline\+::register\+Callback (\begin{DoxyParamCaption}\item[{State}]{state,  }\item[{Priority}]{priority,  }\item[{Module\+Type $\ast$}]{target,  }\item[{bool(Module\+Type\+::$\ast$)(\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&)}]{callback }\end{DoxyParamCaption})}
+
+
+
+Inserts a callback handler into the pipeline with given state and priority. 
+
+This variant is using a pointer to an object and one of its function taking a \mbox{\hyperlink{classo_z_1_1_context}{Context}}\&. \mbox{\Hypertarget{classo_z_1_1_pipeline_a90bddc5511acce66f2aa780c3bba29b4}\label{classo_z_1_1_pipeline_a90bddc5511acce66f2aa780c3bba29b4}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!runPipeline@{runPipeline}}
+\index{runPipeline@{runPipeline}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{runPipeline()}{runPipeline()}}
+{\footnotesize\ttfamily void Pipeline\+::run\+Pipeline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&}]{context }\end{DoxyParamCaption})}
+
+
+
+Process a context into the pipeline. 
+
+This function is thread-\/safe as long as modules are thread safe so keep it in mind when implementing your modules. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+open\+Zia/Pipeline.\+hpp\item 
+open\+Zia/Pipeline.\+cpp\item 
+open\+Zia/Pipeline.\+ipp\end{DoxyCompactItemize}

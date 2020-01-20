@@ -1,0 +1,39 @@
+\hypertarget{classo_z_1_1_i_logger}{}\section{oZ\+::I\+Logger Class Reference}
+\label{classo_z_1_1_i_logger}\index{oZ::ILogger@{oZ::ILogger}}
+
+
+This interface should be derived to implement a custom logger. It must be loaded like any other Module.  
+
+
+
+
+{\ttfamily \#include $<$I\+Logger.\+hpp$>$}
+
+
+
+Inherits \mbox{\hyperlink{classo_z_1_1_i_module}{o\+Z\+::\+I\+Module}}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classo_z_1_1_i_logger_a1ef3d8ab6931286af8f13e161520544b}\label{classo_z_1_1_i_logger_a1ef3d8ab6931286af8f13e161520544b}} 
+\mbox{\hyperlink{classo_z_1_1_i_logger_a1ef3d8ab6931286af8f13e161520544b}{I\+Logger}} (void)=default
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_i_logger}{I\+Logger}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_i_logger_a5a6f9c60dcd37b014a3621ed39ef6ba6}\label{classo_z_1_1_i_logger_a5a6f9c60dcd37b014a3621ed39ef6ba6}} 
+virtual \mbox{\hyperlink{classo_z_1_1_i_logger_a5a6f9c60dcd37b014a3621ed39ef6ba6}{$\sim$\+I\+Logger}} (void)=default
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classo_z_1_1_i_logger}{I\+Logger}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_i_logger_a2e0e168c9218055e41bdd5b57177cba1}\label{classo_z_1_1_i_logger_a2e0e168c9218055e41bdd5b57177cba1}} 
+virtual void \mbox{\hyperlink{classo_z_1_1_i_logger_a2e0e168c9218055e41bdd5b57177cba1}{on\+Log}} (Level level, const std\+::string \&message)=0
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classo_z_1_1_log}{Log}} a single message of given level. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_i_logger_a10732b6da6e8f085c6fe5fa154d361ef}\label{classo_z_1_1_i_logger_a10732b6da6e8f085c6fe5fa154d361ef}} 
+virtual void \mbox{\hyperlink{classo_z_1_1_i_logger_a10732b6da6e8f085c6fe5fa154d361ef}{on\+Register\+Callbacks}} (\mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} \&)
+\begin{DoxyCompactList}\small\item\em The callback register handler is defaulted because your logger may not need it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This interface should be derived to implement a custom logger. It must be loaded like any other Module. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+open\+Zia/I\+Logger.\+hpp\end{DoxyCompactItemize}

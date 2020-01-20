@@ -1,0 +1,77 @@
+\hypertarget{classo_z_1_1_context}{}\section{oZ\+::Context Class Reference}
+\label{classo_z_1_1_context}\index{oZ::Context@{oZ::Context}}
+
+
+The context class uses different concepts \+: 1) State is a state-\/machine code which indicates where the context 2) Constant property should be set when an \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}} want to specify that his process is constant and thus can be cached. 3) \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} is the client who sent a message.  
+
+
+
+
+{\ttfamily \#include $<$Context.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classo_z_1_1_context_af3aab1b32d4333320612049bdafb07d7}\label{classo_z_1_1_context_af3aab1b32d4333320612049bdafb07d7}} 
+\mbox{\hyperlink{classo_z_1_1_context_af3aab1b32d4333320612049bdafb07d7}{Context}} (void)=default
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_context_a906eb29f22e89bc121c47096c7a4b601}\label{classo_z_1_1_context_a906eb29f22e89bc121c47096c7a4b601}} 
+\mbox{\hyperlink{classo_z_1_1_context_a906eb29f22e89bc121c47096c7a4b601}{Context}} (const \mbox{\hyperlink{classo_z_1_1_context}{Context}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object by copy. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_context_ad4a49704266f6e8312b1c9c2ca8ad710}\label{classo_z_1_1_context_ad4a49704266f6e8312b1c9c2ca8ad710}} 
+\mbox{\hyperlink{classo_z_1_1_context_ad4a49704266f6e8312b1c9c2ca8ad710}{Context}} (\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&\&other)=default
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object by move. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_context_afe2e01a552a7711772e4028f778703e8}\label{classo_z_1_1_context_afe2e01a552a7711772e4028f778703e8}} 
+\mbox{\hyperlink{classo_z_1_1_context_afe2e01a552a7711772e4028f778703e8}{$\sim$\+Context}} (void)=default
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classo_z_1_1_context}{Context}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_context_ae675e54f6453c48ee8ccf96706965429}\label{classo_z_1_1_context_ae675e54f6453c48ee8ccf96706965429}} 
+H\+T\+T\+P\+::\+Request \mbox{\hyperlink{classo_z_1_1_context_ae675e54f6453c48ee8ccf96706965429}{get\+Request}} (void) noexcept
+\begin{DoxyCompactList}\small\item\em Get the Request of the H\+T\+TP context. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_context_adad7a501cd8fb3bb65e24fd2639c63f0}\label{classo_z_1_1_context_adad7a501cd8fb3bb65e24fd2639c63f0}} 
+const H\+T\+T\+P\+::\+Request \mbox{\hyperlink{classo_z_1_1_context_adad7a501cd8fb3bb65e24fd2639c63f0}{get\+Request}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Get the Request of the H\+T\+TP context (constant) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_context_a0a3d0176018fe118531d9d4701ae87c4}\label{classo_z_1_1_context_a0a3d0176018fe118531d9d4701ae87c4}} 
+H\+T\+T\+P\+::\+Response \mbox{\hyperlink{classo_z_1_1_context_a0a3d0176018fe118531d9d4701ae87c4}{get\+Response}} (void) noexcept
+\begin{DoxyCompactList}\small\item\em Get the Response of the H\+T\+TP context. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_context_a9051e2f83289ae701d6f261cbea44fdc}\label{classo_z_1_1_context_a9051e2f83289ae701d6f261cbea44fdc}} 
+const H\+T\+T\+P\+::\+Response \mbox{\hyperlink{classo_z_1_1_context_a9051e2f83289ae701d6f261cbea44fdc}{get\+Response}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Get the Response of the H\+T\+TP context (constant) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_context_a6409dfa205d2d292edb725ca2f82c776}\label{classo_z_1_1_context_a6409dfa205d2d292edb725ca2f82c776}} 
+\mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} \mbox{\hyperlink{classo_z_1_1_context_a6409dfa205d2d292edb725ca2f82c776}{get\+Endpoint}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Get the current context\textquotesingle{} state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_context_ae909982a14c14b62038deff79f9151bb}\label{classo_z_1_1_context_ae909982a14c14b62038deff79f9151bb}} 
+void \mbox{\hyperlink{classo_z_1_1_context_ae909982a14c14b62038deff79f9151bb}{set\+Endpoint}} (\mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint) noexcept
+\begin{DoxyCompactList}\small\item\em Set the \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} target. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_context_af912acc5fa475aa1e835a71df1752ef5}\label{classo_z_1_1_context_af912acc5fa475aa1e835a71df1752ef5}} 
+State \mbox{\hyperlink{classo_z_1_1_context_af912acc5fa475aa1e835a71df1752ef5}{get\+State}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Get the current context\textquotesingle{} state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_context_ad64db4a4b4391e8b765338cc227f948b}\label{classo_z_1_1_context_ad64db4a4b4391e8b765338cc227f948b}} 
+void \mbox{\hyperlink{classo_z_1_1_context_ad64db4a4b4391e8b765338cc227f948b}{set\+State}} (State state) noexcept
+\begin{DoxyCompactList}\small\item\em Set the current context\textquotesingle{} state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_context_aa07d51de7059b3a4fc9e3505704a33be}\label{classo_z_1_1_context_aa07d51de7059b3a4fc9e3505704a33be}} 
+bool \mbox{\hyperlink{classo_z_1_1_context_aa07d51de7059b3a4fc9e3505704a33be}{next\+State}} (void) noexcept
+\begin{DoxyCompactList}\small\item\em Set internal state to the next one Return true if the state has changed (and the current state is neither Error nor Completed) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_context_a036d993634650ee8414c2f12d49d0204}\label{classo_z_1_1_context_a036d993634650ee8414c2f12d49d0204}} 
+void \mbox{\hyperlink{classo_z_1_1_context_a036d993634650ee8414c2f12d49d0204}{set\+Error\+State}} (void)
+\begin{DoxyCompactList}\small\item\em Set nternal state to Error. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_context_a53afdf1400b5ec8429b09da40662a34d}\label{classo_z_1_1_context_a53afdf1400b5ec8429b09da40662a34d}} 
+bool \mbox{\hyperlink{classo_z_1_1_context_a53afdf1400b5ec8429b09da40662a34d}{has\+Error}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Fast error check. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_context_ac5dd957a1f76f466b86a179ed3146967}\label{classo_z_1_1_context_ac5dd957a1f76f466b86a179ed3146967}} 
+bool \mbox{\hyperlink{classo_z_1_1_context_ac5dd957a1f76f466b86a179ed3146967}{is\+Completed}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Fast completion check. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_context_ada521ec57fbc2febfd61177e8bbc0128}\label{classo_z_1_1_context_ada521ec57fbc2febfd61177e8bbc0128}} 
+void \mbox{\hyperlink{classo_z_1_1_context_ada521ec57fbc2febfd61177e8bbc0128}{not\+Constant}} (void) noexcept
+\begin{DoxyCompactList}\small\item\em Tell that the \mbox{\hyperlink{classo_z_1_1_context}{Context}} is not constant and thus can\textquotesingle{}t be cached. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classo_z_1_1_context_a748147258019436983fdbbf6ed51c0b6}\label{classo_z_1_1_context_a748147258019436983fdbbf6ed51c0b6}} 
+bool \mbox{\hyperlink{classo_z_1_1_context_a748147258019436983fdbbf6ed51c0b6}{is\+Constant}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Check if the current \mbox{\hyperlink{classo_z_1_1_context}{Context}}\textquotesingle{}s state is constant (and if it can be cached) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The context class uses different concepts \+: 1) State is a state-\/machine code which indicates where the context 2) Constant property should be set when an \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}} want to specify that his process is constant and thus can be cached. 3) \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} is the client who sent a message. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+open\+Zia/Context.\+hpp\item 
+open\+Zia/Context.\+cpp\end{DoxyCompactItemize}
