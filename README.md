@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/MatthieuMv/openZia.svg?branch=master)](https://travis-ci.org/MatthieuMv/openZia)
 [![codecov](https://codecov.io/gh/MatthieuMv/openZia/branch/master/graph/badge.svg)](https://codecov.io/gh/MatthieuMv/openZia)
 
+<<<<<<< HEAD
 # open.. what ?
 openZia is a C++ 17 cross-platform API for the 3rd year Epitech project **Zia**.
 This library is intended to be used to build a **robust and modular HTTP server**.
@@ -38,3 +39,7 @@ Dependencies handling:
 There are no configuration abstraction classes let you freely choose how to implement it for your needs.
 
 Please take a look at the very straightforward [Hello World Example](HELLO.md) file to follow a quick introduction guide.
+=======
+# openZia
+An EPITECH API for the HTTP Server project 'Zia'
+>>>>>>> 60cc31080c67fb52e56a718a53e873dca049e3d8
