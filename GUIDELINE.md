@@ -1,5 +1,3 @@
-## openZia C++ Guideline
-
 # Memory managing
 openZia uses the [RAII idiom](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) for memory managment. It also prefer **std::unique_ptr** and **std::shared_ptr** instead of ugly raw pointers.
 *Keep in mind that 'oZ::ModulePtr' is an alias to a std::shared_ptr<oZ::IModule>.*
