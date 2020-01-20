@@ -1,6 +1,5 @@
 # Memory managing
 openZia uses the [RAII idiom](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) for memory managment. It also prefer **std::unique_ptr** and **std::shared_ptr** instead of ugly raw pointers.
-*Keep in mind that 'oZ::ModulePtr' is an alias to a std::shared_ptr<oZ::IModule>.*
 
 # Naming
 openZia uses the camelCase naming convention.
@@ -35,6 +34,7 @@ void setType(void) noexcept; // Setter
 
 If the concerned type isn't scalar (can't be cheaply copied) then get/set functions look like :
 ```C++
+// This allows end-user to choose how to deal with the memory. Best example is copy vs move semantics.
 Type &getType(void) noexcept; // Mutable reference getter
 const Type &getType(void) const noexcept; // Constant reference getter
 ```
