@@ -37,7 +37,8 @@ public:
     /**
      * @brief Get a value in the header
      */
-    void set(const std::string &key, const std::string &value) { get(key) = value; }
+    template<typename Literal>
+    void set(const std::string &key, Literal &&value) { get(key) = std::forward<Literal>(value); }
 
 private:
     std::unordered_map<std::string, std::string> _map;

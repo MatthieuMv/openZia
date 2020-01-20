@@ -106,6 +106,11 @@ public:
     [[nodiscard]] State getState(void) const noexcept { return _state; }
 
     /**
+     * @brief Set the current context' state
+     */
+    void setState(State state) noexcept { _state = state; }
+
+    /**
      * @brief Set internal state to the next one
      *  Return true if the state has changed (and the current state is neither Error nor Completed)
      */

@@ -12,13 +12,13 @@ using namespace oZ;
 
 bool Context::nextState(void) noexcept
 {
-    switch (_state) {
+    switch (getState()) {
     case State::Error:
     case State::Completed:
     case State::StateCount:
         return false;
     default:
-        _state = static_cast<State>(static_cast<int>(_state) + 1);
+        setState(static_cast<State>(static_cast<int>(getState()) + 1));
         return true;
     }
 }
