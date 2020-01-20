@@ -35,7 +35,7 @@ To implement a module you must think about **when** you need to add its **behavi
 
 Logging messages:
 > Take uses of the **ILogger** interface create specific modules that, once loaded, will have his **oZ::ILogger::onLog** callback triggered each time a log is emited.
-> To emit a log, use the global helper function **oZ::Log**.
+> To emit a log, use the global helper class **oZ::Log**.
 
 Dependencies handling:
 > Each module have a callback to explicitly tell its dependencies, and another to retreive instances to them (instead of querying them at each pipeline run), see **oZ::IModule::onRetreiveDependencies**
