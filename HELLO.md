@@ -19,8 +19,8 @@ Let's say you have a class **Server**.
 		Pipeline _pipeline; // Pipeline loads module
 
 		// Callback when server receives a message
-	    void onPacketReceived(oZ::Buffer &&packet, const oZ::Endpoint endpoint) {
-		    oZ::Context context(std::move(packet), endpoint);
+	    void onPacketReceived(oZ::ByteArray &&buffer, const oZ::Endpoint endpoint) {
+		    oZ::Context context(std::move(buffer), endpoint);
 		    _pipeline.runPipeline(context);
 		    sendResponseToClient(context);
 	    }

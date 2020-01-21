@@ -7,8 +7,7 @@
 
 #pragma once
 
-#include <vector>
-
+#include "ByteArray.hpp"
 #include "HTTP.hpp"
 #include "Endpoint.hpp"
 
@@ -44,11 +43,6 @@ namespace oZ
         StateCount
     };
 
-    /**
-     * @brief Simple vector of byte used as buffer
-     */
-    using Buffer = std::vector<std::int8_t>;
-
     class Pipeline;
 
     class Context;
@@ -72,7 +66,7 @@ public:
     /**
      * @brief Construct a new Context object using a buffer
      */
-    Context(Buffer &&buffer, const Endpoint endpoint);
+    Context(ByteArray &&buffer, const Endpoint endpoint);
 
     /**
      * @brief Construct a new Context object by copy (this operation can be very expensive !!)
@@ -90,14 +84,14 @@ public:
     ~Context(void) = default;
 
     /**
-     * @brief Get the Buffer of the context
+     * @brief Get the ByteArray of the context
      */
-    [[nodiscard]] Buffer getBuffer(void) noexcept { return _buffer; }
+    [[nodiscard]] ByteArray getByteArray(void) noexcept { return _buffer; }
 
     /**
-     * @brief Get the Buffer of the context (constant)
+     * @brief Get the ByteArray of the context (constant)
      */
-    [[nodiscard]] const Buffer getBuffer(void) const noexcept { return _buffer; }
+    [[nodiscard]] const ByteArray getByteArray(void) const noexcept { return _buffer; }
 
     /**
      * @brief Get the current context' state
@@ -173,7 +167,7 @@ public:
 private:
     HTTP::Request _request;
     HTTP::Response _response;
-    Buffer _buffer;
+    ByteArray _buffer;
     Endpoint _endpoint;
     State _state = State::BeforeAnalyze;
     bool _constant = true;

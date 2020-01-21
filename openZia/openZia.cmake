@@ -17,13 +17,7 @@ set(OpenZiaIncludes ${OpenZiaSourcesDir}/..)
 
 # Library sources
 set(OpenZiaSources
-    ${OpenZiaSourcesDir}/BaseHTTP.hpp
-    ${OpenZiaSourcesDir}/HTTP.hpp
-    ${OpenZiaSourcesDir}/HeaderHTTP.hpp
-    ${OpenZiaSourcesDir}/HeaderHTTP.cpp
-    ${OpenZiaSourcesDir}/RequestHTTP.hpp
-    ${OpenZiaSourcesDir}/ResponseHTTP.hpp
-
+    ${OpenZiaSourcesDir}/ByteArray.hpp
     ${OpenZiaSourcesDir}/Endpoint.hpp
     ${OpenZiaSourcesDir}/Endpoint.cpp
 
@@ -41,6 +35,13 @@ set(OpenZiaSources
     ${OpenZiaSourcesDir}/Log.hpp
     ${OpenZiaSourcesDir}/Log.cpp
     ${OpenZiaSourcesDir}/Log.ipp
+
+    ${OpenZiaSourcesDir}/BaseHTTP.hpp
+    ${OpenZiaSourcesDir}/HTTP.hpp
+    ${OpenZiaSourcesDir}/HeaderHTTP.hpp
+    ${OpenZiaSourcesDir}/HeaderHTTP.cpp
+    ${OpenZiaSourcesDir}/RequestHTTP.hpp
+    ${OpenZiaSourcesDir}/ResponseHTTP.hpp
 )
 
 # Create openZia library
