@@ -10,6 +10,11 @@
 
 using namespace oZ;
 
+Context::Context(Buffer &&buffer, const Endpoint endpoint)
+    : _buffer(std::move(buffer)), _endpoint(endpoint)
+{
+}
+
 bool Context::nextState(void) noexcept
 {
     switch (getState()) {

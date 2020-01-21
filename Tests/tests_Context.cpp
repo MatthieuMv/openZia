@@ -44,9 +44,13 @@ Test(Context, States)
 
 Test(Context, Basics)
 {
-    Context context;
-    Endpoint end("127.0.0.1", 4040);
+    Endpoint end1("127.0.0.1", 4040), end2("192.127.4.1", 80);
+    Context context(Buffer(), end1);
+    const auto &ctx = context;
 
-    context.setEndpoint(end);
-    cr_assert_eq(context.getEndpoint(), end);
+    cr_assert(context.getBuffer().empty());
+    cr_assert(ctx.getBuffer().empty());
+    cr_assert_eq(context.getEndpoint(), end1);
+    context.setEndpoint(end2);
+    cr_assert_eq(context.getEndpoint(), end2);
 }

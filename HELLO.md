@@ -19,21 +19,15 @@ Let's say you have a class **Server**.
 		Pipeline _pipeline; // Pipeline loads module
 
 		// Callback when server receives a message
-	    void onPacketReceived(const YourNetworkPacket &packet) {
-		    oZ::Context context = buildPipelineContext(packet);
+	    void onPacketReceived(oZ::Buffer &&packet, const oZ::Endpoint endpoint) {
+		    oZ::Context context(std::move(packet), endpoint);
 		    _pipeline.runPipeline(context);
 		    sendResponseToClient(context);
 	    }
 
-		// Helper used to create a pipeline context from a packet
-		oZ::Context buildPipelineContext(const YourNetworkPacket&packet) const {
-			oZ::Context context;
-			/* Parse the HTTP packet and build a context out of it */
-			return context;
-		}
-
+		// Send the HTTP response to the client
 		void sendResponseToClient(const Context &context) {
-			/* Send the HTTP response to the client. You may use the following methods:
+			/* You may use the following methods:
 				context.hasError() // Fast error checking
 				context.getEndpoint() // Get the endpoint of target client
 				context.getResponse() // Get the response result of the pipeline

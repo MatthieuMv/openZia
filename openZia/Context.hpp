@@ -7,11 +7,18 @@
 
 #pragma once
 
+#include <vector>
+
 #include "HTTP.hpp"
 #include "Endpoint.hpp"
 
 namespace oZ
 {
+    /**
+     * @brief Context pipelines callbacks
+     * 
+     *  This enum represent states of the pipeline' state pattern.
+     */
     enum State : std::uint8_t {
         // An error occured and the pipeline musn't continue its processing
         Error = 0,
@@ -31,9 +38,16 @@ namespace oZ
         Response,
         AfterResponse,
 
+        // Callback when the pipeline is fully completed
         Completed,
+
         StateCount
     };
+
+    /**
+     * @brief Simple vector of byte used as buffer
+     */
+    using Buffer = std::vector<std::int8_t>;
 
     class Pipeline;
 
@@ -56,7 +70,12 @@ public:
     Context(void) = default;
 
     /**
-     * @brief Construct a new Context object by copy
+     * @brief Construct a new Context object using a buffer
+     */
+    Context(Buffer &&buffer, const Endpoint endpoint);
+
+    /**
+     * @brief Construct a new Context object by copy (this operation can be very expensive !!)
      */
     Context(const Context &other) = default;
 
@@ -69,6 +88,26 @@ public:
      * @brief Destroy the Context object
      */
     ~Context(void) = default;
+
+    /**
+     * @brief Get the Buffer of the context
+     */
+    [[nodiscard]] Buffer getBuffer(void) noexcept { return _buffer; }
+
+    /**
+     * @brief Get the Buffer of the context (constant)
+     */
+    [[nodiscard]] const Buffer getBuffer(void) const noexcept { return _buffer; }
+
+    /**
+     * @brief Get the current context' state
+     */
+    [[nodiscard]] Endpoint getEndpoint(void) const noexcept { return _endpoint; }
+
+    /**
+     * @brief Set the Endpoint target
+     */
+    void setEndpoint(Endpoint endpoint) noexcept { _endpoint = endpoint; }
 
     /**
      * @brief Get the Request of the HTTP context
@@ -89,16 +128,6 @@ public:
      * @brief Get the Response of the HTTP context (constant)
      */
     [[nodiscard]] const HTTP::Response getResponse(void) const noexcept { return _response; }
-
-    /**
-     * @brief Get the current context' state
-     */
-    [[nodiscard]] Endpoint getEndpoint(void) const noexcept { return _endpoint; }
-
-    /**
-     * @brief Set the Endpoint target
-     */
-    void setEndpoint(Endpoint endpoint) noexcept { _endpoint = endpoint; }
 
     /**
      * @brief Get the current context' state
@@ -144,6 +173,7 @@ public:
 private:
     HTTP::Request _request;
     HTTP::Response _response;
+    Buffer _buffer;
     Endpoint _endpoint;
     State _state = State::BeforeAnalyze;
     bool _constant = true;

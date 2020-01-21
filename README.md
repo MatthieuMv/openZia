@@ -35,6 +35,11 @@ The **oZ::Pipeline** class abstract module loading and pipeline creation on both
 To implement a module you must think about **when** you need to add its **behavior** to the pipeline.
 > Override the virtual **oZ::IModule::onRegisterCallbacks** to register your callbacks.
 
+HTTP Basics:
+> openZia doesn't implement an HTTP parser, you must implement a specific module for that task.
+> You should use the different analyze and parse callbacks to build a **oZ::HTTP::Request** out of the network packet **oZ::Buffer**.
+> When the packet is successfully parsed, use the different response callbacks to build your response.
+
 Logging messages:
 > Take uses of the **ILogger** interface create specific modules that, once loaded, will have his **oZ::ILogger::onLog** callback triggered each time a log is emited.
 > To emit a log, use the global helper class **oZ::Log**.
