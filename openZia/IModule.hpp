@@ -19,7 +19,7 @@ namespace oZ
 
     /**
      * @brief Priority enum, used to sort modules in the pipeline.
-     * 
+     *
      * If you need to sort modules with more precision, you can use intermediate offset.
      * Example: Low + 1, Low + 2, ...
      */
@@ -39,7 +39,7 @@ namespace oZ
     /**
      * @brief Function signature that each module should respect to get detected and instantied.
      * It musts uses the name 'createModule'.
-     * 
+     *
      * Example : ModulePtr CreateModule(void) { return std::make_shared<MyModule>(); }
      */
     using ModuleInstanceFunction = ModulePtr(*)(void);
@@ -47,7 +47,7 @@ namespace oZ
 
 /**
  * @brief This class is the interface of every module.
- * 
+ *
  * Each module can reimplement a set of virtual functions at each callback of the pipeline.
 
  * Pipeline callbacks get a Context reference in order to transform and/or use its state.
@@ -81,29 +81,29 @@ public:
     virtual void onRegisterCallbacks(Pipeline &) = 0;
 
     /**
+     * @brief Get the module dependencies
+     *
+     *  By default a module has no dependencies
+     */
+    virtual Dependencies getDependencies(void) const noexcept { return Dependencies(); }
+
+    /**
      * @brief This function is called once module registered their callbacks
-     * 
+     *
      *  There you should (if needed) implement dependencies search
      *  Be careful, at this point other modules may not have retreived their dependencies !
      *  Use the pipeline only to find your dependencies and store their shared_ptr instances
-     * 
-     *  This function is not pure virtual because you may not need it 
+     *
+     *  This function is not pure virtual because you may not need it
      */
     virtual void onRetreiveDependencies(Pipeline &pipeline);
 
     /**
      * @brief This function is called after module retreived its dependencies.
-     * 
+     *
      *  The given directory is the path to configuration files
-     * 
+     *
      *  This function is not pure virtual because you may not need it
      */
     virtual void onLoadConfigurationFile(const std::string &directory);
-
-    /**
-     * @brief Get the module dependencies
-     * 
-     *  By default a module has no dependencies
-     */
-    virtual Dependencies getDependencies(void) const noexcept { return Dependencies(); }
 };

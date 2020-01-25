@@ -6,34 +6,34 @@ As the pipeline is already implemented, you will not need a lot of work to get a
 I assume you have already setup your sever basic's routine (listen, accept, read ...).
 Let's say you have a class **Server**.
 ```C++
-    #include <openZia/Pipeline.hpp>
-    class Server {
-    public:
-	    // Set the pipeline module and configuration paths
+	#include <openZia/Pipeline.hpp>
+	class Server {
+	public:
+		// Set the pipeline module and configuration paths
 		Server(void) : _pipeline("ModuleDir", "ConfigDir") {}
 
-	    /* Your routines functions ... */
+		/* Your routines functions ... */
 
 	private:
 		/* Your members ... */
 		Pipeline _pipeline; // Pipeline loads module
 
 		// Callback when server receives a message
-	    void onPacketReceived(oZ::ByteArray &&buffer, const oZ::Endpoint endpoint) {
-		    oZ::Context context(std::move(buffer), endpoint);
-		    _pipeline.runPipeline(context);
-		    sendResponseToClient(context);
-	    }
+		void onPacketReceived(oZ::ByteArray &&buffer, const oZ::Endpoint endpoint) {
+			oZ::Context context(std::move(buffer), endpoint);
+			_pipeline.runPipeline(context);
+			sendInterpretToClient(context);
+		}
 
 		// Send the HTTP response to the client
-		void sendResponseToClient(const Context &context) {
+		void sendInterpretToClient(const Context &context) {
 			/* You may use the following methods:
 				context.hasError() // Fast error checking
 				context.getEndpoint() // Get the endpoint of target client
-				context.getResponse() // Get the response result of the pipeline
+				context.getInterpret() // Get the response result of the pipeline
 			*/
 		}
-    };
+	};
 ```
 
 Now you need to create your first module. Let's create two of them as a demonstration of dependency handling :
@@ -55,17 +55,17 @@ public:
 	// Register your callback to the pipeline
 	virtual void onRegisterCallbacks(Pipeline &pipeline) {
 		pipeline.registerCallback(
-			oZ::State::Response, // Call at response creation time
+			oZ::State::Interpret, // Call at response creation time
 			oZ::Priority::Medium + 1, // With medium priority but higher than 'World' module
-			this, &Hello::onResponse // Member function style
+			this, &Hello::onInterpret // Member function style
 		);
 	}
 
 private:
-	void onResponse(oZ::Context &context) {
+	void onInterpret(oZ::Context &context) {
 		oZ::Log(oZ::Information) << "Module 'Hello' wrote successfully its message";
-		context.getResponse().getHeader().get("Content-Type") = "text/plain";
-		context.getResponse().getBody() += "Hello";
+		context.getInterpret().getHeader().get("Content-Type") = "text/plain";
+		context.getInterpret().getBody() += "Hello";
 	}
 };
 
@@ -73,7 +73,7 @@ private:
 #include "Hello.hpp"
 
 extern "C" {
-    oZ::ModulePtr CreateModule(void) { return std::make_shared<Hello>(); }
+	oZ::ModulePtr CreateModule(void) { return std::make_shared<Hello>(); }
 }
 ```
 
@@ -96,10 +96,10 @@ public:
 	// Register your callback to the pipeline
 	virtual void onRegisterCallbacks(Pipeline &pipeline) {
 		pipeline.registerCallback(
-			oZ::State::Response, // Call at response creation time
+			oZ::State::Interpret, // Call at response creation time
 			oZ::Priority::Medium, // With medium priority
 			[](oZ::Context &context) { // Lambda function style
-				context.getResponse().getBody() += " World";
+				context.getInterpret().getBody() += " World";
 			})
 		);
 	}
@@ -113,6 +113,6 @@ public:
 #include "World.hpp"
 
 extern "C" {
-    oZ::ModulePtr CreateModule(void) { return std::make_shared<World>(); }
+	oZ::ModulePtr CreateModule(void) { return std::make_shared<World>(); }
 }
 ```

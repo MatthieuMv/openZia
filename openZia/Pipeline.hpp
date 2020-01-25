@@ -25,7 +25,7 @@ class oZ::Pipeline
 public:
     /**
      * @brief Callback handler that stores a bounded module's callback function
-     * 
+     *
      *  If the callback returns false, the Pipeline will not continue to process
      *  the current context state. It means that it will skip other modules.
      *  This can be used to implement caching in the pipeline. You can implement your own
@@ -50,7 +50,7 @@ public:
 
     /**
      * @brief Construct a new Pipeline object
-     * 
+     *
      * @param moduleDir Directory containing modules to load
      * @param configurationDir Directory containing configuration files of modules
      */
@@ -88,7 +88,7 @@ public:
 
     /**
      * @brief Inserts a callback handler into the pipeline with given state and priority
-     * 
+     *
      *  This variant is using a pointer to an object and one of its function taking a Context&.
      */
     template<typename ModuleType>
@@ -96,7 +96,7 @@ public:
 
     /**
      * @brief Process a context into the pipeline.
-     * 
+     *
      * This function is thread-safe as long as modules are thread safe so keep it in mind when implementing your modules.
      */
     void runPipeline(Context &context);
@@ -113,7 +113,7 @@ public:
 
     /**
      * @brief Emplaces a new module in the pipeline.
-     * 
+     *
      *  This function should be called by the onLoadModules callback of your derived pipeline.
      */
     template<typename Type, typename ...Args>
@@ -128,7 +128,7 @@ public:
 protected:
     /**
      * @brief Callback which should load a set of module at runtime
-     * 
+     *
      *  This callback can be redefined to implement a custom loader.
      */
     virtual void onLoadModules(const std::string &directoryPath);

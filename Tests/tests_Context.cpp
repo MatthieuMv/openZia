@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** CPP_zia_2019
 ** File description:
-** Context 
+** Context
 */
 
 #include <criterion/criterion.h>
@@ -24,15 +24,12 @@ Test(Context, States)
 {
     Context context;
 
-    cr_assert_eq(context.getState(), State::BeforeAnalyze); context.nextState();
-    cr_assert_eq(context.getState(), State::Analyze);       context.nextState();
-    cr_assert_eq(context.getState(), State::AfterAnalyze);  context.nextState();
     cr_assert_eq(context.getState(), State::BeforeParse);   context.nextState();
     cr_assert_eq(context.getState(), State::Parse);         context.nextState();
     cr_assert_eq(context.getState(), State::AfterParse);    context.nextState();
-    cr_assert_eq(context.getState(), State::BeforeResponse);context.nextState();
-    cr_assert_eq(context.getState(), State::Response);      context.nextState();
-    cr_assert_eq(context.getState(), State::AfterResponse); context.nextState();
+    cr_assert_eq(context.getState(), State::BeforeInterpret);context.nextState();
+    cr_assert_eq(context.getState(), State::Interpret);      context.nextState();
+    cr_assert_eq(context.getState(), State::AfterInterpret); context.nextState();
     cr_assert_eq(context.getState(), State::Completed);     context.nextState();
     cr_assert_eq(context.getState(), State::Completed);
     cr_assert(context.isCompleted());

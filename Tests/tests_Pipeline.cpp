@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** CPP_zia_2019
 ** File description:
-** Pipeline Abstraction 
+** Pipeline Abstraction
 */
 
 #include <criterion/criterion.h>
@@ -41,7 +41,7 @@ public:
     virtual const char *getName(void) const { return "A"; }
 
     virtual void onRegisterCallbacks(Pipeline &pipeline) {
-        pipeline.registerCallback(State::Analyze, Priority::Independent, this, &A::foo);
+        pipeline.registerCallback(State::Parse, Priority::Independent, this, &A::foo);
         registered = true;
     }
 
@@ -68,10 +68,10 @@ public:
     virtual const char *getName(void) const { return "B"; }
 
     virtual void onRegisterCallbacks(Pipeline &pipeline) {
-        pipeline.registerCallback(State::Response, Priority::ASAP, [this](Context &) { ++x; return false; });
-        pipeline.registerCallback(State::AfterResponse, Priority::Independent, [this](Context &ctx) { ctx.setErrorState(); return false; });
+        pipeline.registerCallback(State::Interpret, Priority::ASAP, [this](Context &) { ++x; return false; });
+        pipeline.registerCallback(State::AfterInterpret, Priority::Independent, [this](Context &ctx) { ctx.setErrorState(); return false; });
     }
-    
+
     int x = 0;
 };
 
@@ -82,9 +82,9 @@ public:
 
     virtual void onRegisterCallbacks(Pipeline &pipeline) {
         pipeline.registerCallback(State::Parse, Priority::Independent, [this](Context &) { ++x; return true; });
-        pipeline.registerCallback(State::Response, Priority::Independent, [this](Context &) { ++x; return true; });
+        pipeline.registerCallback(State::Interpret, Priority::Independent, [this](Context &) { ++x; return true; });
     }
-    
+
     int x = 0;
 };
 

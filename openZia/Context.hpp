@@ -15,29 +15,24 @@ namespace oZ
 {
     /**
      * @brief Context pipelines callbacks
-     * 
+     *
      *  This enum represent states of the pipeline' state pattern.
      */
     enum State : std::uint8_t {
-        // An error occured and the pipeline musn't continue its processing
+        // Callback triggered when an error occured and the pipeline is stopping
         Error = 0,
 
-        // Analyze callbacks are used to preprocess a HTTP request
-        BeforeAnalyze,
-        Analyze,
-        AfterAnalyze,
-
-        // Parse callbacks are used to process a HTTP request
+        // Parse callbacks are used to parse HTTP requests
         BeforeParse,
         Parse,
         AfterParse,
 
-        // Response callbacks are used to create a HTTP response
-        BeforeResponse,
-        Response,
-        AfterResponse,
+        // Interpret callbacks are used to create HTTP responses
+        BeforeInterpret,
+        Interpret,
+        AfterInterpret,
 
-        // Callback when the pipeline is fully completed
+        // Callback when the pipeline is fully completed without errors
         Completed,
 
         StateCount
@@ -169,6 +164,6 @@ private:
     HTTP::Response _response;
     ByteArray _buffer;
     Endpoint _endpoint;
-    State _state = State::BeforeAnalyze;
+    State _state = State::BeforeParse;
     bool _constant = true;
 };

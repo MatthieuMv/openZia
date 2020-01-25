@@ -79,6 +79,8 @@ void Pipeline::checkModuleDependency(const ModulePtr &module, const char *depend
 
 void Pipeline::createPipeline(void)
 {
+    if (!_configurationDir.empty() && _configurationDir.back() != '/')
+        _configurationDir.push_back('/');
     for (const auto &module : _modules) {
         module->onRegisterCallbacks(*this);
         module->onRetreiveDependencies(*this);
