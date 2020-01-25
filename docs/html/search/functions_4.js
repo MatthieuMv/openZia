@@ -4,6 +4,7 @@ var searchData=
   ['getaddress',['getAddress',['../classo_z_1_1_endpoint.html#a27a680dbcdf1c89bb10fcbaca969edab',1,'oZ::Endpoint']]],
   ['getaddressvalue',['getAddressValue',['../classo_z_1_1_endpoint.html#ad02055ec457231d4d0f316dcfa5539ba',1,'oZ::Endpoint']]],
   ['getbody',['getBody',['../classo_z_1_1o_z_1_1_h_t_t_p_1_1_response.html#aa7239adea5d18861a4ecbd70a93ab40a',1,'oZ::oZ::HTTP::Response::getBody(void) noexcept'],['../classo_z_1_1o_z_1_1_h_t_t_p_1_1_response.html#a2c8072067e95c0059ce8777e6fb1f772',1,'oZ::oZ::HTTP::Response::getBody(void) const noexcept']]],
+  ['getbytearray',['getByteArray',['../classo_z_1_1_context.html#a587356df2f6993e8e87c08090968d90e',1,'oZ::Context::getByteArray(void) noexcept'],['../classo_z_1_1_context.html#aeec2e7cd171e9c6b01b983969f1f7ae6',1,'oZ::Context::getByteArray(void) const noexcept']]],
   ['getcode',['getCode',['../classo_z_1_1o_z_1_1_h_t_t_p_1_1_response.html#aacfdfb400c4c7e8f46a6b7967b9e174f',1,'oZ::oZ::HTTP::Response']]],
   ['getdependencies',['getDependencies',['../classo_z_1_1_i_module.html#a720a329e6ebcbecbc150d8b0bbee6e37',1,'oZ::IModule']]],
   ['getendpoint',['getEndpoint',['../classo_z_1_1_context.html#a6409dfa205d2d292edb725ca2f82c776',1,'oZ::Context']]],

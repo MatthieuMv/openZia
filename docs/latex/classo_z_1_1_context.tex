@@ -12,58 +12,46 @@ The context class uses different concepts \+: 1) State is a state-\/machine code
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classo_z_1_1_context_af3aab1b32d4333320612049bdafb07d7}\label{classo_z_1_1_context_af3aab1b32d4333320612049bdafb07d7}} 
 \mbox{\hyperlink{classo_z_1_1_context_af3aab1b32d4333320612049bdafb07d7}{Context}} (void)=default
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_context_a906eb29f22e89bc121c47096c7a4b601}\label{classo_z_1_1_context_a906eb29f22e89bc121c47096c7a4b601}} 
+\mbox{\hyperlink{classo_z_1_1_context_a17743171fb82c800a3fb5da19c05532e}{Context}} (\mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} \&\&buffer, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object using a buffer. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classo_z_1_1_context_a906eb29f22e89bc121c47096c7a4b601}{Context}} (const \mbox{\hyperlink{classo_z_1_1_context}{Context}} \&other)=default
-\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object by copy. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_context_ad4a49704266f6e8312b1c9c2ca8ad710}\label{classo_z_1_1_context_ad4a49704266f6e8312b1c9c2ca8ad710}} 
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object by copy (this operation can be very expensive !!) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classo_z_1_1_context_ad4a49704266f6e8312b1c9c2ca8ad710}{Context}} (\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&\&other)=default
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object by move. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_context_afe2e01a552a7711772e4028f778703e8}\label{classo_z_1_1_context_afe2e01a552a7711772e4028f778703e8}} 
 \mbox{\hyperlink{classo_z_1_1_context_afe2e01a552a7711772e4028f778703e8}{$\sim$\+Context}} (void)=default
 \begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classo_z_1_1_context}{Context}} object. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_context_ae675e54f6453c48ee8ccf96706965429}\label{classo_z_1_1_context_ae675e54f6453c48ee8ccf96706965429}} 
-H\+T\+T\+P\+::\+Request \mbox{\hyperlink{classo_z_1_1_context_ae675e54f6453c48ee8ccf96706965429}{get\+Request}} (void) noexcept
-\begin{DoxyCompactList}\small\item\em Get the Request of the H\+T\+TP context. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_context_adad7a501cd8fb3bb65e24fd2639c63f0}\label{classo_z_1_1_context_adad7a501cd8fb3bb65e24fd2639c63f0}} 
-const H\+T\+T\+P\+::\+Request \mbox{\hyperlink{classo_z_1_1_context_adad7a501cd8fb3bb65e24fd2639c63f0}{get\+Request}} (void) const noexcept
-\begin{DoxyCompactList}\small\item\em Get the Request of the H\+T\+TP context (constant) \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_context_a0a3d0176018fe118531d9d4701ae87c4}\label{classo_z_1_1_context_a0a3d0176018fe118531d9d4701ae87c4}} 
-H\+T\+T\+P\+::\+Response \mbox{\hyperlink{classo_z_1_1_context_a0a3d0176018fe118531d9d4701ae87c4}{get\+Response}} (void) noexcept
-\begin{DoxyCompactList}\small\item\em Get the Response of the H\+T\+TP context. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_context_a9051e2f83289ae701d6f261cbea44fdc}\label{classo_z_1_1_context_a9051e2f83289ae701d6f261cbea44fdc}} 
-const H\+T\+T\+P\+::\+Response \mbox{\hyperlink{classo_z_1_1_context_a9051e2f83289ae701d6f261cbea44fdc}{get\+Response}} (void) const noexcept
-\begin{DoxyCompactList}\small\item\em Get the Response of the H\+T\+TP context (constant) \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_context_a6409dfa205d2d292edb725ca2f82c776}\label{classo_z_1_1_context_a6409dfa205d2d292edb725ca2f82c776}} 
+\mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} \mbox{\hyperlink{classo_z_1_1_context_a587356df2f6993e8e87c08090968d90e}{get\+Byte\+Array}} (void) noexcept
+\begin{DoxyCompactList}\small\item\em Get the Byte\+Array of the context. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} \mbox{\hyperlink{classo_z_1_1_context_aeec2e7cd171e9c6b01b983969f1f7ae6}{get\+Byte\+Array}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Get the Byte\+Array of the context (constant) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} \mbox{\hyperlink{classo_z_1_1_context_a6409dfa205d2d292edb725ca2f82c776}{get\+Endpoint}} (void) const noexcept
 \begin{DoxyCompactList}\small\item\em Get the current context\textquotesingle{} state. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_context_ae909982a14c14b62038deff79f9151bb}\label{classo_z_1_1_context_ae909982a14c14b62038deff79f9151bb}} 
 void \mbox{\hyperlink{classo_z_1_1_context_ae909982a14c14b62038deff79f9151bb}{set\+Endpoint}} (\mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint) noexcept
 \begin{DoxyCompactList}\small\item\em Set the \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} target. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_context_af912acc5fa475aa1e835a71df1752ef5}\label{classo_z_1_1_context_af912acc5fa475aa1e835a71df1752ef5}} 
-State \mbox{\hyperlink{classo_z_1_1_context_af912acc5fa475aa1e835a71df1752ef5}{get\+State}} (void) const noexcept
+H\+T\+T\+P\+::\+Request \mbox{\hyperlink{classo_z_1_1_context_ae675e54f6453c48ee8ccf96706965429}{get\+Request}} (void) noexcept
+\begin{DoxyCompactList}\small\item\em Get the Request of the \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}} context. \end{DoxyCompactList}\item 
+const H\+T\+T\+P\+::\+Request \mbox{\hyperlink{classo_z_1_1_context_adad7a501cd8fb3bb65e24fd2639c63f0}{get\+Request}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Get the Request of the \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}} context (constant) \end{DoxyCompactList}\item 
+H\+T\+T\+P\+::\+Response \mbox{\hyperlink{classo_z_1_1_context_a0a3d0176018fe118531d9d4701ae87c4}{get\+Response}} (void) noexcept
+\begin{DoxyCompactList}\small\item\em Get the Response of the \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}} context. \end{DoxyCompactList}\item 
+const H\+T\+T\+P\+::\+Response \mbox{\hyperlink{classo_z_1_1_context_a9051e2f83289ae701d6f261cbea44fdc}{get\+Response}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Get the Response of the \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}} context (constant) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268e}{State}} \mbox{\hyperlink{classo_z_1_1_context_af912acc5fa475aa1e835a71df1752ef5}{get\+State}} (void) const noexcept
 \begin{DoxyCompactList}\small\item\em Get the current context\textquotesingle{} state. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_context_ad64db4a4b4391e8b765338cc227f948b}\label{classo_z_1_1_context_ad64db4a4b4391e8b765338cc227f948b}} 
-void \mbox{\hyperlink{classo_z_1_1_context_ad64db4a4b4391e8b765338cc227f948b}{set\+State}} (State state) noexcept
+void \mbox{\hyperlink{classo_z_1_1_context_ad64db4a4b4391e8b765338cc227f948b}{set\+State}} (\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268e}{State}} state) noexcept
 \begin{DoxyCompactList}\small\item\em Set the current context\textquotesingle{} state. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_context_aa07d51de7059b3a4fc9e3505704a33be}\label{classo_z_1_1_context_aa07d51de7059b3a4fc9e3505704a33be}} 
 bool \mbox{\hyperlink{classo_z_1_1_context_aa07d51de7059b3a4fc9e3505704a33be}{next\+State}} (void) noexcept
 \begin{DoxyCompactList}\small\item\em Set internal state to the next one Return true if the state has changed (and the current state is neither Error nor Completed) \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_context_a036d993634650ee8414c2f12d49d0204}\label{classo_z_1_1_context_a036d993634650ee8414c2f12d49d0204}} 
 void \mbox{\hyperlink{classo_z_1_1_context_a036d993634650ee8414c2f12d49d0204}{set\+Error\+State}} (void)
 \begin{DoxyCompactList}\small\item\em Set nternal state to Error. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_context_a53afdf1400b5ec8429b09da40662a34d}\label{classo_z_1_1_context_a53afdf1400b5ec8429b09da40662a34d}} 
 bool \mbox{\hyperlink{classo_z_1_1_context_a53afdf1400b5ec8429b09da40662a34d}{has\+Error}} (void) const noexcept
 \begin{DoxyCompactList}\small\item\em Fast error check. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_context_ac5dd957a1f76f466b86a179ed3146967}\label{classo_z_1_1_context_ac5dd957a1f76f466b86a179ed3146967}} 
 bool \mbox{\hyperlink{classo_z_1_1_context_ac5dd957a1f76f466b86a179ed3146967}{is\+Completed}} (void) const noexcept
 \begin{DoxyCompactList}\small\item\em Fast completion check. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_context_ada521ec57fbc2febfd61177e8bbc0128}\label{classo_z_1_1_context_ada521ec57fbc2febfd61177e8bbc0128}} 
 void \mbox{\hyperlink{classo_z_1_1_context_ada521ec57fbc2febfd61177e8bbc0128}{not\+Constant}} (void) noexcept
 \begin{DoxyCompactList}\small\item\em Tell that the \mbox{\hyperlink{classo_z_1_1_context}{Context}} is not constant and thus can\textquotesingle{}t be cached. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_context_a748147258019436983fdbbf6ed51c0b6}\label{classo_z_1_1_context_a748147258019436983fdbbf6ed51c0b6}} 
 bool \mbox{\hyperlink{classo_z_1_1_context_a748147258019436983fdbbf6ed51c0b6}{is\+Constant}} (void) const noexcept
 \begin{DoxyCompactList}\small\item\em Check if the current \mbox{\hyperlink{classo_z_1_1_context}{Context}}\textquotesingle{}s state is constant (and if it can be cached) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -71,7 +59,223 @@ bool \mbox{\hyperlink{classo_z_1_1_context_a748147258019436983fdbbf6ed51c0b6}{is
 \subsection{Detailed Description}
 The context class uses different concepts \+: 1) State is a state-\/machine code which indicates where the context 2) Constant property should be set when an \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}} want to specify that his process is constant and thus can be cached. 3) \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} is the client who sent a message. 
 
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classo_z_1_1_context_af3aab1b32d4333320612049bdafb07d7}\label{classo_z_1_1_context_af3aab1b32d4333320612049bdafb07d7}} 
+\index{oZ::Context@{oZ::Context}!Context@{Context}}
+\index{Context@{Context}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{Context()}{Context()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily o\+Z\+::\+Context\+::\+Context (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object. 
+
+\mbox{\Hypertarget{classo_z_1_1_context_a17743171fb82c800a3fb5da19c05532e}\label{classo_z_1_1_context_a17743171fb82c800a3fb5da19c05532e}} 
+\index{oZ::Context@{oZ::Context}!Context@{Context}}
+\index{Context@{Context}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{Context()}{Context()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Context\+::\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} \&\&}]{buffer,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object using a buffer. 
+
+\mbox{\Hypertarget{classo_z_1_1_context_a906eb29f22e89bc121c47096c7a4b601}\label{classo_z_1_1_context_a906eb29f22e89bc121c47096c7a4b601}} 
+\index{oZ::Context@{oZ::Context}!Context@{Context}}
+\index{Context@{Context}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{Context()}{Context()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily o\+Z\+::\+Context\+::\+Context (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classo_z_1_1_context}{Context}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object by copy (this operation can be very expensive !!) 
+
+\mbox{\Hypertarget{classo_z_1_1_context_ad4a49704266f6e8312b1c9c2ca8ad710}\label{classo_z_1_1_context_ad4a49704266f6e8312b1c9c2ca8ad710}} 
+\index{oZ::Context@{oZ::Context}!Context@{Context}}
+\index{Context@{Context}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{Context()}{Context()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily o\+Z\+::\+Context\+::\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object by move. 
+
+\mbox{\Hypertarget{classo_z_1_1_context_afe2e01a552a7711772e4028f778703e8}\label{classo_z_1_1_context_afe2e01a552a7711772e4028f778703e8}} 
+\index{oZ::Context@{oZ::Context}!````~Context@{$\sim$Context}}
+\index{````~Context@{$\sim$Context}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{$\sim$Context()}{~Context()}}
+{\footnotesize\ttfamily o\+Z\+::\+Context\+::$\sim$\+Context (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destroy the \mbox{\hyperlink{classo_z_1_1_context}{Context}} object. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classo_z_1_1_context_a587356df2f6993e8e87c08090968d90e}\label{classo_z_1_1_context_a587356df2f6993e8e87c08090968d90e}} 
+\index{oZ::Context@{oZ::Context}!getByteArray@{getByteArray}}
+\index{getByteArray@{getByteArray}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{getByteArray()}{getByteArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} o\+Z\+::\+Context\+::get\+Byte\+Array (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the Byte\+Array of the context. 
+
+\mbox{\Hypertarget{classo_z_1_1_context_aeec2e7cd171e9c6b01b983969f1f7ae6}\label{classo_z_1_1_context_aeec2e7cd171e9c6b01b983969f1f7ae6}} 
+\index{oZ::Context@{oZ::Context}!getByteArray@{getByteArray}}
+\index{getByteArray@{getByteArray}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{getByteArray()}{getByteArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} o\+Z\+::\+Context\+::get\+Byte\+Array (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the Byte\+Array of the context (constant) 
+
+\mbox{\Hypertarget{classo_z_1_1_context_a6409dfa205d2d292edb725ca2f82c776}\label{classo_z_1_1_context_a6409dfa205d2d292edb725ca2f82c776}} 
+\index{oZ::Context@{oZ::Context}!getEndpoint@{getEndpoint}}
+\index{getEndpoint@{getEndpoint}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{getEndpoint()}{getEndpoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} o\+Z\+::\+Context\+::get\+Endpoint (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the current context\textquotesingle{} state. 
+
+\mbox{\Hypertarget{classo_z_1_1_context_ae675e54f6453c48ee8ccf96706965429}\label{classo_z_1_1_context_ae675e54f6453c48ee8ccf96706965429}} 
+\index{oZ::Context@{oZ::Context}!getRequest@{getRequest}}
+\index{getRequest@{getRequest}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{getRequest()}{getRequest()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily H\+T\+T\+P\+::\+Request o\+Z\+::\+Context\+::get\+Request (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the Request of the \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}} context. 
+
+\mbox{\Hypertarget{classo_z_1_1_context_adad7a501cd8fb3bb65e24fd2639c63f0}\label{classo_z_1_1_context_adad7a501cd8fb3bb65e24fd2639c63f0}} 
+\index{oZ::Context@{oZ::Context}!getRequest@{getRequest}}
+\index{getRequest@{getRequest}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{getRequest()}{getRequest()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const H\+T\+T\+P\+::\+Request o\+Z\+::\+Context\+::get\+Request (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the Request of the \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}} context (constant) 
+
+\mbox{\Hypertarget{classo_z_1_1_context_a0a3d0176018fe118531d9d4701ae87c4}\label{classo_z_1_1_context_a0a3d0176018fe118531d9d4701ae87c4}} 
+\index{oZ::Context@{oZ::Context}!getResponse@{getResponse}}
+\index{getResponse@{getResponse}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{getResponse()}{getResponse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily H\+T\+T\+P\+::\+Response o\+Z\+::\+Context\+::get\+Response (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the Response of the \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}} context. 
+
+\mbox{\Hypertarget{classo_z_1_1_context_a9051e2f83289ae701d6f261cbea44fdc}\label{classo_z_1_1_context_a9051e2f83289ae701d6f261cbea44fdc}} 
+\index{oZ::Context@{oZ::Context}!getResponse@{getResponse}}
+\index{getResponse@{getResponse}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{getResponse()}{getResponse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const H\+T\+T\+P\+::\+Response o\+Z\+::\+Context\+::get\+Response (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the Response of the \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}} context (constant) 
+
+\mbox{\Hypertarget{classo_z_1_1_context_af912acc5fa475aa1e835a71df1752ef5}\label{classo_z_1_1_context_af912acc5fa475aa1e835a71df1752ef5}} 
+\index{oZ::Context@{oZ::Context}!getState@{getState}}
+\index{getState@{getState}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268e}{State}} o\+Z\+::\+Context\+::get\+State (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the current context\textquotesingle{} state. 
+
+\mbox{\Hypertarget{classo_z_1_1_context_a53afdf1400b5ec8429b09da40662a34d}\label{classo_z_1_1_context_a53afdf1400b5ec8429b09da40662a34d}} 
+\index{oZ::Context@{oZ::Context}!hasError@{hasError}}
+\index{hasError@{hasError}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{hasError()}{hasError()}}
+{\footnotesize\ttfamily bool o\+Z\+::\+Context\+::has\+Error (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Fast error check. 
+
+\mbox{\Hypertarget{classo_z_1_1_context_ac5dd957a1f76f466b86a179ed3146967}\label{classo_z_1_1_context_ac5dd957a1f76f466b86a179ed3146967}} 
+\index{oZ::Context@{oZ::Context}!isCompleted@{isCompleted}}
+\index{isCompleted@{isCompleted}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{isCompleted()}{isCompleted()}}
+{\footnotesize\ttfamily bool o\+Z\+::\+Context\+::is\+Completed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Fast completion check. 
+
+\mbox{\Hypertarget{classo_z_1_1_context_a748147258019436983fdbbf6ed51c0b6}\label{classo_z_1_1_context_a748147258019436983fdbbf6ed51c0b6}} 
+\index{oZ::Context@{oZ::Context}!isConstant@{isConstant}}
+\index{isConstant@{isConstant}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{isConstant()}{isConstant()}}
+{\footnotesize\ttfamily bool o\+Z\+::\+Context\+::is\+Constant (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Check if the current \mbox{\hyperlink{classo_z_1_1_context}{Context}}\textquotesingle{}s state is constant (and if it can be cached) 
+
+\mbox{\Hypertarget{classo_z_1_1_context_aa07d51de7059b3a4fc9e3505704a33be}\label{classo_z_1_1_context_aa07d51de7059b3a4fc9e3505704a33be}} 
+\index{oZ::Context@{oZ::Context}!nextState@{nextState}}
+\index{nextState@{nextState}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{nextState()}{nextState()}}
+{\footnotesize\ttfamily bool Context\+::next\+State (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Set internal state to the next one Return true if the state has changed (and the current state is neither Error nor Completed) 
+
+\mbox{\Hypertarget{classo_z_1_1_context_ada521ec57fbc2febfd61177e8bbc0128}\label{classo_z_1_1_context_ada521ec57fbc2febfd61177e8bbc0128}} 
+\index{oZ::Context@{oZ::Context}!notConstant@{notConstant}}
+\index{notConstant@{notConstant}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{notConstant()}{notConstant()}}
+{\footnotesize\ttfamily void o\+Z\+::\+Context\+::not\+Constant (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Tell that the \mbox{\hyperlink{classo_z_1_1_context}{Context}} is not constant and thus can\textquotesingle{}t be cached. 
+
+\mbox{\Hypertarget{classo_z_1_1_context_ae909982a14c14b62038deff79f9151bb}\label{classo_z_1_1_context_ae909982a14c14b62038deff79f9151bb}} 
+\index{oZ::Context@{oZ::Context}!setEndpoint@{setEndpoint}}
+\index{setEndpoint@{setEndpoint}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{setEndpoint()}{setEndpoint()}}
+{\footnotesize\ttfamily void o\+Z\+::\+Context\+::set\+Endpoint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Set the \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} target. 
+
+\mbox{\Hypertarget{classo_z_1_1_context_a036d993634650ee8414c2f12d49d0204}\label{classo_z_1_1_context_a036d993634650ee8414c2f12d49d0204}} 
+\index{oZ::Context@{oZ::Context}!setErrorState@{setErrorState}}
+\index{setErrorState@{setErrorState}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{setErrorState()}{setErrorState()}}
+{\footnotesize\ttfamily void o\+Z\+::\+Context\+::set\+Error\+State (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set nternal state to Error. 
+
+\mbox{\Hypertarget{classo_z_1_1_context_ad64db4a4b4391e8b765338cc227f948b}\label{classo_z_1_1_context_ad64db4a4b4391e8b765338cc227f948b}} 
+\index{oZ::Context@{oZ::Context}!setState@{setState}}
+\index{setState@{setState}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void o\+Z\+::\+Context\+::set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268e}{State}}}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Set the current context\textquotesingle{} state. 
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-open\+Zia/Context.\+hpp\item 
-open\+Zia/Context.\+cpp\end{DoxyCompactItemize}
+/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_context_8hpp}{Context.\+hpp}}\item 
+/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_context_8cpp}{Context.\+cpp}}\end{DoxyCompactItemize}

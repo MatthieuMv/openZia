@@ -1,0 +1,107 @@
+\hypertarget{_base_h_t_t_p_8hpp}{}\section{/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\+Base\+H\+T\+TP.hpp File Reference}
+\label{_base_h_t_t_p_8hpp}\index{/home/mmoinvaziri/Epitech/CPP\_zia\_2019/External/openZia/openZia/BaseHTTP.hpp@{/home/mmoinvaziri/Epitech/CPP\_zia\_2019/External/openZia/openZia/BaseHTTP.hpp}}
+{\ttfamily \#include $<$cinttypes$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structo_z_1_1_h_t_t_p_1_1_version}{o\+Z\+::\+H\+T\+T\+P\+::\+Version}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}} \mbox{\hyperlink{structo_z_1_1_h_t_t_p_1_1_version}{Version}} structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceo_z}{oZ}}
+\item 
+ \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{o\+Z\+::\+H\+T\+TP}}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a6d47156e2eac27750983fc1b54bd2ff8}{o\+Z\+::\+H\+T\+T\+P\+::\+U\+RI}} = std\+::string
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}} U\+RI (Request) \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_afcd8b91e5e8a7b6df0a7b3b298ec3965}{o\+Z\+::\+H\+T\+T\+P\+::\+Reason}} = std\+::string
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}} Reason (Response) \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a270c38b9f9b6228ce430fda6d5b150d6}{o\+Z\+::\+H\+T\+T\+P\+::\+Body}} = std\+::string
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}} Body (Response) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199}{o\+Z\+::\+H\+T\+T\+P\+::\+Code}} \{ \newline
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199aec0fc0100c4fc1ce4eea230c3dc10360}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Undefined}} = 0, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199aa0bfb8e59e6c13fc8d990781f77694fe}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Continue}} = 100, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a548c5a637eddf65132b21411aeafc6a1}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Switching\+Protocols}} = 101, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199ae0aa021e21dddbd6d8cecec71e9cf564}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+OK}} = 200, 
+\newline
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a0eceeb45861f9585dd7a97a3e36f85c6}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Created}} = 201, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a382ab522931673c11e398ead1b7b1678}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Accepted}} = 202, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a2d0ea43e788b779c0aec92366b711c2f}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Non\+Authoritative\+Information}} = 203, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199acd447f1ec89f564ebac583d60087df12}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+No\+Content}} = 204, 
+\newline
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a4e9202c31896211f63be5b7345a897ed}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Reset\+Content}} = 205, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a750de7eda10d780b3bbaefb57128c24b}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Partial\+Content}} = 206, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199aa589749d075c3423333bdc93e3b4e774}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Multiple\+Choices}} = 300, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a32638c25f4c913fce6214c2c4afff9dc}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Moved\+Permanently}} = 301, 
+\newline
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a5d695cc28c6a7ea955162fbdd0ae42b9}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Found}} = 302, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a7843649eb3841f496a79303fd815029e}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+See\+Other}} = 303, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199ac169e6d9a1b9442001384de8dcf49ab9}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Not\+Modified}} = 304, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a0a272f25fd5e8a06065ef8ee41a88bea}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Use\+Proxy}} = 305, 
+\newline
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a1b73a351faf2b550d06fae9cc6e0a894}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Temporary\+Redirect}} = 307, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a9edf8fbf00a57d95a0af4923c9a1ec6f}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Bad\+Request}} = 400, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199ae06d1ba70f1331e9f9a113cc2f887d3f}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Unauthorized}} = 401, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a4c99006c75b53fe48865cdfa0ac065ba}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Payment\+Required}} = 402, 
+\newline
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a722969577a96ca3953e84e3d949dee81}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Forbidden}} = 403, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a38c300f4fc9ce8a77aad4a30de05cad8}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Not\+Found}} = 404, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a8ba68fee5542f5fd071aed140c39bd8e}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Method\+Not\+Allowed}} = 405, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199af83a928e6a3f3b502ffadd2a414ce48c}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Not\+Acceptable}} = 406, 
+\newline
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a59a2898a8bf9da75a5855e76110f06f2}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Proxy\+Authentication\+Required}} = 407, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199af9098a9c319f11b44af3e260892063a6}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Request\+Time\+Out}} = 408, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199af1d4ac54357cc0932f385d56814ba7e4}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Conflict}} = 409, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a0b497b33b1a05057bc1634e607170bf6}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Gone}} = 410, 
+\newline
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a8282fb93cb1cf45b135ea191668ca583}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Length\+Required}} = 411, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a3542a02d18f11f46d53990d91752a6d4}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Precondition\+Failed}} = 412, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a1d2dd18ee1a925e5887cbc2f9202e779}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Request\+Entity\+Too\+Large}} = 413, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a4896a92527b74e68134933dcb77a7017}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Request\+U\+R\+I\+Too\+Large}} = 414, 
+\newline
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199aa3219a6843adbb23de79b4df9c307f5d}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Unsupported\+Media\+Type}} = 415, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a7779e53fc887ac0429f4ebde5fc0b59f}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Requested\+Range\+Not\+Satisfiable}} = 416, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a6af78095a2be4a230ba87f03dd131830}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Expectation\+Failed}} = 417, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199aecbf01325f1c744e9d7bb586ac2eb5ed}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Internal\+Server\+Error}} = 500, 
+\newline
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a997ca4ce119685f40f03a9a8a6c5346e}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Not\+Implemented}} = 501, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a0e7c9ad08be0653518bf456c9994ace5}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Bad\+Gateway}} = 502, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a2a4581043d849bcb0e4747970ef1489b}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Service\+Unavailable}} = 503, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a259322bcdf0d2e4f5c3fe2a736e6184c}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+Gateway\+Time\+Out}} = 504, 
+\newline
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_acd43703151305f79b1e2f42e98ee8199a036c4283fc4ecb1686f44462f75208e5}{o\+Z\+::\+H\+T\+T\+P\+::\+Code\+::\+H\+T\+T\+P\+Version\+Not\+Supported}} = 505
+ \}
+\begin{DoxyCompactList}\small\item\em H\+T\+TP 1.\+1 Codes. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a02d8497e4abbb0adf3af0fe9fad1b7a6}{o\+Z\+::\+H\+T\+T\+P\+::\+Method}} \{ \newline
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a02d8497e4abbb0adf3af0fe9fad1b7a6a82b54b33ea69c9433dc272365308285b}{o\+Z\+::\+H\+T\+T\+P\+::\+Method\+::\+Null\+Method}} = 0, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a02d8497e4abbb0adf3af0fe9fad1b7a6a054b4f3ea543c990f6b125f41af6ebf7}{o\+Z\+::\+H\+T\+T\+P\+::\+Method\+::\+Option}}, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a02d8497e4abbb0adf3af0fe9fad1b7a6ac55582518cba2c464f29f5bae1c68def}{o\+Z\+::\+H\+T\+T\+P\+::\+Method\+::\+Get}}, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a02d8497e4abbb0adf3af0fe9fad1b7a6a98921133d10fbdb0fb6dbb7b2648befe}{o\+Z\+::\+H\+T\+T\+P\+::\+Method\+::\+Head}}, 
+\newline
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a02d8497e4abbb0adf3af0fe9fad1b7a6a03d947a2158373c3b9d74325850cb8b9}{o\+Z\+::\+H\+T\+T\+P\+::\+Method\+::\+Post}}, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a02d8497e4abbb0adf3af0fe9fad1b7a6ad0bf1810982e9728fcf3ac444a015373}{o\+Z\+::\+H\+T\+T\+P\+::\+Method\+::\+Put}}, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a02d8497e4abbb0adf3af0fe9fad1b7a6af2a6c498fb90ee345d997f888fce3b18}{o\+Z\+::\+H\+T\+T\+P\+::\+Method\+::\+Delete}}, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a02d8497e4abbb0adf3af0fe9fad1b7a6add4ec0ac4e58f7c32a01244ae91150b1}{o\+Z\+::\+H\+T\+T\+P\+::\+Method\+::\+Trace}}, 
+\newline
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a02d8497e4abbb0adf3af0fe9fad1b7a6a49ab28040dfa07f53544970c6d147e1e}{o\+Z\+::\+H\+T\+T\+P\+::\+Method\+::\+Connect}}, 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a02d8497e4abbb0adf3af0fe9fad1b7a6a501c78dd7462ae9cb997f05db181379a}{o\+Z\+::\+H\+T\+T\+P\+::\+Method\+::\+Method\+Count}}
+ \}
+\begin{DoxyCompactList}\small\item\em H\+T\+TP 1.\+1 Methods. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr const char $\ast$ \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a34bd18b4f1bf5cfa84672c2f8b81801e}{o\+Z\+::\+H\+T\+T\+P\+::\+Method\+Name}} (const Method method) noexcept
+\begin{DoxyCompactList}\small\item\em Converts a Method enum case to a \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}} method name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr Version \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_af1d13b042d8595fb3196ce91c5c4955d}{o\+Z\+::\+H\+T\+T\+P\+::\+Default\+Version}} = Version(1, 1)
+\end{DoxyCompactItemize}

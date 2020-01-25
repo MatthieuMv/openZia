@@ -9,14 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(initResizable);
-/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -56,23 +48,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classo_z_1_1_i_module.html','');});
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -87,6 +62,11 @@ $(document).ready(function(){initNavTree('classo_z_1_1_i_module.html','');});
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceo_z.html">oZ</a></li><li class="navelem"><a class="el" href="classo_z_1_1_i_module.html">IModule</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -106,44 +86,113 @@ $(document).ready(function(){initNavTree('classo_z_1_1_i_module.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ac13210556cb2a65d186bfbe5208c666c"><td class="memItemLeft" align="right" valign="top"><a id="ac13210556cb2a65d186bfbe5208c666c"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#ac13210556cb2a65d186bfbe5208c666c">Dependencies</a> = std::vector&lt; const char * &gt;</td></tr>
-<tr class="memdesc:ac13210556cb2a65d186bfbe5208c666c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dependencies are represented as a vector of raw string. <br /></td></tr>
+<tr class="memitem:ac13210556cb2a65d186bfbe5208c666c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#ac13210556cb2a65d186bfbe5208c666c">Dependencies</a> = std::vector&lt; const char * &gt;</td></tr>
+<tr class="memdesc:ac13210556cb2a65d186bfbe5208c666c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dependencies are represented as a vector of raw string.  <a href="#ac13210556cb2a65d186bfbe5208c666c">More...</a><br /></td></tr>
 <tr class="separator:ac13210556cb2a65d186bfbe5208c666c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a21fdd98fb701ae6f7f0e0de14beb72de"><td class="memItemLeft" align="right" valign="top"><a id="a21fdd98fb701ae6f7f0e0de14beb72de"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#a21fdd98fb701ae6f7f0e0de14beb72de">IModule</a> (void)=default</td></tr>
-<tr class="memdesc:a21fdd98fb701ae6f7f0e0de14beb72de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classo_z_1_1_i_module.html" title="This class is the interface of every module.">IModule</a> object. <br /></td></tr>
+<tr class="memitem:a21fdd98fb701ae6f7f0e0de14beb72de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#a21fdd98fb701ae6f7f0e0de14beb72de">IModule</a> (void)=default</td></tr>
+<tr class="memdesc:a21fdd98fb701ae6f7f0e0de14beb72de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classo_z_1_1_i_module.html" title="This class is the interface of every module.">IModule</a> object.  <a href="#a21fdd98fb701ae6f7f0e0de14beb72de">More...</a><br /></td></tr>
 <tr class="separator:a21fdd98fb701ae6f7f0e0de14beb72de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ac6f3edf9fe885b2510dc01379a951c"><td class="memItemLeft" align="right" valign="top"><a id="a6ac6f3edf9fe885b2510dc01379a951c"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#a6ac6f3edf9fe885b2510dc01379a951c">~IModule</a> (void)=default</td></tr>
-<tr class="memdesc:a6ac6f3edf9fe885b2510dc01379a951c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classo_z_1_1_i_module.html" title="This class is the interface of every module.">IModule</a> object. <br /></td></tr>
+<tr class="memitem:a6ac6f3edf9fe885b2510dc01379a951c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#a6ac6f3edf9fe885b2510dc01379a951c">~IModule</a> (void)=default</td></tr>
+<tr class="memdesc:a6ac6f3edf9fe885b2510dc01379a951c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classo_z_1_1_i_module.html" title="This class is the interface of every module.">IModule</a> object.  <a href="#a6ac6f3edf9fe885b2510dc01379a951c">More...</a><br /></td></tr>
 <tr class="separator:a6ac6f3edf9fe885b2510dc01379a951c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af41d45158fd28e1bd86a34e25f5282d6"><td class="memItemLeft" align="right" valign="top"><a id="af41d45158fd28e1bd86a34e25f5282d6"></a>
-virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#af41d45158fd28e1bd86a34e25f5282d6">getName</a> (void) const =0</td></tr>
-<tr class="memdesc:af41d45158fd28e1bd86a34e25f5282d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the module name. <br /></td></tr>
+<tr class="memitem:af41d45158fd28e1bd86a34e25f5282d6"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#af41d45158fd28e1bd86a34e25f5282d6">getName</a> (void) const =0</td></tr>
+<tr class="memdesc:af41d45158fd28e1bd86a34e25f5282d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the module name.  <a href="#af41d45158fd28e1bd86a34e25f5282d6">More...</a><br /></td></tr>
 <tr class="separator:af41d45158fd28e1bd86a34e25f5282d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dc905faa6df5e22eecc6ffbc923fd95"><td class="memItemLeft" align="right" valign="top"><a id="a3dc905faa6df5e22eecc6ffbc923fd95"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#a3dc905faa6df5e22eecc6ffbc923fd95">onRegisterCallbacks</a> (<a class="el" href="classo_z_1_1_pipeline.html">Pipeline</a> &amp;)=0</td></tr>
-<tr class="memdesc:a3dc905faa6df5e22eecc6ffbc923fd95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register module's callbacks in the pipeline. <br /></td></tr>
+<tr class="memitem:a3dc905faa6df5e22eecc6ffbc923fd95"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#a3dc905faa6df5e22eecc6ffbc923fd95">onRegisterCallbacks</a> (<a class="el" href="classo_z_1_1_pipeline.html">Pipeline</a> &amp;)=0</td></tr>
+<tr class="memdesc:a3dc905faa6df5e22eecc6ffbc923fd95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register module's callbacks in the pipeline.  <a href="#a3dc905faa6df5e22eecc6ffbc923fd95">More...</a><br /></td></tr>
 <tr class="separator:a3dc905faa6df5e22eecc6ffbc923fd95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a720a329e6ebcbecbc150d8b0bbee6e37"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classo_z_1_1_i_module.html#ac13210556cb2a65d186bfbe5208c666c">Dependencies</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#a720a329e6ebcbecbc150d8b0bbee6e37">getDependencies</a> (void) const noexcept</td></tr>
+<tr class="memdesc:a720a329e6ebcbecbc150d8b0bbee6e37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the module dependencies.  <a href="#a720a329e6ebcbecbc150d8b0bbee6e37">More...</a><br /></td></tr>
+<tr class="separator:a720a329e6ebcbecbc150d8b0bbee6e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af183d3711ef7d7a6966ac078b63a7685"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#af183d3711ef7d7a6966ac078b63a7685">onRetreiveDependencies</a> (<a class="el" href="classo_z_1_1_pipeline.html">Pipeline</a> &amp;pipeline)</td></tr>
 <tr class="memdesc:af183d3711ef7d7a6966ac078b63a7685"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called once module registered their callbacks.  <a href="#af183d3711ef7d7a6966ac078b63a7685">More...</a><br /></td></tr>
 <tr class="separator:af183d3711ef7d7a6966ac078b63a7685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61a2cc76594401ed2f50931a6a6b76f3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#a61a2cc76594401ed2f50931a6a6b76f3">onLoadConfigurationFile</a> (const std::string &amp;directory)</td></tr>
 <tr class="memdesc:a61a2cc76594401ed2f50931a6a6b76f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called after module retreived its dependencies.  <a href="#a61a2cc76594401ed2f50931a6a6b76f3">More...</a><br /></td></tr>
 <tr class="separator:a61a2cc76594401ed2f50931a6a6b76f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a720a329e6ebcbecbc150d8b0bbee6e37"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classo_z_1_1_i_module.html#ac13210556cb2a65d186bfbe5208c666c">Dependencies</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#a720a329e6ebcbecbc150d8b0bbee6e37">getDependencies</a> (void) const noexcept</td></tr>
-<tr class="memdesc:a720a329e6ebcbecbc150d8b0bbee6e37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the module dependencies.  <a href="#a720a329e6ebcbecbc150d8b0bbee6e37">More...</a><br /></td></tr>
-<tr class="separator:a720a329e6ebcbecbc150d8b0bbee6e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class is the interface of every module. </p>
 <p>Each module can reimplement a set of virtual functions at each callback of the pipeline.</p>
 <p><a class="el" href="classo_z_1_1_pipeline.html" title="The pileline abstracts the pipeline of modules.">Pipeline</a> callbacks get a <a class="el" href="classo_z_1_1_context.html" title="The context class uses different concepts : 1) State is a state-machine code which indicates where th...">Context</a> reference in order to transform and/or use its state. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="ac13210556cb2a65d186bfbe5208c666c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac13210556cb2a65d186bfbe5208c666c">&#9670;&nbsp;</a></span>Dependencies</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classo_z_1_1_i_module.html#ac13210556cb2a65d186bfbe5208c666c">oZ::IModule::Dependencies</a> =  std::vector&lt;const char *&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dependencies are represented as a vector of raw string. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a21fdd98fb701ae6f7f0e0de14beb72de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21fdd98fb701ae6f7f0e0de14beb72de">&#9670;&nbsp;</a></span>IModule()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">oZ::IModule::IModule </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classo_z_1_1_i_module.html" title="This class is the interface of every module.">IModule</a> object. </p>
+
+</div>
+</div>
+<a id="a6ac6f3edf9fe885b2510dc01379a951c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ac6f3edf9fe885b2510dc01379a951c">&#9670;&nbsp;</a></span>~IModule()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual oZ::IModule::~IModule </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroy the <a class="el" href="classo_z_1_1_i_module.html" title="This class is the interface of every module.">IModule</a> object. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a720a329e6ebcbecbc150d8b0bbee6e37"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a720a329e6ebcbecbc150d8b0bbee6e37">&#9670;&nbsp;</a></span>getDependencies()</h2>
 
@@ -170,6 +219,34 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>Get the module dependencies. </p>
 <p>By default a module has no dependencies </p>
+
+</div>
+</div>
+<a id="af41d45158fd28e1bd86a34e25f5282d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af41d45158fd28e1bd86a34e25f5282d6">&#9670;&nbsp;</a></span>getName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const char* oZ::IModule::getName </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the module name. </p>
 
 </div>
 </div>
@@ -200,6 +277,36 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>This function is called after module retreived its dependencies. </p>
 <p>The given directory is the path to configuration files</p>
 <p>This function is not pure virtual because you may not need it </p>
+
+</div>
+</div>
+<a id="a3dc905faa6df5e22eecc6ffbc923fd95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dc905faa6df5e22eecc6ffbc923fd95">&#9670;&nbsp;</a></span>onRegisterCallbacks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void oZ::IModule::onRegisterCallbacks </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classo_z_1_1_pipeline.html">Pipeline</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Register module's callbacks in the pipeline. </p>
+
+<p>Implemented in <a class="el" href="classo_z_1_1_i_logger.html#a10732b6da6e8f085c6fe5fa154d361ef">oZ::ILogger</a>.</p>
 
 </div>
 </div>
@@ -234,19 +341,15 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>openZia/<a class="el" href="_i_module_8hpp_source.html">IModule.hpp</a></li>
-<li>openZia/IModule.cpp</li>
+<li>/home/mmoinvaziri/Epitech/CPP_zia_2019/External/openZia/openZia/<a class="el" href="_i_module_8hpp_source.html">IModule.hpp</a></li>
+<li>/home/mmoinvaziri/Epitech/CPP_zia_2019/External/openZia/openZia/<a class="el" href="_i_module_8cpp.html">IModule.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><b>oZ</b></li><li class="navelem"><a class="el" href="classo_z_1_1_i_module.html">IModule</a></li>
-    <li class="footer">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.15
+</small></address>
 </body>
 </html>

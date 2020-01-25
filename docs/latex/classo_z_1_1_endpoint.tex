@@ -1,43 +1,89 @@
 \hypertarget{classo_z_1_1_endpoint}{}\section{oZ\+::Endpoint Class Reference}
 \label{classo_z_1_1_endpoint}\index{oZ::Endpoint@{oZ::Endpoint}}
+
+
+{\ttfamily \#include $<$Endpoint.\+hpp$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classo_z_1_1_endpoint_aa0e46ff6f1b744e9173a97680e2e20a6}\label{classo_z_1_1_endpoint_aa0e46ff6f1b744e9173a97680e2e20a6}} 
 \mbox{\hyperlink{classo_z_1_1_endpoint_aa0e46ff6f1b744e9173a97680e2e20a6}{Endpoint}} (void)=default
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} object. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_endpoint_ac7c25299f3e5bc05a54e7906d17fbfd9}\label{classo_z_1_1_endpoint_ac7c25299f3e5bc05a54e7906d17fbfd9}} 
-\mbox{\hyperlink{classo_z_1_1_endpoint_ac7c25299f3e5bc05a54e7906d17fbfd9}{Endpoint}} (const std\+::string \&ip, Port port)
+\mbox{\hyperlink{classo_z_1_1_endpoint_ac7c25299f3e5bc05a54e7906d17fbfd9}{Endpoint}} (const std\+::string \&ip, \mbox{\hyperlink{namespaceo_z_afeccb82d451972ba3b7d2a32b066b30b}{Port}} port)
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} object using IP as string. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_endpoint_a7dd91554b61824eac5e0b015fa12f957}\label{classo_z_1_1_endpoint_a7dd91554b61824eac5e0b015fa12f957}} 
-\mbox{\hyperlink{classo_z_1_1_endpoint_a7dd91554b61824eac5e0b015fa12f957}{Endpoint}} (IP ip, Port port)
+\mbox{\hyperlink{classo_z_1_1_endpoint_a7dd91554b61824eac5e0b015fa12f957}{Endpoint}} (\mbox{\hyperlink{namespaceo_z_ace55c2d0182a14ceea9649d0d0cf9c4a}{IP}} ip, \mbox{\hyperlink{namespaceo_z_afeccb82d451972ba3b7d2a32b066b30b}{Port}} port)
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} object using IP as 4 bytes value. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_endpoint_a33f6c2eb724e0d60d988212bc6b66008}\label{classo_z_1_1_endpoint_a33f6c2eb724e0d60d988212bc6b66008}} 
 \mbox{\hyperlink{classo_z_1_1_endpoint_a33f6c2eb724e0d60d988212bc6b66008}{Endpoint}} (const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} \&other)
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} object. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_endpoint_ae48da5e193017cb119233761406e7d54}\label{classo_z_1_1_endpoint_ae48da5e193017cb119233761406e7d54}} 
 \mbox{\hyperlink{classo_z_1_1_endpoint_ae48da5e193017cb119233761406e7d54}{$\sim$\+Endpoint}} (void)=default
 \begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} objecti. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_endpoint_ab5a405bf455ab2f4e28458b0ba69d399}\label{classo_z_1_1_endpoint_ab5a405bf455ab2f4e28458b0ba69d399}} 
 bool \mbox{\hyperlink{classo_z_1_1_endpoint_ab5a405bf455ab2f4e28458b0ba69d399}{operator==}} (const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} \&other) const noexcept
 \begin{DoxyCompactList}\small\item\em Equality operator. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classo_z_1_1_endpoint_a27a680dbcdf1c89bb10fcbaca969edab}{get\+Address}} (void) const noexcept
 \begin{DoxyCompactList}\small\item\em Get internal address as formated string. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_endpoint_ad02055ec457231d4d0f316dcfa5539ba}\label{classo_z_1_1_endpoint_ad02055ec457231d4d0f316dcfa5539ba}} 
-IP \mbox{\hyperlink{classo_z_1_1_endpoint_ad02055ec457231d4d0f316dcfa5539ba}{get\+Address\+Value}} (void) const noexcept
+\mbox{\hyperlink{namespaceo_z_ace55c2d0182a14ceea9649d0d0cf9c4a}{IP}} \mbox{\hyperlink{classo_z_1_1_endpoint_ad02055ec457231d4d0f316dcfa5539ba}{get\+Address\+Value}} (void) const noexcept
 \begin{DoxyCompactList}\small\item\em Retreive internal ip in 4 bytes. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_endpoint_a90caf5f6497ec5a09b34d7a6069502da}\label{classo_z_1_1_endpoint_a90caf5f6497ec5a09b34d7a6069502da}} 
 void \mbox{\hyperlink{classo_z_1_1_endpoint_a90caf5f6497ec5a09b34d7a6069502da}{set\+Address}} (const std\+::string \&ip)
 \begin{DoxyCompactList}\small\item\em Set the Address object using a string. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_endpoint_a7259041c3bef1408d9a8c85c67a7b378}\label{classo_z_1_1_endpoint_a7259041c3bef1408d9a8c85c67a7b378}} 
-void \mbox{\hyperlink{classo_z_1_1_endpoint_a7259041c3bef1408d9a8c85c67a7b378}{set\+Address}} (IP ip)
+void \mbox{\hyperlink{classo_z_1_1_endpoint_a7259041c3bef1408d9a8c85c67a7b378}{set\+Address}} (\mbox{\hyperlink{namespaceo_z_ace55c2d0182a14ceea9649d0d0cf9c4a}{IP}} ip)
 \begin{DoxyCompactList}\small\item\em Set the Address object using a 4 byte value. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_endpoint_aad983948594b295187d6117f99b1988d}\label{classo_z_1_1_endpoint_aad983948594b295187d6117f99b1988d}} 
-Port \mbox{\hyperlink{classo_z_1_1_endpoint_aad983948594b295187d6117f99b1988d}{get\+Port}} (void) const noexcept
+\mbox{\hyperlink{namespaceo_z_afeccb82d451972ba3b7d2a32b066b30b}{Port}} \mbox{\hyperlink{classo_z_1_1_endpoint_aad983948594b295187d6117f99b1988d}{get\+Port}} (void) const noexcept
 \begin{DoxyCompactList}\small\item\em Get internal port. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_endpoint_a2f7fda5ee5e4645a8b9a55de9e534f1a}\label{classo_z_1_1_endpoint_a2f7fda5ee5e4645a8b9a55de9e534f1a}} 
-void \mbox{\hyperlink{classo_z_1_1_endpoint_a2f7fda5ee5e4645a8b9a55de9e534f1a}{set\+Port}} (Port port) noexcept
+void \mbox{\hyperlink{classo_z_1_1_endpoint_a2f7fda5ee5e4645a8b9a55de9e534f1a}{set\+Port}} (\mbox{\hyperlink{namespaceo_z_afeccb82d451972ba3b7d2a32b066b30b}{Port}} port) noexcept
 \begin{DoxyCompactList}\small\item\em Set internal port. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classo_z_1_1_endpoint_aa0e46ff6f1b744e9173a97680e2e20a6}\label{classo_z_1_1_endpoint_aa0e46ff6f1b744e9173a97680e2e20a6}} 
+\index{oZ::Endpoint@{oZ::Endpoint}!Endpoint@{Endpoint}}
+\index{Endpoint@{Endpoint}!oZ::Endpoint@{oZ::Endpoint}}
+\subsubsection{\texorpdfstring{Endpoint()}{Endpoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily o\+Z\+::\+Endpoint\+::\+Endpoint (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Construct a new \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} object. 
+
+\mbox{\Hypertarget{classo_z_1_1_endpoint_ac7c25299f3e5bc05a54e7906d17fbfd9}\label{classo_z_1_1_endpoint_ac7c25299f3e5bc05a54e7906d17fbfd9}} 
+\index{oZ::Endpoint@{oZ::Endpoint}!Endpoint@{Endpoint}}
+\index{Endpoint@{Endpoint}!oZ::Endpoint@{oZ::Endpoint}}
+\subsubsection{\texorpdfstring{Endpoint()}{Endpoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily o\+Z\+::\+Endpoint\+::\+Endpoint (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip,  }\item[{\mbox{\hyperlink{namespaceo_z_afeccb82d451972ba3b7d2a32b066b30b}{Port}}}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} object using IP as string. 
+
+\mbox{\Hypertarget{classo_z_1_1_endpoint_a7dd91554b61824eac5e0b015fa12f957}\label{classo_z_1_1_endpoint_a7dd91554b61824eac5e0b015fa12f957}} 
+\index{oZ::Endpoint@{oZ::Endpoint}!Endpoint@{Endpoint}}
+\index{Endpoint@{Endpoint}!oZ::Endpoint@{oZ::Endpoint}}
+\subsubsection{\texorpdfstring{Endpoint()}{Endpoint()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily o\+Z\+::\+Endpoint\+::\+Endpoint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_ace55c2d0182a14ceea9649d0d0cf9c4a}{IP}}}]{ip,  }\item[{\mbox{\hyperlink{namespaceo_z_afeccb82d451972ba3b7d2a32b066b30b}{Port}}}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} object using IP as 4 bytes value. 
+
+\mbox{\Hypertarget{classo_z_1_1_endpoint_a33f6c2eb724e0d60d988212bc6b66008}\label{classo_z_1_1_endpoint_a33f6c2eb724e0d60d988212bc6b66008}} 
+\index{oZ::Endpoint@{oZ::Endpoint}!Endpoint@{Endpoint}}
+\index{Endpoint@{Endpoint}!oZ::Endpoint@{oZ::Endpoint}}
+\subsubsection{\texorpdfstring{Endpoint()}{Endpoint()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily o\+Z\+::\+Endpoint\+::\+Endpoint (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} object. 
+
+\mbox{\Hypertarget{classo_z_1_1_endpoint_ae48da5e193017cb119233761406e7d54}\label{classo_z_1_1_endpoint_ae48da5e193017cb119233761406e7d54}} 
+\index{oZ::Endpoint@{oZ::Endpoint}!````~Endpoint@{$\sim$Endpoint}}
+\index{````~Endpoint@{$\sim$Endpoint}!oZ::Endpoint@{oZ::Endpoint}}
+\subsubsection{\texorpdfstring{$\sim$Endpoint()}{~Endpoint()}}
+{\footnotesize\ttfamily o\+Z\+::\+Endpoint\+::$\sim$\+Endpoint (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destroy the \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} objecti. 
+
 
 
 \subsection{Member Function Documentation}
@@ -54,9 +100,69 @@ Get internal address as formated string.
 \begin{DoxyReturn}{Returns}
 std\+::string IP Address formated as \textquotesingle{}X.\+X.\+X.\+X\textquotesingle{} 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classo_z_1_1_endpoint_ad02055ec457231d4d0f316dcfa5539ba}\label{classo_z_1_1_endpoint_ad02055ec457231d4d0f316dcfa5539ba}} 
+\index{oZ::Endpoint@{oZ::Endpoint}!getAddressValue@{getAddressValue}}
+\index{getAddressValue@{getAddressValue}!oZ::Endpoint@{oZ::Endpoint}}
+\subsubsection{\texorpdfstring{getAddressValue()}{getAddressValue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceo_z_ace55c2d0182a14ceea9649d0d0cf9c4a}{IP}} o\+Z\+::\+Endpoint\+::get\+Address\+Value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Retreive internal ip in 4 bytes. 
+
+\mbox{\Hypertarget{classo_z_1_1_endpoint_aad983948594b295187d6117f99b1988d}\label{classo_z_1_1_endpoint_aad983948594b295187d6117f99b1988d}} 
+\index{oZ::Endpoint@{oZ::Endpoint}!getPort@{getPort}}
+\index{getPort@{getPort}!oZ::Endpoint@{oZ::Endpoint}}
+\subsubsection{\texorpdfstring{getPort()}{getPort()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceo_z_afeccb82d451972ba3b7d2a32b066b30b}{Port}} o\+Z\+::\+Endpoint\+::get\+Port (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get internal port. 
+
+\mbox{\Hypertarget{classo_z_1_1_endpoint_ab5a405bf455ab2f4e28458b0ba69d399}\label{classo_z_1_1_endpoint_ab5a405bf455ab2f4e28458b0ba69d399}} 
+\index{oZ::Endpoint@{oZ::Endpoint}!operator==@{operator==}}
+\index{operator==@{operator==}!oZ::Endpoint@{oZ::Endpoint}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool o\+Z\+::\+Endpoint\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Equality operator. 
+
+\mbox{\Hypertarget{classo_z_1_1_endpoint_a90caf5f6497ec5a09b34d7a6069502da}\label{classo_z_1_1_endpoint_a90caf5f6497ec5a09b34d7a6069502da}} 
+\index{oZ::Endpoint@{oZ::Endpoint}!setAddress@{setAddress}}
+\index{setAddress@{setAddress}!oZ::Endpoint@{oZ::Endpoint}}
+\subsubsection{\texorpdfstring{setAddress()}{setAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Endpoint\+::set\+Address (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip }\end{DoxyParamCaption})}
+
+
+
+Set the Address object using a string. 
+
+\mbox{\Hypertarget{classo_z_1_1_endpoint_a7259041c3bef1408d9a8c85c67a7b378}\label{classo_z_1_1_endpoint_a7259041c3bef1408d9a8c85c67a7b378}} 
+\index{oZ::Endpoint@{oZ::Endpoint}!setAddress@{setAddress}}
+\index{setAddress@{setAddress}!oZ::Endpoint@{oZ::Endpoint}}
+\subsubsection{\texorpdfstring{setAddress()}{setAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void o\+Z\+::\+Endpoint\+::set\+Address (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_ace55c2d0182a14ceea9649d0d0cf9c4a}{IP}}}]{ip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the Address object using a 4 byte value. 
+
+\mbox{\Hypertarget{classo_z_1_1_endpoint_a2f7fda5ee5e4645a8b9a55de9e534f1a}\label{classo_z_1_1_endpoint_a2f7fda5ee5e4645a8b9a55de9e534f1a}} 
+\index{oZ::Endpoint@{oZ::Endpoint}!setPort@{setPort}}
+\index{setPort@{setPort}!oZ::Endpoint@{oZ::Endpoint}}
+\subsubsection{\texorpdfstring{setPort()}{setPort()}}
+{\footnotesize\ttfamily void o\+Z\+::\+Endpoint\+::set\+Port (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_afeccb82d451972ba3b7d2a32b066b30b}{Port}}}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Set internal port. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-open\+Zia/Endpoint.\+hpp\item 
-open\+Zia/Endpoint.\+cpp\end{DoxyCompactItemize}
+/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_endpoint_8hpp}{Endpoint.\+hpp}}\item 
+/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_endpoint_8cpp}{Endpoint.\+cpp}}\end{DoxyCompactItemize}

@@ -9,14 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(initResizable);
-/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -56,23 +48,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classo_z_1_1_log.html','');});
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -87,6 +62,11 @@ $(document).ready(function(){initNavTree('classo_z_1_1_log.html','');});
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceo_z.html">oZ</a></li><li class="navelem"><a class="el" href="classo_z_1_1_log.html">Log</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -96,61 +76,255 @@ $(document).ready(function(){initNavTree('classo_z_1_1_log.html','');});
 <div class="title">oZ::Log Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_log_8hpp_source.html">Log.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afc1467edb15b611bbb42630e1acaee12"><td class="memItemLeft" align="right" valign="top"><a id="afc1467edb15b611bbb42630e1acaee12"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_log.html#afc1467edb15b611bbb42630e1acaee12">Log</a> (void)=default</td></tr>
-<tr class="memdesc:afc1467edb15b611bbb42630e1acaee12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classo_z_1_1_log.html">Log</a> object. <br /></td></tr>
+<tr class="memitem:afc1467edb15b611bbb42630e1acaee12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_log.html#afc1467edb15b611bbb42630e1acaee12">Log</a> (void)=default</td></tr>
+<tr class="memdesc:afc1467edb15b611bbb42630e1acaee12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classo_z_1_1_log.html">Log</a> object.  <a href="#afc1467edb15b611bbb42630e1acaee12">More...</a><br /></td></tr>
 <tr class="separator:afc1467edb15b611bbb42630e1acaee12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3902d7978a48f2c02174bd048acec17"><td class="memItemLeft" align="right" valign="top"><a id="ad3902d7978a48f2c02174bd048acec17"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_log.html#ad3902d7978a48f2c02174bd048acec17">Log</a> (Level level)</td></tr>
-<tr class="memdesc:ad3902d7978a48f2c02174bd048acec17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classo_z_1_1_log.html">Log</a> object using a log level. <br /></td></tr>
+<tr class="memitem:ad3902d7978a48f2c02174bd048acec17"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_log.html#ad3902d7978a48f2c02174bd048acec17">Log</a> (<a class="el" href="namespaceo_z.html#a72fc7662d5f07391ac6f0a5699014bfa">Level</a> level)</td></tr>
+<tr class="memdesc:ad3902d7978a48f2c02174bd048acec17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classo_z_1_1_log.html">Log</a> object using a log level.  <a href="#ad3902d7978a48f2c02174bd048acec17">More...</a><br /></td></tr>
 <tr class="separator:ad3902d7978a48f2c02174bd048acec17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28d6db7c25427e63d38eebfc05290b52"><td class="memItemLeft" align="right" valign="top"><a id="a28d6db7c25427e63d38eebfc05290b52"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_log.html#a28d6db7c25427e63d38eebfc05290b52">~Log</a> (void)</td></tr>
-<tr class="memdesc:a28d6db7c25427e63d38eebfc05290b52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classo_z_1_1_log.html">Log</a> object and flush stream. <br /></td></tr>
+<tr class="memitem:a28d6db7c25427e63d38eebfc05290b52"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_log.html#a28d6db7c25427e63d38eebfc05290b52">~Log</a> (void)</td></tr>
+<tr class="memdesc:a28d6db7c25427e63d38eebfc05290b52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classo_z_1_1_log.html">Log</a> object and flush stream.  <a href="#a28d6db7c25427e63d38eebfc05290b52">More...</a><br /></td></tr>
 <tr class="separator:a28d6db7c25427e63d38eebfc05290b52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cb4c3c614b1d5ae6285aecb31554fb4"><td class="memTemplParams" colspan="2"><a id="a0cb4c3c614b1d5ae6285aecb31554fb4"></a>
-template&lt;typename Type &gt; </td></tr>
+<tr class="memitem:a0cb4c3c614b1d5ae6285aecb31554fb4"><td class="memTemplParams" colspan="2">template&lt;typename Type &gt; </td></tr>
 <tr class="memitem:a0cb4c3c614b1d5ae6285aecb31554fb4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classo_z_1_1_log.html">Log</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_log.html#a0cb4c3c614b1d5ae6285aecb31554fb4">operator&lt;&lt;</a> (Type &amp;&amp;value)</td></tr>
-<tr class="memdesc:a0cb4c3c614b1d5ae6285aecb31554fb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a value of any type to the stream. <br /></td></tr>
+<tr class="memdesc:a0cb4c3c614b1d5ae6285aecb31554fb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a value of any type to the stream.  <a href="#a0cb4c3c614b1d5ae6285aecb31554fb4">More...</a><br /></td></tr>
 <tr class="separator:a0cb4c3c614b1d5ae6285aecb31554fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41c8972eca682eb2701126b43a2f9099"><td class="memItemLeft" align="right" valign="top"><a id="a41c8972eca682eb2701126b43a2f9099"></a>
-<a class="el" href="classo_z_1_1_log.html">Log</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_log.html#a41c8972eca682eb2701126b43a2f9099">flush</a> (void)</td></tr>
-<tr class="memdesc:a41c8972eca682eb2701126b43a2f9099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush current stream. <br /></td></tr>
+<tr class="memitem:a41c8972eca682eb2701126b43a2f9099"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classo_z_1_1_log.html">Log</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_log.html#a41c8972eca682eb2701126b43a2f9099">flush</a> (void)</td></tr>
+<tr class="memdesc:a41c8972eca682eb2701126b43a2f9099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush current stream.  <a href="#a41c8972eca682eb2701126b43a2f9099">More...</a><br /></td></tr>
 <tr class="separator:a41c8972eca682eb2701126b43a2f9099"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4b6199f686c0b32f40be8885fca9db0"><td class="memTemplParams" colspan="2"><a id="ab4b6199f686c0b32f40be8885fca9db0"></a>
-template&lt;typename Type &gt; </td></tr>
-<tr class="memitem:ab4b6199f686c0b32f40be8885fca9db0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classo_z_1_1_log.html">oZ::Log</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator&lt;&lt;</b> (Type &amp;&amp;value)</td></tr>
+<tr class="memitem:ab4b6199f686c0b32f40be8885fca9db0"><td class="memTemplParams" colspan="2">template&lt;typename Type &gt; </td></tr>
+<tr class="memitem:ab4b6199f686c0b32f40be8885fca9db0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classo_z_1_1_log.html">oZ::Log</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_log.html#ab4b6199f686c0b32f40be8885fca9db0">operator&lt;&lt;</a> (Type &amp;&amp;value)</td></tr>
 <tr class="separator:ab4b6199f686c0b32f40be8885fca9db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a09f81a16467abe5e5f38d4caf9d9e738"><td class="memItemLeft" align="right" valign="top"><a id="a09f81a16467abe5e5f38d4caf9d9e738"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_log.html#a09f81a16467abe5e5f38d4caf9d9e738">AddLogger</a> (LoggerPtr logger)</td></tr>
-<tr class="memdesc:a09f81a16467abe5e5f38d4caf9d9e738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new logger into the list. <br /></td></tr>
+<tr class="memitem:a09f81a16467abe5e5f38d4caf9d9e738"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_log.html#a09f81a16467abe5e5f38d4caf9d9e738">AddLogger</a> (<a class="el" href="namespaceo_z.html#aaa2fbabbfafc6616a7e69651b62a3d4e">LoggerPtr</a> logger)</td></tr>
+<tr class="memdesc:a09f81a16467abe5e5f38d4caf9d9e738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new logger into the list.  <a href="#a09f81a16467abe5e5f38d4caf9d9e738">More...</a><br /></td></tr>
 <tr class="separator:a09f81a16467abe5e5f38d4caf9d9e738"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1c737e66220f5f6f2f557c054b44e48"><td class="memItemLeft" align="right" valign="top"><a id="aa1c737e66220f5f6f2f557c054b44e48"></a>
-static LoggerList &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_log.html#aa1c737e66220f5f6f2f557c054b44e48">GetLoggerList</a> (void)</td></tr>
-<tr class="memdesc:aa1c737e66220f5f6f2f557c054b44e48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the global logger list. <br /></td></tr>
+<tr class="memitem:aa1c737e66220f5f6f2f557c054b44e48"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceo_z.html#a2d18a70272709242e8e7ebffc3f1806c">LoggerList</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_log.html#aa1c737e66220f5f6f2f557c054b44e48">GetLoggerList</a> (void)</td></tr>
+<tr class="memdesc:aa1c737e66220f5f6f2f557c054b44e48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the global logger list.  <a href="#aa1c737e66220f5f6f2f557c054b44e48">More...</a><br /></td></tr>
 <tr class="separator:aa1c737e66220f5f6f2f557c054b44e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="afc1467edb15b611bbb42630e1acaee12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc1467edb15b611bbb42630e1acaee12">&#9670;&nbsp;</a></span>Log() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">oZ::Log::Log </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classo_z_1_1_log.html">Log</a> object. </p>
+
+</div>
+</div>
+<a id="ad3902d7978a48f2c02174bd048acec17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3902d7978a48f2c02174bd048acec17">&#9670;&nbsp;</a></span>Log() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">oZ::Log::Log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceo_z.html#a72fc7662d5f07391ac6f0a5699014bfa">Level</a>&#160;</td>
+          <td class="paramname"><em>level</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classo_z_1_1_log.html">Log</a> object using a log level. </p>
+
+</div>
+</div>
+<a id="a28d6db7c25427e63d38eebfc05290b52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28d6db7c25427e63d38eebfc05290b52">&#9670;&nbsp;</a></span>~Log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">oZ::Log::~Log </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroy the <a class="el" href="classo_z_1_1_log.html">Log</a> object and flush stream. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a09f81a16467abe5e5f38d4caf9d9e738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09f81a16467abe5e5f38d4caf9d9e738">&#9670;&nbsp;</a></span>AddLogger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void oZ::Log::AddLogger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceo_z.html#aaa2fbabbfafc6616a7e69651b62a3d4e">LoggerPtr</a>&#160;</td>
+          <td class="paramname"><em>logger</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add a new logger into the list. </p>
+
+</div>
+</div>
+<a id="a41c8972eca682eb2701126b43a2f9099"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41c8972eca682eb2701126b43a2f9099">&#9670;&nbsp;</a></span>flush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classo_z_1_1_log.html">Log</a> &amp; Log::flush </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Flush current stream. </p>
+
+</div>
+</div>
+<a id="aa1c737e66220f5f6f2f557c054b44e48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1c737e66220f5f6f2f557c054b44e48">&#9670;&nbsp;</a></span>GetLoggerList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceo_z.html#a2d18a70272709242e8e7ebffc3f1806c">LoggerList</a> &amp; Log::GetLoggerList </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the global logger list. </p>
+
+</div>
+</div>
+<a id="ab4b6199f686c0b32f40be8885fca9db0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4b6199f686c0b32f40be8885fca9db0">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classo_z_1_1_log.html">oZ::Log</a>&amp; oZ::Log::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">Type &amp;&amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0cb4c3c614b1d5ae6285aecb31554fb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cb4c3c614b1d5ae6285aecb31554fb4">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classo_z_1_1_log.html">Log</a>&amp; oZ::Log::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">Type &amp;&amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a value of any type to the stream. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>openZia/<a class="el" href="_log_8hpp_source.html">Log.hpp</a></li>
-<li>openZia/Log.cpp</li>
-<li>openZia/Log.ipp</li>
+<li>/home/mmoinvaziri/Epitech/CPP_zia_2019/External/openZia/openZia/<a class="el" href="_log_8hpp_source.html">Log.hpp</a></li>
+<li>/home/mmoinvaziri/Epitech/CPP_zia_2019/External/openZia/openZia/<a class="el" href="_log_8cpp.html">Log.cpp</a></li>
+<li>/home/mmoinvaziri/Epitech/CPP_zia_2019/External/openZia/openZia/<a class="el" href="_log_8ipp.html">Log.ipp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><b>oZ</b></li><li class="navelem"><a class="el" href="classo_z_1_1_log.html">Log</a></li>
-    <li class="footer">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.15
+</small></address>
 </body>
 </html>

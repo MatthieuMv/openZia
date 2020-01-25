@@ -1,39 +1,119 @@
 \hypertarget{classo_z_1_1_log}{}\section{oZ\+::Log Class Reference}
 \label{classo_z_1_1_log}\index{oZ::Log@{oZ::Log}}
+
+
+{\ttfamily \#include $<$Log.\+hpp$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classo_z_1_1_log_afc1467edb15b611bbb42630e1acaee12}\label{classo_z_1_1_log_afc1467edb15b611bbb42630e1acaee12}} 
 \mbox{\hyperlink{classo_z_1_1_log_afc1467edb15b611bbb42630e1acaee12}{Log}} (void)=default
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_log}{Log}} object. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_log_ad3902d7978a48f2c02174bd048acec17}\label{classo_z_1_1_log_ad3902d7978a48f2c02174bd048acec17}} 
-\mbox{\hyperlink{classo_z_1_1_log_ad3902d7978a48f2c02174bd048acec17}{Log}} (Level level)
+\mbox{\hyperlink{classo_z_1_1_log_ad3902d7978a48f2c02174bd048acec17}{Log}} (\mbox{\hyperlink{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfa}{Level}} level)
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_log}{Log}} object using a log level. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_log_a28d6db7c25427e63d38eebfc05290b52}\label{classo_z_1_1_log_a28d6db7c25427e63d38eebfc05290b52}} 
 \mbox{\hyperlink{classo_z_1_1_log_a28d6db7c25427e63d38eebfc05290b52}{$\sim$\+Log}} (void)
 \begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classo_z_1_1_log}{Log}} object and flush stream. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_log_a0cb4c3c614b1d5ae6285aecb31554fb4}\label{classo_z_1_1_log_a0cb4c3c614b1d5ae6285aecb31554fb4}} 
 {\footnotesize template$<$typename Type $>$ }\\\mbox{\hyperlink{classo_z_1_1_log}{Log}} \& \mbox{\hyperlink{classo_z_1_1_log_a0cb4c3c614b1d5ae6285aecb31554fb4}{operator$<$$<$}} (Type \&\&value)
 \begin{DoxyCompactList}\small\item\em Add a value of any type to the stream. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_log_a41c8972eca682eb2701126b43a2f9099}\label{classo_z_1_1_log_a41c8972eca682eb2701126b43a2f9099}} 
 \mbox{\hyperlink{classo_z_1_1_log}{Log}} \& \mbox{\hyperlink{classo_z_1_1_log_a41c8972eca682eb2701126b43a2f9099}{flush}} (void)
 \begin{DoxyCompactList}\small\item\em Flush current stream. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_log_ab4b6199f686c0b32f40be8885fca9db0}\label{classo_z_1_1_log_ab4b6199f686c0b32f40be8885fca9db0}} 
-{\footnotesize template$<$typename Type $>$ }\\\mbox{\hyperlink{classo_z_1_1_log}{o\+Z\+::\+Log}} \& {\bfseries operator$<$$<$} (Type \&\&value)
+{\footnotesize template$<$typename Type $>$ }\\\mbox{\hyperlink{classo_z_1_1_log}{o\+Z\+::\+Log}} \& \mbox{\hyperlink{classo_z_1_1_log_ab4b6199f686c0b32f40be8885fca9db0}{operator$<$$<$}} (Type \&\&value)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classo_z_1_1_log_a09f81a16467abe5e5f38d4caf9d9e738}\label{classo_z_1_1_log_a09f81a16467abe5e5f38d4caf9d9e738}} 
-static void \mbox{\hyperlink{classo_z_1_1_log_a09f81a16467abe5e5f38d4caf9d9e738}{Add\+Logger}} (Logger\+Ptr logger)
+static void \mbox{\hyperlink{classo_z_1_1_log_a09f81a16467abe5e5f38d4caf9d9e738}{Add\+Logger}} (\mbox{\hyperlink{namespaceo_z_aaa2fbabbfafc6616a7e69651b62a3d4e}{Logger\+Ptr}} logger)
 \begin{DoxyCompactList}\small\item\em Add a new logger into the list. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classo_z_1_1_log_aa1c737e66220f5f6f2f557c054b44e48}\label{classo_z_1_1_log_aa1c737e66220f5f6f2f557c054b44e48}} 
-static Logger\+List \& \mbox{\hyperlink{classo_z_1_1_log_aa1c737e66220f5f6f2f557c054b44e48}{Get\+Logger\+List}} (void)
+static \mbox{\hyperlink{namespaceo_z_a2d18a70272709242e8e7ebffc3f1806c}{Logger\+List}} \& \mbox{\hyperlink{classo_z_1_1_log_aa1c737e66220f5f6f2f557c054b44e48}{Get\+Logger\+List}} (void)
 \begin{DoxyCompactList}\small\item\em Get the global logger list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classo_z_1_1_log_afc1467edb15b611bbb42630e1acaee12}\label{classo_z_1_1_log_afc1467edb15b611bbb42630e1acaee12}} 
+\index{oZ::Log@{oZ::Log}!Log@{Log}}
+\index{Log@{Log}!oZ::Log@{oZ::Log}}
+\subsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily o\+Z\+::\+Log\+::\+Log (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Construct a new \mbox{\hyperlink{classo_z_1_1_log}{Log}} object. 
+
+\mbox{\Hypertarget{classo_z_1_1_log_ad3902d7978a48f2c02174bd048acec17}\label{classo_z_1_1_log_ad3902d7978a48f2c02174bd048acec17}} 
+\index{oZ::Log@{oZ::Log}!Log@{Log}}
+\index{Log@{Log}!oZ::Log@{oZ::Log}}
+\subsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily o\+Z\+::\+Log\+::\+Log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfa}{Level}}}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classo_z_1_1_log}{Log}} object using a log level. 
+
+\mbox{\Hypertarget{classo_z_1_1_log_a28d6db7c25427e63d38eebfc05290b52}\label{classo_z_1_1_log_a28d6db7c25427e63d38eebfc05290b52}} 
+\index{oZ::Log@{oZ::Log}!````~Log@{$\sim$Log}}
+\index{````~Log@{$\sim$Log}!oZ::Log@{oZ::Log}}
+\subsubsection{\texorpdfstring{$\sim$Log()}{~Log()}}
+{\footnotesize\ttfamily o\+Z\+::\+Log\+::$\sim$\+Log (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \mbox{\hyperlink{classo_z_1_1_log}{Log}} object and flush stream. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classo_z_1_1_log_a09f81a16467abe5e5f38d4caf9d9e738}\label{classo_z_1_1_log_a09f81a16467abe5e5f38d4caf9d9e738}} 
+\index{oZ::Log@{oZ::Log}!AddLogger@{AddLogger}}
+\index{AddLogger@{AddLogger}!oZ::Log@{oZ::Log}}
+\subsubsection{\texorpdfstring{AddLogger()}{AddLogger()}}
+{\footnotesize\ttfamily static void o\+Z\+::\+Log\+::\+Add\+Logger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_aaa2fbabbfafc6616a7e69651b62a3d4e}{Logger\+Ptr}}}]{logger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Add a new logger into the list. 
+
+\mbox{\Hypertarget{classo_z_1_1_log_a41c8972eca682eb2701126b43a2f9099}\label{classo_z_1_1_log_a41c8972eca682eb2701126b43a2f9099}} 
+\index{oZ::Log@{oZ::Log}!flush@{flush}}
+\index{flush@{flush}!oZ::Log@{oZ::Log}}
+\subsubsection{\texorpdfstring{flush()}{flush()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classo_z_1_1_log}{Log}} \& Log\+::flush (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Flush current stream. 
+
+\mbox{\Hypertarget{classo_z_1_1_log_aa1c737e66220f5f6f2f557c054b44e48}\label{classo_z_1_1_log_aa1c737e66220f5f6f2f557c054b44e48}} 
+\index{oZ::Log@{oZ::Log}!GetLoggerList@{GetLoggerList}}
+\index{GetLoggerList@{GetLoggerList}!oZ::Log@{oZ::Log}}
+\subsubsection{\texorpdfstring{GetLoggerList()}{GetLoggerList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceo_z_a2d18a70272709242e8e7ebffc3f1806c}{Logger\+List}} \& Log\+::\+Get\+Logger\+List (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the global logger list. 
+
+\mbox{\Hypertarget{classo_z_1_1_log_ab4b6199f686c0b32f40be8885fca9db0}\label{classo_z_1_1_log_ab4b6199f686c0b32f40be8885fca9db0}} 
+\index{oZ::Log@{oZ::Log}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!oZ::Log@{oZ::Log}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classo_z_1_1_log}{o\+Z\+::\+Log}}\& o\+Z\+::\+Log\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{Type \&\&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classo_z_1_1_log_a0cb4c3c614b1d5ae6285aecb31554fb4}\label{classo_z_1_1_log_a0cb4c3c614b1d5ae6285aecb31554fb4}} 
+\index{oZ::Log@{oZ::Log}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!oZ::Log@{oZ::Log}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classo_z_1_1_log}{Log}}\& o\+Z\+::\+Log\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{Type \&\&}]{value }\end{DoxyParamCaption})}
+
+
+
+Add a value of any type to the stream. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-open\+Zia/Log.\+hpp\item 
-open\+Zia/Log.\+cpp\item 
-open\+Zia/Log.\+ipp\end{DoxyCompactItemize}
+/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_log_8hpp}{Log.\+hpp}}\item 
+/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_log_8cpp}{Log.\+cpp}}\item 
+/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_log_8ipp}{Log.\+ipp}}\end{DoxyCompactItemize}

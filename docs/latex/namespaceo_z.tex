@@ -1,0 +1,249 @@
+\hypertarget{namespaceo_z}{}\section{oZ Namespace Reference}
+\label{namespaceo_z}\index{oZ@{oZ}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}}
+\item 
+ \mbox{\hyperlink{namespaceo_z_1_1o_z}{oZ}}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classo_z_1_1_context}{Context}}
+\begin{DoxyCompactList}\small\item\em The context class uses different concepts \+: 1) State is a state-\/machine code which indicates where the context 2) Constant property should be set when an \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}} want to specify that his process is constant and thus can be cached. 3) \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} is the client who sent a message. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}
+\item 
+class \mbox{\hyperlink{classo_z_1_1_i_logger}{I\+Logger}}
+\begin{DoxyCompactList}\small\item\em This interface should be derived to implement a custom logger. It must be loaded like any other Module. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}}
+\begin{DoxyCompactList}\small\item\em This class is the interface of every module. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classo_z_1_1_log}{Log}}
+\item 
+class \mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}}
+\begin{DoxyCompactList}\small\item\em The pileline abstracts the pipeline of modules. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} = std\+::vector$<$ std\+::int8\+\_\+t $>$
+\begin{DoxyCompactList}\small\item\em Simple vector of byte used as network buffer. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespaceo_z_ace55c2d0182a14ceea9649d0d0cf9c4a}{IP}} = std\+::uint32\+\_\+t
+\item 
+using \mbox{\hyperlink{namespaceo_z_afeccb82d451972ba3b7d2a32b066b30b}{Port}} = std\+::uint16\+\_\+t
+\item 
+using \mbox{\hyperlink{namespaceo_z_aaa2fbabbfafc6616a7e69651b62a3d4e}{Logger\+Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classo_z_1_1_i_logger}{I\+Logger}} $>$
+\begin{DoxyCompactList}\small\item\em Logger pointer type, using shared\+\_\+ptr like \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}}. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespaceo_z_a2d18a70272709242e8e7ebffc3f1806c}{Logger\+List}} = std\+::vector$<$ \mbox{\hyperlink{namespaceo_z_aaa2fbabbfafc6616a7e69651b62a3d4e}{Logger\+Ptr}} $>$
+\begin{DoxyCompactList}\small\item\em Simple vector of logger interfaces. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespaceo_z_af5a56aaaee027504979038f38991adcf}{Module\+Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}} $>$
+\begin{DoxyCompactList}\small\item\em Module pointer type, using shared\+\_\+ptr as backend. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespaceo_z_ac1fa0fdab4bd08a5e127651d1f4150a2}{Module\+Instance\+Function}} = \mbox{\hyperlink{namespaceo_z_af5a56aaaee027504979038f38991adcf}{Module\+Ptr}}($\ast$)(void)
+\begin{DoxyCompactList}\small\item\em Function signature that each module should respect to get detected and instantied. It musts uses the name \textquotesingle{}create\+Module\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268e}{State}} \+: std\+::uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268ea8cbb8c938091aee2c8633fbfd8e82c46}{Error}} = 0, 
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268ea78c9bdd3e337f72d372abcfea4243744}{Before\+Parse}}, 
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268eae6600f994575c8175501f2f8843ebd31}{Parse}}, 
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268ea19a2d70dc785d86158c7b2ff76cac6b6}{After\+Parse}}, 
+\newline
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268eafc3a2bbd2d542063830856ff9f7f45cb}{Before\+Interpret}}, 
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268eab11c571ba172a8c48b2c31efe0c60e6d}{Interpret}}, 
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268eacdc49713b2c93380a8d1d5c85ee3d8f4}{After\+Interpret}}, 
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268eae7df63e8f17e4676ac5538eb29584e22}{Completed}}, 
+\newline
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268ea9316dd881ad0cf8cf871aa48cf9b3abc}{State\+Count}}
+ \}
+\begin{DoxyCompactList}\small\item\em Context pipelines callbacks. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfa}{Level}} \+: std\+::uint8\+\_\+t \{ \mbox{\hyperlink{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfaa8ec624dced39a6d648c44ecf68138aa7}{Information}}, 
+\mbox{\hyperlink{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfaa584630d5910c995ec14e470c452a1458}{Warning}}, 
+\mbox{\hyperlink{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfaa99c2009fa0e05649fa31d4668bdca544}{Critical}}, 
+\mbox{\hyperlink{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfaa6e1805ff3512319ba7d40abc11066a62}{Debug}}
+ \}
+\begin{DoxyCompactList}\small\item\em Levels of log messages. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12}{Priority}} \+: std\+::uint16\+\_\+t \{ \newline
+\mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a0bf10abb7e9da477f36b2e69fdae8745}{Independent}} = 0, 
+\mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a44acd2d788f9e79eba46abcb3c006b0e}{Low}} = 1000, 
+\mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a4e322bd010e5b70a4c4172c619a7e370}{Medium}} = 2000, 
+\mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a7f08ba8e8aed8277432e0eba6cf9ffc2}{High}} = 3000, 
+\newline
+\mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a3e5081e5e70560fee15eb20b87662a69}{A\+S\+AP}} = 4000
+ \}
+\begin{DoxyCompactList}\small\item\em Priority enum, used to sort modules in the pipeline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}\label{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}} 
+\index{oZ@{oZ}!ByteArray@{ByteArray}}
+\index{ByteArray@{ByteArray}!oZ@{oZ}}
+\subsubsection{\texorpdfstring{ByteArray}{ByteArray}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{o\+Z\+::\+Byte\+Array}} = typedef std\+::vector$<$std\+::int8\+\_\+t$>$}
+
+
+
+Simple vector of byte used as network buffer. 
+
+\mbox{\Hypertarget{namespaceo_z_ace55c2d0182a14ceea9649d0d0cf9c4a}\label{namespaceo_z_ace55c2d0182a14ceea9649d0d0cf9c4a}} 
+\index{oZ@{oZ}!IP@{IP}}
+\index{IP@{IP}!oZ@{oZ}}
+\subsubsection{\texorpdfstring{IP}{IP}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceo_z_ace55c2d0182a14ceea9649d0d0cf9c4a}{o\+Z\+::\+IP}} = typedef std\+::uint32\+\_\+t}
+
+\mbox{\Hypertarget{namespaceo_z_a2d18a70272709242e8e7ebffc3f1806c}\label{namespaceo_z_a2d18a70272709242e8e7ebffc3f1806c}} 
+\index{oZ@{oZ}!LoggerList@{LoggerList}}
+\index{LoggerList@{LoggerList}!oZ@{oZ}}
+\subsubsection{\texorpdfstring{LoggerList}{LoggerList}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceo_z_a2d18a70272709242e8e7ebffc3f1806c}{o\+Z\+::\+Logger\+List}} = typedef std\+::vector$<$\mbox{\hyperlink{namespaceo_z_aaa2fbabbfafc6616a7e69651b62a3d4e}{Logger\+Ptr}}$>$}
+
+
+
+Simple vector of logger interfaces. 
+
+\mbox{\Hypertarget{namespaceo_z_aaa2fbabbfafc6616a7e69651b62a3d4e}\label{namespaceo_z_aaa2fbabbfafc6616a7e69651b62a3d4e}} 
+\index{oZ@{oZ}!LoggerPtr@{LoggerPtr}}
+\index{LoggerPtr@{LoggerPtr}!oZ@{oZ}}
+\subsubsection{\texorpdfstring{LoggerPtr}{LoggerPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceo_z_aaa2fbabbfafc6616a7e69651b62a3d4e}{o\+Z\+::\+Logger\+Ptr}} = typedef std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classo_z_1_1_i_logger}{I\+Logger}}$>$}
+
+
+
+Logger pointer type, using shared\+\_\+ptr like \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}}. 
+
+\mbox{\Hypertarget{namespaceo_z_ac1fa0fdab4bd08a5e127651d1f4150a2}\label{namespaceo_z_ac1fa0fdab4bd08a5e127651d1f4150a2}} 
+\index{oZ@{oZ}!ModuleInstanceFunction@{ModuleInstanceFunction}}
+\index{ModuleInstanceFunction@{ModuleInstanceFunction}!oZ@{oZ}}
+\subsubsection{\texorpdfstring{ModuleInstanceFunction}{ModuleInstanceFunction}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceo_z_ac1fa0fdab4bd08a5e127651d1f4150a2}{o\+Z\+::\+Module\+Instance\+Function}} = typedef \mbox{\hyperlink{namespaceo_z_af5a56aaaee027504979038f38991adcf}{Module\+Ptr}}($\ast$)(void)}
+
+
+
+Function signature that each module should respect to get detected and instantied. It musts uses the name \textquotesingle{}create\+Module\textquotesingle{}. 
+
+Example \+: Module\+Ptr Create\+Module(void) \{ return std\+::make\+\_\+shared$<$\+My\+Module$>$(); \} \mbox{\Hypertarget{namespaceo_z_af5a56aaaee027504979038f38991adcf}\label{namespaceo_z_af5a56aaaee027504979038f38991adcf}} 
+\index{oZ@{oZ}!ModulePtr@{ModulePtr}}
+\index{ModulePtr@{ModulePtr}!oZ@{oZ}}
+\subsubsection{\texorpdfstring{ModulePtr}{ModulePtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceo_z_af5a56aaaee027504979038f38991adcf}{o\+Z\+::\+Module\+Ptr}} = typedef std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}}$>$}
+
+
+
+Module pointer type, using shared\+\_\+ptr as backend. 
+
+\mbox{\Hypertarget{namespaceo_z_afeccb82d451972ba3b7d2a32b066b30b}\label{namespaceo_z_afeccb82d451972ba3b7d2a32b066b30b}} 
+\index{oZ@{oZ}!Port@{Port}}
+\index{Port@{Port}!oZ@{oZ}}
+\subsubsection{\texorpdfstring{Port}{Port}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceo_z_afeccb82d451972ba3b7d2a32b066b30b}{o\+Z\+::\+Port}} = typedef std\+::uint16\+\_\+t}
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfa}\label{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfa}} 
+\index{oZ@{oZ}!Level@{Level}}
+\index{Level@{Level}!oZ@{oZ}}
+\subsubsection{\texorpdfstring{Level}{Level}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfa}{o\+Z\+::\+Level}} \+: std\+::uint8\+\_\+t}
+
+
+
+Levels of log messages. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Information@{Information}!oZ@{oZ}}\index{oZ@{oZ}!Information@{Information}}}\mbox{\Hypertarget{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfaa8ec624dced39a6d648c44ecf68138aa7}\label{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfaa8ec624dced39a6d648c44ecf68138aa7}} 
+Information&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Warning@{Warning}!oZ@{oZ}}\index{oZ@{oZ}!Warning@{Warning}}}\mbox{\Hypertarget{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfaa584630d5910c995ec14e470c452a1458}\label{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfaa584630d5910c995ec14e470c452a1458}} 
+Warning&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Critical@{Critical}!oZ@{oZ}}\index{oZ@{oZ}!Critical@{Critical}}}\mbox{\Hypertarget{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfaa99c2009fa0e05649fa31d4668bdca544}\label{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfaa99c2009fa0e05649fa31d4668bdca544}} 
+Critical&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Debug@{Debug}!oZ@{oZ}}\index{oZ@{oZ}!Debug@{Debug}}}\mbox{\Hypertarget{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfaa6e1805ff3512319ba7d40abc11066a62}\label{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfaa6e1805ff3512319ba7d40abc11066a62}} 
+Debug&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12}\label{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12}} 
+\index{oZ@{oZ}!Priority@{Priority}}
+\index{Priority@{Priority}!oZ@{oZ}}
+\subsubsection{\texorpdfstring{Priority}{Priority}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12}{o\+Z\+::\+Priority}} \+: std\+::uint16\+\_\+t}
+
+
+
+Priority enum, used to sort modules in the pipeline. 
+
+If you need to sort modules with more precision, you can use intermediate offset. Example\+: Low + 1, Low + 2, ... \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Independent@{Independent}!oZ@{oZ}}\index{oZ@{oZ}!Independent@{Independent}}}\mbox{\Hypertarget{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a0bf10abb7e9da477f36b2e69fdae8745}\label{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a0bf10abb7e9da477f36b2e69fdae8745}} 
+Independent&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Low@{Low}!oZ@{oZ}}\index{oZ@{oZ}!Low@{Low}}}\mbox{\Hypertarget{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a44acd2d788f9e79eba46abcb3c006b0e}\label{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a44acd2d788f9e79eba46abcb3c006b0e}} 
+Low&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Medium@{Medium}!oZ@{oZ}}\index{oZ@{oZ}!Medium@{Medium}}}\mbox{\Hypertarget{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a4e322bd010e5b70a4c4172c619a7e370}\label{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a4e322bd010e5b70a4c4172c619a7e370}} 
+Medium&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{High@{High}!oZ@{oZ}}\index{oZ@{oZ}!High@{High}}}\mbox{\Hypertarget{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a7f08ba8e8aed8277432e0eba6cf9ffc2}\label{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a7f08ba8e8aed8277432e0eba6cf9ffc2}} 
+High&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASAP@{ASAP}!oZ@{oZ}}\index{oZ@{oZ}!ASAP@{ASAP}}}\mbox{\Hypertarget{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a3e5081e5e70560fee15eb20b87662a69}\label{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a3e5081e5e70560fee15eb20b87662a69}} 
+A\+S\+AP&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceo_z_a356b278f7c65def0cae75fca8cae268e}\label{namespaceo_z_a356b278f7c65def0cae75fca8cae268e}} 
+\index{oZ@{oZ}!State@{State}}
+\index{State@{State}!oZ@{oZ}}
+\subsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268e}{o\+Z\+::\+State}} \+: std\+::uint8\+\_\+t}
+
+
+
+\mbox{\hyperlink{classo_z_1_1_context}{Context}} pipelines callbacks. 
+
+This enum represent states of the pipeline\textquotesingle{} state pattern. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!oZ@{oZ}}\index{oZ@{oZ}!Error@{Error}}}\mbox{\Hypertarget{namespaceo_z_a356b278f7c65def0cae75fca8cae268ea8cbb8c938091aee2c8633fbfd8e82c46}\label{namespaceo_z_a356b278f7c65def0cae75fca8cae268ea8cbb8c938091aee2c8633fbfd8e82c46}} 
+Error&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BeforeParse@{BeforeParse}!oZ@{oZ}}\index{oZ@{oZ}!BeforeParse@{BeforeParse}}}\mbox{\Hypertarget{namespaceo_z_a356b278f7c65def0cae75fca8cae268ea78c9bdd3e337f72d372abcfea4243744}\label{namespaceo_z_a356b278f7c65def0cae75fca8cae268ea78c9bdd3e337f72d372abcfea4243744}} 
+Before\+Parse&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Parse@{Parse}!oZ@{oZ}}\index{oZ@{oZ}!Parse@{Parse}}}\mbox{\Hypertarget{namespaceo_z_a356b278f7c65def0cae75fca8cae268eae6600f994575c8175501f2f8843ebd31}\label{namespaceo_z_a356b278f7c65def0cae75fca8cae268eae6600f994575c8175501f2f8843ebd31}} 
+Parse&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AfterParse@{AfterParse}!oZ@{oZ}}\index{oZ@{oZ}!AfterParse@{AfterParse}}}\mbox{\Hypertarget{namespaceo_z_a356b278f7c65def0cae75fca8cae268ea19a2d70dc785d86158c7b2ff76cac6b6}\label{namespaceo_z_a356b278f7c65def0cae75fca8cae268ea19a2d70dc785d86158c7b2ff76cac6b6}} 
+After\+Parse&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BeforeInterpret@{BeforeInterpret}!oZ@{oZ}}\index{oZ@{oZ}!BeforeInterpret@{BeforeInterpret}}}\mbox{\Hypertarget{namespaceo_z_a356b278f7c65def0cae75fca8cae268eafc3a2bbd2d542063830856ff9f7f45cb}\label{namespaceo_z_a356b278f7c65def0cae75fca8cae268eafc3a2bbd2d542063830856ff9f7f45cb}} 
+Before\+Interpret&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Interpret@{Interpret}!oZ@{oZ}}\index{oZ@{oZ}!Interpret@{Interpret}}}\mbox{\Hypertarget{namespaceo_z_a356b278f7c65def0cae75fca8cae268eab11c571ba172a8c48b2c31efe0c60e6d}\label{namespaceo_z_a356b278f7c65def0cae75fca8cae268eab11c571ba172a8c48b2c31efe0c60e6d}} 
+Interpret&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AfterInterpret@{AfterInterpret}!oZ@{oZ}}\index{oZ@{oZ}!AfterInterpret@{AfterInterpret}}}\mbox{\Hypertarget{namespaceo_z_a356b278f7c65def0cae75fca8cae268eacdc49713b2c93380a8d1d5c85ee3d8f4}\label{namespaceo_z_a356b278f7c65def0cae75fca8cae268eacdc49713b2c93380a8d1d5c85ee3d8f4}} 
+After\+Interpret&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Completed@{Completed}!oZ@{oZ}}\index{oZ@{oZ}!Completed@{Completed}}}\mbox{\Hypertarget{namespaceo_z_a356b278f7c65def0cae75fca8cae268eae7df63e8f17e4676ac5538eb29584e22}\label{namespaceo_z_a356b278f7c65def0cae75fca8cae268eae7df63e8f17e4676ac5538eb29584e22}} 
+Completed&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{StateCount@{StateCount}!oZ@{oZ}}\index{oZ@{oZ}!StateCount@{StateCount}}}\mbox{\Hypertarget{namespaceo_z_a356b278f7c65def0cae75fca8cae268ea9316dd881ad0cf8cf871aa48cf9b3abc}\label{namespaceo_z_a356b278f7c65def0cae75fca8cae268ea9316dd881ad0cf8cf871aa48cf9b3abc}} 
+State\+Count&\\
+\hline
+
+\end{DoxyEnumFields}

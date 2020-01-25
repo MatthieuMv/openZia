@@ -1,0 +1,32 @@
+\hypertarget{_context_8hpp}{}\section{/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\+Context.hpp File Reference}
+\label{_context_8hpp}\index{/home/mmoinvaziri/Epitech/CPP\_zia\_2019/External/openZia/openZia/Context.hpp@{/home/mmoinvaziri/Epitech/CPP\_zia\_2019/External/openZia/openZia/Context.hpp}}
+{\ttfamily \#include \char`\"{}Byte\+Array.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}H\+T\+T\+P.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Endpoint.\+hpp\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classo_z_1_1_context}{o\+Z\+::\+Context}}
+\begin{DoxyCompactList}\small\item\em The context class uses different concepts \+: 1) State is a state-\/machine code which indicates where the context 2) Constant property should be set when an \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}} want to specify that his process is constant and thus can be cached. 3) \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} is the client who sent a message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceo_z}{oZ}}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268e}{o\+Z\+::\+State}} \+: std\+::uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268ea8cbb8c938091aee2c8633fbfd8e82c46}{o\+Z\+::\+Error}} = 0, 
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268ea78c9bdd3e337f72d372abcfea4243744}{o\+Z\+::\+Before\+Parse}}, 
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268eae6600f994575c8175501f2f8843ebd31}{o\+Z\+::\+Parse}}, 
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268ea19a2d70dc785d86158c7b2ff76cac6b6}{o\+Z\+::\+After\+Parse}}, 
+\newline
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268eafc3a2bbd2d542063830856ff9f7f45cb}{o\+Z\+::\+Before\+Interpret}}, 
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268eab11c571ba172a8c48b2c31efe0c60e6d}{o\+Z\+::\+Interpret}}, 
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268eacdc49713b2c93380a8d1d5c85ee3d8f4}{o\+Z\+::\+After\+Interpret}}, 
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268eae7df63e8f17e4676ac5538eb29584e22}{o\+Z\+::\+Completed}}, 
+\newline
+\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268ea9316dd881ad0cf8cf871aa48cf9b3abc}{o\+Z\+::\+State\+Count}}
+ \}
+\begin{DoxyCompactList}\small\item\em Context pipelines callbacks. \end{DoxyCompactList}\end{DoxyCompactItemize}

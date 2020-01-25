@@ -1,0 +1,30 @@
+\hypertarget{_i_logger_8hpp}{}\section{/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\+I\+Logger.hpp File Reference}
+\label{_i_logger_8hpp}\index{/home/mmoinvaziri/Epitech/CPP\_zia\_2019/External/openZia/openZia/ILogger.hpp@{/home/mmoinvaziri/Epitech/CPP\_zia\_2019/External/openZia/openZia/ILogger.hpp}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}I\+Module.\+hpp\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classo_z_1_1_i_logger}{o\+Z\+::\+I\+Logger}}
+\begin{DoxyCompactList}\small\item\em This interface should be derived to implement a custom logger. It must be loaded like any other Module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceo_z}{oZ}}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespaceo_z_aaa2fbabbfafc6616a7e69651b62a3d4e}{o\+Z\+::\+Logger\+Ptr}} = std\+::shared\+\_\+ptr$<$ I\+Logger $>$
+\begin{DoxyCompactList}\small\item\em Logger pointer type, using shared\+\_\+ptr like \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}}. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespaceo_z_a2d18a70272709242e8e7ebffc3f1806c}{o\+Z\+::\+Logger\+List}} = std\+::vector$<$ Logger\+Ptr $>$
+\begin{DoxyCompactList}\small\item\em Simple vector of logger interfaces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfa}{o\+Z\+::\+Level}} \+: std\+::uint8\+\_\+t \{ \mbox{\hyperlink{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfaa8ec624dced39a6d648c44ecf68138aa7}{o\+Z\+::\+Information}}, 
+\mbox{\hyperlink{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfaa584630d5910c995ec14e470c452a1458}{o\+Z\+::\+Warning}}, 
+\mbox{\hyperlink{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfaa99c2009fa0e05649fa31d4668bdca544}{o\+Z\+::\+Critical}}, 
+\mbox{\hyperlink{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfaa6e1805ff3512319ba7d40abc11066a62}{o\+Z\+::\+Debug}}
+ \}
+\begin{DoxyCompactList}\small\item\em Levels of log messages. \end{DoxyCompactList}\end{DoxyCompactItemize}

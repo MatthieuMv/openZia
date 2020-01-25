@@ -9,14 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(initResizable);
-/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -56,23 +48,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classo_z_1_1_pipeline.html','');});
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -87,6 +62,11 @@ $(document).ready(function(){initNavTree('classo_z_1_1_pipeline.html','');});
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceo_z.html">oZ</a></li><li class="navelem"><a class="el" href="classo_z_1_1_pipeline.html">Pipeline</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -108,17 +88,14 @@ Public Types</h2></td></tr>
 <tr class="memitem:a5a71ea2f2d4be5b82589c1b8175722f4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a5a71ea2f2d4be5b82589c1b8175722f4">CallbackHandler</a> = std::function&lt; bool(<a class="el" href="classo_z_1_1_context.html">Context</a> &amp;)&gt;</td></tr>
 <tr class="memdesc:a5a71ea2f2d4be5b82589c1b8175722f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback handler that stores a bounded module's callback function.  <a href="#a5a71ea2f2d4be5b82589c1b8175722f4">More...</a><br /></td></tr>
 <tr class="separator:a5a71ea2f2d4be5b82589c1b8175722f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bb478d291a83763b269d8d27e186a47"><td class="memItemLeft" align="right" valign="top"><a id="a3bb478d291a83763b269d8d27e186a47"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a3bb478d291a83763b269d8d27e186a47">ModuleList</a> = std::vector&lt; ModulePtr &gt;</td></tr>
-<tr class="memdesc:a3bb478d291a83763b269d8d27e186a47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple vector of modules. <br /></td></tr>
+<tr class="memitem:a3bb478d291a83763b269d8d27e186a47"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a3bb478d291a83763b269d8d27e186a47">ModuleList</a> = std::vector&lt; <a class="el" href="namespaceo_z.html#af5a56aaaee027504979038f38991adcf">ModulePtr</a> &gt;</td></tr>
+<tr class="memdesc:a3bb478d291a83763b269d8d27e186a47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple vector of modules.  <a href="#a3bb478d291a83763b269d8d27e186a47">More...</a><br /></td></tr>
 <tr class="separator:a3bb478d291a83763b269d8d27e186a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4082276a9a2bafefab47a1298feec67"><td class="memItemLeft" align="right" valign="top"><a id="ae4082276a9a2bafefab47a1298feec67"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#ae4082276a9a2bafefab47a1298feec67">PipelineMap</a> = std::array&lt; std::vector&lt; std::pair&lt; Priority, <a class="el" href="classo_z_1_1_pipeline.html#a5a71ea2f2d4be5b82589c1b8175722f4">CallbackHandler</a> &gt; &gt;, State::StateCount &gt;</td></tr>
-<tr class="memdesc:ae4082276a9a2bafefab47a1298feec67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array containing a vector of callback fo each state. <br /></td></tr>
+<tr class="memitem:ae4082276a9a2bafefab47a1298feec67"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#ae4082276a9a2bafefab47a1298feec67">PipelineMap</a> = std::array&lt; std::vector&lt; std::pair&lt; <a class="el" href="namespaceo_z.html#af05a92eb185d18369e9b4acdcd9dcd12">Priority</a>, <a class="el" href="classo_z_1_1_pipeline.html#a5a71ea2f2d4be5b82589c1b8175722f4">CallbackHandler</a> &gt; &gt;, State::StateCount &gt;</td></tr>
+<tr class="memdesc:ae4082276a9a2bafefab47a1298feec67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array containing a vector of callback fo each state.  <a href="#ae4082276a9a2bafefab47a1298feec67">More...</a><br /></td></tr>
 <tr class="separator:ae4082276a9a2bafefab47a1298feec67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1f26badb603f054e554e3ddf8b846b0"><td class="memItemLeft" align="right" valign="top"><a id="aa1f26badb603f054e554e3ddf8b846b0"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#aa1f26badb603f054e554e3ddf8b846b0">LoggerList</a> = std::vector&lt; LoggerPtr &gt;</td></tr>
-<tr class="memdesc:aa1f26badb603f054e554e3ddf8b846b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector containing <a class="el" href="classo_z_1_1_i_logger.html" title="This interface should be derived to implement a custom logger. It must be loaded like any other Modul...">ILogger</a> modules. <br /></td></tr>
+<tr class="memitem:aa1f26badb603f054e554e3ddf8b846b0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#aa1f26badb603f054e554e3ddf8b846b0">LoggerList</a> = std::vector&lt; <a class="el" href="namespaceo_z.html#aaa2fbabbfafc6616a7e69651b62a3d4e">LoggerPtr</a> &gt;</td></tr>
+<tr class="memdesc:aa1f26badb603f054e554e3ddf8b846b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector containing <a class="el" href="classo_z_1_1_i_logger.html" title="This interface should be derived to implement a custom logger. It must be loaded like any other Modul...">ILogger</a> modules.  <a href="#aa1f26badb603f054e554e3ddf8b846b0">More...</a><br /></td></tr>
 <tr class="separator:aa1f26badb603f054e554e3ddf8b846b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -126,49 +103,41 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a40ef016f523e714052118dc552f8176a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a40ef016f523e714052118dc552f8176a">Pipeline</a> (std::string &amp;&amp;moduleDir=&quot;Modules&quot;, std::string &amp;&amp;configurationDir=&quot;Modules/Configurations&quot;)</td></tr>
 <tr class="memdesc:a40ef016f523e714052118dc552f8176a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classo_z_1_1_pipeline.html" title="The pileline abstracts the pipeline of modules.">Pipeline</a> object.  <a href="#a40ef016f523e714052118dc552f8176a">More...</a><br /></td></tr>
 <tr class="separator:a40ef016f523e714052118dc552f8176a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1d6cd9a6b71cae2b5ebe0031b945237"><td class="memItemLeft" align="right" valign="top"><a id="ab1d6cd9a6b71cae2b5ebe0031b945237"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#ab1d6cd9a6b71cae2b5ebe0031b945237">Pipeline</a> (const <a class="el" href="classo_z_1_1_pipeline.html">Pipeline</a> &amp;other)=delete</td></tr>
-<tr class="memdesc:ab1d6cd9a6b71cae2b5ebe0031b945237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable copy constructor to prevent useless huge copies. <br /></td></tr>
+<tr class="memitem:ab1d6cd9a6b71cae2b5ebe0031b945237"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#ab1d6cd9a6b71cae2b5ebe0031b945237">Pipeline</a> (const <a class="el" href="classo_z_1_1_pipeline.html">Pipeline</a> &amp;other)=delete</td></tr>
+<tr class="memdesc:ab1d6cd9a6b71cae2b5ebe0031b945237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable copy constructor to prevent useless huge copies.  <a href="#ab1d6cd9a6b71cae2b5ebe0031b945237">More...</a><br /></td></tr>
 <tr class="separator:ab1d6cd9a6b71cae2b5ebe0031b945237"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f9e61063bafb53108f1058f3de8c56a"><td class="memItemLeft" align="right" valign="top"><a id="a6f9e61063bafb53108f1058f3de8c56a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a6f9e61063bafb53108f1058f3de8c56a">Pipeline</a> (<a class="el" href="classo_z_1_1_pipeline.html">Pipeline</a> &amp;&amp;other)=default</td></tr>
-<tr class="memdesc:a6f9e61063bafb53108f1058f3de8c56a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classo_z_1_1_pipeline.html" title="The pileline abstracts the pipeline of modules.">Pipeline</a> object by move. <br /></td></tr>
+<tr class="memitem:a6f9e61063bafb53108f1058f3de8c56a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a6f9e61063bafb53108f1058f3de8c56a">Pipeline</a> (<a class="el" href="classo_z_1_1_pipeline.html">Pipeline</a> &amp;&amp;other)=default</td></tr>
+<tr class="memdesc:a6f9e61063bafb53108f1058f3de8c56a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classo_z_1_1_pipeline.html" title="The pileline abstracts the pipeline of modules.">Pipeline</a> object by move.  <a href="#a6f9e61063bafb53108f1058f3de8c56a">More...</a><br /></td></tr>
 <tr class="separator:a6f9e61063bafb53108f1058f3de8c56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91969687e5d9dccb384febbce62d5dd9"><td class="memItemLeft" align="right" valign="top"><a id="a91969687e5d9dccb384febbce62d5dd9"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a91969687e5d9dccb384febbce62d5dd9">~Pipeline</a> (void)=default</td></tr>
-<tr class="memdesc:a91969687e5d9dccb384febbce62d5dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classo_z_1_1_pipeline.html" title="The pileline abstracts the pipeline of modules.">Pipeline</a> object. <br /></td></tr>
+<tr class="memitem:a91969687e5d9dccb384febbce62d5dd9"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a91969687e5d9dccb384febbce62d5dd9">~Pipeline</a> (void)=default</td></tr>
+<tr class="memdesc:a91969687e5d9dccb384febbce62d5dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classo_z_1_1_pipeline.html" title="The pileline abstracts the pipeline of modules.">Pipeline</a> object.  <a href="#a91969687e5d9dccb384febbce62d5dd9">More...</a><br /></td></tr>
 <tr class="separator:a91969687e5d9dccb384febbce62d5dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2815743412c13100c68fee0d87283417"><td class="memItemLeft" align="right" valign="top"><a id="a2815743412c13100c68fee0d87283417"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a2815743412c13100c68fee0d87283417">loadModules</a> (void)</td></tr>
-<tr class="memdesc:a2815743412c13100c68fee0d87283417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find modules and load them into the pipeline. This function will : 1) Trigger the onLoadModules callback that you should implement yourself 2) Check if modules dependencies are avaible 3) Build the internal pipeline with it. 4) Load configuration files of each modules. <br /></td></tr>
+<tr class="memitem:a2815743412c13100c68fee0d87283417"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a2815743412c13100c68fee0d87283417">loadModules</a> (void)</td></tr>
+<tr class="memdesc:a2815743412c13100c68fee0d87283417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find modules and load them into the pipeline. This function will : 1) Trigger the onLoadModules callback that you should implement yourself 2) Check if modules dependencies are avaible 3) Build the internal pipeline with it. 4) Load configuration files of each modules.  <a href="#a2815743412c13100c68fee0d87283417">More...</a><br /></td></tr>
 <tr class="separator:a2815743412c13100c68fee0d87283417"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a869b02b2b8953993ccfb882a3e1f3a0f"><td class="memItemLeft" align="right" valign="top"><a id="a869b02b2b8953993ccfb882a3e1f3a0f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a869b02b2b8953993ccfb882a3e1f3a0f">registerCallback</a> (State state, Priority priority, <a class="el" href="classo_z_1_1_pipeline.html#a5a71ea2f2d4be5b82589c1b8175722f4">CallbackHandler</a> &amp;&amp;handler)</td></tr>
-<tr class="memdesc:a869b02b2b8953993ccfb882a3e1f3a0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a callback handler into the pipeline with given state and priority. <br /></td></tr>
+<tr class="memitem:a869b02b2b8953993ccfb882a3e1f3a0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a869b02b2b8953993ccfb882a3e1f3a0f">registerCallback</a> (<a class="el" href="namespaceo_z.html#a356b278f7c65def0cae75fca8cae268e">State</a> state, <a class="el" href="namespaceo_z.html#af05a92eb185d18369e9b4acdcd9dcd12">Priority</a> priority, <a class="el" href="classo_z_1_1_pipeline.html#a5a71ea2f2d4be5b82589c1b8175722f4">CallbackHandler</a> &amp;&amp;handler)</td></tr>
+<tr class="memdesc:a869b02b2b8953993ccfb882a3e1f3a0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a callback handler into the pipeline with given state and priority.  <a href="#a869b02b2b8953993ccfb882a3e1f3a0f">More...</a><br /></td></tr>
 <tr class="separator:a869b02b2b8953993ccfb882a3e1f3a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6d96b2697aa6770a3f1dd205b12c1c3"><td class="memTemplParams" colspan="2">template&lt;typename ModuleType &gt; </td></tr>
-<tr class="memitem:af6d96b2697aa6770a3f1dd205b12c1c3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#af6d96b2697aa6770a3f1dd205b12c1c3">registerCallback</a> (State state, Priority priority, ModuleType *target, bool(ModuleType::*)(<a class="el" href="classo_z_1_1_context.html">Context</a> &amp;))</td></tr>
+<tr class="memitem:af6d96b2697aa6770a3f1dd205b12c1c3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#af6d96b2697aa6770a3f1dd205b12c1c3">registerCallback</a> (<a class="el" href="namespaceo_z.html#a356b278f7c65def0cae75fca8cae268e">State</a> state, <a class="el" href="namespaceo_z.html#af05a92eb185d18369e9b4acdcd9dcd12">Priority</a> priority, ModuleType *target, bool(ModuleType::*)(<a class="el" href="classo_z_1_1_context.html">Context</a> &amp;))</td></tr>
 <tr class="memdesc:af6d96b2697aa6770a3f1dd205b12c1c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a callback handler into the pipeline with given state and priority.  <a href="#af6d96b2697aa6770a3f1dd205b12c1c3">More...</a><br /></td></tr>
 <tr class="separator:af6d96b2697aa6770a3f1dd205b12c1c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90bddc5511acce66f2aa780c3bba29b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a90bddc5511acce66f2aa780c3bba29b4">runPipeline</a> (<a class="el" href="classo_z_1_1_context.html">Context</a> &amp;context)</td></tr>
 <tr class="memdesc:a90bddc5511acce66f2aa780c3bba29b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process a context into the pipeline.  <a href="#a90bddc5511acce66f2aa780c3bba29b4">More...</a><br /></td></tr>
 <tr class="separator:a90bddc5511acce66f2aa780c3bba29b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3886c29b903d2e359a853ea76711661b"><td class="memItemLeft" align="right" valign="top"><a id="a3886c29b903d2e359a853ea76711661b"></a>
-<a class="el" href="classo_z_1_1_pipeline.html#a3bb478d291a83763b269d8d27e186a47">ModuleList</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a3886c29b903d2e359a853ea76711661b">getModules</a> (void) noexcept</td></tr>
-<tr class="memdesc:a3886c29b903d2e359a853ea76711661b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get internal loaded modules. <br /></td></tr>
+<tr class="memitem:a3886c29b903d2e359a853ea76711661b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classo_z_1_1_pipeline.html#a3bb478d291a83763b269d8d27e186a47">ModuleList</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a3886c29b903d2e359a853ea76711661b">getModules</a> (void) noexcept</td></tr>
+<tr class="memdesc:a3886c29b903d2e359a853ea76711661b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get internal loaded modules.  <a href="#a3886c29b903d2e359a853ea76711661b">More...</a><br /></td></tr>
 <tr class="separator:a3886c29b903d2e359a853ea76711661b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84358c4166a67aabc0d5811608727da9"><td class="memItemLeft" align="right" valign="top"><a id="a84358c4166a67aabc0d5811608727da9"></a>
-const <a class="el" href="classo_z_1_1_pipeline.html#a3bb478d291a83763b269d8d27e186a47">ModuleList</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a84358c4166a67aabc0d5811608727da9">getModules</a> (void) const noexcept</td></tr>
-<tr class="memdesc:a84358c4166a67aabc0d5811608727da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get internal loaded modules (const) <br /></td></tr>
+<tr class="memitem:a84358c4166a67aabc0d5811608727da9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classo_z_1_1_pipeline.html#a3bb478d291a83763b269d8d27e186a47">ModuleList</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a84358c4166a67aabc0d5811608727da9">getModules</a> (void) const noexcept</td></tr>
+<tr class="memdesc:a84358c4166a67aabc0d5811608727da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get internal loaded modules (const)  <a href="#a84358c4166a67aabc0d5811608727da9">More...</a><br /></td></tr>
 <tr class="separator:a84358c4166a67aabc0d5811608727da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a797f98947aace930fbb15cd6b2d9f726"><td class="memTemplParams" colspan="2">template&lt;typename Type , typename ... Args&gt; </td></tr>
 <tr class="memitem:a797f98947aace930fbb15cd6b2d9f726"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a797f98947aace930fbb15cd6b2d9f726">addModule</a> (Args &amp;&amp;...args)</td></tr>
 <tr class="memdesc:a797f98947aace930fbb15cd6b2d9f726"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emplaces a new module in the pipeline.  <a href="#a797f98947aace930fbb15cd6b2d9f726">More...</a><br /></td></tr>
 <tr class="separator:a797f98947aace930fbb15cd6b2d9f726"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f1abc0f7c0985dbc859cd5b20082998"><td class="memTemplParams" colspan="2"><a id="a4f1abc0f7c0985dbc859cd5b20082998"></a>
-template&lt;typename Type  = IModule&gt; </td></tr>
+<tr class="memitem:a4f1abc0f7c0985dbc859cd5b20082998"><td class="memTemplParams" colspan="2">template&lt;typename Type  = IModule&gt; </td></tr>
 <tr class="memitem:a4f1abc0f7c0985dbc859cd5b20082998"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a4f1abc0f7c0985dbc859cd5b20082998">findModule</a> (void) const</td></tr>
-<tr class="memdesc:a4f1abc0f7c0985dbc859cd5b20082998"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a module of Type in internal module list returning it as a shared pointer. <br /></td></tr>
+<tr class="memdesc:a4f1abc0f7c0985dbc859cd5b20082998"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a module of Type in internal module list returning it as a shared pointer.  <a href="#a4f1abc0f7c0985dbc859cd5b20082998">More...</a><br /></td></tr>
 <tr class="separator:a4f1abc0f7c0985dbc859cd5b20082998"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
@@ -197,9 +166,57 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aa1f26badb603f054e554e3ddf8b846b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1f26badb603f054e554e3ddf8b846b0">&#9670;&nbsp;</a></span>LoggerList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classo_z_1_1_pipeline.html#aa1f26badb603f054e554e3ddf8b846b0">oZ::Pipeline::LoggerList</a> =  std::vector&lt;<a class="el" href="namespaceo_z.html#aaa2fbabbfafc6616a7e69651b62a3d4e">LoggerPtr</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vector containing <a class="el" href="classo_z_1_1_i_logger.html" title="This interface should be derived to implement a custom logger. It must be loaded like any other Modul...">ILogger</a> modules. </p>
+
+</div>
+</div>
+<a id="a3bb478d291a83763b269d8d27e186a47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bb478d291a83763b269d8d27e186a47">&#9670;&nbsp;</a></span>ModuleList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classo_z_1_1_pipeline.html#a3bb478d291a83763b269d8d27e186a47">oZ::Pipeline::ModuleList</a> =  std::vector&lt;<a class="el" href="namespaceo_z.html#af5a56aaaee027504979038f38991adcf">ModulePtr</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Simple vector of modules. </p>
+
+</div>
+</div>
+<a id="ae4082276a9a2bafefab47a1298feec67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4082276a9a2bafefab47a1298feec67">&#9670;&nbsp;</a></span>PipelineMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classo_z_1_1_pipeline.html#ae4082276a9a2bafefab47a1298feec67">oZ::Pipeline::PipelineMap</a> =  std::array&lt;std::vector&lt;std::pair&lt;<a class="el" href="namespaceo_z.html#af05a92eb185d18369e9b4acdcd9dcd12">Priority</a>, <a class="el" href="classo_z_1_1_pipeline.html#a5a71ea2f2d4be5b82589c1b8175722f4">CallbackHandler</a>&gt; &gt;, State::StateCount&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Array containing a vector of callback fo each state. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a40ef016f523e714052118dc552f8176a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40ef016f523e714052118dc552f8176a">&#9670;&nbsp;</a></span>Pipeline()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a40ef016f523e714052118dc552f8176a">&#9670;&nbsp;</a></span>Pipeline() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -235,6 +252,90 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ab1d6cd9a6b71cae2b5ebe0031b945237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1d6cd9a6b71cae2b5ebe0031b945237">&#9670;&nbsp;</a></span>Pipeline() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">oZ::Pipeline::Pipeline </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classo_z_1_1_pipeline.html">Pipeline</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Disable copy constructor to prevent useless huge copies. </p>
+
+</div>
+</div>
+<a id="a6f9e61063bafb53108f1058f3de8c56a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f9e61063bafb53108f1058f3de8c56a">&#9670;&nbsp;</a></span>Pipeline() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">oZ::Pipeline::Pipeline </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classo_z_1_1_pipeline.html">Pipeline</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classo_z_1_1_pipeline.html" title="The pileline abstracts the pipeline of modules.">Pipeline</a> object by move. </p>
+
+</div>
+</div>
+<a id="a91969687e5d9dccb384febbce62d5dd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91969687e5d9dccb384febbce62d5dd9">&#9670;&nbsp;</a></span>~Pipeline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual oZ::Pipeline::~Pipeline </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroy the <a class="el" href="classo_z_1_1_pipeline.html" title="The pileline abstracts the pipeline of modules.">Pipeline</a> object. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a797f98947aace930fbb15cd6b2d9f726"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a797f98947aace930fbb15cd6b2d9f726">&#9670;&nbsp;</a></span>addModule()</h2>
@@ -256,6 +357,104 @@ template&lt;typename Type , typename ... Args&gt; </div>
 
 <p>Emplaces a new module in the pipeline. </p>
 <p>This function should be called by the onLoadModules callback of your derived pipeline. </p>
+
+</div>
+</div>
+<a id="a4f1abc0f7c0985dbc859cd5b20082998"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f1abc0f7c0985dbc859cd5b20082998">&#9670;&nbsp;</a></span>findModule()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; Type &gt; oZ::Pipeline::findModule </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find a module of Type in internal module list returning it as a shared pointer. </p>
+
+</div>
+</div>
+<a id="a3886c29b903d2e359a853ea76711661b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3886c29b903d2e359a853ea76711661b">&#9670;&nbsp;</a></span>getModules() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classo_z_1_1_pipeline.html#a3bb478d291a83763b269d8d27e186a47">ModuleList</a>&amp; oZ::Pipeline::getModules </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get internal loaded modules. </p>
+
+</div>
+</div>
+<a id="a84358c4166a67aabc0d5811608727da9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84358c4166a67aabc0d5811608727da9">&#9670;&nbsp;</a></span>getModules() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classo_z_1_1_pipeline.html#a3bb478d291a83763b269d8d27e186a47">ModuleList</a>&amp; oZ::Pipeline::getModules </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get internal loaded modules (const) </p>
+
+</div>
+</div>
+<a id="a2815743412c13100c68fee0d87283417"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2815743412c13100c68fee0d87283417">&#9670;&nbsp;</a></span>loadModules()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pipeline::loadModules </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find modules and load them into the pipeline. This function will : 1) Trigger the onLoadModules callback that you should implement yourself 2) Check if modules dependencies are avaible 3) Build the internal pipeline with it. 4) Load configuration files of each modules. </p>
 
 </div>
 </div>
@@ -288,8 +487,44 @@ template&lt;typename Type , typename ... Args&gt; </div>
 
 </div>
 </div>
+<a id="a869b02b2b8953993ccfb882a3e1f3a0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a869b02b2b8953993ccfb882a3e1f3a0f">&#9670;&nbsp;</a></span>registerCallback() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pipeline::registerCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceo_z.html#a356b278f7c65def0cae75fca8cae268e">State</a>&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceo_z.html#af05a92eb185d18369e9b4acdcd9dcd12">Priority</a>&#160;</td>
+          <td class="paramname"><em>priority</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classo_z_1_1_pipeline.html#a5a71ea2f2d4be5b82589c1b8175722f4">CallbackHandler</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>handler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inserts a callback handler into the pipeline with given state and priority. </p>
+
+</div>
+</div>
 <a id="af6d96b2697aa6770a3f1dd205b12c1c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6d96b2697aa6770a3f1dd205b12c1c3">&#9670;&nbsp;</a></span>registerCallback()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af6d96b2697aa6770a3f1dd205b12c1c3">&#9670;&nbsp;</a></span>registerCallback() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -299,13 +534,13 @@ template&lt;typename ModuleType &gt; </div>
         <tr>
           <td class="memname">void oZ::Pipeline::registerCallback </td>
           <td>(</td>
-          <td class="paramtype">State&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceo_z.html#a356b278f7c65def0cae75fca8cae268e">State</a>&#160;</td>
           <td class="paramname"><em>state</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Priority&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceo_z.html#af05a92eb185d18369e9b4acdcd9dcd12">Priority</a>&#160;</td>
           <td class="paramname"><em>priority</em>, </td>
         </tr>
         <tr>
@@ -355,20 +590,16 @@ template&lt;typename ModuleType &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>openZia/<a class="el" href="_pipeline_8hpp_source.html">Pipeline.hpp</a></li>
-<li>openZia/Pipeline.cpp</li>
-<li>openZia/Pipeline.ipp</li>
+<li>/home/mmoinvaziri/Epitech/CPP_zia_2019/External/openZia/openZia/<a class="el" href="_pipeline_8hpp_source.html">Pipeline.hpp</a></li>
+<li>/home/mmoinvaziri/Epitech/CPP_zia_2019/External/openZia/openZia/<a class="el" href="_pipeline_8cpp.html">Pipeline.cpp</a></li>
+<li>/home/mmoinvaziri/Epitech/CPP_zia_2019/External/openZia/openZia/<a class="el" href="_pipeline_8ipp.html">Pipeline.ipp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><b>oZ</b></li><li class="navelem"><a class="el" href="classo_z_1_1_pipeline.html">Pipeline</a></li>
-    <li class="footer">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.15
+</small></address>
 </body>
 </html>
