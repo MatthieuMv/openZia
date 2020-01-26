@@ -10,6 +10,7 @@
 #include <string>
 #include <functional>
 
+#include "DynamicLoader.hpp"
 #include "ILogger.hpp"
 
 namespace oZ
@@ -120,6 +121,11 @@ public:
     void addModule(Args &&...args);
 
     /**
+     * @brief Find a module of given name in internal module list returning it as a shared pointer.
+     */
+    [[nodiscard]] ModulePtr findModule(const char *name) const;
+
+    /**
      * @brief Find a module of Type in internal module list returning it as a shared pointer.
      */
     template<typename Type = IModule>
@@ -130,8 +136,12 @@ protected:
      * @brief Callback which should load a set of module at runtime
      *
      *  This callback can be redefined to implement a custom loader.
+     *  The default implementation creates the directory if it doesn't exists.
      */
     virtual void onLoadModules(const std::string &directoryPath);
+
+protected:
+    DynamicLoader _dynamicLoader;
 
 private:
     ModuleList _modules;
@@ -151,6 +161,8 @@ private:
 
     /**
      * @brief Create internal pipeline with the current internal modules.
+     *  This function will first register modules' callbacks, then retreive dependencies of them to finally load their configuration files.
+     *  If the configuration folder doesn't exists, it will create it.
      */
     void createPipeline(void);
 

@@ -5,6 +5,8 @@
 ** Pipeline template sources
 */
 
+#include <iostream>
+#include <filesystem>
 #include <cstring>
 
 #include "Pipeline.hpp"
@@ -14,6 +16,7 @@ using namespace oZ;
 Pipeline::Pipeline(std::string &&moduleDir, std::string &&configurationDir)
     : _moduleDir(std::move(moduleDir)), _configurationDir(std::move(configurationDir))
 {
+    std::cout << _moduleDir << std::endl;
     loadModules();
 }
 
@@ -27,11 +30,29 @@ void Pipeline::loadModules(void)
     createPipeline();
 }
 
-void Pipeline::onLoadModules(const std::string &directoryPath)
+ModulePtr Pipeline::findModule(const char *name) const
 {
-    (void)(directoryPath);
+    for (const auto &module : _modules) {
+        if (!std::strcmp(module->getName(), name))
+            return module;
+    }
+    return nullptr;
 }
 
+void Pipeline::onLoadModules(const std::string &directoryPath)
+{
+    std::filesystem::path path(directoryPath);
+
+    if (!std::filesystem::exists(path))
+        std::filesystem::create_directory(path);
+    for (const auto &file : std::filesystem::directory_iterator(path)) {
+       if (auto ext = file.path().extension().string(); ext != ".dll" && ext != ".so")
+            continue;
+        auto handler = _dynamicLoader.load(file.path());
+        auto function = _dynamicLoader.getFunction<ModulePtr(*)(void)>(handler, "CreateModule");
+        _modules.emplace_back((*function)());
+    }
+}
 
 void Pipeline::registerCallback(State state, Priority priority, CallbackHandler &&handler)
 {
@@ -81,6 +102,8 @@ void Pipeline::createPipeline(void)
 {
     if (!_configurationDir.empty() && _configurationDir.back() != '/')
         _configurationDir.push_back('/');
+    if (std::filesystem::path path = _configurationDir; !std::filesystem::exists(path))
+        std::filesystem::create_directory(path);
     for (const auto &module : _modules) {
         module->onRegisterCallbacks(*this);
         module->onRetreiveDependencies(*this);
