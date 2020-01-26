@@ -27,11 +27,15 @@ set(OpenZiaSources
     ${OpenZiaSourcesDir}/IModule.hpp
     ${OpenZiaSourcesDir}/IModule.cpp
     ${OpenZiaSourcesDir}/ILogger.hpp
-    
+
+    ${OpenZiaSourcesDir}/OperatingSystem.hpp
+    ${OpenZiaSourcesDir}/DynamicLoader.hpp
+    ${OpenZiaSourcesDir}/DynamicLoader.cpp
+
     ${OpenZiaSourcesDir}/Pipeline.hpp
     ${OpenZiaSourcesDir}/Pipeline.cpp
     ${OpenZiaSourcesDir}/Pipeline.ipp
-    
+
     ${OpenZiaSourcesDir}/Log.hpp
     ${OpenZiaSourcesDir}/Log.cpp
     ${OpenZiaSourcesDir}/Log.ipp
@@ -46,3 +50,4 @@ set(OpenZiaSources
 
 # Create openZia library
 add_library(${PROJECT_NAME} ${OpenZiaSources})
+target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS})

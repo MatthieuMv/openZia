@@ -1,6 +1,15 @@
 # Module implementation
-In this section we will take a closer look at the class IModule, and all its components.
+A Module is a dynamic library which contains a single class loaded at runtime.
+It means that you must compile every module independently.
+For that you must implement your modules deriving from **oZ::IModule** interface.
+Last, you will need an instantiation function:
+```C++
+extern "C" ModulePtr CreateModule(void) { return std::make_shared<MyModule>(); }
+```
+The API already does the dynamic library loading for you so you can focus more on creating modules.
 
+## Module
+In this section we will take a closer look at the interface class **oZ::IModule**, and all its components.
 ```C++
 // Module interface
 class IModule;
@@ -9,9 +18,9 @@ using ModulePtr = std::shared_ptr<IModule>
 ```
 We use shared pointers to store instantiated modules. This allows holding a reference to a module while asserting its existence.
 
- ## Must have functions
- Each module have a set of virtual function to be override. Actually, only 2 of them are pure virtual :
- ```C++
+## Must have functions
+Each module have a set of virtual function to be override. Actually, only 2 of them are pure virtual :
+```C++
 // Get the raw string name of module instance
 virtual const char *getName(void) const = 0;
 

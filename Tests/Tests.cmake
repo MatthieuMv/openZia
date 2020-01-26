@@ -15,11 +15,21 @@ set(TestsSources
     ${OpenZiaSourcesTestsDir}/tests_IModule.cpp
     ${OpenZiaSourcesTestsDir}/tests_ILogger.cpp
     ${OpenZiaSourcesTestsDir}/tests_Pipeline.cpp
+    ${OpenZiaSourcesTestsDir}/tests_DynamicLoader.cpp
     ${OpenZiaSourcesTestsDir}/tests_Log.cpp
 )
 
+# Add a foo library for testing purposes
+set(FooSources
+    ${OpenZiaSourcesTestsDir}/Medias/FooModule.hpp
+    ${OpenZiaSourcesTestsDir}/Medias/FooModule.cpp
+)
+add_library(Foo SHARED ${FooSources})
+target_link_libraries(Foo openZia)
+target_include_directories(Foo PRIVATE ${OpenZiaIncludes})
+
 add_executable(${PROJECT_NAME} ${TestsSources} ${OpenZiaSources})
-target_link_libraries(${PROJECT_NAME} criterion)
+target_link_libraries(${PROJECT_NAME} criterion ${CMAKE_DL_LIBS})
 target_include_directories(${PROJECT_NAME} PRIVATE ${OpenZiaIncludes})
 
 if (DEFINED OPENZIA_COVERAGE)
