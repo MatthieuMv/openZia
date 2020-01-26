@@ -90,5 +90,5 @@ Take uses of the **ILogger** interface create specific modules that, once loaded
 
 > To emit a log, use the global helper class **oZ::Log**.
 
-# C. More examples !
+# More examples !
  Please take a look at the very straightforward [Hello World Example](HELLO.md) file to follow a quick introduction guide.
