@@ -24,11 +24,12 @@ namespace oZ
      * Example: Low + 1, Low + 2, ...
      */
     enum Priority : std::uint16_t {
-        Independent = 0,
-        Low = 1000,
-        Medium = 2000,
-        High = 3000,
-        ASAP = 4000
+        Last = 0,
+        Independent = 1000,
+        Low = 2000,
+        Medium = 3000,
+        High = 4000,
+        ASAP = 5000
     };
 
     /**

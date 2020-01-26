@@ -5,7 +5,6 @@
 ** Pipeline template sources
 */
 
-#include <iostream>
 #include <filesystem>
 #include <cstring>
 
@@ -16,7 +15,6 @@ using namespace oZ;
 Pipeline::Pipeline(std::string &&moduleDir, std::string &&configurationDir)
     : _moduleDir(std::move(moduleDir)), _configurationDir(std::move(configurationDir))
 {
-    std::cout << _moduleDir << std::endl;
     loadModules();
 }
 

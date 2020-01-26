@@ -51,3 +51,4 @@ set(OpenZiaSources
 # Create openZia library
 add_library(${PROJECT_NAME} ${OpenZiaSources})
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS})
+target_compile_options(${PROJECT_NAME} PRIVATE -fPIC)

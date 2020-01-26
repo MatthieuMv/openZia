@@ -5,9 +5,11 @@
 ** Log
 */
 
+#include <iostream>
+
 template<typename Type>
 oZ::Log &oZ::Log::operator<<(Type &&value)
 {
     _os << std::forward<Type>(value);
-    return *this;    
+    return *this;
 }
