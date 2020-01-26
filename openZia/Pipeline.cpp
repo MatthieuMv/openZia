@@ -7,6 +7,7 @@
 
 #include <filesystem>
 #include <cstring>
+#include <iostream>
 
 #include "Pipeline.hpp"
 
@@ -19,9 +20,12 @@ Pipeline::Pipeline(std::string &&moduleDir, std::string &&configurationDir)
 
 void Pipeline::loadModules(void)
 {
+    std::cout << "Clearing pipeline..." << std::endl;
     for (auto &state : _pipeline)
         state.clear();
     _modules.clear();
+    _dynamicLoader.release();
+    std::cout << "Loading modules..." << std::endl;
     onLoadModules(_moduleDir);
     checkModulesDependencies();
     createPipeline();
@@ -45,8 +49,11 @@ void Pipeline::onLoadModules(const std::string &directoryPath)
     for (const auto &file : std::filesystem::directory_iterator(path)) {
        if (auto ext = file.path().extension().string(); ext != ".dll" && ext != ".so")
             continue;
+        std::cout << "Found file " << file.path().string() << std::endl;
         auto handler = _dynamicLoader.load(file.path());
+        std::cout << "Searching function" << std::endl;
         auto function = _dynamicLoader.getFunction<ModulePtr(*)(void)>(handler, "CreateModule");
+        std::cout << "Instantiating module" << std::endl;
         _modules.emplace_back((*function)());
     }
 }
