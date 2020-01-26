@@ -8,8 +8,8 @@
 #include <cinttypes>
 #include <string>
 
-namespace oZ::HTTP
-{
+// Verbose declaration needed for doxygen support
+namespace oZ { namespace HTTP {
     /**
      * @brief HTTP URI (Request)
      */
@@ -109,7 +109,7 @@ namespace oZ::HTTP
         Version(const Version &other) = default;
 
         /**
-         * @brief Comparison operator 
+         * @brief Comparison operator
          */
         bool operator==(const Version &other) const noexcept { return majorVersion == other.majorVersion && minorVersion == other.minorVersion; }
 
@@ -143,4 +143,4 @@ namespace oZ::HTTP
             return "CONNECT";
         }
     }
-}
+}}

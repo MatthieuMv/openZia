@@ -11,7 +11,8 @@
 
 #include "BaseHTTP.hpp"
 
-namespace oZ::HTTP { class Header; }
+// Verbose declaration needed for doxygen support
+namespace oZ { namespace HTTP { class Header; } }
 
 /**
  * @brief The HTTP Header is a simple map of string used to store header values

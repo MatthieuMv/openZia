@@ -9,7 +9,8 @@
 
 #include "HeaderHTTP.hpp"
 
-namespace oZ::HTTP { class Response; }
+// Verbose declaration needed for doxygen support
+namespace oZ { namespace HTTP { class Response; } }
 
 /**
  * @brief The HTTP response inherits from the header

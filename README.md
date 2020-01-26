@@ -5,7 +5,7 @@
 
 
 
-Github page: https://matthieumv.github.io/openZia
+Documentation: https://matthieumv.github.io/openZia
 
 
 

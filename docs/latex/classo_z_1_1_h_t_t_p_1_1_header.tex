@@ -1,0 +1,75 @@
+\hypertarget{classo_z_1_1_h_t_t_p_1_1_header}{}\section{oZ\+::H\+T\+TP\+::Header Class Reference}
+\label{classo_z_1_1_h_t_t_p_1_1_header}\index{oZ::HTTP::Header@{oZ::HTTP::Header}}
+
+
+The \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}} \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header}{Header}} is a simple map of string used to store header values.  
+
+
+
+
+{\ttfamily \#include $<$Header\+H\+T\+T\+P.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a6981daf90cda100da0e23a516991d35b}{exists}} (const std\+::string \&key) const noexcept
+\begin{DoxyCompactList}\small\item\em Check existence of a value in the header. \end{DoxyCompactList}\item 
+std\+::string \& \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_aeedea8bfa094294f0f5892bc9736c48e}{get}} (const std\+::string \&key)
+\begin{DoxyCompactList}\small\item\em Get a value in the header, and insert it if not found. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_acb0cba9e469ca227411584a4d5485b91}{get}} (const std\+::string \&key) const
+\begin{DoxyCompactList}\small\item\em Get a value in the header, and throw if not found. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Literal $>$ }\\void \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a00466b7e626925b15b650733bab543f6}{set}} (const std\+::string \&key, Literal \&\&value)
+\begin{DoxyCompactList}\small\item\em Get a value in the header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}} \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header}{Header}} is a simple map of string used to store header values. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_a6981daf90cda100da0e23a516991d35b}\label{classo_z_1_1_h_t_t_p_1_1_header_a6981daf90cda100da0e23a516991d35b}} 
+\index{oZ::HTTP::Header@{oZ::HTTP::Header}!exists@{exists}}
+\index{exists@{exists}!oZ::HTTP::Header@{oZ::HTTP::Header}}
+\subsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily bool o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Check existence of a value in the header. 
+
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_aeedea8bfa094294f0f5892bc9736c48e}\label{classo_z_1_1_h_t_t_p_1_1_header_aeedea8bfa094294f0f5892bc9736c48e}} 
+\index{oZ::HTTP::Header@{oZ::HTTP::Header}!get@{get}}
+\index{get@{get}!oZ::HTTP::Header@{oZ::HTTP::Header}}
+\subsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string\& o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a value in the header, and insert it if not found. 
+
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_acb0cba9e469ca227411584a4d5485b91}\label{classo_z_1_1_h_t_t_p_1_1_header_acb0cba9e469ca227411584a4d5485b91}} 
+\index{oZ::HTTP::Header@{oZ::HTTP::Header}!get@{get}}
+\index{get@{get}!oZ::HTTP::Header@{oZ::HTTP::Header}}
+\subsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string \& Header\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const}
+
+
+
+Get a value in the header, and throw if not found. 
+
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_a00466b7e626925b15b650733bab543f6}\label{classo_z_1_1_h_t_t_p_1_1_header_a00466b7e626925b15b650733bab543f6}} 
+\index{oZ::HTTP::Header@{oZ::HTTP::Header}!set@{set}}
+\index{set@{set}!oZ::HTTP::Header@{oZ::HTTP::Header}}
+\subsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily template$<$typename Literal $>$ \\
+void o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::set (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{Literal \&\&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a value in the header. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_header_h_t_t_p_8hpp}{Header\+H\+T\+T\+P.\+hpp}}\item 
+/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_header_h_t_t_p_8cpp}{Header\+H\+T\+T\+P.\+cpp}}\end{DoxyCompactItemize}

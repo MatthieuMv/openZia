@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['http',['HTTP',['../namespaceo_z_1_1_h_t_t_p.html',1,'oZ::HTTP'],['../namespaceo_z_1_1o_z_1_1_h_t_t_p.html',1,'oZ::oZ::HTTP']]],
+  ['http',['HTTP',['../namespaceo_z_1_1_h_t_t_p.html',1,'oZ']]],
   ['ok',['OK',['../namespaceo_z_1_1_h_t_t_p.html#acd43703151305f79b1e2f42e98ee8199ae0aa021e21dddbd6d8cecec71e9cf564',1,'oZ::HTTP']]],
   ['onloadconfigurationfile',['onLoadConfigurationFile',['../classo_z_1_1_i_module.html#a61a2cc76594401ed2f50931a6a6b76f3',1,'oZ::IModule']]],
   ['onloadmodules',['onLoadModules',['../classo_z_1_1_pipeline.html#a0265d90a5540e69b25069d5d96973c53',1,'oZ::Pipeline']]],
@@ -10,5 +10,5 @@ var searchData=
   ['operator_3c_3c',['operator&lt;&lt;',['../classo_z_1_1_log.html#a0cb4c3c614b1d5ae6285aecb31554fb4',1,'oZ::Log::operator&lt;&lt;(Type &amp;&amp;value)'],['../classo_z_1_1_log.html#ab4b6199f686c0b32f40be8885fca9db0',1,'oZ::Log::operator&lt;&lt;(Type &amp;&amp;value)']]],
   ['operator_3d_3d',['operator==',['../structo_z_1_1_h_t_t_p_1_1_version.html#a6d985577db3b920c4efa2a03c46b827b',1,'oZ::HTTP::Version::operator==()'],['../classo_z_1_1_endpoint.html#ab5a405bf455ab2f4e28458b0ba69d399',1,'oZ::Endpoint::operator==()']]],
   ['option',['Option',['../namespaceo_z_1_1_h_t_t_p.html#a02d8497e4abbb0adf3af0fe9fad1b7a6a054b4f3ea543c990f6b125f41af6ebf7',1,'oZ::HTTP']]],
-  ['oz',['oZ',['../namespaceo_z.html',1,'oZ'],['../namespaceo_z_1_1o_z.html',1,'oZ::oZ']]]
+  ['oz',['oZ',['../namespaceo_z.html',1,'']]]
 ];

@@ -9,7 +9,8 @@
 
 #include "HeaderHTTP.hpp"
 
-namespace oZ::HTTP { class Request; }
+// Verbose declaration needed for doxygen support
+namespace oZ { namespace HTTP { class Request; } }
 
 class oZ::HTTP::Request
 {
