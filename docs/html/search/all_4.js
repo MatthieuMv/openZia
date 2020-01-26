@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['endpoint',['Endpoint',['../classo_z_1_1_endpoint.html',1,'oZ::Endpoint'],['../classo_z_1_1_endpoint.html#aa0e46ff6f1b744e9173a97680e2e20a6',1,'oZ::Endpoint::Endpoint(void)=default'],['../classo_z_1_1_endpoint.html#ac7c25299f3e5bc05a54e7906d17fbfd9',1,'oZ::Endpoint::Endpoint(const std::string &amp;ip, Port port)'],['../classo_z_1_1_endpoint.html#a7dd91554b61824eac5e0b015fa12f957',1,'oZ::Endpoint::Endpoint(IP ip, Port port)'],['../classo_z_1_1_endpoint.html#a33f6c2eb724e0d60d988212bc6b66008',1,'oZ::Endpoint::Endpoint(const Endpoint &amp;other)']]],
-  ['endpoint_2ecpp',['Endpoint.cpp',['../_endpoint_8cpp.html',1,'']]],
-  ['endpoint_2ehpp',['Endpoint.hpp',['../_endpoint_8hpp.html',1,'']]],
-  ['error',['Error',['../namespaceo_z.html#a356b278f7c65def0cae75fca8cae268ea8cbb8c938091aee2c8633fbfd8e82c46',1,'oZ']]],
-  ['exists',['exists',['../classo_z_1_1_h_t_t_p_1_1_header.html#a6981daf90cda100da0e23a516991d35b',1,'oZ::HTTP::Header']]],
-  ['expectationfailed',['ExpectationFailed',['../namespaceo_z_1_1_h_t_t_p.html#acd43703151305f79b1e2f42e98ee8199a6af78095a2be4a230ba87f03dd131830',1,'oZ::HTTP']]]
+  ['debug',['Debug',['../namespaceo_z.html#a72fc7662d5f07391ac6f0a5699014bfaa6e1805ff3512319ba7d40abc11066a62',1,'oZ']]],
+  ['defaultversion',['DefaultVersion',['../namespaceo_z_1_1_h_t_t_p.html#af1d13b042d8595fb3196ce91c5c4955d',1,'oZ::HTTP']]],
+  ['delete',['Delete',['../namespaceo_z_1_1_h_t_t_p.html#a02d8497e4abbb0adf3af0fe9fad1b7a6af2a6c498fb90ee345d997f888fce3b18',1,'oZ::HTTP']]],
+  ['dependencies',['Dependencies',['../classo_z_1_1_i_module.html#ac13210556cb2a65d186bfbe5208c666c',1,'oZ::IModule']]],
+  ['dynamichandler',['DynamicHandler',['../namespaceo_z.html#a4f8ae5685d0f7dca498d73129b482f2d',1,'oZ']]],
+  ['dynamicloader',['DynamicLoader',['../classo_z_1_1_dynamic_loader.html',1,'oZ::DynamicLoader'],['../classo_z_1_1_dynamic_loader.html#ab046e300c6645cc5fdb1e3c1d0c4690b',1,'oZ::DynamicLoader::DynamicLoader()']]],
+  ['dynamicloader_2ecpp',['DynamicLoader.cpp',['../_dynamic_loader_8cpp.html',1,'']]],
+  ['dynamicloader_2ehpp',['DynamicLoader.hpp',['../_dynamic_loader_8hpp.html',1,'']]]
 ];

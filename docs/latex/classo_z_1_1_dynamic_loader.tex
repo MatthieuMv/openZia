@@ -1,0 +1,118 @@
+\hypertarget{classo_z_1_1_dynamic_loader}{}\section{oZ\+::Dynamic\+Loader Class Reference}
+\label{classo_z_1_1_dynamic_loader}\index{oZ::DynamicLoader@{oZ::DynamicLoader}}
+
+
+{\ttfamily \#include $<$Dynamic\+Loader.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classo_z_1_1_dynamic_loader_ab046e300c6645cc5fdb1e3c1d0c4690b}{Dynamic\+Loader}} (void)=default
+\begin{DoxyCompactList}\small\item\em Construct a new Dynamic Loader object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classo_z_1_1_dynamic_loader_a48b8658929c54dbb03a79f752d2fc131}{$\sim$\+Dynamic\+Loader}} (void)
+\begin{DoxyCompactList}\small\item\em Destroy the Dynamic Loader object and release its content. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}{Dynamic\+Handler}} \mbox{\hyperlink{classo_z_1_1_dynamic_loader_a1a0201ebc77bdd744aa528d7cb999a89}{load}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Load a dynamic library. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{classo_z_1_1_dynamic_loader_a136f9d35245f4e3d556d7f4eae951cdf}{get\+Function}} (\mbox{\hyperlink{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}{Dynamic\+Handler}} handler, const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Get a function of handler library, returning opaque pointer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Signature $>$ }\\Signature \mbox{\hyperlink{classo_z_1_1_dynamic_loader_ad5c090a613bec9cf397a479bf3257cfa}{get\+Function}} (\mbox{\hyperlink{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}{Dynamic\+Handler}} handler, const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Get a function of handler library, returning custom Signature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classo_z_1_1_dynamic_loader_a405559cdad1b8eba0bd3bee22fa764f9}{release}} (void)
+\begin{DoxyCompactList}\small\item\em Release loaded libraries. Call this function after every instances aquired from libraries are destroyed. If you destroy instances after, the virtual destructor will be unloaded and your program will crash. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classo_z_1_1_dynamic_loader_ae822f62c912bfdc978188d22e45798ff}{get\+Last\+Error}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Get the last error as string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classo_z_1_1_dynamic_loader_a732fb1a8c82a4caa1a5e3a227b9d32ab}{get\+Handler\+Path}} (const \mbox{\hyperlink{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}{Dynamic\+Handler}} handler) const noexcept
+\begin{DoxyCompactList}\small\item\em Get the name of a handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classo_z_1_1_dynamic_loader_ab046e300c6645cc5fdb1e3c1d0c4690b}\label{classo_z_1_1_dynamic_loader_ab046e300c6645cc5fdb1e3c1d0c4690b}} 
+\index{oZ::DynamicLoader@{oZ::DynamicLoader}!DynamicLoader@{DynamicLoader}}
+\index{DynamicLoader@{DynamicLoader}!oZ::DynamicLoader@{oZ::DynamicLoader}}
+\subsubsection{\texorpdfstring{DynamicLoader()}{DynamicLoader()}}
+{\footnotesize\ttfamily o\+Z\+::\+Dynamic\+Loader\+::\+Dynamic\+Loader (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Construct a new Dynamic Loader object. 
+
+\mbox{\Hypertarget{classo_z_1_1_dynamic_loader_a48b8658929c54dbb03a79f752d2fc131}\label{classo_z_1_1_dynamic_loader_a48b8658929c54dbb03a79f752d2fc131}} 
+\index{oZ::DynamicLoader@{oZ::DynamicLoader}!````~DynamicLoader@{$\sim$DynamicLoader}}
+\index{````~DynamicLoader@{$\sim$DynamicLoader}!oZ::DynamicLoader@{oZ::DynamicLoader}}
+\subsubsection{\texorpdfstring{$\sim$DynamicLoader()}{~DynamicLoader()}}
+{\footnotesize\ttfamily Dynamic\+Loader\+::$\sim$\+Dynamic\+Loader (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the Dynamic Loader object and release its content. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classo_z_1_1_dynamic_loader_a136f9d35245f4e3d556d7f4eae951cdf}\label{classo_z_1_1_dynamic_loader_a136f9d35245f4e3d556d7f4eae951cdf}} 
+\index{oZ::DynamicLoader@{oZ::DynamicLoader}!getFunction@{getFunction}}
+\index{getFunction@{getFunction}!oZ::DynamicLoader@{oZ::DynamicLoader}}
+\subsubsection{\texorpdfstring{getFunction()}{getFunction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void $\ast$ Dynamic\+Loader\+::get\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}{Dynamic\+Handler}}}]{handler,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Get a function of handler library, returning opaque pointer. 
+
+\mbox{\Hypertarget{classo_z_1_1_dynamic_loader_ad5c090a613bec9cf397a479bf3257cfa}\label{classo_z_1_1_dynamic_loader_ad5c090a613bec9cf397a479bf3257cfa}} 
+\index{oZ::DynamicLoader@{oZ::DynamicLoader}!getFunction@{getFunction}}
+\index{getFunction@{getFunction}!oZ::DynamicLoader@{oZ::DynamicLoader}}
+\subsubsection{\texorpdfstring{getFunction()}{getFunction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Signature $>$ \\
+Signature o\+Z\+::\+Dynamic\+Loader\+::get\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}{Dynamic\+Handler}}}]{handler,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a function of handler library, returning custom Signature. 
+
+\mbox{\Hypertarget{classo_z_1_1_dynamic_loader_a732fb1a8c82a4caa1a5e3a227b9d32ab}\label{classo_z_1_1_dynamic_loader_a732fb1a8c82a4caa1a5e3a227b9d32ab}} 
+\index{oZ::DynamicLoader@{oZ::DynamicLoader}!getHandlerPath@{getHandlerPath}}
+\index{getHandlerPath@{getHandlerPath}!oZ::DynamicLoader@{oZ::DynamicLoader}}
+\subsubsection{\texorpdfstring{getHandlerPath()}{getHandlerPath()}}
+{\footnotesize\ttfamily std\+::string Dynamic\+Loader\+::get\+Handler\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}{Dynamic\+Handler}}}]{handler }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Get the name of a handler. 
+
+\mbox{\Hypertarget{classo_z_1_1_dynamic_loader_ae822f62c912bfdc978188d22e45798ff}\label{classo_z_1_1_dynamic_loader_ae822f62c912bfdc978188d22e45798ff}} 
+\index{oZ::DynamicLoader@{oZ::DynamicLoader}!getLastError@{getLastError}}
+\index{getLastError@{getLastError}!oZ::DynamicLoader@{oZ::DynamicLoader}}
+\subsubsection{\texorpdfstring{getLastError()}{getLastError()}}
+{\footnotesize\ttfamily std\+::string Dynamic\+Loader\+::get\+Last\+Error (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Get the last error as string. 
+
+\mbox{\Hypertarget{classo_z_1_1_dynamic_loader_a1a0201ebc77bdd744aa528d7cb999a89}\label{classo_z_1_1_dynamic_loader_a1a0201ebc77bdd744aa528d7cb999a89}} 
+\index{oZ::DynamicLoader@{oZ::DynamicLoader}!load@{load}}
+\index{load@{load}!oZ::DynamicLoader@{oZ::DynamicLoader}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}{Dynamic\+Handler}} Dynamic\+Loader\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Load a dynamic library. 
+
+\mbox{\Hypertarget{classo_z_1_1_dynamic_loader_a405559cdad1b8eba0bd3bee22fa764f9}\label{classo_z_1_1_dynamic_loader_a405559cdad1b8eba0bd3bee22fa764f9}} 
+\index{oZ::DynamicLoader@{oZ::DynamicLoader}!release@{release}}
+\index{release@{release}!oZ::DynamicLoader@{oZ::DynamicLoader}}
+\subsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily void Dynamic\+Loader\+::release (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Release loaded libraries. Call this function after every instances aquired from libraries are destroyed. If you destroy instances after, the virtual destructor will be unloaded and your program will crash. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_dynamic_loader_8hpp}{Dynamic\+Loader.\+hpp}}\item 
+/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_dynamic_loader_8cpp}{Dynamic\+Loader.\+cpp}}\end{DoxyCompactItemize}

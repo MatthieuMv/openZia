@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['endpoint_2ecpp',['Endpoint.cpp',['../_endpoint_8cpp.html',1,'']]],
-  ['endpoint_2ehpp',['Endpoint.hpp',['../_endpoint_8hpp.html',1,'']]]
+  ['dynamicloader_2ecpp',['DynamicLoader.cpp',['../_dynamic_loader_8cpp.html',1,'']]],
+  ['dynamicloader_2ehpp',['DynamicLoader.hpp',['../_dynamic_loader_8hpp.html',1,'']]]
 ];

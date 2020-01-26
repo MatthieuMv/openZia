@@ -26,11 +26,11 @@ set(FooSources
 )
 add_library(Foo SHARED ${FooSources})
 target_link_libraries(Foo openZia)
-target_include_directories(Foo PRIVATE ${OpenZiaIncludes})
+target_include_directories(Foo PRIVATE ${openZiaIncludes})
 
 add_executable(${PROJECT_NAME} ${TestsSources} ${OpenZiaSources})
 target_link_libraries(${PROJECT_NAME} criterion ${CMAKE_DL_LIBS})
-target_include_directories(${PROJECT_NAME} PRIVATE ${OpenZiaIncludes})
+target_include_directories(${PROJECT_NAME} PRIVATE ${openZiaIncludes})
 
 if (DEFINED OPENZIA_COVERAGE)
     target_link_libraries(${PROJECT_NAME} gcov)

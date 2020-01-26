@@ -14,7 +14,8 @@ using namespace oZ;
 
 class MyPipeline : public Pipeline
 {
-    virtual void onLoadModules(const std::string &) {}
+public:
+    virtual void onLoadModules(const std::string &) override {}
 };
 
 class BasicLogger : public ILogger
@@ -32,5 +33,6 @@ Test(ILogger, Basics)
     MyPipeline pipeline;
     BasicLogger logger;
 
+    pipeline.loadModules();
     logger.onRegisterCallbacks(pipeline);
 }

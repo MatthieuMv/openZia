@@ -9,13 +9,15 @@ Let's say you have a class **Server**.
 	#include <openZia/Pipeline.hpp>
 	class Server {
 	public:
-		// Set the pipeline module and configuration paths
-		Server(void) : _pipeline("ModuleDir", "ConfigDir") {}
+		// Set the pipeline module and configuration paths and load modules
+		Server(void) : _pipeline("ModuleDir", "ConfigDir") {
+			_pipeline.loadModules();
+		}
 
-		/* Your routines functions ... */
+		/* ... Your routines functions ... */
 
 	private:
-		/* Your members ... */
+		/* ... Your members ... */
 		Pipeline _pipeline; // Pipeline loads module
 
 		// Callback when server receives a message
@@ -72,9 +74,7 @@ private:
 /* --- Hello.cpp --- */
 #include "Hello.hpp"
 
-extern "C" {
-	oZ::ModulePtr CreateModule(void) { return std::make_shared<Hello>(); }
-}
+extern "C" oZ::ModulePtr CreateModule(void) { return std::make_shared<Hello>(); }
 ```
 
 ```C++
@@ -112,7 +112,5 @@ public:
 /* --- World.cpp --- */
 #include "World.hpp"
 
-extern "C" {
-	oZ::ModulePtr CreateModule(void) { return std::make_shared<World>(); }
-}
+extern "C" oZ::ModulePtr CreateModule(void) { return std::make_shared<World>(); }
 ```

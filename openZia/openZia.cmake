@@ -12,8 +12,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED 17 ON)
 get_filename_component(OpenZiaSourcesDir ${CMAKE_CURRENT_LIST_FILE} PATH)
 
 # Define external variables in order to link with ease
-set(OpenZiaLibs openZia)
-set(OpenZiaIncludes ${OpenZiaSourcesDir}/..)
+set(openZiaLibs openZia)
+set(openZiaIncludes ${OpenZiaSourcesDir}/..)
 
 # Library sources
 set(OpenZiaSources

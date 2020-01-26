@@ -72,6 +72,7 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classo_z_1_1_pipeline-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">oZ::Pipeline Class Reference</div>  </div>
@@ -100,9 +101,9 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a40ef016f523e714052118dc552f8176a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a40ef016f523e714052118dc552f8176a">Pipeline</a> (std::string &amp;&amp;moduleDir=&quot;Modules&quot;, std::string &amp;&amp;configurationDir=&quot;Modules/Configurations&quot;)</td></tr>
-<tr class="memdesc:a40ef016f523e714052118dc552f8176a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classo_z_1_1_pipeline.html" title="The pileline abstracts the pipeline of modules.">Pipeline</a> object.  <a href="#a40ef016f523e714052118dc552f8176a">More...</a><br /></td></tr>
-<tr class="separator:a40ef016f523e714052118dc552f8176a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fc2efefb6e953ce5a4f8d7d3437619a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a5fc2efefb6e953ce5a4f8d7d3437619a">Pipeline</a> (std::string &amp;&amp;moduleDir=&quot;Modules&quot;, std::string &amp;&amp;configurationDir=&quot;Modules/Config&quot;)</td></tr>
+<tr class="memdesc:a5fc2efefb6e953ce5a4f8d7d3437619a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classo_z_1_1_pipeline.html" title="The pileline abstracts the pipeline of modules.">Pipeline</a> object.  <a href="#a5fc2efefb6e953ce5a4f8d7d3437619a">More...</a><br /></td></tr>
+<tr class="separator:a5fc2efefb6e953ce5a4f8d7d3437619a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1d6cd9a6b71cae2b5ebe0031b945237"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#ab1d6cd9a6b71cae2b5ebe0031b945237">Pipeline</a> (const <a class="el" href="classo_z_1_1_pipeline.html">Pipeline</a> &amp;other)=delete</td></tr>
 <tr class="memdesc:ab1d6cd9a6b71cae2b5ebe0031b945237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable copy constructor to prevent useless huge copies.  <a href="#ab1d6cd9a6b71cae2b5ebe0031b945237">More...</a><br /></td></tr>
 <tr class="separator:ab1d6cd9a6b71cae2b5ebe0031b945237"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,6 +136,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a797f98947aace930fbb15cd6b2d9f726"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a797f98947aace930fbb15cd6b2d9f726">addModule</a> (Args &amp;&amp;...args)</td></tr>
 <tr class="memdesc:a797f98947aace930fbb15cd6b2d9f726"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emplaces a new module in the pipeline.  <a href="#a797f98947aace930fbb15cd6b2d9f726">More...</a><br /></td></tr>
 <tr class="separator:a797f98947aace930fbb15cd6b2d9f726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8aa56af891b2d889e7c21198daa1451"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceo_z.html#af5a56aaaee027504979038f38991adcf">ModulePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#aa8aa56af891b2d889e7c21198daa1451">findModule</a> (const char *name) const</td></tr>
+<tr class="memdesc:aa8aa56af891b2d889e7c21198daa1451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a module of given name in internal module list returning it as a shared pointer.  <a href="#aa8aa56af891b2d889e7c21198daa1451">More...</a><br /></td></tr>
+<tr class="separator:aa8aa56af891b2d889e7c21198daa1451"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f1abc0f7c0985dbc859cd5b20082998"><td class="memTemplParams" colspan="2">template&lt;typename Type  = IModule&gt; </td></tr>
 <tr class="memitem:a4f1abc0f7c0985dbc859cd5b20082998"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a4f1abc0f7c0985dbc859cd5b20082998">findModule</a> (void) const</td></tr>
 <tr class="memdesc:a4f1abc0f7c0985dbc859cd5b20082998"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a module of Type in internal module list returning it as a shared pointer.  <a href="#a4f1abc0f7c0985dbc859cd5b20082998">More...</a><br /></td></tr>
@@ -145,6 +149,11 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a0265d90a5540e69b25069d5d96973c53"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a0265d90a5540e69b25069d5d96973c53">onLoadModules</a> (const std::string &amp;directoryPath)</td></tr>
 <tr class="memdesc:a0265d90a5540e69b25069d5d96973c53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback which should load a set of module at runtime.  <a href="#a0265d90a5540e69b25069d5d96973c53">More...</a><br /></td></tr>
 <tr class="separator:a0265d90a5540e69b25069d5d96973c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a6412859211177d78f0eebcecda79e841"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classo_z_1_1_dynamic_loader.html">DynamicLoader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a6412859211177d78f0eebcecda79e841">_dynamicLoader</a></td></tr>
+<tr class="separator:a6412859211177d78f0eebcecda79e841"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The pileline abstracts the pipeline of modules. </p>
@@ -215,8 +224,8 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a40ef016f523e714052118dc552f8176a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40ef016f523e714052118dc552f8176a">&#9670;&nbsp;</a></span>Pipeline() <span class="overload">[1/3]</span></h2>
+<a id="a5fc2efefb6e953ce5a4f8d7d3437619a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fc2efefb6e953ce5a4f8d7d3437619a">&#9670;&nbsp;</a></span>Pipeline() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -231,7 +240,7 @@ Protected Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string &amp;&amp;&#160;</td>
-          <td class="paramname"><em>configurationDir</em> = <code>&quot;Modules/Configurations&quot;</code>&#160;</td>
+          <td class="paramname"><em>configurationDir</em> = <code>&quot;Modules/Config&quot;</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -360,8 +369,28 @@ template&lt;typename Type , typename ... Args&gt; </div>
 
 </div>
 </div>
+<a id="aa8aa56af891b2d889e7c21198daa1451"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8aa56af891b2d889e7c21198daa1451">&#9670;&nbsp;</a></span>findModule() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceo_z.html#af5a56aaaee027504979038f38991adcf">ModulePtr</a> Pipeline::findModule </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find a module of given name in internal module list returning it as a shared pointer. </p>
+
+</div>
+</div>
 <a id="a4f1abc0f7c0985dbc859cd5b20082998"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f1abc0f7c0985dbc859cd5b20082998">&#9670;&nbsp;</a></span>findModule()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f1abc0f7c0985dbc859cd5b20082998">&#9670;&nbsp;</a></span>findModule() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -586,6 +615,29 @@ template&lt;typename ModuleType &gt; </div>
 
 <p>Process a context into the pipeline. </p>
 <p>This function is thread-safe as long as modules are thread safe so keep it in mind when implementing your modules. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a6412859211177d78f0eebcecda79e841"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6412859211177d78f0eebcecda79e841">&#9670;&nbsp;</a></span>_dynamicLoader</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classo_z_1_1_dynamic_loader.html">DynamicLoader</a> oZ::Pipeline::_dynamicLoader</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -15,7 +15,6 @@ using namespace oZ;
 Pipeline::Pipeline(std::string &&moduleDir, std::string &&configurationDir)
     : _moduleDir(std::move(moduleDir)), _configurationDir(std::move(configurationDir))
 {
-    loadModules();
 }
 
 void Pipeline::loadModules(void)
@@ -42,7 +41,7 @@ void Pipeline::onLoadModules(const std::string &directoryPath)
     std::filesystem::path path(directoryPath);
 
     if (!std::filesystem::exists(path))
-        std::filesystem::create_directory(path);
+        throw std::logic_error("Pipeline::onLoadModules: Inexisting module directory '" + directoryPath + '\'');
     for (const auto &file : std::filesystem::directory_iterator(path)) {
        if (auto ext = file.path().extension().string(); ext != ".dll" && ext != ".so")
             continue;
@@ -100,8 +99,6 @@ void Pipeline::createPipeline(void)
 {
     if (!_configurationDir.empty() && _configurationDir.back() != '/')
         _configurationDir.push_back('/');
-    if (std::filesystem::path path = _configurationDir; !std::filesystem::exists(path))
-        std::filesystem::create_directory(path);
     for (const auto &module : _modules) {
         module->onRegisterCallbacks(*this);
         module->onRetreiveDependencies(*this);

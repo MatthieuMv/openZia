@@ -8,7 +8,6 @@
 #include <criterion/criterion.h>
 
 #include <openZia/Pipeline.hpp>
-#include <iostream>
 
 #include "Utils.hpp"
 
@@ -16,13 +15,17 @@ using namespace oZ;
 
 Test(Pipeline, Basics)
 {
-    std::cout << "BASICS" << std::endl;
     Pipeline pipeline(".", ".");
 
-
+    pipeline.loadModules();
     cr_assert_eq(pipeline.getModules().size(), 1);
     cr_assert_not(pipeline.findModule("aze"));
     cr_assert(pipeline.findModule("Foo"));
+}
+
+Test(Pipeline, InexistingModuleDir)
+{
+    cr_assert(CrashTest([] { Pipeline("azerty").loadModules(); }));
 }
 
 /*
@@ -89,7 +92,8 @@ public:
 
 class ABCPipeline : public Pipeline
 {
-    virtual void onLoadModules(const std::string &) {
+public:
+    virtual void onLoadModules(const std::string &) override {
         addModule<A>();
         addModule<B>();
         addModule<C>();
@@ -124,7 +128,7 @@ public:
 
 class AbisPipeline : public Pipeline
 {
-    virtual void onLoadModules(const std::string &) {
+    virtual void onLoadModules(const std::string &) override {
         addModule<Abis>();
         addModule<B>();
     }

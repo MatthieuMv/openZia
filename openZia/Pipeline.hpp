@@ -55,7 +55,7 @@ public:
      * @param moduleDir Directory containing modules to load
      * @param configurationDir Directory containing configuration files of modules
      */
-    Pipeline(std::string &&moduleDir = "Modules", std::string &&configurationDir = "Modules/Configurations");
+    Pipeline(std::string &&moduleDir = "Modules", std::string &&configurationDir = "Modules/Config");
 
     /**
      * @brief Disable copy constructor to prevent useless huge copies
@@ -136,7 +136,6 @@ protected:
      * @brief Callback which should load a set of module at runtime
      *
      *  This callback can be redefined to implement a custom loader.
-     *  The default implementation creates the directory if it doesn't exists.
      */
     virtual void onLoadModules(const std::string &directoryPath);
 
@@ -162,7 +161,6 @@ private:
     /**
      * @brief Create internal pipeline with the current internal modules.
      *  This function will first register modules' callbacks, then retreive dependencies of them to finally load their configuration files.
-     *  If the configuration folder doesn't exists, it will create it.
      */
     void createPipeline(void);
 

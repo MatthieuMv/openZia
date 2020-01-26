@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['set',['set',['../classo_z_1_1_h_t_t_p_1_1_header.html#a00466b7e626925b15b650733bab543f6',1,'oZ::HTTP::Header']]],
-  ['setaddress',['setAddress',['../classo_z_1_1_endpoint.html#a90caf5f6497ec5a09b34d7a6069502da',1,'oZ::Endpoint::setAddress(const std::string &amp;ip)'],['../classo_z_1_1_endpoint.html#a7259041c3bef1408d9a8c85c67a7b378',1,'oZ::Endpoint::setAddress(IP ip)']]],
-  ['setcode',['setCode',['../classo_z_1_1_h_t_t_p_1_1_response.html#a87d7f7da3ff4de61d1ead1a7d336dfa8',1,'oZ::HTTP::Response']]],
-  ['setendpoint',['setEndpoint',['../classo_z_1_1_context.html#ae909982a14c14b62038deff79f9151bb',1,'oZ::Context']]],
-  ['seterrorstate',['setErrorState',['../classo_z_1_1_context.html#a036d993634650ee8414c2f12d49d0204',1,'oZ::Context']]],
-  ['setmethod',['setMethod',['../classo_z_1_1_h_t_t_p_1_1_request.html#a9f3add384eca2de060c2f3c601e7b15e',1,'oZ::HTTP::Request']]],
-  ['setport',['setPort',['../classo_z_1_1_endpoint.html#a2f7fda5ee5e4645a8b9a55de9e534f1a',1,'oZ::Endpoint']]],
-  ['setstate',['setState',['../classo_z_1_1_context.html#ad64db4a4b4391e8b765338cc227f948b',1,'oZ::Context']]],
-  ['setversion',['setVersion',['../classo_z_1_1_h_t_t_p_1_1_request.html#a478b88fb4a88f9d0489b408162005b61',1,'oZ::HTTP::Request::setVersion()'],['../classo_z_1_1_h_t_t_p_1_1_response.html#a676c9d140574b68e28120b827187b06a',1,'oZ::HTTP::Response::setVersion()']]]
+  ['registercallback',['registerCallback',['../classo_z_1_1_pipeline.html#a869b02b2b8953993ccfb882a3e1f3a0f',1,'oZ::Pipeline::registerCallback(State state, Priority priority, CallbackHandler &amp;&amp;handler)'],['../classo_z_1_1_pipeline.html#af6d96b2697aa6770a3f1dd205b12c1c3',1,'oZ::Pipeline::registerCallback(State state, Priority priority, ModuleType *target, bool(ModuleType::*)(Context &amp;))']]],
+  ['release',['release',['../classo_z_1_1_dynamic_loader.html#a405559cdad1b8eba0bd3bee22fa764f9',1,'oZ::DynamicLoader']]],
+  ['request',['Request',['../classo_z_1_1_h_t_t_p_1_1_request.html#acc69cd33d01a659ec94ae669cdbdba2a',1,'oZ::HTTP::Request::Request(Method method=Method::NullMethod, URI &amp;&amp;uri=URI(), Version version=DefaultVersion)'],['../classo_z_1_1_h_t_t_p_1_1_request.html#a0912395e7f1d4b61ceb28754ba02498f',1,'oZ::HTTP::Request::Request(const Request &amp;other)=default'],['../classo_z_1_1_h_t_t_p_1_1_request.html#ab2033d92faeb72d7488477cc4f9859d5',1,'oZ::HTTP::Request::Request(Request &amp;&amp;other)=default']]],
+  ['response',['Response',['../classo_z_1_1_h_t_t_p_1_1_response.html#a0f77c44152124e9fb1d123138fd44552',1,'oZ::HTTP::Response::Response(Code code=Code::Undefined, Reason &amp;&amp;reason=Reason(), Body &amp;&amp;body=Body(), Version version=DefaultVersion)'],['../classo_z_1_1_h_t_t_p_1_1_response.html#a917512ce455c189e139f861d68268997',1,'oZ::HTTP::Response::Response(const Response &amp;other)=default'],['../classo_z_1_1_h_t_t_p_1_1_response.html#a3a709877eff1de8e3f0695421a616a5f',1,'oZ::HTTP::Response::Response(Response &amp;&amp;other)=default']]],
+  ['runpipeline',['runPipeline',['../classo_z_1_1_pipeline.html#a90bddc5511acce66f2aa780c3bba29b4',1,'oZ::Pipeline']]]
 ];

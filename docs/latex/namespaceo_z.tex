@@ -10,6 +10,8 @@
 \item 
 class \mbox{\hyperlink{classo_z_1_1_context}{Context}}
 \begin{DoxyCompactList}\small\item\em The context class uses different concepts \+: 1) State is a state-\/machine code which indicates where the context 2) Constant property should be set when an \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}} want to specify that his process is constant and thus can be cached. 3) \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} is the client who sent a message. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classo_z_1_1_dynamic_loader}{Dynamic\+Loader}}
+\item 
 class \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}
 \item 
 class \mbox{\hyperlink{classo_z_1_1_i_logger}{I\+Logger}}
@@ -25,6 +27,8 @@ class \mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}}
 \item 
 using \mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} = std\+::vector$<$ std\+::int8\+\_\+t $>$
 \begin{DoxyCompactList}\small\item\em Simple vector of byte used as network buffer. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}{Dynamic\+Handler}} = void $\ast$
+\item 
 using \mbox{\hyperlink{namespaceo_z_ace55c2d0182a14ceea9649d0d0cf9c4a}{IP}} = std\+::uint32\+\_\+t
 \item 
 using \mbox{\hyperlink{namespaceo_z_afeccb82d451972ba3b7d2a32b066b30b}{Port}} = std\+::uint16\+\_\+t
@@ -61,12 +65,13 @@ enum \mbox{\hyperlink{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfa}{Level}} \+
  \}
 \begin{DoxyCompactList}\small\item\em Levels of log messages. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12}{Priority}} \+: std\+::uint16\+\_\+t \{ \newline
-\mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a0bf10abb7e9da477f36b2e69fdae8745}{Independent}} = 0, 
-\mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a44acd2d788f9e79eba46abcb3c006b0e}{Low}} = 1000, 
-\mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a4e322bd010e5b70a4c4172c619a7e370}{Medium}} = 2000, 
-\mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a7f08ba8e8aed8277432e0eba6cf9ffc2}{High}} = 3000, 
+\mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12aa71d089139a7dea68f3de0ff29990bff}{Last}} = 0, 
+\mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a0bf10abb7e9da477f36b2e69fdae8745}{Independent}} = 1000, 
+\mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a44acd2d788f9e79eba46abcb3c006b0e}{Low}} = 2000, 
+\mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a4e322bd010e5b70a4c4172c619a7e370}{Medium}} = 3000, 
 \newline
-\mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a3e5081e5e70560fee15eb20b87662a69}{A\+S\+AP}} = 4000
+\mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a7f08ba8e8aed8277432e0eba6cf9ffc2}{High}} = 4000, 
+\mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a3e5081e5e70560fee15eb20b87662a69}{A\+S\+AP}} = 5000
  \}
 \begin{DoxyCompactList}\small\item\em Priority enum, used to sort modules in the pipeline. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -81,6 +86,12 @@ enum \mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12}{Priority}}
 
 
 Simple vector of byte used as network buffer. 
+
+\mbox{\Hypertarget{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}\label{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}} 
+\index{oZ@{oZ}!DynamicHandler@{DynamicHandler}}
+\index{DynamicHandler@{DynamicHandler}!oZ@{oZ}}
+\subsubsection{\texorpdfstring{DynamicHandler}{DynamicHandler}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}{o\+Z\+::\+Dynamic\+Handler}} = typedef void $\ast$}
 
 \mbox{\Hypertarget{namespaceo_z_ace55c2d0182a14ceea9649d0d0cf9c4a}\label{namespaceo_z_ace55c2d0182a14ceea9649d0d0cf9c4a}} 
 \index{oZ@{oZ}!IP@{IP}}
@@ -176,6 +187,10 @@ Debug&\\
 Priority enum, used to sort modules in the pipeline. 
 
 If you need to sort modules with more precision, you can use intermediate offset. Example\+: Low + 1, Low + 2, ... \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Last@{Last}!oZ@{oZ}}\index{oZ@{oZ}!Last@{Last}}}\mbox{\Hypertarget{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12aa71d089139a7dea68f3de0ff29990bff}\label{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12aa71d089139a7dea68f3de0ff29990bff}} 
+Last&\\
+\hline
+
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Independent@{Independent}!oZ@{oZ}}\index{oZ@{oZ}!Independent@{Independent}}}\mbox{\Hypertarget{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a0bf10abb7e9da477f36b2e69fdae8745}\label{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12a0bf10abb7e9da477f36b2e69fdae8745}} 
 Independent&\\
 \hline
