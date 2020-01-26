@@ -42,18 +42,21 @@ ModulePtr Pipeline::findModule(const char *name) const
 
 void Pipeline::onLoadModules(const std::string &directoryPath)
 {
+    std::cout << "onLoadModules" << std::endl;
     std::filesystem::path path(directoryPath);
 
+    std::cout << "Checking existence of directory" << directoryPath << std::endl;
     if (!std::filesystem::exists(path))
         throw std::logic_error("Pipeline::onLoadModules: Inexisting module directory '" + directoryPath + '\'');
     for (const auto &file : std::filesystem::directory_iterator(path)) {
+        std::cout << "Found file " << file.path().string() << std::endl;
        if (auto ext = file.path().extension().string(); ext != ".dll" && ext != ".so")
             continue;
-        std::cout << "Found file " << file.path().string() << std::endl;
+        std::cout << "Opening file " << file.path().string() << std::endl;
         auto handler = _dynamicLoader.load(file.path());
-        std::cout << "Searching function" << std::endl;
+        std::cout << "Searching function " << file.path().string()  << std::endl;
         auto function = _dynamicLoader.getFunction<ModulePtr(*)(void)>(handler, "CreateModule");
-        std::cout << "Instantiating module" << std::endl;
+        std::cout << "Instantiating module " << file.path().string()  << std::endl;
         _modules.emplace_back((*function)());
     }
 }
