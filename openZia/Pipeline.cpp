@@ -5,9 +5,16 @@
 ** Pipeline template sources
 */
 
-#include <filesystem>
+#if __has_include(<filesystem>)
+    #include <filesystem>
+#elif __has_include(<experimental/filesystem>)
+    #include <experimental/filesystem>
+    namespace std::filesystem = std::experimental::filesystem;
+#else
+    #error "You compiler doesn't support std::filesystem nor std::experimental::filesystem"
+#endif
+
 #include <cstring>
-#include <iostream>
 
 #include "Pipeline.hpp"
 
@@ -20,12 +27,10 @@ Pipeline::Pipeline(std::string &&moduleDir, std::string &&configurationDir)
 
 void Pipeline::loadModules(void)
 {
-    std::cout << "Clearing pipeline..." << std::endl;
     for (auto &state : _pipeline)
         state.clear();
     _modules.clear();
     _dynamicLoader.release();
-    std::cout << "Loading modules..." << std::endl;
     onLoadModules(_moduleDir);
     checkModulesDependencies();
     createPipeline();
@@ -42,23 +47,17 @@ ModulePtr Pipeline::findModule(const char *name) const
 
 void Pipeline::onLoadModules(const std::string &directoryPath)
 {
-    std::cout << "onLoadModules" << std::endl;
     std::filesystem::path path(directoryPath);
 
-    std::cout << "Checking existence of directory" << directoryPath << std::endl;
     if (!std::filesystem::exists(path))
         throw std::logic_error("Pipeline::onLoadModules: Inexisting module directory '" + directoryPath + '\'');
     for (const auto &file : std::filesystem::directory_iterator(path)) {
-        std::cout << "Found file " << file.path().string() << std::endl;
         if (!file.path().has_extension())
             continue;
-        if (auto ext = file.path().extension().string(); ext != ".dll" && ext != ".so")
+        else if (auto ext = file.path().extension().string(); ext != ".dll" && ext != ".so")
             continue;
-        std::cout << "Opening file " << file.path().string() << std::endl;
         auto handler = _dynamicLoader.load(file.path());
-        std::cout << "Searching function " << file.path().string()  << std::endl;
         auto function = _dynamicLoader.getFunction<ModulePtr(*)(void)>(handler, "CreateModule");
-        std::cout << "Instantiating module " << file.path().string()  << std::endl;
         _modules.emplace_back((*function)());
     }
 }

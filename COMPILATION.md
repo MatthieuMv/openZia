@@ -5,7 +5,7 @@ In this section we will cover the compilation part of openZia. We will see how t
 ## Independent compilation
 
 You may first want to assert that openZia compiles well in your system.
-The first dependency is to check your C++ compiler, it must be able to support **all C++17 features** (for linux **GCC >= 8** will be required as GCC 7 doesn't support well filesystem). You must also have **CMake** installed with a lower build system like **Makefiles** or **Visual studio solutions**.
+The first dependency is to check your C++ compiler, it must be able to support **all C++17 features**. You must also have **CMake** installed with a lower build system like **Makefiles** or **Visual studio solutions**.
 If you wish to start unit tests, you must install **Criterion** unit-testing library.
 For the coverage, you will need **gcovr**.
 
