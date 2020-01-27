@@ -50,7 +50,9 @@ void Pipeline::onLoadModules(const std::string &directoryPath)
         throw std::logic_error("Pipeline::onLoadModules: Inexisting module directory '" + directoryPath + '\'');
     for (const auto &file : std::filesystem::directory_iterator(path)) {
         std::cout << "Found file " << file.path().string() << std::endl;
-       if (auto ext = file.path().extension().string(); ext != ".dll" && ext != ".so")
+        if (!file.path().has_extension())
+            continue;
+        if (auto ext = file.path().extension().string(); ext != ".dll" && ext != ".so")
             continue;
         std::cout << "Opening file " << file.path().string() << std::endl;
         auto handler = _dynamicLoader.load(file.path());

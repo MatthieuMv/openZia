@@ -1,4 +1,5 @@
 # Module implementation
+
 A Module is a dynamic library which contains a single class loaded at runtime.
 It means that you must compile every module independently.
 For that you must implement your modules deriving from **oZ::IModule** interface.
@@ -9,6 +10,7 @@ extern "C" ModulePtr CreateModule(void) { return std::make_shared<MyModule>(); }
 The API already does the dynamic library loading for you so you can focus more on creating modules.
 
 ## Module
+
 In this section we will take a closer look at the interface class **oZ::IModule**, and all its components.
 ```C++
 // Module interface
@@ -18,7 +20,31 @@ using ModulePtr = std::shared_ptr<IModule>
 ```
 We use shared pointers to store instantiated modules. This allows holding a reference to a module while asserting its existence.
 
+## Modules callbacks
+
+Each module can register multiple callback functions at any state of the pipeline. The enumeration of each callback is **oZ::State**.
+
+Use the different states and the **oZ::Priority** enumeration to sort modules callback.
+Each state of the pipeline are triggered in this order:
+> BeforeParse -> Parse -> AfterParse -> BeforeInterpret -> Interpret -> AfterInterpret -> Completed
+
+Each callback must take a **oZ::Context** in parameter and return a boolean.
+At any time, you if an error is set using **oZ::Context::setErrorState**, the pipeline will trigger the special **oZ::State::Error** sate callback.
+If you return false from the callback, the pipeline will not trigger other modules' callbacks from the current **oZ::State** and go straight for the next one.
+
+```C++
+bool MyModule::myCallback(oZ::Context &context)
+{
+	if (hasError(context)) {
+		context.setErrorState();
+		return false; // If you return true here, the pipeline will finish to trigger every callback of the current state and not immediatly call Error callbacks
+	}
+	return true;
+}
+```
+
 ## Must have functions
+
 Each module have a set of virtual function to be override. Actually, only 2 of them are pure virtual :
 ```C++
 // Get the raw string name of module instance
@@ -29,6 +55,7 @@ virtual void onRegisterCallbacks(Pipeline &pipeline) = 0;
 ```
 
 ### HowTo: HTTP module
+
 Let's see a simple example with an independent HTTP Module:
 ```C++
 class HTTPModule : public oZ::IModule
@@ -56,6 +83,7 @@ public:
 And that's it ! You don't have to implement anything else to create an independent module.
 
 ## Optional functions
+
 However, there are more virtual functions for more complex needs. These functions are default-implemented to let you the choice of using them or not.
 ```C++
 // Get the list of dependencies (as a vector of raw string, see function getName above)
@@ -69,6 +97,7 @@ virtual void onLoadConfigurationFile(const std::string &directory);
 ```
 
 ### HowTo: Dependencies
+
 Let's first see how dependencies are handled given a short example:
 
 ```C++
@@ -99,6 +128,7 @@ private:
 ```
 
 ### HowTo: Configuration file
+
 Let's see how simple it is to add a configuration file to setup a module.
 Please note that the configuration file language is totally up to you, in this example it is named *MyCustomConfigLoader*.
 ```C++
