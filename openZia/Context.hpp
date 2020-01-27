@@ -7,9 +7,8 @@
 
 #pragma once
 
-#include "ByteArray.hpp"
+#include "Packet.hpp"
 #include "HTTP.hpp"
-#include "Endpoint.hpp"
 
 namespace oZ
 {
@@ -59,9 +58,9 @@ public:
     Context(void) = default;
 
     /**
-     * @brief Construct a new Context object using a buffer
+     * @brief Construct a new Context object using a packet
      */
-    Context(ByteArray &&buffer, const Endpoint endpoint);
+    Context(Packet &&packet);
 
     /**
      * @brief Construct a new Context object by copy (this operation can be very expensive !!)
@@ -79,24 +78,14 @@ public:
     ~Context(void) = default;
 
     /**
-     * @brief Get the ByteArray of the context
+     * @brief Get the network Packet of the context
      */
-    [[nodiscard]] ByteArray getByteArray(void) noexcept { return _buffer; }
+    [[nodiscard]] Packet &getPacket(void) noexcept { return _packet; }
 
     /**
-     * @brief Get the ByteArray of the context (constant)
+     * @brief Get the network Packet of the context (constant)
      */
-    [[nodiscard]] const ByteArray getByteArray(void) const noexcept { return _buffer; }
-
-    /**
-     * @brief Get the current context' state
-     */
-    [[nodiscard]] Endpoint getEndpoint(void) const noexcept { return _endpoint; }
-
-    /**
-     * @brief Set the Endpoint target
-     */
-    void setEndpoint(Endpoint endpoint) noexcept { _endpoint = endpoint; }
+    [[nodiscard]] const Packet &getPacket(void) const noexcept { return _packet; }
 
     /**
      * @brief Get the Request of the HTTP context
@@ -160,10 +149,9 @@ public:
     [[nodiscard]] bool isConstant(void) const noexcept { return _constant; }
 
 private:
+    Packet _packet;
     HTTP::Request _request;
     HTTP::Response _response;
-    ByteArray _buffer;
-    Endpoint _endpoint;
     State _state = State::BeforeParse;
     bool _constant = true;
 };

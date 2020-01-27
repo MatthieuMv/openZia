@@ -3,7 +3,7 @@
 [![codecov](https://codecov.io/gh/MatthieuMv/openZia/branch/master/graph/badge.svg)](https://codecov.io/gh/MatthieuMv/openZia)
 
 
-Documentation: https://matthieumv.github.io/openZia
+[**openZia's documentation page**](https://matthieumv.github.io/openZia)
 
 # open.. what ?
 
@@ -39,7 +39,7 @@ The API is based on a **Fixed Pipeline** that is composed of various **callbacks
 
 The **oZ::Pipeline** class abstract module loading and pipeline creation on both windows and linux. **oZ::Pipeline::loadModules** function will search dynamic libraries in the module directory provided in pipeline's constructor.
 
-**oZ::Context** is the class used to process any HTTP request into the pipeline.
+The **oZ::Context** class stores the current pipeline **state**, network client **buffer** and its **endpoint**, HTTP **request** / **response** and an **encryption key** if used by the client (to implement SSL efficiently). This class is described in details in the [Context guide](CONTEXT.md).
 
 **oZ::Pipeline** and **oZ::Context** are intended to be used in a [State Pattern](https://en.wikipedia.org/wiki/State_pattern) where the context hold the current state and get changed while being processed.
 

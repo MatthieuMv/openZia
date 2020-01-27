@@ -21,6 +21,7 @@ set(OpenZiaSources
     ${OpenZiaSourcesDir}/Endpoint.hpp
     ${OpenZiaSourcesDir}/Endpoint.cpp
 
+    ${OpenZiaSourcesDir}/Packet.hpp
     ${OpenZiaSourcesDir}/Context.hpp
     ${OpenZiaSourcesDir}/Context.cpp
 

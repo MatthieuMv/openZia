@@ -10,8 +10,8 @@
 
 using namespace oZ;
 
-Context::Context(ByteArray &&buffer, const Endpoint endpoint)
-    : _buffer(std::move(buffer)), _endpoint(endpoint)
+Context::Context(Packet &&packet)
+    : _packet(std::move(packet))
 {
 }
 

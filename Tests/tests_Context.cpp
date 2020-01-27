@@ -42,12 +42,18 @@ Test(Context, States)
 Test(Context, Basics)
 {
     Endpoint end1("127.0.0.1", 4040), end2("192.127.4.1", 80);
-    Context context(ByteArray(), end1);
+    Context context(Packet(ByteArray(), end1));
     const auto &ctx = context;
 
-    cr_assert(context.getByteArray().empty());
-    cr_assert(ctx.getByteArray().empty());
-    cr_assert_eq(context.getEndpoint(), end1);
-    context.setEndpoint(end2);
-    cr_assert_eq(context.getEndpoint(), end2);
+    cr_assert(context.getPacket().getByteArray().empty());
+    cr_assert(ctx.getPacket().getByteArray().empty());
+    cr_assert_eq(context.getPacket().getEndpoint(), end1);
+    context.getPacket().setEndpoint(end2);
+    cr_assert_eq(context.getPacket().getEndpoint(), end2);
+    cr_assert_not(context.getPacket().hasEncryption());
+    context.getPacket().setEncryption(true);
+    cr_assert(context.getPacket().hasEncryption());
+    cr_assert(ctx.getPacket().getEncryptionKey().empty());
+    context.getPacket().getEncryptionKey() = "123";
+    cr_assert_eq(ctx.getPacket().getEncryptionKey(), "123");
 }
