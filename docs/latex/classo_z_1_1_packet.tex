@@ -1,0 +1,152 @@
+\hypertarget{classo_z_1_1_packet}{}\section{oZ\+::Packet Class Reference}
+\label{classo_z_1_1_packet}\index{oZ::Packet@{oZ::Packet}}
+
+
+{\ttfamily \#include $<$Packet.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classo_z_1_1_packet_a5c96f8d5db686e035b199e8aeb0e0cea}{Packet}} (void)=default
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_packet}{Packet}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classo_z_1_1_packet_a0d77934c04128b52f1dae887ca198051}{Packet}} (\mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} \&\&byte\+Array, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_packet}{Packet}} object using byte\+Array and an endpoint. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classo_z_1_1_packet_a01d80a0c452b1e07dfd160f494be2af5}{$\sim$\+Packet}} (void)=default
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classo_z_1_1_packet}{Packet}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} \& \mbox{\hyperlink{classo_z_1_1_packet_a8a5d791e4675a3f065928884b64fe7bf}{get\+Byte\+Array}} (void) noexcept
+\begin{DoxyCompactList}\small\item\em Get the Byte\+Array of the context. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} \mbox{\hyperlink{classo_z_1_1_packet_a4919e1356309ad8c9d7595052d0ca498}{get\+Byte\+Array}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Get the Byte\+Array of the context (constant) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} \mbox{\hyperlink{classo_z_1_1_packet_a89367cc491fdfdb6bf88eda9bc4eb219}{get\+Endpoint}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Get the current context\textquotesingle{} state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classo_z_1_1_packet_a53cd7a27e65dcb1667d9a0beb1dc2f66}{set\+Endpoint}} (\mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint) noexcept
+\begin{DoxyCompactList}\small\item\em Set the \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} target. \end{DoxyCompactList}\item 
+std\+::string \& \mbox{\hyperlink{classo_z_1_1_packet_a93abca1901de8784297e53e2a92dc810}{get\+Encryption\+Key}} (void) noexcept
+\begin{DoxyCompactList}\small\item\em Get the Encryption Key. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classo_z_1_1_packet_a71f6029e78232544fd48761de456719a}{get\+Encryption\+Key}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Get the Encryption Key (constant) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classo_z_1_1_packet_abf9bd4979afb439272832d5a90f7d556}{has\+Encryption}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Check the usage of encryption port (default H\+T\+T\+PS is 443) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classo_z_1_1_packet_acb3412cd14f3dd6749f8dfa0892f4bf4}{set\+Encryption}} (bool value) noexcept
+\begin{DoxyCompactList}\small\item\em Set the encryption state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classo_z_1_1_packet_a5c96f8d5db686e035b199e8aeb0e0cea}\label{classo_z_1_1_packet_a5c96f8d5db686e035b199e8aeb0e0cea}} 
+\index{oZ::Packet@{oZ::Packet}!Packet@{Packet}}
+\index{Packet@{Packet}!oZ::Packet@{oZ::Packet}}
+\subsubsection{\texorpdfstring{Packet()}{Packet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily o\+Z\+::\+Packet\+::\+Packet (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Construct a new \mbox{\hyperlink{classo_z_1_1_packet}{Packet}} object. 
+
+\mbox{\Hypertarget{classo_z_1_1_packet_a0d77934c04128b52f1dae887ca198051}\label{classo_z_1_1_packet_a0d77934c04128b52f1dae887ca198051}} 
+\index{oZ::Packet@{oZ::Packet}!Packet@{Packet}}
+\index{Packet@{Packet}!oZ::Packet@{oZ::Packet}}
+\subsubsection{\texorpdfstring{Packet()}{Packet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily o\+Z\+::\+Packet\+::\+Packet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} \&\&}]{byte\+Array,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classo_z_1_1_packet}{Packet}} object using byte\+Array and an endpoint. 
+
+\mbox{\Hypertarget{classo_z_1_1_packet_a01d80a0c452b1e07dfd160f494be2af5}\label{classo_z_1_1_packet_a01d80a0c452b1e07dfd160f494be2af5}} 
+\index{oZ::Packet@{oZ::Packet}!````~Packet@{$\sim$Packet}}
+\index{````~Packet@{$\sim$Packet}!oZ::Packet@{oZ::Packet}}
+\subsubsection{\texorpdfstring{$\sim$Packet()}{~Packet()}}
+{\footnotesize\ttfamily o\+Z\+::\+Packet\+::$\sim$\+Packet (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destroy the \mbox{\hyperlink{classo_z_1_1_packet}{Packet}} object. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classo_z_1_1_packet_a8a5d791e4675a3f065928884b64fe7bf}\label{classo_z_1_1_packet_a8a5d791e4675a3f065928884b64fe7bf}} 
+\index{oZ::Packet@{oZ::Packet}!getByteArray@{getByteArray}}
+\index{getByteArray@{getByteArray}!oZ::Packet@{oZ::Packet}}
+\subsubsection{\texorpdfstring{getByteArray()}{getByteArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}}\& o\+Z\+::\+Packet\+::get\+Byte\+Array (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the Byte\+Array of the context. 
+
+\mbox{\Hypertarget{classo_z_1_1_packet_a4919e1356309ad8c9d7595052d0ca498}\label{classo_z_1_1_packet_a4919e1356309ad8c9d7595052d0ca498}} 
+\index{oZ::Packet@{oZ::Packet}!getByteArray@{getByteArray}}
+\index{getByteArray@{getByteArray}!oZ::Packet@{oZ::Packet}}
+\subsubsection{\texorpdfstring{getByteArray()}{getByteArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} o\+Z\+::\+Packet\+::get\+Byte\+Array (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the Byte\+Array of the context (constant) 
+
+\mbox{\Hypertarget{classo_z_1_1_packet_a93abca1901de8784297e53e2a92dc810}\label{classo_z_1_1_packet_a93abca1901de8784297e53e2a92dc810}} 
+\index{oZ::Packet@{oZ::Packet}!getEncryptionKey@{getEncryptionKey}}
+\index{getEncryptionKey@{getEncryptionKey}!oZ::Packet@{oZ::Packet}}
+\subsubsection{\texorpdfstring{getEncryptionKey()}{getEncryptionKey()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string\& o\+Z\+::\+Packet\+::get\+Encryption\+Key (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the Encryption Key. 
+
+\mbox{\Hypertarget{classo_z_1_1_packet_a71f6029e78232544fd48761de456719a}\label{classo_z_1_1_packet_a71f6029e78232544fd48761de456719a}} 
+\index{oZ::Packet@{oZ::Packet}!getEncryptionKey@{getEncryptionKey}}
+\index{getEncryptionKey@{getEncryptionKey}!oZ::Packet@{oZ::Packet}}
+\subsubsection{\texorpdfstring{getEncryptionKey()}{getEncryptionKey()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string\& o\+Z\+::\+Packet\+::get\+Encryption\+Key (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the Encryption Key (constant) 
+
+\mbox{\Hypertarget{classo_z_1_1_packet_a89367cc491fdfdb6bf88eda9bc4eb219}\label{classo_z_1_1_packet_a89367cc491fdfdb6bf88eda9bc4eb219}} 
+\index{oZ::Packet@{oZ::Packet}!getEndpoint@{getEndpoint}}
+\index{getEndpoint@{getEndpoint}!oZ::Packet@{oZ::Packet}}
+\subsubsection{\texorpdfstring{getEndpoint()}{getEndpoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} o\+Z\+::\+Packet\+::get\+Endpoint (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the current context\textquotesingle{} state. 
+
+\mbox{\Hypertarget{classo_z_1_1_packet_abf9bd4979afb439272832d5a90f7d556}\label{classo_z_1_1_packet_abf9bd4979afb439272832d5a90f7d556}} 
+\index{oZ::Packet@{oZ::Packet}!hasEncryption@{hasEncryption}}
+\index{hasEncryption@{hasEncryption}!oZ::Packet@{oZ::Packet}}
+\subsubsection{\texorpdfstring{hasEncryption()}{hasEncryption()}}
+{\footnotesize\ttfamily bool o\+Z\+::\+Packet\+::has\+Encryption (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Check the usage of encryption port (default H\+T\+T\+PS is 443) 
+
+\mbox{\Hypertarget{classo_z_1_1_packet_acb3412cd14f3dd6749f8dfa0892f4bf4}\label{classo_z_1_1_packet_acb3412cd14f3dd6749f8dfa0892f4bf4}} 
+\index{oZ::Packet@{oZ::Packet}!setEncryption@{setEncryption}}
+\index{setEncryption@{setEncryption}!oZ::Packet@{oZ::Packet}}
+\subsubsection{\texorpdfstring{setEncryption()}{setEncryption()}}
+{\footnotesize\ttfamily void o\+Z\+::\+Packet\+::set\+Encryption (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Set the encryption state. 
+
+\mbox{\Hypertarget{classo_z_1_1_packet_a53cd7a27e65dcb1667d9a0beb1dc2f66}\label{classo_z_1_1_packet_a53cd7a27e65dcb1667d9a0beb1dc2f66}} 
+\index{oZ::Packet@{oZ::Packet}!setEndpoint@{setEndpoint}}
+\index{setEndpoint@{setEndpoint}!oZ::Packet@{oZ::Packet}}
+\subsubsection{\texorpdfstring{setEndpoint()}{setEndpoint()}}
+{\footnotesize\ttfamily void o\+Z\+::\+Packet\+::set\+Endpoint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Set the \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} target. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_packet_8hpp}{Packet.\+hpp}}\end{DoxyCompactItemize}

@@ -14,22 +14,18 @@ The context class uses different concepts \+: 1) State is a state-\/machine code
 \item 
 \mbox{\hyperlink{classo_z_1_1_context_af3aab1b32d4333320612049bdafb07d7}{Context}} (void)=default
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classo_z_1_1_context_a17743171fb82c800a3fb5da19c05532e}{Context}} (\mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} \&\&buffer, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint)
-\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object using a buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classo_z_1_1_context_aa57df3d21eacc6e149f9c61c0c3f196b}{Context}} (\mbox{\hyperlink{classo_z_1_1_packet}{Packet}} \&\&packet)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object using a packet. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classo_z_1_1_context_a906eb29f22e89bc121c47096c7a4b601}{Context}} (const \mbox{\hyperlink{classo_z_1_1_context}{Context}} \&other)=default
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object by copy (this operation can be very expensive !!) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classo_z_1_1_context_ad4a49704266f6e8312b1c9c2ca8ad710}{Context}} (\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&\&other)=default
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object by move. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classo_z_1_1_context_afe2e01a552a7711772e4028f778703e8}{$\sim$\+Context}} (void)=default
 \begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classo_z_1_1_context}{Context}} object. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} \mbox{\hyperlink{classo_z_1_1_context_a587356df2f6993e8e87c08090968d90e}{get\+Byte\+Array}} (void) noexcept
-\begin{DoxyCompactList}\small\item\em Get the Byte\+Array of the context. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} \mbox{\hyperlink{classo_z_1_1_context_aeec2e7cd171e9c6b01b983969f1f7ae6}{get\+Byte\+Array}} (void) const noexcept
-\begin{DoxyCompactList}\small\item\em Get the Byte\+Array of the context (constant) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} \mbox{\hyperlink{classo_z_1_1_context_a6409dfa205d2d292edb725ca2f82c776}{get\+Endpoint}} (void) const noexcept
-\begin{DoxyCompactList}\small\item\em Get the current context\textquotesingle{} state. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classo_z_1_1_context_ae909982a14c14b62038deff79f9151bb}{set\+Endpoint}} (\mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint) noexcept
-\begin{DoxyCompactList}\small\item\em Set the \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} target. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classo_z_1_1_packet}{Packet}} \& \mbox{\hyperlink{classo_z_1_1_context_ad2814c8e2b850cb4c5a70a964dbd3d58}{get\+Packet}} (void) noexcept
+\begin{DoxyCompactList}\small\item\em Get the network \mbox{\hyperlink{classo_z_1_1_packet}{Packet}} of the context. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classo_z_1_1_packet}{Packet}} \& \mbox{\hyperlink{classo_z_1_1_context_a25918977b74de5fc3874d38a2f235ba2}{get\+Packet}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Get the network \mbox{\hyperlink{classo_z_1_1_packet}{Packet}} of the context (constant) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_request}{H\+T\+T\+P\+::\+Request}} \mbox{\hyperlink{classo_z_1_1_context_ae675e54f6453c48ee8ccf96706965429}{get\+Request}} (void) noexcept
 \begin{DoxyCompactList}\small\item\em Get the Request of the \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}} context. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_request}{H\+T\+T\+P\+::\+Request}} \mbox{\hyperlink{classo_z_1_1_context_adad7a501cd8fb3bb65e24fd2639c63f0}{get\+Request}} (void) const noexcept
@@ -70,15 +66,15 @@ The context class uses different concepts \+: 1) State is a state-\/machine code
 
 Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object. 
 
-\mbox{\Hypertarget{classo_z_1_1_context_a17743171fb82c800a3fb5da19c05532e}\label{classo_z_1_1_context_a17743171fb82c800a3fb5da19c05532e}} 
+\mbox{\Hypertarget{classo_z_1_1_context_aa57df3d21eacc6e149f9c61c0c3f196b}\label{classo_z_1_1_context_aa57df3d21eacc6e149f9c61c0c3f196b}} 
 \index{oZ::Context@{oZ::Context}!Context@{Context}}
 \index{Context@{Context}!oZ::Context@{oZ::Context}}
 \subsubsection{\texorpdfstring{Context()}{Context()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily Context\+::\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} \&\&}]{buffer,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Context\+::\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classo_z_1_1_packet}{Packet}} \&\&}]{packet }\end{DoxyParamCaption})}
 
 
 
-Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object using a buffer. 
+Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object using a packet. 
 
 \mbox{\Hypertarget{classo_z_1_1_context_a906eb29f22e89bc121c47096c7a4b601}\label{classo_z_1_1_context_a906eb29f22e89bc121c47096c7a4b601}} 
 \index{oZ::Context@{oZ::Context}!Context@{Context}}
@@ -113,35 +109,25 @@ Destroy the \mbox{\hyperlink{classo_z_1_1_context}{Context}} object.
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classo_z_1_1_context_a587356df2f6993e8e87c08090968d90e}\label{classo_z_1_1_context_a587356df2f6993e8e87c08090968d90e}} 
-\index{oZ::Context@{oZ::Context}!getByteArray@{getByteArray}}
-\index{getByteArray@{getByteArray}!oZ::Context@{oZ::Context}}
-\subsubsection{\texorpdfstring{getByteArray()}{getByteArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} o\+Z\+::\+Context\+::get\+Byte\+Array (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+\mbox{\Hypertarget{classo_z_1_1_context_ad2814c8e2b850cb4c5a70a964dbd3d58}\label{classo_z_1_1_context_ad2814c8e2b850cb4c5a70a964dbd3d58}} 
+\index{oZ::Context@{oZ::Context}!getPacket@{getPacket}}
+\index{getPacket@{getPacket}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{getPacket()}{getPacket()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classo_z_1_1_packet}{Packet}}\& o\+Z\+::\+Context\+::get\+Packet (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
-Get the Byte\+Array of the context. 
+Get the network \mbox{\hyperlink{classo_z_1_1_packet}{Packet}} of the context. 
 
-\mbox{\Hypertarget{classo_z_1_1_context_aeec2e7cd171e9c6b01b983969f1f7ae6}\label{classo_z_1_1_context_aeec2e7cd171e9c6b01b983969f1f7ae6}} 
-\index{oZ::Context@{oZ::Context}!getByteArray@{getByteArray}}
-\index{getByteArray@{getByteArray}!oZ::Context@{oZ::Context}}
-\subsubsection{\texorpdfstring{getByteArray()}{getByteArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} o\+Z\+::\+Context\+::get\+Byte\+Array (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
-
-
-
-Get the Byte\+Array of the context (constant) 
-
-\mbox{\Hypertarget{classo_z_1_1_context_a6409dfa205d2d292edb725ca2f82c776}\label{classo_z_1_1_context_a6409dfa205d2d292edb725ca2f82c776}} 
-\index{oZ::Context@{oZ::Context}!getEndpoint@{getEndpoint}}
-\index{getEndpoint@{getEndpoint}!oZ::Context@{oZ::Context}}
-\subsubsection{\texorpdfstring{getEndpoint()}{getEndpoint()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} o\+Z\+::\+Context\+::get\+Endpoint (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+\mbox{\Hypertarget{classo_z_1_1_context_a25918977b74de5fc3874d38a2f235ba2}\label{classo_z_1_1_context_a25918977b74de5fc3874d38a2f235ba2}} 
+\index{oZ::Context@{oZ::Context}!getPacket@{getPacket}}
+\index{getPacket@{getPacket}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{getPacket()}{getPacket()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classo_z_1_1_packet}{Packet}}\& o\+Z\+::\+Context\+::get\+Packet (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
-Get the current context\textquotesingle{} state. 
+Get the network \mbox{\hyperlink{classo_z_1_1_packet}{Packet}} of the context (constant) 
 
 \mbox{\Hypertarget{classo_z_1_1_context_ae675e54f6453c48ee8ccf96706965429}\label{classo_z_1_1_context_ae675e54f6453c48ee8ccf96706965429}} 
 \index{oZ::Context@{oZ::Context}!getRequest@{getRequest}}
@@ -242,16 +228,6 @@ Set internal state to the next one Return true if the state has changed (and the
 
 
 Tell that the \mbox{\hyperlink{classo_z_1_1_context}{Context}} is not constant and thus can\textquotesingle{}t be cached. 
-
-\mbox{\Hypertarget{classo_z_1_1_context_ae909982a14c14b62038deff79f9151bb}\label{classo_z_1_1_context_ae909982a14c14b62038deff79f9151bb}} 
-\index{oZ::Context@{oZ::Context}!setEndpoint@{setEndpoint}}
-\index{setEndpoint@{setEndpoint}!oZ::Context@{oZ::Context}}
-\subsubsection{\texorpdfstring{setEndpoint()}{setEndpoint()}}
-{\footnotesize\ttfamily void o\+Z\+::\+Context\+::set\+Endpoint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
-
-
-
-Set the \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} target. 
 
 \mbox{\Hypertarget{classo_z_1_1_context_a036d993634650ee8414c2f12d49d0204}\label{classo_z_1_1_context_a036d993634650ee8414c2f12d49d0204}} 
 \index{oZ::Context@{oZ::Context}!setErrorState@{setErrorState}}
