@@ -25,7 +25,9 @@ If you want to run test or see coverage please watch below.
 ## Add openZia to your CMake project
 
 First you need add openZia's repository to your submodules.
-> $ git submodule add https://github.com/MatthieuMv/openZia.git
+```console
+git submodule add https://github.com/MatthieuMv/openZia.git
+```
 
 Next you need to **automate compilation** of openZia in your **CMakeLists.txt**, and link your program to it.
 ```cmake
