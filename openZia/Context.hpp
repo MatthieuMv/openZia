@@ -90,22 +90,22 @@ public:
     /**
      * @brief Get the Request of the HTTP context
      */
-    [[nodiscard]] HTTP::Request getRequest(void) noexcept { return _request; }
+    [[nodiscard]] HTTP::Request &getRequest(void) noexcept { return _request; }
 
     /**
      * @brief Get the Request of the HTTP context (constant)
      */
-    [[nodiscard]] const HTTP::Request getRequest(void) const noexcept { return _request; }
+    [[nodiscard]] const HTTP::Request &getRequest(void) const noexcept { return _request; }
 
     /**
      * @brief Get the Response of the HTTP context
      */
-    [[nodiscard]] HTTP::Response getResponse(void) noexcept { return _response; }
+    [[nodiscard]] HTTP::Response &getResponse(void) noexcept { return _response; }
 
     /**
      * @brief Get the Response of the HTTP context (constant)
      */
-    [[nodiscard]] const HTTP::Response getResponse(void) const noexcept { return _response; }
+    [[nodiscard]] const HTTP::Response &getResponse(void) const noexcept { return _response; }
 
     /**
      * @brief Get the current context' state

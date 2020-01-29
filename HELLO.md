@@ -24,15 +24,15 @@ Let's say you have a class **Server**.
 		void onPacketReceived(oZ::ByteArray &&buffer, const oZ::Endpoint endpoint) {
 			oZ::Context context(std::move(buffer), endpoint);
 			_pipeline.runPipeline(context);
-			sendInterpretToClient(context);
+			sendResponseToClient(context);
 		}
 
 		// Send the HTTP response to the client
-		void sendInterpretToClient(const Context &context) {
+		void sendResponseToClient(const Context &context) {
 			/* You may use the following methods:
 				context.hasError() // Fast error checking
 				context.getEndpoint() // Get the endpoint of target client
-				context.getInterpret() // Get the response result of the pipeline
+				context.getResponse() // Get the response result of the pipeline
 			*/
 		}
 	};
@@ -66,8 +66,8 @@ public:
 private:
 	void onInterpret(oZ::Context &context) {
 		oZ::Log(oZ::Information) << "Module 'Hello' wrote successfully its message";
-		context.getInterpret().getHeader().get("Content-Type") = "text/plain";
-		context.getInterpret().getBody() += "Hello";
+		context.getResponse().getHeader().get("Content-Type") = "text/plain";
+		context.getResponse().getBody() += "Hello";
 	}
 };
 
@@ -99,7 +99,7 @@ public:
 			oZ::State::Interpret, // Call at response creation time
 			oZ::Priority::Medium, // With medium priority
 			[](oZ::Context &context) { // Lambda function style
-				context.getInterpret().getBody() += " World";
+				context.getResponse().getBody() += " World";
 			})
 		);
 	}
