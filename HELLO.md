@@ -10,7 +10,7 @@ Let's say you have a class **Server**.
 	class Server {
 	public:
 		// Set the pipeline module and configuration paths and load modules
-		Server(void) : _pipeline("ModuleDir", "ConfigDir") {
+		Server() : _pipeline("ModuleDir", "ConfigDir") {
 			_pipeline.loadModules();
 		}
 
@@ -48,11 +48,11 @@ Now you need to create your first module. Let's create two of them as a demonstr
 class Hello : public oZ::IModule
 {
 public:
-	Hello(void) = default;
-	virtual ~Hello(void) = default;
+	Hello() = default;
+	virtual ~Hello() = default;
 
-	virtual const char *getName(void) const { return "Hello"; }
-	virtual Dependencies getDependencies(void) const noexcept { return { "World" }; }
+	virtual const char *getName() const { return "Hello"; }
+	virtual Dependencies getDependencies() const noexcept { return { "World" }; }
 
 	// Register your callback to the pipeline
 	virtual void onRegisterCallbacks(Pipeline &pipeline) {
@@ -74,7 +74,7 @@ private:
 /* --- Hello.cpp --- */
 #include "Hello.hpp"
 
-extern "C" oZ::ModulePtr CreateModule(void) { return std::make_shared<Hello>(); }
+extern "C" oZ::ModulePtr CreateModule() { return std::make_shared<Hello>(); }
 ```
 
 ```C++
@@ -87,11 +87,11 @@ extern "C" oZ::ModulePtr CreateModule(void) { return std::make_shared<Hello>(); 
 class World : public oZ::IModule
 {
 public:
-	World(void) = default;
-	virtual ~World(void) = default;
+	World() = default;
+	virtual ~World() = default;
 
-	virtual const char *getName(void) const { return "World"; }
-	virtual Dependencies getDependencies(void) const noexcept { return { "Hello" }; }
+	virtual const char *getName() const { return "World"; }
+	virtual Dependencies getDependencies() const noexcept { return { "Hello" }; }
 
 	// Register your callback to the pipeline
 	virtual void onRegisterCallbacks(Pipeline &pipeline) {
@@ -112,5 +112,5 @@ public:
 /* --- World.cpp --- */
 #include "World.hpp"
 
-extern "C" oZ::ModulePtr CreateModule(void) { return std::make_shared<World>(); }
+extern "C" oZ::ModulePtr CreateModule() { return std::make_shared<World>(); }
 ```

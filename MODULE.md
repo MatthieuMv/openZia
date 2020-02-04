@@ -5,7 +5,7 @@ It means that you must compile every module independently.
 For that you must implement your modules deriving from **oZ::IModule** interface.
 Last, you will need an instantiation function:
 ```C++
-extern "C" ModulePtr CreateModule(void) { return std::make_shared<MyModule>(); }
+extern "C" ModulePtr CreateModule() { return std::make_shared<MyModule>(); }
 ```
 The API already does the dynamic library loading for you so you can focus more on creating modules.
 
@@ -48,7 +48,7 @@ bool MyModule::myCallback(oZ::Context &context)
 Each module have a set of virtual function to be override. Actually, only 2 of them are pure virtual :
 ```C++
 // Get the raw string name of module instance
-virtual const char *getName(void) const = 0;
+virtual const char *getName() const = 0;
 
 // Register module's callbacks to the pipeline
 virtual void onRegisterCallbacks(Pipeline &pipeline) = 0;
@@ -62,7 +62,7 @@ class HTTPModule : public oZ::IModule
 {
 public:
 	// Get the raw string name of module instance
-	virtual const char *getName(void) const { return "HTTPModule"; }
+	virtual const char *getName() const { return "HTTPModule"; }
 
 	// Register module's callbacks to the pipeline
 	virtual void onRegisterCallbacks(oZ::Pipeline &pipeline) {
@@ -87,7 +87,7 @@ And that's it ! You don't have to implement anything else to create an independe
 However, there are more virtual functions for more complex needs. These functions are default-implemented to let you the choice of using them or not.
 ```C++
 // Get the list of dependencies (as a vector of raw string, see function getName above)
-virtual Dependencies getDependencies(void) const noexcept;
+virtual Dependencies getDependencies() const noexcept;
 
 // Given a pipeline reference, find each dependent module to store them internally
 virtual void onRetreiveDependencies(Pipeline &pipeline);
@@ -104,18 +104,18 @@ Let's first see how dependencies are handled given a short example:
 class ChildModule : public oZ::IModule
 {
 public:
-	virtual const char *getName(void) const { return "Child"; }
+	virtual const char *getName() const { return "Child"; }
 	virtual void onRegisterCallbacks(oZ::Pipeline &pipeline) { ... }
 };
 
 class RootModule : public oZ::IModule
 {
 public:
-	virtual const char *getName(void) const { return "Root"; }
+	virtual const char *getName() const { return "Root"; }
 	virtual void onRegisterCallbacks(oZ::Pipeline &pipeline) { ... }
 
 	// Return the list of dependencies
-	virtual Dependencies getDependencies(void) const noexcept { return { "Child" }; }
+	virtual Dependencies getDependencies() const noexcept { return { "Child" }; }
 
 	// Find dependencies and store them before any process for performance reasons
 	virtual void onRetreiveDependencies(oZ::Pipeline &pipeline) {
@@ -140,7 +140,7 @@ class MyModule : public oZ::IModule
 public:
 	static const auto *FileName = "MyModule.conf";
 
-	virtual const char *getName(void) const { return "My" };
+	virtual const char *getName() const { return "My" };
 	virtual void onRegisterCallbacks(oZ::Pipeline &pipeline) { ... }
 
 	// Open configuration file and load some properties using MyCustomConfigLoader
