@@ -22,7 +22,7 @@ Let's say you have a class **Server**.
 
 		// Callback when server receives a message
 		void onPacketReceived(oZ::ByteArray &&buffer, const oZ::Endpoint endpoint) {
-			oZ::Context context(std::move(buffer), endpoint);
+			oZ::Context context(oZ::Packet(std::move(buffer), endpoint));
 			_pipeline.runPipeline(context);
 			sendResponseToClient(context);
 		}
