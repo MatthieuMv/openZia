@@ -29,8 +29,8 @@ Each state of the pipeline are triggered in this order:
 > BeforeParse -> Parse -> AfterParse -> BeforeInterpret -> Interpret -> AfterInterpret -> Completed
 
 Each callback must take a **oZ::Context** in parameter and return a boolean.
+If you **return false** from the callback, the pipeline will **not trigger** other modules' callbacks from the current **oZ::State** and go straight for the next one.
 At any time, you if an error is set using **oZ::Context::setErrorState**, the pipeline will trigger the special **oZ::State::Error** sate callback.
-If you return false from the callback, the pipeline will not trigger other modules' callbacks from the current **oZ::State** and go straight for the next one.
 
 ```C++
 bool MyModule::myCallback(oZ::Context &context)
@@ -72,11 +72,12 @@ public:
 			this, &HTTPModule::onParseHeader // Actual function callback
 		);
 	}
-	void onParseHeader(oZ::Context &context) {
+	bool onParseHeader(oZ::Context &context) {
 		const auto &byteArray = context.getByteArray();
 		auto &request = context.getRequest();
 		auto &header = request.getHeader();
 		// Parse 'byteArray' to fill 'header' and 'request' data
+		return true; // Tell the pipeline we continue to process this state
 	}
 };
 ```
