@@ -34,12 +34,12 @@ public:
     /**
      * @brief Destroy the Request object
      */
-    ~Request(void) = default;
+    ~Request() = default;
 
     /**
      * @brief Get request's method
      */
-    [[nodiscard]] Method getMethod(void) const noexcept { return _method; }
+    [[nodiscard]] Method getMethod() const noexcept { return _method; }
 
     /**
      * @brief Set request's method
@@ -49,17 +49,17 @@ public:
     /**
      * @brief Get request's URI reference
      */
-    [[nodiscard]] URI &getURI(void) noexcept { return _uri; }
+    [[nodiscard]] URI &getURI() noexcept { return _uri; }
 
     /**
      * @brief Get request's URI constant reference
      */
-    [[nodiscard]] const URI &getURI(void) const noexcept { return _uri; }
+    [[nodiscard]] const URI &getURI() const noexcept { return _uri; }
 
     /**
      * @brief Get request's version
      */
-    [[nodiscard]] Version getVersion(void) const noexcept { return _version; }
+    [[nodiscard]] Version getVersion() const noexcept { return _version; }
 
     /**
      * @brief Set request's version
@@ -69,12 +69,12 @@ public:
     /**
      * @brief Get the response's header reference
      */
-    [[nodiscard]] Header &getHeader(void) noexcept { return _header; }
+    [[nodiscard]] Header &getHeader() noexcept { return _header; }
 
     /**
      * @brief Get the response's header constant reference
      */
-    [[nodiscard]] const Header &getHeader(void) const noexcept { return _header; }
+    [[nodiscard]] const Header &getHeader() const noexcept { return _header; }
 
 private:
     Method _method = Method::NullMethod;

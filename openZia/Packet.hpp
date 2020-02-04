@@ -18,7 +18,7 @@ public:
     /**
      * @brief Construct a new Packet object
      */
-    Packet(void) = default;
+    Packet() = default;
 
     /**
      * @brief Construct a new Packet object using byteArray and an endpoint
@@ -28,22 +28,22 @@ public:
     /**
      * @brief Destroy the Packet object
      */
-    ~Packet(void) = default;
+    ~Packet() = default;
 
     /**
      * @brief Get the ByteArray of the context
      */
-    [[nodiscard]] ByteArray &getByteArray(void) noexcept { return _byteArray; }
+    [[nodiscard]] ByteArray &getByteArray() noexcept { return _byteArray; }
 
     /**
      * @brief Get the ByteArray of the context (constant)
      */
-    [[nodiscard]] const ByteArray getByteArray(void) const noexcept { return _byteArray; }
+    [[nodiscard]] const ByteArray getByteArray() const noexcept { return _byteArray; }
 
     /**
      * @brief Get the current context' state
      */
-    [[nodiscard]] Endpoint getEndpoint(void) const noexcept { return _endpoint; }
+    [[nodiscard]] Endpoint getEndpoint() const noexcept { return _endpoint; }
 
     /**
      * @brief Set the Endpoint target
@@ -53,17 +53,17 @@ public:
     /**
      * @brief Get the Encryption Key
      */
-    [[nodiscard]] std::string &getEncryptionKey(void) noexcept { return _encryptionKey; }
+    [[nodiscard]] std::string &getEncryptionKey() noexcept { return _encryptionKey; }
 
     /**
      * @brief Get the Encryption Key (constant)
      */
-    [[nodiscard]] const std::string &getEncryptionKey(void) const noexcept { return _encryptionKey; }
+    [[nodiscard]] const std::string &getEncryptionKey() const noexcept { return _encryptionKey; }
 
     /**
      * @brief Check the usage of encryption port (default HTTPS is 443)
      */
-    [[nodiscard]] bool hasEncryption(void) const noexcept { return _useEncryption; }
+    [[nodiscard]] bool hasEncryption() const noexcept { return _useEncryption; }
 
     /**
      * @brief Set the encryption state

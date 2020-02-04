@@ -26,7 +26,7 @@ public:
     /**
      * @brief Construct a new Endpoint object
      */
-    Endpoint(void) = default;
+    Endpoint() = default;
 
     /**
      * @brief Construct a new Endpoint object using IP as string
@@ -46,7 +46,7 @@ public:
     /**
      * @brief Destroy the Endpoint objecti
      */
-    ~Endpoint(void) = default;
+    ~Endpoint() = default;
 
     /**
      * @brief Equality operator
@@ -58,12 +58,12 @@ public:
      *
      * @return std::string IP Address formated as 'X.X.X.X'
      */
-    std::string getAddress(void) const noexcept;
+    std::string getAddress() const noexcept;
 
     /**
      * @brief Retreive internal ip in 4 bytes
      */
-    IP getAddressValue(void) const noexcept { return _ip; }
+    IP getAddressValue() const noexcept { return _ip; }
 
     /**
      * @brief Set the Address object using a string
@@ -78,7 +78,7 @@ public:
     /**
      * @brief Get internal port
      */
-    Port getPort(void) const noexcept { return _port; }
+    Port getPort() const noexcept { return _port; }
 
     /**
      * @brief Set internal port

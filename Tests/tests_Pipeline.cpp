@@ -40,7 +40,7 @@ class C;
 class A : public IModule
 {
 public:
-    virtual const char *getName(void) const { return "A"; }
+    virtual const char *getName() const { return "A"; }
 
     virtual void onRegisterCallbacks(Pipeline &pipeline) {
         pipeline.registerCallback(State::Parse, Priority::Independent, this, &A::foo);
@@ -54,7 +54,7 @@ public:
 
     virtual void onLoadConfigurationFile(const std::string &) { configured = true; }
 
-    virtual Dependencies getDependencies(void) const noexcept { return { "B", "C" }; }
+    virtual Dependencies getDependencies() const noexcept { return { "B", "C" }; }
 
     bool foo(Context &) { ++x; return true; }
 
@@ -67,7 +67,7 @@ public:
 class B : public IModule
 {
 public:
-    virtual const char *getName(void) const { return "B"; }
+    virtual const char *getName() const { return "B"; }
 
     virtual void onRegisterCallbacks(Pipeline &pipeline) {
         pipeline.registerCallback(State::Interpret, Priority::ASAP, [this](Context &) { ++x; return false; });
@@ -80,7 +80,7 @@ public:
 class C : public IModule
 {
 public:
-    virtual const char *getName(void) const { return "C"; }
+    virtual const char *getName() const { return "C"; }
 
     virtual void onRegisterCallbacks(Pipeline &pipeline) {
         pipeline.registerCallback(State::Parse, Priority::Independent, [this](Context &) { ++x; return true; });
@@ -123,7 +123,7 @@ Test(Pipeline, ABC)
 class Abis : public A
 {
 public:
-    virtual Dependencies getDependencies(void) const noexcept { return { "B", "E" }; }
+    virtual Dependencies getDependencies() const noexcept { return { "B", "E" }; }
 };
 
 class AbisPipeline : public Pipeline

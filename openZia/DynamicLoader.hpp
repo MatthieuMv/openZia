@@ -23,12 +23,12 @@ public:
     /**
      * @brief Construct a new Dynamic Loader object
      */
-    DynamicLoader(void) = default;
+    DynamicLoader() = default;
 
     /**
      * @brief Destroy the Dynamic Loader object and release its content
      */
-    ~DynamicLoader(void);
+    ~DynamicLoader();
 
     /**
      * @brief Load a dynamic library
@@ -51,12 +51,12 @@ public:
      *  Call this function after every instances aquired from libraries are destroyed.
      *  If you destroy instances after, the virtual destructor will be unloaded and your program will crash.
      */
-    void release(void);
+    void release();
 
     /**
      * @brief Get the last error as string
      */
-    [[nodiscard]] std::string getLastError(void) const noexcept;
+    [[nodiscard]] std::string getLastError() const noexcept;
 
     /**
      * @brief Get the name of a handler

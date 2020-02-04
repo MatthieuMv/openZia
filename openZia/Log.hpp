@@ -19,7 +19,7 @@ public:
     /**
      * @brief Construct a new Log object
      */
-    Log(void) = default;
+    Log() = default;
 
     /**
      * @brief Construct a new Log object using a log level
@@ -29,7 +29,7 @@ public:
     /**
      * @brief Destroy the Log object and flush stream
      */
-    ~Log(void) { flush(); }
+    ~Log() { flush(); }
 
     /**
      * @brief Add a value of any type to the stream
@@ -40,7 +40,7 @@ public:
     /**
      * @brief Flush current stream
      */
-    Log &flush(void);
+    Log &flush();
 
     /**
      * @brief Add a new logger into the list
@@ -50,7 +50,7 @@ public:
     /**
      * @brief Get the global logger list
      */
-    static LoggerList &GetLoggerList(void);
+    static LoggerList &GetLoggerList();
 
 
 private:

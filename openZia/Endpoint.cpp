@@ -11,7 +11,7 @@
 
 using namespace oZ;
 
-std::string Endpoint::getAddress(void) const noexcept
+std::string Endpoint::getAddress() const noexcept
 {
     auto *ptr = reinterpret_cast<const std::uint8_t *>(&_ip);
     std::string res;

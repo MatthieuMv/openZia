@@ -25,7 +25,7 @@ Test(DynamicLoader, Basics)
     auto handler = loader.load("./libFoo" + Extension);
     cr_assert(handler);
 
-    auto function = loader.getFunction<oZ::ModulePtr(*)(void)>(handler, "CreateModule");
+    auto function = loader.getFunction<oZ::ModulePtr(*)()>(handler, "CreateModule");
     cr_assert(function);
 
     auto module = (*function)();

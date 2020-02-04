@@ -70,7 +70,7 @@ public:
     /**
      * @brief Destroy the Pipeline object
      */
-    virtual ~Pipeline(void) = default;
+    virtual ~Pipeline() = default;
 
     /**
      * @brief Find modules and load them into the pipeline.
@@ -80,7 +80,7 @@ public:
      *      3) Build the internal pipeline with it.
      *      4) Load configuration files of each modules
      */
-    void loadModules(void);
+    void loadModules();
 
     /**
      * @brief Inserts a callback handler into the pipeline with given state and priority
@@ -105,12 +105,12 @@ public:
     /**
      * @brief Get internal loaded modules
      */
-    [[nodiscard]] ModuleList &getModules(void) noexcept { return _modules; }
+    [[nodiscard]] ModuleList &getModules() noexcept { return _modules; }
 
     /**
      * @brief Get internal loaded modules (const)
      */
-    [[nodiscard]] const ModuleList &getModules(void) const noexcept { return _modules; }
+    [[nodiscard]] const ModuleList &getModules() const noexcept { return _modules; }
 
     /**
      * @brief Emplaces a new module in the pipeline.
@@ -129,7 +129,7 @@ public:
      * @brief Find a module of Type in internal module list returning it as a shared pointer.
      */
     template<typename Type = IModule>
-    [[nodiscard]] std::shared_ptr<Type> findModule(void) const;
+    [[nodiscard]] std::shared_ptr<Type> findModule() const;
 
 protected:
     /**
@@ -151,7 +151,7 @@ private:
     /**
      * @brief Check if every modules dependencies are present.
      */
-    void checkModulesDependencies(void);
+    void checkModulesDependencies();
 
     /**
      * @brief Check if a module's dependency matches a currently loaded module
@@ -162,7 +162,7 @@ private:
      * @brief Create internal pipeline with the current internal modules.
      *  This function will first register modules' callbacks, then retreive dependencies of them to finally load their configuration files.
      */
-    void createPipeline(void);
+    void createPipeline();
 
     /**
      * @brief Trigger every callback of a given context's state

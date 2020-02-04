@@ -47,7 +47,7 @@ DynamicHandler DynamicLoader::load(const std::string &path)
     return handler;
 }
 
-void DynamicLoader::release(void)
+void DynamicLoader::release()
 {
     for (auto &[handler, name] : _handlers) {
 #if defined(SYSTEM_LINUX)
@@ -59,7 +59,7 @@ void DynamicLoader::release(void)
     _handlers.clear();
 }
 
-std::string DynamicLoader::getLastError(void) const noexcept
+std::string DynamicLoader::getLastError() const noexcept
 {
 #if defined(SYSTEM_LINUX)
     return ::dlerror();

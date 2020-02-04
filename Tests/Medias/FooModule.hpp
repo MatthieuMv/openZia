@@ -12,6 +12,6 @@
 class FooModule : public oZ::IModule
 {
 public:
-    virtual const char *getName(void) const { return "Foo"; }
+    virtual const char *getName() const { return "Foo"; }
     virtual void onRegisterCallbacks(oZ::Pipeline &) {}
 };

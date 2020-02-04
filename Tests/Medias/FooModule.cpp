@@ -7,4 +7,4 @@
 
 #include "FooModule.hpp"
 
-extern "C" oZ::ModulePtr CreateModule(void) { return std::make_shared<FooModule>(); }
+extern "C" oZ::ModulePtr CreateModule() { return std::make_shared<FooModule>(); }

@@ -11,7 +11,7 @@
 
 using namespace oZ;
 
-Log &Log::flush(void)
+Log &Log::flush()
 {
     auto &loggers = GetLoggerList();
     auto toLog = _os.str();
@@ -24,7 +24,7 @@ Log &Log::flush(void)
     return *this;
 }
 
-LoggerList &Log::GetLoggerList(void)
+LoggerList &Log::GetLoggerList()
 {
     static LoggerList loggers;
 

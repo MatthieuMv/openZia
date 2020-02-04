@@ -37,12 +37,12 @@ public:
     /**
      * @brief Destroy the Response object
      */
-    ~Response(void) = default;
+    ~Response() = default;
 
     /**
      * @brief Get request's code
      */
-    [[nodiscard]] Code getCode(void) const noexcept { return _code; }
+    [[nodiscard]] Code getCode() const noexcept { return _code; }
 
     /**
      * @brief Set request's code
@@ -52,27 +52,27 @@ public:
     /**
      * @brief Get request's Reason reference
      */
-    [[nodiscard]] Reason &getReason(void) noexcept { return _reason; }
+    [[nodiscard]] Reason &getReason() noexcept { return _reason; }
 
     /**
      * @brief Get request's Reason constant reference
      */
-    [[nodiscard]] const Reason &getReason(void) const noexcept { return _reason; }
+    [[nodiscard]] const Reason &getReason() const noexcept { return _reason; }
 
     /**
      * @brief Get request's Body reference
      */
-    [[nodiscard]] Body &getBody(void) noexcept { return _body; }
+    [[nodiscard]] Body &getBody() noexcept { return _body; }
 
     /**
      * @brief Get request's Body constant reference
      */
-    [[nodiscard]] const Body &getBody(void) const noexcept { return _body; }
+    [[nodiscard]] const Body &getBody() const noexcept { return _body; }
 
     /**
      * @brief Get request's version
      */
-    [[nodiscard]] Version getVersion(void) const noexcept { return _version; }
+    [[nodiscard]] Version getVersion() const noexcept { return _version; }
 
     /**
      * @brief Set request's version
@@ -82,12 +82,12 @@ public:
     /**
      * @brief Get the response's header reference
      */
-    [[nodiscard]] Header &getHeader(void) noexcept { return _header; }
+    [[nodiscard]] Header &getHeader() noexcept { return _header; }
 
     /**
      * @brief Get the response's header constant reference
      */
-    [[nodiscard]] const Header &getHeader(void) const noexcept { return _header; }
+    [[nodiscard]] const Header &getHeader() const noexcept { return _header; }
 
 private:
     Code _code = Code::Undefined;

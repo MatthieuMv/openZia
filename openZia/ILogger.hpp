@@ -14,7 +14,7 @@
 namespace oZ
 {
     class ILogger;
-    
+
     /**
      * @brief Levels of log messages
      */
@@ -46,12 +46,12 @@ public:
     /**
      * @brief Construct a new ILogger object
      */
-    ILogger(void) = default;
+    ILogger() = default;
 
     /**
      * @brief Destroy the ILogger object
      */
-    virtual ~ILogger(void) = default;
+    virtual ~ILogger() = default;
 
     /**
      * @brief Log a single message of given level

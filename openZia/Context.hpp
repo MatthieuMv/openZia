@@ -55,7 +55,7 @@ public:
     /**
      * @brief Construct a new Context object
      */
-    Context(void) = default;
+    Context() = default;
 
     /**
      * @brief Construct a new Context object using a packet
@@ -75,42 +75,42 @@ public:
     /**
      * @brief Destroy the Context object
      */
-    ~Context(void) = default;
+    ~Context() = default;
 
     /**
      * @brief Get the network Packet of the context
      */
-    [[nodiscard]] Packet &getPacket(void) noexcept { return _packet; }
+    [[nodiscard]] Packet &getPacket() noexcept { return _packet; }
 
     /**
      * @brief Get the network Packet of the context (constant)
      */
-    [[nodiscard]] const Packet &getPacket(void) const noexcept { return _packet; }
+    [[nodiscard]] const Packet &getPacket() const noexcept { return _packet; }
 
     /**
      * @brief Get the Request of the HTTP context
      */
-    [[nodiscard]] HTTP::Request &getRequest(void) noexcept { return _request; }
+    [[nodiscard]] HTTP::Request &getRequest() noexcept { return _request; }
 
     /**
      * @brief Get the Request of the HTTP context (constant)
      */
-    [[nodiscard]] const HTTP::Request &getRequest(void) const noexcept { return _request; }
+    [[nodiscard]] const HTTP::Request &getRequest() const noexcept { return _request; }
 
     /**
      * @brief Get the Response of the HTTP context
      */
-    [[nodiscard]] HTTP::Response &getResponse(void) noexcept { return _response; }
+    [[nodiscard]] HTTP::Response &getResponse() noexcept { return _response; }
 
     /**
      * @brief Get the Response of the HTTP context (constant)
      */
-    [[nodiscard]] const HTTP::Response &getResponse(void) const noexcept { return _response; }
+    [[nodiscard]] const HTTP::Response &getResponse() const noexcept { return _response; }
 
     /**
      * @brief Get the current context' state
      */
-    [[nodiscard]] State getState(void) const noexcept { return _state; }
+    [[nodiscard]] State getState() const noexcept { return _state; }
 
     /**
      * @brief Set the current context' state
@@ -121,32 +121,32 @@ public:
      * @brief Set internal state to the next one
      *  Return true if the state has changed (and the current state is neither Error nor Completed)
      */
-    bool nextState(void) noexcept;
+    bool nextState() noexcept;
 
     /**
      * @brief Set nternal state to Error
      */
-    void setErrorState(void) { _state = State::Error; }
+    void setErrorState() { _state = State::Error; }
 
     /**
      * @brief Fast error check
      */
-    [[nodiscard]] bool hasError(void) const noexcept { return getState() == State::Error; }
+    [[nodiscard]] bool hasError() const noexcept { return getState() == State::Error; }
 
     /**
      * @brief Fast completion check
      */
-    [[nodiscard]] bool isCompleted(void) const noexcept { return getState() == State::Completed; }
+    [[nodiscard]] bool isCompleted() const noexcept { return getState() == State::Completed; }
 
     /**
      * @brief Tell that the Context is not constant and thus can't be cached
      */
-    void notConstant(void) noexcept { _constant = false; }
+    void notConstant() noexcept { _constant = false; }
 
     /**
      * @brief Check if the current Context's state is constant (and if it can be cached)
      */
-    [[nodiscard]] bool isConstant(void) const noexcept { return _constant; }
+    [[nodiscard]] bool isConstant() const noexcept { return _constant; }
 
 private:
     Packet _packet;

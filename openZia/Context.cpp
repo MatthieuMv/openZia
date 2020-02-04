@@ -15,7 +15,7 @@ Context::Context(Packet &&packet)
 {
 }
 
-bool Context::nextState(void) noexcept
+bool Context::nextState() noexcept
 {
     switch (getState()) {
     case State::Error:

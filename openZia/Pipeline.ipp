@@ -20,7 +20,7 @@ void oZ::Pipeline::addModule(Args &&...args)
 }
 
 template<typename Type>
-std::shared_ptr<Type> oZ::Pipeline::findModule(void) const
+std::shared_ptr<Type> oZ::Pipeline::findModule() const
 {
     for (auto &module : _modules)
         if (auto ptr = std::dynamic_pointer_cast<Type>(module); ptr)

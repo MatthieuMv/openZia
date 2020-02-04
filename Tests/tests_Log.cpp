@@ -22,14 +22,14 @@ class TestLogger : public ILogger
 {
 public:
     TestLogger(std::string &content) : _content(content) {}
-    virtual ~TestLogger(void) = default;
+    virtual ~TestLogger() = default;
 
     virtual void onLog(Level, const std::string &message) {
         _content += message;
         _content += '\n';
     }
 
-    virtual const char *getName(void) const { return "TestLogger"; }
+    virtual const char *getName() const { return "TestLogger"; }
 
     virtual void onRegisterCallbacks(Pipeline &) {}
 

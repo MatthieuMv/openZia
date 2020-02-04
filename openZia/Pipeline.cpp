@@ -25,7 +25,7 @@ Pipeline::Pipeline(std::string &&moduleDir, std::string &&configurationDir)
 {
 }
 
-void Pipeline::loadModules(void)
+void Pipeline::loadModules()
 {
     for (auto &state : _pipeline)
         state.clear();
@@ -57,7 +57,7 @@ void Pipeline::onLoadModules(const std::string &directoryPath)
         else if (auto ext = file.path().extension().string(); ext != ".dll" && ext != ".so")
             continue;
         auto handler = _dynamicLoader.load(file.path());
-        auto function = _dynamicLoader.getFunction<ModulePtr(*)(void)>(handler, "CreateModule");
+        auto function = _dynamicLoader.getFunction<ModulePtr(*)()>(handler, "CreateModule");
         _modules.emplace_back((*function)());
     }
 }
@@ -89,7 +89,7 @@ void Pipeline::triggerContextStateCallbacks(Context &context)
     }
 }
 
-void Pipeline::checkModulesDependencies(void)
+void Pipeline::checkModulesDependencies()
 {
     for (const auto &module : _modules) {
         for (const auto *dependencie : module->getDependencies())
@@ -106,7 +106,7 @@ void Pipeline::checkModuleDependency(const ModulePtr &module, const char *depend
         throw std::logic_error(std::string("Pipeline::checkModuleDependencies: ") + module->getName() + "' requires missing module '" + dependency + '\'');
 }
 
-void Pipeline::createPipeline(void)
+void Pipeline::createPipeline()
 {
     if (!_configurationDir.empty() && _configurationDir.back() != '/')
         _configurationDir.push_back('/');

@@ -41,9 +41,9 @@ namespace oZ
      * @brief Function signature that each module should respect to get detected and instantied.
      * It musts uses the name 'createModule'.
      *
-     * Example : ModulePtr CreateModule(void) { return std::make_shared<MyModule>(); }
+     * Example : ModulePtr CreateModule() { return std::make_shared<MyModule>(); }
      */
-    using ModuleInstanceFunction = ModulePtr(*)(void);
+    using ModuleInstanceFunction = ModulePtr(*)();
 }
 
 /**
@@ -64,17 +64,17 @@ public:
     /**
      * @brief Construct a new IModule object
      */
-    IModule(void) = default;
+    IModule() = default;
 
     /**
      * @brief Destroy the IModule object
      */
-    virtual ~IModule(void) = default;
+    virtual ~IModule() = default;
 
     /**
      * @brief Get the module name
      */
-    virtual const char *getName(void) const = 0;
+    virtual const char *getName() const = 0;
 
     /**
      * @brief Register module's callbacks in the pipeline
@@ -86,7 +86,7 @@ public:
      *
      *  By default a module has no dependencies
      */
-    virtual Dependencies getDependencies(void) const noexcept { return Dependencies(); }
+    virtual Dependencies getDependencies() const noexcept { return Dependencies(); }
 
     /**
      * @brief This function is called once module registered their callbacks

@@ -21,11 +21,11 @@ public:
 class BasicLogger : public ILogger
 {
 public:
-    virtual ~BasicLogger(void) = default;
+    virtual ~BasicLogger() = default;
 
     virtual void onLog(Level, const std::string &) {}
 
-    virtual const char *getName(void) const { return "BasicLogger"; }
+    virtual const char *getName() const { return "BasicLogger"; }
 };
 
 Test(ILogger, Basics)
