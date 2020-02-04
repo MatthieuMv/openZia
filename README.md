@@ -5,6 +5,8 @@
 
 [**openZia's documentation page**](https://matthieumv.github.io/openZia)
 
+For any specific question (not convenient for an issue): matthieu.moinvaziri@epitech.eu
+
 # open.. what ?
 
 openZia is a C++ 17 cross-platform API for the 3rd year Epitech project **Zia**.
