@@ -64,10 +64,11 @@ public:
 	}
 
 private:
-	void onInterpret(oZ::Context &context) {
+	bool onInterpret(oZ::Context &context) {
 		oZ::Log(oZ::Information) << "Module 'Hello' wrote successfully its message";
 		context.getResponse().getHeader().get("Content-Type") = "text/plain";
 		context.getResponse().getBody() += "Hello";
+		return true;
 	}
 };
 
@@ -100,6 +101,7 @@ public:
 			oZ::Priority::Medium, // With medium priority
 			[](oZ::Context &context) { // Lambda function style
 				context.getResponse().getBody() += " World";
+				return true;
 			})
 		);
 	}
