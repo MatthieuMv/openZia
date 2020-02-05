@@ -5,6 +5,7 @@
 ** HeaderHTTP
 */
 
+#include <stdexcept>
 #include "HeaderHTTP.hpp"
 
 using namespace oZ::HTTP;

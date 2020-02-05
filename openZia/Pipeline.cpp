@@ -56,7 +56,7 @@ void Pipeline::onLoadModules(const std::string &directoryPath)
             continue;
         else if (auto ext = file.path().extension().string(); ext != ".dll" && ext != ".so")
             continue;
-        auto handler = _dynamicLoader.load(file.path());
+        auto handler = _dynamicLoader.load(file.path().string());
         auto function = _dynamicLoader.getFunction<ModulePtr(*)(void)>(handler, "CreateModule");
         _modules.emplace_back((*function)());
     }

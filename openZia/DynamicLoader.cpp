@@ -25,7 +25,12 @@ DynamicLoader::~DynamicLoader()
 
 void *DynamicLoader::getFunction(DynamicHandler handler, const std::string &name)
 {
-    void *function = ::dlsym(handler, name.c_str());
+	void *function = nullptr;
+#if defined(SYSTEM_LINUX)
+    function = ::dlsym(handler, name.c_str());
+#elif defined(SYSTEM_WINDOWS)
+    function = ::GetProcAddress((HMODULE)handler, name.c_str());
+#endif
 
     if (!function)
         throw std::runtime_error("DynamicLoader::getFunction: Couldn't find function '" + name + "' in handler '" + getHandlerPath(handler) + '\'');
@@ -53,7 +58,7 @@ void DynamicLoader::release(void)
 #if defined(SYSTEM_LINUX)
         ::dlclose(handler);
 #elif defined(SYSTEM_WINDOWS)
-        ::FreeLibrary(handler);
+        ::FreeLibrary((HMODULE)handler);
 #endif
     }
     _handlers.clear();
@@ -72,10 +77,10 @@ std::string DynamicLoader::getLastError(void) const noexcept
         FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
         NULL, id,
         MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-        static_cast<LPSTR>(&buffer), 0, NULL
+        reinterpret_cast<LPSTR>(&buffer), 0, NULL
     );
     std::string message(buffer, size);
-    LocalFree(messageBuffer);
+    //LocalFree(messageBuffer);
     return message;
 #endif
 }
