@@ -9,6 +9,7 @@
 
 #include <string>
 #include <functional>
+#include <array>
 
 #include "DynamicLoader.hpp"
 #include "ILogger.hpp"

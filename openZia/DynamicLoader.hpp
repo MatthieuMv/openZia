@@ -10,11 +10,23 @@
 #include <string>
 #include <unordered_map>
 
+#include "OperatingSystem.hpp"
+
+#if defined(SYSTEM_LINUX)
+#include <dlfcn.h>
+#elif defined(SYSTEM_WINDOWS)
+#include <Windows.h>
+#endif
+
 namespace oZ
 {
     class DynamicLoader;
 
-    using DynamicHandler = void *;
+#if defined(SYSTEM_WINDOWS)
+	using DynamicHandler = HMODULE;
+#else
+	using DynamicHandler = void*;
+#endif
 }
 
 class oZ::DynamicLoader
@@ -64,5 +76,5 @@ public:
     [[nodiscard]] std::string getHandlerPath(const DynamicHandler handler) const noexcept;
 
 private:
-    std::unordered_map<void *, std::string> _handlers;
+    std::unordered_map<DynamicHandler, std::string> _handlers;
 };

@@ -33,12 +33,12 @@ void Endpoint::setAddress(const std::string &ip)
 
         for (auto c : ip) {
             if (c == '.') {
-                ptr[i++] = std::stoul(cache);
+				ptr[i++] = static_cast<std::uint8_t>(std::stoul(cache));
                 cache.clear();
             } else
                 cache.push_back(c);
         }
-        ptr[i++] = std::stoul(cache);
+        ptr[i++] = static_cast<std::uint8_t>(std::stoul(cache));
         cache.clear();
         if (i != 4)
             throw std::logic_error(nullptr);
