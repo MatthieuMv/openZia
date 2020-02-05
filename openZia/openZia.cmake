@@ -51,5 +51,9 @@ set(OpenZiaSources
 
 # Create openZia library
 add_library(${PROJECT_NAME} ${OpenZiaSources})
-target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} stdc++fs)
 set_property(TARGET ${PROJECT_NAME} PROPERTY POSITION_INDEPENDENT_CODE ON)
+
+# GCC < 9 requires explicit link to filesystem library
+if (UNIX)
+    target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} stdc++fs)
+endif ()
