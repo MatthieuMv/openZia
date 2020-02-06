@@ -8,6 +8,7 @@
 #pragma once
 
 #include "HeaderHTTP.hpp"
+#include "ByteArray.hpp"
 
 // Verbose declaration needed for doxygen support
 namespace oZ { namespace HTTP { class Request; } }
