@@ -23,7 +23,8 @@ public:
     /**
      * @brief Construct a new Packet object using byteArray and an endpoint
      */
-    Packet(ByteArray &&byteArray, const Endpoint endpoint) : _byteArray(std::move(byteArray)), _endpoint(endpoint) {}
+    Packet(ByteArray &&byteArray, const Endpoint endpoint)
+        : _byteArray(std::move(byteArray)), _endpoint(endpoint), _encryptionKey() {}
 
     /**
      * @brief Destroy the Packet object
@@ -48,7 +49,7 @@ public:
     /**
      * @brief Set the Endpoint target
      */
-    void setEndpoint(Endpoint endpoint) noexcept { _endpoint = endpoint; }
+    void setEndpoint(const Endpoint endpoint) noexcept { _endpoint = endpoint; }
 
     /**
      * @brief Get the Encryption Key
@@ -68,11 +69,11 @@ public:
     /**
      * @brief Set the encryption state
      */
-    void setEncryption(bool value) noexcept { _useEncryption = value; }
+    void setEncryption(const bool value) noexcept { _useEncryption = value; }
 
 private:
-    ByteArray _byteArray;
-    Endpoint _endpoint;
-    std::string _encryptionKey;
+    ByteArray _byteArray {};
+    Endpoint _endpoint {};
+    std::string _encryptionKey {};
     bool _useEncryption = false;
 };

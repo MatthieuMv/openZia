@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** CPP_zia_2019
 ** File description:
-** HTTP Response 
+** HTTP Response
 */
 
 #include <criterion/criterion.h>
@@ -13,22 +13,25 @@ using namespace oZ::HTTP;
 
 Test(Response, Basics)
 {
-    Response base(Code::OK, "all is", "hello", Version(1, 1)), res(base);
+    Response base;
 
-    cr_assert_eq(res.getCode(), Code::OK);
-    cr_assert_eq(res.getReason(), "all is");
-    cr_assert_eq(res.getBody(), "hello");
-    cr_assert_eq(res.getVersion(), Version(1, 1));
+    base.setCode(Code::OK);
+    base.getReason() = "all is";
+    base.getBody() = "hello";
+    base.setVersion(Version(1, 1));
+    cr_assert_eq(base.getCode(), Code::OK);
+    cr_assert_eq(base.getReason(), "all is");
+    cr_assert_eq(base.getBody(), "hello");
+    cr_assert_eq(base.getVersion(), Version(1, 1));
 
-    res.setCode(Code::Accepted);
-    res.getReason() = "good";
-    res.getBody() = "world";
-    res.setVersion(Version(1, 0));
+    base.setCode(Code::Accepted);
+    base.getReason() = "good";
+    base.getBody() = "world";
+    base.setVersion(Version(1, 0));
+    cr_assert_eq(base.getCode(), Code::Accepted);
+    cr_assert_eq(base.getReason(), "good");
+    cr_assert_eq(base.getBody(), "world");
+    cr_assert_eq(base.getVersion(), Version(1, 0));
 
-    cr_assert_eq(res.getCode(), Code::Accepted);
-    cr_assert_eq(res.getReason(), "good");
-    cr_assert_eq(res.getBody(), "world");
-    cr_assert_eq(res.getVersion(), Version(1, 0));
-
-    cr_assert_not(res.getHeader().exists("abc"));
+    cr_assert_not(base.getHeader().exists("abc"));
 }

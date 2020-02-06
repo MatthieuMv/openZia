@@ -5,6 +5,6 @@ project(openZia)
 
 include(openZia/openZia.cmake)
 
-if (DEFINED OPENZIA_TESTS OR DEFINED OPENZIA_COVERAGE)
+if (${OPENZIA_TESTS} AND ${OPENZIA_COVERAGE})
     include(Tests/Tests.cmake)
 endif ()

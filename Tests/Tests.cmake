@@ -32,7 +32,7 @@ add_executable(${PROJECT_NAME} ${TestsSources} ${OpenZiaSources})
 target_link_libraries(${PROJECT_NAME} criterion ${CMAKE_DL_LIBS} stdc++fs)
 target_include_directories(${PROJECT_NAME} PRIVATE ${openZiaIncludes})
 
-if (DEFINED OPENZIA_COVERAGE)
+if (${OPENZIA_COVERAGE})
     target_link_libraries(${PROJECT_NAME} gcov)
     target_compile_options(${PROJECT_NAME} PUBLIC --coverage)
 endif ()

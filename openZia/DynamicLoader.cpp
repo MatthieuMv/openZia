@@ -18,11 +18,11 @@ DynamicLoader::~DynamicLoader()
 
 void *DynamicLoader::getFunction(DynamicHandler handler, const std::string &name)
 {
-	void *function = nullptr;
+    void *function = nullptr;
 #if defined(SYSTEM_LINUX)
     function = ::dlsym(handler, name.c_str());
 #elif defined(SYSTEM_WINDOWS)
-	function = ::GetProcAddress(handler, name.c_str());
+    function = ::GetProcAddress(handler, name.c_str());
 #endif
     if (!function)
         throw std::runtime_error("DynamicLoader::getFunction: Couldn't find function '" + name + "' in handler '" + getHandlerPath(handler) + '\'');

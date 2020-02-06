@@ -42,5 +42,5 @@ public:
     void set(const std::string &key, Literal &&value) { get(key) = std::forward<Literal>(value); }
 
 private:
-    std::unordered_map<std::string, std::string> _map;
+    std::unordered_map<std::string, std::string> _map {};
 };

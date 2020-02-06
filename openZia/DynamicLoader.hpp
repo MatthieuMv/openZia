@@ -23,9 +23,9 @@ namespace oZ
     class DynamicLoader;
 
 #if defined(SYSTEM_WINDOWS)
-	using DynamicHandler = HMODULE;
+    using DynamicHandler = HMODULE;
 #else
-	using DynamicHandler = void*;
+    using DynamicHandler = void*;
 #endif
 }
 
@@ -76,5 +76,5 @@ public:
     [[nodiscard]] std::string getHandlerPath(const DynamicHandler handler) const noexcept;
 
 private:
-    std::unordered_map<DynamicHandler, std::string> _handlers;
+    std::unordered_map<DynamicHandler, std::string> _handlers {};
 };
