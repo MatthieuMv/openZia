@@ -11,17 +11,17 @@
 \begin{DoxyCompactList}\small\item\em Construct a new Dynamic Loader object. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classo_z_1_1_dynamic_loader_a48b8658929c54dbb03a79f752d2fc131}{$\sim$\+Dynamic\+Loader}} (void)
 \begin{DoxyCompactList}\small\item\em Destroy the Dynamic Loader object and release its content. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}{Dynamic\+Handler}} \mbox{\hyperlink{classo_z_1_1_dynamic_loader_a1a0201ebc77bdd744aa528d7cb999a89}{load}} (const std\+::string \&path)
+\mbox{\hyperlink{namespaceo_z_acbfabf71824b5fc6a3beb64e397afc19}{Dynamic\+Handler}} \mbox{\hyperlink{classo_z_1_1_dynamic_loader_a1a0201ebc77bdd744aa528d7cb999a89}{load}} (const std\+::string \&path)
 \begin{DoxyCompactList}\small\item\em Load a dynamic library. \end{DoxyCompactList}\item 
-void $\ast$ \mbox{\hyperlink{classo_z_1_1_dynamic_loader_a136f9d35245f4e3d556d7f4eae951cdf}{get\+Function}} (\mbox{\hyperlink{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}{Dynamic\+Handler}} handler, const std\+::string \&name)
+void $\ast$ \mbox{\hyperlink{classo_z_1_1_dynamic_loader_a136f9d35245f4e3d556d7f4eae951cdf}{get\+Function}} (\mbox{\hyperlink{namespaceo_z_acbfabf71824b5fc6a3beb64e397afc19}{Dynamic\+Handler}} handler, const std\+::string \&name)
 \begin{DoxyCompactList}\small\item\em Get a function of handler library, returning opaque pointer. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Signature $>$ }\\Signature \mbox{\hyperlink{classo_z_1_1_dynamic_loader_ad5c090a613bec9cf397a479bf3257cfa}{get\+Function}} (\mbox{\hyperlink{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}{Dynamic\+Handler}} handler, const std\+::string \&name)
+{\footnotesize template$<$typename Signature $>$ }\\Signature \mbox{\hyperlink{classo_z_1_1_dynamic_loader_ad5c090a613bec9cf397a479bf3257cfa}{get\+Function}} (\mbox{\hyperlink{namespaceo_z_acbfabf71824b5fc6a3beb64e397afc19}{Dynamic\+Handler}} handler, const std\+::string \&name)
 \begin{DoxyCompactList}\small\item\em Get a function of handler library, returning custom Signature. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classo_z_1_1_dynamic_loader_a405559cdad1b8eba0bd3bee22fa764f9}{release}} (void)
 \begin{DoxyCompactList}\small\item\em Release loaded libraries. Call this function after every instances aquired from libraries are destroyed. If you destroy instances after, the virtual destructor will be unloaded and your program will crash. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classo_z_1_1_dynamic_loader_ae822f62c912bfdc978188d22e45798ff}{get\+Last\+Error}} (void) const noexcept
 \begin{DoxyCompactList}\small\item\em Get the last error as string. \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{classo_z_1_1_dynamic_loader_a732fb1a8c82a4caa1a5e3a227b9d32ab}{get\+Handler\+Path}} (const \mbox{\hyperlink{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}{Dynamic\+Handler}} handler) const noexcept
+std\+::string \mbox{\hyperlink{classo_z_1_1_dynamic_loader_a732fb1a8c82a4caa1a5e3a227b9d32ab}{get\+Handler\+Path}} (const \mbox{\hyperlink{namespaceo_z_acbfabf71824b5fc6a3beb64e397afc19}{Dynamic\+Handler}} handler) const noexcept
 \begin{DoxyCompactList}\small\item\em Get the name of a handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -53,7 +53,7 @@ Destroy the Dynamic Loader object and release its content.
 \index{oZ::DynamicLoader@{oZ::DynamicLoader}!getFunction@{getFunction}}
 \index{getFunction@{getFunction}!oZ::DynamicLoader@{oZ::DynamicLoader}}
 \subsubsection{\texorpdfstring{getFunction()}{getFunction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void $\ast$ Dynamic\+Loader\+::get\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}{Dynamic\+Handler}}}]{handler,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void $\ast$ Dynamic\+Loader\+::get\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_acbfabf71824b5fc6a3beb64e397afc19}{Dynamic\+Handler}}}]{handler,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
 
 
 
@@ -64,7 +64,7 @@ Get a function of handler library, returning opaque pointer.
 \index{getFunction@{getFunction}!oZ::DynamicLoader@{oZ::DynamicLoader}}
 \subsubsection{\texorpdfstring{getFunction()}{getFunction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename Signature $>$ \\
-Signature o\+Z\+::\+Dynamic\+Loader\+::get\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}{Dynamic\+Handler}}}]{handler,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+Signature o\+Z\+::\+Dynamic\+Loader\+::get\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_acbfabf71824b5fc6a3beb64e397afc19}{Dynamic\+Handler}}}]{handler,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -74,7 +74,7 @@ Get a function of handler library, returning custom Signature.
 \index{oZ::DynamicLoader@{oZ::DynamicLoader}!getHandlerPath@{getHandlerPath}}
 \index{getHandlerPath@{getHandlerPath}!oZ::DynamicLoader@{oZ::DynamicLoader}}
 \subsubsection{\texorpdfstring{getHandlerPath()}{getHandlerPath()}}
-{\footnotesize\ttfamily std\+::string Dynamic\+Loader\+::get\+Handler\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}{Dynamic\+Handler}}}]{handler }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+{\footnotesize\ttfamily std\+::string Dynamic\+Loader\+::get\+Handler\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceo_z_acbfabf71824b5fc6a3beb64e397afc19}{Dynamic\+Handler}}}]{handler }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 
 
@@ -94,7 +94,7 @@ Get the last error as string.
 \index{oZ::DynamicLoader@{oZ::DynamicLoader}!load@{load}}
 \index{load@{load}!oZ::DynamicLoader@{oZ::DynamicLoader}}
 \subsubsection{\texorpdfstring{load()}{load()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespaceo_z_a4f8ae5685d0f7dca498d73129b482f2d}{Dynamic\+Handler}} Dynamic\+Loader\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceo_z_acbfabf71824b5fc6a3beb64e397afc19}{Dynamic\+Handler}} Dynamic\+Loader\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
 
 
 

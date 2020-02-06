@@ -2,6 +2,8 @@ var searchData=
 [
   ['majorversion',['majorVersion',['../structo_z_1_1_h_t_t_p_1_1_version.html#a451d759d7fcdcef197c21140b1e9527e',1,'oZ::HTTP::Version']]],
   ['medium',['Medium',['../namespaceo_z.html#af05a92eb185d18369e9b4acdcd9dcd12a4e322bd010e5b70a4c4172c619a7e370',1,'oZ']]],
+  ['message',['Message',['../classo_z_1_1_h_t_t_p_1_1_message.html',1,'oZ::HTTP']]],
+  ['messagehttp_2ehpp',['MessageHTTP.hpp',['../_message_h_t_t_p_8hpp.html',1,'']]],
   ['method',['Method',['../namespaceo_z_1_1_h_t_t_p.html#a02d8497e4abbb0adf3af0fe9fad1b7a6',1,'oZ::HTTP']]],
   ['methodcount',['MethodCount',['../namespaceo_z_1_1_h_t_t_p.html#a02d8497e4abbb0adf3af0fe9fad1b7a6a501c78dd7462ae9cb997f05db181379a',1,'oZ::HTTP']]],
   ['methodname',['MethodName',['../namespaceo_z_1_1_h_t_t_p.html#a34bd18b4f1bf5cfa84672c2f8b81801e',1,'oZ::HTTP']]],

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['packet',['Packet',['../classo_z_1_1_packet.html',1,'oZ']]],
-  ['pipeline',['Pipeline',['../classo_z_1_1_pipeline.html',1,'oZ']]]
+  ['message',['Message',['../classo_z_1_1_h_t_t_p_1_1_message.html',1,'oZ::HTTP']]]
 ];
