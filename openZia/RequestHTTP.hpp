@@ -67,18 +67,29 @@ public:
     void setVersion(Version version) noexcept { _version = version; }
 
     /**
-     * @brief Get the response's header reference
+     * @brief Get the request's header reference
      */
     [[nodiscard]] Header &getHeader(void) noexcept { return _header; }
 
     /**
-     * @brief Get the response's header constant reference
+     * @brief Get the request's header constant reference
      */
     [[nodiscard]] const Header &getHeader(void) const noexcept { return _header; }
 
+    /**
+     * @brief Get the request's body reference
+     */
+    [[nodiscard]] ByteArray &getBody(void) noexcept { return _body; }
+
+    /**
+     * @brief Get the request's body constant reference
+     */
+    [[nodiscard]] const ByteArray &getBody(void) const noexcept { return _body; }
+
 private:
-    Method _method = Method::NullMethod;
-    URI _uri;
-    Version _version;
-    Header _header;
+    Method      _method = Method::NullMethod;
+    URI         _uri;
+    Version     _version;
+    Header      _header;
+    ByteArray   _body;
 };
