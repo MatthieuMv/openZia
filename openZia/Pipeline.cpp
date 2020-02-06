@@ -6,12 +6,15 @@
 */
 
 #if __has_include(<filesystem>)
-    #include <filesystem>
+# include <filesystem>
+namespace fs = std::filesystem;
+
 #elif __has_include(<experimental/filesystem>)
-    #include <experimental/filesystem>
-    namespace std { namespace filesystem = std::experimental::filesystem; }
+# include <experimental/filesystem>
+namespace fs = std::experimental::filesystem;
+
 #else
-    #error "You compiler doesn't support std::filesystem nor std::experimental::filesystem"
+# error "You compiler doesn't support std::filesystem nor std::experimental::filesystem"
 #endif
 
 #include <cstring>
@@ -47,11 +50,11 @@ ModulePtr Pipeline::findModule(const char *name) const
 
 void Pipeline::onLoadModules(const std::string &directoryPath)
 {
-    std::filesystem::path path(directoryPath);
+    fs::path path(directoryPath);
 
-    if (!std::filesystem::exists(path))
+    if (!fs::exists(path))
         throw std::logic_error("Pipeline::onLoadModules: Inexisting module directory '" + directoryPath + '\'');
-    for (const auto &file : std::filesystem::directory_iterator(path)) {
+    for (const auto &file : fs::directory_iterator(path)) {
         if (!file.path().has_extension())
             continue;
         else if (auto ext = file.path().extension().string(); ext != ".dll" && ext != ".so")
@@ -92,18 +95,17 @@ void Pipeline::triggerContextStateCallbacks(Context &context)
 void Pipeline::checkModulesDependencies(void)
 {
     for (const auto &module : _modules) {
-        for (const auto *dependencie : module->getDependencies())
+        for (const auto &dependencie : module->getDependencies())
             checkModuleDependency(module, dependencie);
     }
 }
 
 void Pipeline::checkModuleDependency(const ModulePtr &module, const char *dependency)
 {
-    auto it = std::find_if(_modules.begin(), _modules.end(),
-                [dependency](const auto &m) { return !std::strcmp(m->getName(), dependency); });
-
-    if (it == _modules.end())
-        throw std::logic_error(std::string("Pipeline::checkModuleDependencies: ") + module->getName() + "' requires missing module '" + dependency + '\'');
+    if (!std::any_of(std::begin(_modules), std::end(_modules),
+        [&dependency](const auto &m) { return !std::strcmp(m->getName(), dependency); }))
+        throw std::logic_error(std::string("Pipeline::checkModuleDependencies: ") +
+            module->getName() + "' requires missing module '" + dependency + '\'');
 }
 
 void Pipeline::createPipeline(void)

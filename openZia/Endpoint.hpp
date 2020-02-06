@@ -39,11 +39,6 @@ public:
     Endpoint(IP ip, Port port) : _ip(ip), _port(port) {}
 
     /**
-     * @brief Construct a new Endpoint object
-     */
-    Endpoint(const Endpoint &other) : _port(other._port), _ip(other._ip) {}
-
-    /**
      * @brief Destroy the Endpoint objecti
      */
     ~Endpoint(void) = default;

@@ -9,7 +9,7 @@
 #include <string>
 
 // Verbose declaration needed for doxygen support
-namespace oZ { namespace HTTP {
+namespace oZ::HTTP {
     /**
      * @brief HTTP URI (Request)
      */
@@ -90,6 +90,7 @@ namespace oZ { namespace HTTP {
         Delete,
         Trace,
         Connect,
+
         MethodCount
     };
 
@@ -123,24 +124,16 @@ namespace oZ { namespace HTTP {
      */
     [[nodiscard]] constexpr const char *MethodName(const Method method) noexcept {
         switch (method) {
-        case Method::NullMethod:
-            return "NULL_METHOD";
-        case Method::Option:
-            return "OPTION";
-        case Method::Get:
-            return "GET";
-        case Method::Head:
-            return "HEAD";
-        case Method::Post:
-            return "POST";
-        case Method::Put:
-            return "PUT";
-        case Method::Delete:
-            return "DELETE";
-        case Method::Trace:
-            return "TRACE";
-        case Method::Connect:
-            return "CONNECT";
+            case Method::NullMethod:    return "NULL_METHOD";
+            case Method::Option:        return "OPTION";
+            case Method::Get:           return "GET";
+            case Method::Head:          return "HEAD";
+            case Method::Post:          return "POST";
+            case Method::Put:           return "PUT";
+            case Method::Delete:        return "DELETE";
+            case Method::Trace:         return "TRACE";
+            case Method::Connect:       return "CONNECT";
+            default:                    return nullptr;
         }
     }
-}}
+}
