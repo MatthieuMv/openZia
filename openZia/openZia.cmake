@@ -68,6 +68,6 @@ if (UNIX)
         -Winvalid-pch -Wlong-long -Wmissing-field-initializers -Wmissing-format-attribute
         -Wmissing-noreturn -Wpacked -Wpointer-arith -Wstack-protector
         -Wstrict-aliasing=2 -Wunreachable-code -Wunused -Wunused-parameter
-        -Wvariadic-macros -Wwrite-strings
+        -Wvariadic-macros -Wwrite-strings -Wunused-variable
     )
 endif ()

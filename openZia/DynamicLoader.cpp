@@ -46,11 +46,11 @@ DynamicHandler DynamicLoader::load(const std::string &path)
 
 void DynamicLoader::release(void)
 {
-    for (auto &[handler, name] : _handlers) {
+    for (auto &pair : _handlers) {
 #if defined(SYSTEM_LINUX)
-        ::dlclose(handler);
+        ::dlclose(pair.first);
 #elif defined(SYSTEM_WINDOWS)
-        ::FreeLibrary(handler);
+        ::FreeLibrary(pair.first);
 #endif
     }
     _handlers.clear();

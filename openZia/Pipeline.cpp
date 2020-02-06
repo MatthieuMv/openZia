@@ -10,7 +10,7 @@
     namespace fs = std::filesystem;
 #elif __has_include(<experimental/filesystem>)
     #include <experimental/filesystem>
-    namespace fs = std::experimental::filesystem; }
+    namespace fs = std::experimental::filesystem;
 #else
     #error "You compiler doesn't support std::filesystem nor std::experimental::filesystem"
 #endif
