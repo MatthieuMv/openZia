@@ -18,11 +18,22 @@
     static const std::string Extension = ".dll";
 #endif
 
+// todo : move that in a macro.hpp file
+#if !defined(LIBDIR)
+# define LIBDIR "."
+#endif
+
+// should be a member of oZ::DynamicLoader
+static std::string toLibPath(const std::string &name)
+{
+    return std::string(LIBDIR) + "/lib" + name + Extension;
+}
+
 Test(DynamicLoader, Basics)
 {
     oZ::DynamicLoader loader;
 
-    auto handler = loader.load("./libFoo" + Extension);
+    auto handler = loader.load(toLibPath("Foo"));
     cr_assert(handler);
 
     auto function = loader.getFunction<oZ::ModulePtr(*)(void)>(handler, "CreateModule");
@@ -45,7 +56,7 @@ Test(DynamicLoader, Errors)
 
     cr_assert(CrashTest([&loader]{ return loader.load("./azerty/uiop" + Extension); }));
 
-    auto handler = loader.load("./libFoo" + Extension);
+    auto handler = loader.load(toLibPath("Foo"));
     cr_assert(handler);
 
     cr_assert(CrashTest([&loader, handler]{ return loader.getFunction(handler, "azerty"); }));

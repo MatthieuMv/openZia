@@ -1,16 +1,11 @@
 cmake_minimum_required(VERSION 3.0)
-project(openZia)
+
+if (NOT DEFINED PROJECT_NAME)
+    project(openZia)
+endif()
 
 # This modules builds the API library
 # It can be imported to easily add the API to an existing CMake project
-
-# Requires C++ 17
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED 17 ON)
-
-if(UNIX)
-    set(CMAKE_CXX_FLAGS "-Wall -Wextra")
-endif()
 
 # Retreive where is located 'openZia.cmake'
 get_filename_component(OpenZiaSourcesDir ${CMAKE_CURRENT_LIST_FILE} PATH)
@@ -21,46 +16,33 @@ set(openZiaIncludes ${OpenZiaSourcesDir}/..)
 
 # Library sources
 set(OpenZiaSources
-    ${OpenZiaSourcesDir}/ByteArray.hpp
-    ${OpenZiaSourcesDir}/Endpoint.hpp
     ${OpenZiaSourcesDir}/Endpoint.cpp
-
-    ${OpenZiaSourcesDir}/Packet.hpp
-    ${OpenZiaSourcesDir}/Context.hpp
     ${OpenZiaSourcesDir}/Context.cpp
-
-    ${OpenZiaSourcesDir}/IModule.hpp
     ${OpenZiaSourcesDir}/IModule.cpp
-    ${OpenZiaSourcesDir}/ILogger.hpp
-
-    ${OpenZiaSourcesDir}/OperatingSystem.hpp
-    ${OpenZiaSourcesDir}/DynamicLoader.hpp
     ${OpenZiaSourcesDir}/DynamicLoader.cpp
-
-    ${OpenZiaSourcesDir}/Pipeline.hpp
     ${OpenZiaSourcesDir}/Pipeline.cpp
-    ${OpenZiaSourcesDir}/Pipeline.ipp
-
-    ${OpenZiaSourcesDir}/Log.hpp
     ${OpenZiaSourcesDir}/Log.cpp
-    ${OpenZiaSourcesDir}/Log.ipp
-
-    ${OpenZiaSourcesDir}/BaseHTTP.hpp
-    ${OpenZiaSourcesDir}/HTTP.hpp
-    ${OpenZiaSourcesDir}/HeaderHTTP.hpp
     ${OpenZiaSourcesDir}/HeaderHTTP.cpp
-    ${OpenZiaSourcesDir}/RequestHTTP.hpp
-    ${OpenZiaSourcesDir}/ResponseHTTP.hpp
 )
 
 # Create openZia library
-add_library(${PROJECT_NAME} ${OpenZiaSources})
-set_property(TARGET ${PROJECT_NAME} PROPERTY POSITION_INDEPENDENT_CODE ON)
+add_library(${openZiaLibs} ${OpenZiaSources})
+
+if (NOT CMAKE_LIBRARY_OUTPUT_DIRECTORY MATCHES "")
+    add_definitions(-DLIBDIR="${CMAKE_LIBRARY_OUTPUT_DIRECTORY}")
+endif()
+if (NOT CMAKE_RUNTIME_OUTPUT_DIRECTORY MATCHES "")
+    add_definitions(-DBINDIR="${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
+endif()
+
+set_property(TARGET ${openZiaLibs} PROPERTY CXX_STANDARD 17)
+set_property(TARGET ${openZiaLibs} PROPERTY CMAKE_CXX_STANDARD_REQUIRED ON)
+set_property(TARGET ${openZiaLibs} PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 # GCC < 9 requires explicit link to filesystem library
 if (UNIX)
-    target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} stdc++fs)
-    target_compile_options(${PROJECT_NAME} PRIVATE
+    target_link_libraries(${openZiaLibs} ${CMAKE_DL_LIBS} stdc++fs)
+    target_compile_options(${openZiaLibs} PRIVATE
 #        -Werror # Stop on any error !
         -pedantic -Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy
         -Wdisabled-optimization -Wformat=2 -Winit-self -Wlogical-op -Wmissing-declarations

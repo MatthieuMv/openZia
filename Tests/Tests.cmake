@@ -3,7 +3,7 @@ project(openZiaTests)
 # Retreive where is located 'Tests.cmake'
 get_filename_component(OpenZiaSourcesTestsDir ${CMAKE_CURRENT_LIST_FILE} PATH)
 
-message("Compiling criterion unit-tests for openZia project")
+message(STATUS "Compiling criterion unit-tests for openZia project")
 
 set(TestsSources
     ${OpenZiaSourcesTestsDir}/tests_BaseHTTP.cpp
@@ -19,6 +19,9 @@ set(TestsSources
     ${OpenZiaSourcesTestsDir}/tests_Log.cpp
 )
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 # Add a foo library for testing purposes
 set(FooSources
     ${OpenZiaSourcesTestsDir}/Medias/FooModule.hpp
@@ -28,8 +31,8 @@ add_library(Foo SHARED ${FooSources})
 target_link_libraries(Foo openZia)
 target_include_directories(Foo PRIVATE ${openZiaIncludes})
 
-add_executable(${PROJECT_NAME} ${TestsSources} ${OpenZiaSources})
-target_link_libraries(${PROJECT_NAME} criterion ${CMAKE_DL_LIBS} stdc++fs)
+add_executable(${PROJECT_NAME} ${TestsSources})
+target_link_libraries(${PROJECT_NAME} criterion ${CMAKE_DL_LIBS} stdc++fs ${openZiaLibs})
 target_include_directories(${PROJECT_NAME} PRIVATE ${openZiaIncludes})
 
 if (${OPENZIA_COVERAGE})

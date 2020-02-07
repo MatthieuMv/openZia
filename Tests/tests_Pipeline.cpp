@@ -11,11 +11,16 @@
 
 #include "Utils.hpp"
 
+// todo : move that in a macro.hpp file
+#ifndef LIBDIR
+# define LIBDIR "."
+#endif
+
 using namespace oZ;
 
 Test(Pipeline, Basics)
 {
-    Pipeline pipeline(".", ".");
+    Pipeline pipeline(LIBDIR, ".");
 
     pipeline.loadModules();
     cr_assert_eq(pipeline.getModules().size(), 1);

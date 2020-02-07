@@ -12,7 +12,7 @@
     #include <experimental/filesystem>
     namespace fs = std::experimental::filesystem;
 #else
-# error "You compiler doesn't support std::filesystem nor std::experimental::filesystem"
+    #error "You compiler doesn't support std::filesystem nor std::experimental::filesystem"
 #endif
 
 #include <cstring>
@@ -94,7 +94,7 @@ void Pipeline::triggerContextStateCallbacks(Context &context)
 void Pipeline::checkModulesDependencies(void)
 {
     for (const auto &module : _modules) {
-        for (const auto &dependencie : module->getDependencies())
+        for (const auto *dependencie : module->getDependencies())
             checkModuleDependency(module, dependencie);
     }
 }
@@ -108,4 +108,11 @@ void Pipeline::checkModuleDependency(const ModulePtr &module, const char *depend
 
 void Pipeline::createPipeline(void)
 {
+    if (!_configurationDir.empty() && _configurationDir.back() != '/')
+        _configurationDir.push_back('/');
+    for (const auto &module : _modules) {
+        module->onRegisterCallbacks(*this);
+        module->onRetreiveDependencies(*this);
+        module->onLoadConfigurationFile(_configurationDir);
+    }
 }
