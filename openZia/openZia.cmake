@@ -8,6 +8,10 @@ project(openZia)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED 17 ON)
 
+if(UNIX)
+    set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+endif()
+
 # Retreive where is located 'openZia.cmake'
 get_filename_component(OpenZiaSourcesDir ${CMAKE_CURRENT_LIST_FILE} PATH)
 
