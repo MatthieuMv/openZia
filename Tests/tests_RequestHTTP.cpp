@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** CPP_zia_2019
 ** File description:
-** HTTP Request 
+** HTTP Request
 */
 
 #include <criterion/criterion.h>
@@ -13,19 +13,24 @@ using namespace oZ::HTTP;
 
 Test(Request, Basics)
 {
-    Request base(Method::Get, "index.html", Version(1, 1)), req(base);
+    Request base;
 
-    cr_assert_eq(req.getMethod(), Method::Get);
-    cr_assert_eq(req.getURI(), "index.html");
-    cr_assert_eq(req.getVersion(), Version(1, 1));
+    base.setMethod(Method::Get);
+    base.getURI() = "index.html";
+    base.getBody() = "hello";
+    base.setVersion(Version(1, 1));
+    cr_assert_eq(base.getMethod(), Method::Get);
+    cr_assert_eq(base.getURI(), "index.html");
+    cr_assert_eq(base.getBody(), "hello");
+    cr_assert_eq(base.getVersion(), Version(1, 1));
 
-    req.setMethod(Method::Post);
-    req.getURI() = "azerty";
-    req.setVersion(Version(1, 0));
+    base.setMethod(Method::Post);
+    base.getURI() = "azerty";
+    base.setVersion(Version(1, 0));
 
-    cr_assert_eq(req.getMethod(), Method::Post);
-    cr_assert_eq(req.getURI(), "azerty");
-    cr_assert_eq(req.getVersion(), Version(1, 0));
+    cr_assert_eq(base.getMethod(), Method::Post);
+    cr_assert_eq(base.getURI(), "azerty");
+    cr_assert_eq(base.getVersion(), Version(1, 0));
 
-    cr_assert_not(req.getHeader().exists("abc"));
+    cr_assert_not(base.getHeader().exists("abc"));
 }

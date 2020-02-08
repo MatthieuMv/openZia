@@ -19,7 +19,7 @@ std::string Endpoint::getAddress(void) const noexcept
     for (auto i = 0; i < 4; ++i) {
         if (i)
             res.push_back('.');
-        res += std::to_string(ptr[i]);
+        res += std::to_string(static_cast<unsigned>(ptr[i]));
     }
     return res;
 }
@@ -33,7 +33,7 @@ void Endpoint::setAddress(const std::string &ip)
 
         for (auto c : ip) {
             if (c == '.') {
-				ptr[i++] = static_cast<std::uint8_t>(std::stoul(cache));
+                ptr[i++] = static_cast<std::uint8_t>(std::stoul(cache));
                 cache.clear();
             } else
                 cache.push_back(c);

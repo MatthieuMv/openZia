@@ -1,0 +1,108 @@
+\hypertarget{classo_z_1_1_h_t_t_p_1_1_message}{}\section{oZ\+::H\+T\+TP\+::Message Class Reference}
+\label{classo_z_1_1_h_t_t_p_1_1_message}\index{oZ::HTTP::Message@{oZ::HTTP::Message}}
+
+
+{\ttfamily \#include $<$Message\+H\+T\+T\+P.\+hpp$>$}
+
+
+
+Inherited by \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_request}{o\+Z\+::\+H\+T\+T\+P\+::\+Request}}, and \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_response}{o\+Z\+::\+H\+T\+T\+P\+::\+Response}}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_message_a42e40b68d8080d66ca335a2b8fc45c79}{$\sim$\+Message}} (void)=default
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_message}{Message}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header}{Header}} \& \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_message_a17e948e575922d18e084d9ad8c6f4538}{get\+Header}} (void) noexcept
+\begin{DoxyCompactList}\small\item\em Get the response\textquotesingle{}s header reference. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header}{Header}} \& \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_message_a01624052798c5304cb8c6f3de637ac96}{get\+Header}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Get the response\textquotesingle{}s header constant reference. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a270c38b9f9b6228ce430fda6d5b150d6}{Body}} \& \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_message_aed4d82d784cf503dbbfa1180f9b3434f}{get\+Body}} (void) noexcept
+\begin{DoxyCompactList}\small\item\em Get request\textquotesingle{}s Body reference. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a270c38b9f9b6228ce430fda6d5b150d6}{Body}} \& \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_message_ad06f3f586945dad61b206607f340f4e1}{get\+Body}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Get request\textquotesingle{}s Body constant reference. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structo_z_1_1_h_t_t_p_1_1_version}{Version}} \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_message_a6041a3ba343c0115c79c233e5c322d0b}{get\+Version}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Get request\textquotesingle{}s version. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_message_ac3fa35df570a24f54999e1091fac0726}{set\+Version}} (const \mbox{\hyperlink{structo_z_1_1_h_t_t_p_1_1_version}{Version}} version) noexcept
+\begin{DoxyCompactList}\small\item\em Set request\textquotesingle{}s version. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_message_a42e40b68d8080d66ca335a2b8fc45c79}\label{classo_z_1_1_h_t_t_p_1_1_message_a42e40b68d8080d66ca335a2b8fc45c79}} 
+\index{oZ::HTTP::Message@{oZ::HTTP::Message}!````~Message@{$\sim$Message}}
+\index{````~Message@{$\sim$Message}!oZ::HTTP::Message@{oZ::HTTP::Message}}
+\subsubsection{\texorpdfstring{$\sim$Message()}{~Message()}}
+{\footnotesize\ttfamily virtual o\+Z\+::\+H\+T\+T\+P\+::\+Message\+::$\sim$\+Message (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destroy the \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_message}{Message}} object. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_message_aed4d82d784cf503dbbfa1180f9b3434f}\label{classo_z_1_1_h_t_t_p_1_1_message_aed4d82d784cf503dbbfa1180f9b3434f}} 
+\index{oZ::HTTP::Message@{oZ::HTTP::Message}!getBody@{getBody}}
+\index{getBody@{getBody}!oZ::HTTP::Message@{oZ::HTTP::Message}}
+\subsubsection{\texorpdfstring{getBody()}{getBody()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a270c38b9f9b6228ce430fda6d5b150d6}{Body}}\& o\+Z\+::\+H\+T\+T\+P\+::\+Message\+::get\+Body (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get request\textquotesingle{}s Body reference. 
+
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_message_ad06f3f586945dad61b206607f340f4e1}\label{classo_z_1_1_h_t_t_p_1_1_message_ad06f3f586945dad61b206607f340f4e1}} 
+\index{oZ::HTTP::Message@{oZ::HTTP::Message}!getBody@{getBody}}
+\index{getBody@{getBody}!oZ::HTTP::Message@{oZ::HTTP::Message}}
+\subsubsection{\texorpdfstring{getBody()}{getBody()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a270c38b9f9b6228ce430fda6d5b150d6}{Body}}\& o\+Z\+::\+H\+T\+T\+P\+::\+Message\+::get\+Body (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get request\textquotesingle{}s Body constant reference. 
+
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_message_a17e948e575922d18e084d9ad8c6f4538}\label{classo_z_1_1_h_t_t_p_1_1_message_a17e948e575922d18e084d9ad8c6f4538}} 
+\index{oZ::HTTP::Message@{oZ::HTTP::Message}!getHeader@{getHeader}}
+\index{getHeader@{getHeader}!oZ::HTTP::Message@{oZ::HTTP::Message}}
+\subsubsection{\texorpdfstring{getHeader()}{getHeader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header}{Header}}\& o\+Z\+::\+H\+T\+T\+P\+::\+Message\+::get\+Header (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the response\textquotesingle{}s header reference. 
+
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_message_a01624052798c5304cb8c6f3de637ac96}\label{classo_z_1_1_h_t_t_p_1_1_message_a01624052798c5304cb8c6f3de637ac96}} 
+\index{oZ::HTTP::Message@{oZ::HTTP::Message}!getHeader@{getHeader}}
+\index{getHeader@{getHeader}!oZ::HTTP::Message@{oZ::HTTP::Message}}
+\subsubsection{\texorpdfstring{getHeader()}{getHeader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header}{Header}}\& o\+Z\+::\+H\+T\+T\+P\+::\+Message\+::get\+Header (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the response\textquotesingle{}s header constant reference. 
+
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_message_a6041a3ba343c0115c79c233e5c322d0b}\label{classo_z_1_1_h_t_t_p_1_1_message_a6041a3ba343c0115c79c233e5c322d0b}} 
+\index{oZ::HTTP::Message@{oZ::HTTP::Message}!getVersion@{getVersion}}
+\index{getVersion@{getVersion}!oZ::HTTP::Message@{oZ::HTTP::Message}}
+\subsubsection{\texorpdfstring{getVersion()}{getVersion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structo_z_1_1_h_t_t_p_1_1_version}{Version}} o\+Z\+::\+H\+T\+T\+P\+::\+Message\+::get\+Version (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get request\textquotesingle{}s version. 
+
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_message_ac3fa35df570a24f54999e1091fac0726}\label{classo_z_1_1_h_t_t_p_1_1_message_ac3fa35df570a24f54999e1091fac0726}} 
+\index{oZ::HTTP::Message@{oZ::HTTP::Message}!setVersion@{setVersion}}
+\index{setVersion@{setVersion}!oZ::HTTP::Message@{oZ::HTTP::Message}}
+\subsubsection{\texorpdfstring{setVersion()}{setVersion()}}
+{\footnotesize\ttfamily void o\+Z\+::\+H\+T\+T\+P\+::\+Message\+::set\+Version (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structo_z_1_1_h_t_t_p_1_1_version}{Version}}}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Set request\textquotesingle{}s version. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_message_h_t_t_p_8hpp}{Message\+H\+T\+T\+P.\+hpp}}\end{DoxyCompactItemize}

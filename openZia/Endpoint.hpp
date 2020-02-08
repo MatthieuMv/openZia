@@ -41,12 +41,17 @@ public:
     /**
      * @brief Construct a new Endpoint object
      */
-    Endpoint(const Endpoint &other) : _port(other._port), _ip(other._ip) {}
+    Endpoint(const Endpoint &other) = default;
 
     /**
      * @brief Destroy the Endpoint objecti
      */
     ~Endpoint(void) = default;
+
+    /**
+     * @brief Copy operator
+     */
+    Endpoint &operator=(const Endpoint &other) = default;
 
     /**
      * @brief Equality operator
@@ -73,7 +78,7 @@ public:
     /**
      * @brief Set the Address object using a 4 byte value
      */
-    void setAddress(IP ip) { _ip = ip; }
+    void setAddress(const IP ip) { _ip = ip; }
 
     /**
      * @brief Get internal port
@@ -83,7 +88,7 @@ public:
     /**
      * @brief Set internal port
      */
-    void setPort(Port port) noexcept { _port = port; }
+    void setPort(const Port port) noexcept { _port = port; }
 
 private:
     IP _ip = 0;

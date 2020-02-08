@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "HeaderHTTP.hpp"
+#include "MessageHTTP.hpp"
 
 // Verbose declaration needed for doxygen support
 namespace oZ { namespace HTTP { class Response; } }
@@ -15,29 +15,13 @@ namespace oZ { namespace HTTP { class Response; } }
 /**
  * @brief The HTTP response inherits from the header
  */
-class oZ::HTTP::Response
+class oZ::HTTP::Response : public Message
 {
 public:
     /**
-     * @brief Construct a new Response object
-     */
-    Response(Code code = Code::Undefined, Reason &&reason = Reason(), Body &&body = Body(), Version version = DefaultVersion)
-        : _code(code), _reason(std::move(reason)), _body(std::move(body)), _version(version) {}
-
-    /**
-     * @brief Construct a new Response object by copy
-     */
-    Response(const Response &other) = default;
-
-    /**
-     * @brief Construct a new Response object by move
-     */
-    Response(Response &&other) = default;
-
-    /**
      * @brief Destroy the Response object
      */
-    ~Response(void) = default;
+    virtual ~Response(void) = default;
 
     /**
      * @brief Get request's code
@@ -47,7 +31,7 @@ public:
     /**
      * @brief Set request's code
      */
-    void setCode(Code code) noexcept { _code = code; }
+    void setCode(const Code code) noexcept { _code = code; }
 
     /**
      * @brief Get request's Reason reference
@@ -59,40 +43,7 @@ public:
      */
     [[nodiscard]] const Reason &getReason(void) const noexcept { return _reason; }
 
-    /**
-     * @brief Get request's Body reference
-     */
-    [[nodiscard]] Body &getBody(void) noexcept { return _body; }
-
-    /**
-     * @brief Get request's Body constant reference
-     */
-    [[nodiscard]] const Body &getBody(void) const noexcept { return _body; }
-
-    /**
-     * @brief Get request's version
-     */
-    [[nodiscard]] Version getVersion(void) const noexcept { return _version; }
-
-    /**
-     * @brief Set request's version
-     */
-    void setVersion(Version version) noexcept { _version = version; }
-
-    /**
-     * @brief Get the response's header reference
-     */
-    [[nodiscard]] Header &getHeader(void) noexcept { return _header; }
-
-    /**
-     * @brief Get the response's header constant reference
-     */
-    [[nodiscard]] const Header &getHeader(void) const noexcept { return _header; }
-
 private:
+    Reason _reason {};
     Code _code = Code::Undefined;
-    Reason _reason;
-    Body _body;
-    Version _version;
-    Header _header;
 };

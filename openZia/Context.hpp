@@ -115,7 +115,7 @@ public:
     /**
      * @brief Set the current context' state
      */
-    void setState(State state) noexcept { _state = state; }
+    void setState(const State state) noexcept { _state = state; }
 
     /**
      * @brief Set internal state to the next one
@@ -149,9 +149,9 @@ public:
     [[nodiscard]] bool isConstant(void) const noexcept { return _constant; }
 
 private:
-    Packet _packet;
-    HTTP::Request _request;
-    HTTP::Response _response;
+    Packet _packet {};
+    HTTP::Request _request {};
+    HTTP::Response _response {};
     State _state = State::BeforeParse;
     bool _constant = true;
 };

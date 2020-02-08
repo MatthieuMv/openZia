@@ -55,7 +55,7 @@ public:
 
 private:
     Level _level = Level::Information;
-    std::ostringstream _os;
+    std::ostringstream _os {};
 };
 
 #include "Log.ipp"

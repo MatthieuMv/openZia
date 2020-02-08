@@ -141,13 +141,13 @@ protected:
     virtual void onLoadModules(const std::string &directoryPath);
 
 protected:
-    DynamicLoader _dynamicLoader;
+    DynamicLoader _dynamicLoader {};
 
 private:
-    ModuleList _modules;
-    PipelineMap _pipeline;
-    LoggerList _loggers;
-    std::string _moduleDir, _configurationDir;
+    ModuleList _modules {};
+    PipelineMap _pipeline {};
+    LoggerList _loggers {};
+    std::string _moduleDir {}, _configurationDir {};
 
     /**
      * @brief Check if every modules dependencies are present.
