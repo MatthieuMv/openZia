@@ -28,7 +28,7 @@ Test(DynamicLoader, Basics)
     auto function = loader.getFunction<oZ::ModuleInstanceFunction>(handler, "CreateModule");
     cr_assert(function);
 
-    oZ::ModulePtr module = (*function)();
+    oZ::ModulePtr module { (*function)() };
     cr_assert(module.get());
     cr_assert_str_eq(module->getName(), "Foo");
 
