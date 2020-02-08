@@ -5,7 +5,7 @@ It means that you must compile every module independently.
 For that you must implement your modules deriving from **oZ::IModule** interface.
 Last, you will need an instantiation function:
 ```C++
-extern "C" ModulePtr CreateModule(void) { return std::make_shared<MyModule>(); }
+extern "C" IModule *CreateModule(void) { return MyModule(); }
 ```
 The API already does the dynamic library loading for you so you can focus more on creating modules.
 

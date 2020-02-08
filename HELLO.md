@@ -75,7 +75,7 @@ private:
 /* --- Hello.cpp --- */
 #include "Hello.hpp"
 
-extern "C" oZ::ModulePtr CreateModule(void) { return std::make_shared<Hello>(); }
+extern "C" oZ::IModule *CreateModule(void) { return new Hello(); }
 ```
 
 ```C++
@@ -114,5 +114,5 @@ public:
 /* --- World.cpp --- */
 #include "World.hpp"
 
-extern "C" oZ::ModulePtr CreateModule(void) { return std::make_shared<World>(); }
+extern "C" oZ::IModule *CreateModule(void) { return new World(); }
 ```

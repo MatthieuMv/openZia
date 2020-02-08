@@ -41,9 +41,9 @@ namespace oZ
      * @brief Function signature that each module should respect to get detected and instantied.
      * It musts uses the name 'createModule'.
      *
-     * Example : ModulePtr CreateModule(void) { return std::make_shared<MyModule>(); }
+     * Example : IModule *CreateModule(void) { return MyModule(); }
      */
-    using ModuleInstanceFunction = ModulePtr(*)(void);
+    using ModuleInstanceFunction = IModule*(*)(void);
 }
 
 /**
