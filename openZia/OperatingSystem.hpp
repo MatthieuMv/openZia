@@ -9,6 +9,8 @@
 
 #if defined(__linux__) || defined(__linux) || defined(linux) || defined(_LINUX)
     #define SYSTEM_LINUX
+#elif defined(__APPLE__)
+    #define SYSTEM_DARWIN
 #elif defined(_WIN32) || defined(_WIN64)
     #define SYSTEM_WINDOWS
 #else
