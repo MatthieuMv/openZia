@@ -16,7 +16,7 @@ Test(DynamicLoader, Basics)
 {
     oZ::DynamicLoader loader;
 
-    auto handler = loader.load("./libFoo" + SHARED_LIB_EXT);
+    auto handler = loader.load("./libFoo" + std::string(SHARED_LIB_EXT));
     cr_assert(handler);
 
     auto function = loader.getFunction<oZ::ModuleInstanceFunction>(handler, "CreateModule");
@@ -37,9 +37,9 @@ Test(DynamicLoader, Errors)
 
     cr_assert_eq(loader.getHandlerPath(nullptr), std::string());
 
-    cr_assert(CrashTest([&loader]{ return loader.load("./azerty/uiop" + SHARED_LIB_EXT); }));
+    cr_assert(CrashTest([&loader]{ return loader.load("./azerty/uiop" + std::string(SHARED_LIB_EXT)); }));
 
-    auto handler = loader.load("./libFoo" + SHARED_LIB_EXT);
+    auto handler = loader.load("./libFoo" + std::string(SHARED_LIB_EXT));
     cr_assert(handler);
 
     cr_assert(CrashTest([&loader, handler]{ return loader.getFunction(handler, "azerty"); }));

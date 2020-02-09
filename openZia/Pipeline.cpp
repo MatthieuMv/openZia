@@ -56,7 +56,7 @@ void Pipeline::onLoadModules(const std::string &directoryPath)
     for (const auto &file : fs::directory_iterator(path)) {
         if (!file.path().has_extension())
             continue;
-        else if (auto ext = file.path().extension().string(); ext != SHARED_LIB_EXT)
+        else if (auto ext = file.path().extension().string(); ext != std::string(SHARED_LIB_EXT))
             continue;
         auto handler = _dynamicLoader.load(file.path().string());
         auto function = _dynamicLoader.getFunction<ModuleInstanceFunction>(handler, "CreateModule");
