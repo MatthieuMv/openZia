@@ -2,7 +2,7 @@ var searchData=
 [
   ['seeother',['SeeOther',['../namespaceo_z_1_1_h_t_t_p.html#acd43703151305f79b1e2f42e98ee8199a7843649eb3841f496a79303fd815029e',1,'oZ::HTTP']]],
   ['serviceunavailable',['ServiceUnavailable',['../namespaceo_z_1_1_h_t_t_p.html#acd43703151305f79b1e2f42e98ee8199a2a4581043d849bcb0e4747970ef1489b',1,'oZ::HTTP']]],
-  ['set',['set',['../classo_z_1_1_h_t_t_p_1_1_header.html#a00466b7e626925b15b650733bab543f6',1,'oZ::HTTP::Header']]],
+  ['set',['set',['../classo_z_1_1_h_t_t_p_1_1_header.html#a3063660c3eb22844296e83807b8a62e1',1,'oZ::HTTP::Header']]],
   ['setaddress',['setAddress',['../classo_z_1_1_endpoint.html#a90caf5f6497ec5a09b34d7a6069502da',1,'oZ::Endpoint::setAddress(const std::string &amp;ip)'],['../classo_z_1_1_endpoint.html#ab59c67d8538e05a0bc5192777296d47a',1,'oZ::Endpoint::setAddress(const IP ip)']]],
   ['setcode',['setCode',['../classo_z_1_1_h_t_t_p_1_1_response.html#a37a97a943ebded8fca87ee14cd76c0fa',1,'oZ::HTTP::Response']]],
   ['setencryption',['setEncryption',['../classo_z_1_1_packet.html#a7c6fc3f9ca25adf83be8e7c1f5ae5b70',1,'oZ::Packet']]],
@@ -14,5 +14,6 @@ var searchData=
   ['setversion',['setVersion',['../classo_z_1_1_h_t_t_p_1_1_message.html#ac3fa35df570a24f54999e1091fac0726',1,'oZ::HTTP::Message']]],
   ['state',['State',['../namespaceo_z.html#a356b278f7c65def0cae75fca8cae268e',1,'oZ']]],
   ['statecount',['StateCount',['../namespaceo_z.html#a356b278f7c65def0cae75fca8cae268ea9316dd881ad0cf8cf871aa48cf9b3abc',1,'oZ']]],
+  ['stringmultimap',['StringMultimap',['../namespaceo_z_1_1_h_t_t_p.html#a339aac279d709cfa16148ad073500fc1',1,'oZ::HTTP']]],
   ['switchingprotocols',['SwitchingProtocols',['../namespaceo_z_1_1_h_t_t_p.html#acd43703151305f79b1e2f42e98ee8199a548c5a637eddf65132b21411aeafc6a1',1,'oZ::HTTP']]]
 ];

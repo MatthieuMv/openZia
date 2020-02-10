@@ -9,59 +9,189 @@ The \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}} \mbox{\hyperlink{class
 
 {\ttfamily \#include $<$Header\+H\+T\+T\+P.\+hpp$>$}
 
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a572d529cae124a02fb68df9c3e51c576}{Iterator}} = String\+Multimap\+::iterator
+\item 
+using \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a509c1ea8f5b221246e6e49c01a115d69}{Const\+Iterator}} = String\+Multimap\+::const\+\_\+iterator
+\item 
+using \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a226f04d25adf24d2a683f82ef8327812}{Iterator\+Range}} = std\+::pair$<$ \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a572d529cae124a02fb68df9c3e51c576}{Iterator}}, \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a572d529cae124a02fb68df9c3e51c576}{Iterator}} $>$
+\item 
+using \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a0823c7353e93de315929c96457563c3d}{Const\+Iterator\+Range}} = std\+::pair$<$ \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a509c1ea8f5b221246e6e49c01a115d69}{Const\+Iterator}}, \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a509c1ea8f5b221246e6e49c01a115d69}{Const\+Iterator}} $>$
+\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a6981daf90cda100da0e23a516991d35b}{exists}} (const std\+::string \&key) const noexcept
+{\footnotesize template$<$typename Literal $>$ }\\bool \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_aac91315b9984871e672845f8a69cf1ef}{exists}} (const Literal \&key) const noexcept
 \begin{DoxyCompactList}\small\item\em Check existence of a value in the header. \end{DoxyCompactList}\item 
-std\+::string \& \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_aeedea8bfa094294f0f5892bc9736c48e}{get}} (const std\+::string \&key)
-\begin{DoxyCompactList}\small\item\em Get a value in the header, and insert it if not found. \end{DoxyCompactList}\item 
-const std\+::string \& \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_acb0cba9e469ca227411584a4d5485b91}{get}} (const std\+::string \&key) const
-\begin{DoxyCompactList}\small\item\em Get a value in the header, and throw if not found. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Literal $>$ }\\void \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a00466b7e626925b15b650733bab543f6}{set}} (const std\+::string \&key, Literal \&\&value)
-\begin{DoxyCompactList}\small\item\em Get a value in the header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$typename Literal $>$ }\\std\+::string \& \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_ad09c489218fdd63493dd5ce7b025265e}{get}} (const Literal \&key, const std\+::uint32\+\_\+t index=0)
+\begin{DoxyCompactList}\small\item\em Get a value in the header matching a key and an index, and throw if not found. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Literal $>$ }\\const std\+::string \& \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_abad6705f4eff158eec13825b3419d265}{get}} (const Literal \&key, const std\+::uint32\+\_\+t index=0) const
+\begin{DoxyCompactList}\small\item\em Get a value in the header matching a key and an index, and throw if not found. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Literal , typename Literal2 $>$ }\\void \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a3063660c3eb22844296e83807b8a62e1}{set}} (const Literal \&key, Literal2 \&\&value)
+\begin{DoxyCompactList}\small\item\em Get a value in the header. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Literal $>$ }\\std\+::uint32\+\_\+t \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a59d2eb480ab72b94240e8eb87cf7aee2}{count}} (const Literal \&key) const noexcept
+\begin{DoxyCompactList}\small\item\em Count occurences of matching key. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Literal $>$ }\\\mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a572d529cae124a02fb68df9c3e51c576}{Iterator}} \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_ae20764876b35b2185394eafcb007454b}{get\+Iterator}} (const Literal \&key)
+\begin{DoxyCompactList}\small\item\em Get the iterator of matching key. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Literal $>$ }\\\mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a509c1ea8f5b221246e6e49c01a115d69}{Const\+Iterator}} \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a43a6b9a03c9a46c4eeee0df3c3990d63}{get\+Iterator}} (const Literal \&key) const
+\begin{DoxyCompactList}\small\item\em Get the iterator of matching key. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Literal $>$ }\\\mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a226f04d25adf24d2a683f82ef8327812}{Iterator\+Range}} \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_ae30e471f7d522477cf022531a84e727a}{get\+Iterator\+Range}} (const Literal \&key)
+\begin{DoxyCompactList}\small\item\em Get the iterator range of matching key. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Literal $>$ }\\\mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a0823c7353e93de315929c96457563c3d}{Const\+Iterator\+Range}} \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_acecb2a9ed8e432a4a3ab9c6170d73793}{get\+Iterator\+Range}} (const Literal \&key) const
+\begin{DoxyCompactList}\small\item\em Get the iterator range of matching key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a339aac279d709cfa16148ad073500fc1}{String\+Multimap}} \& \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a915a52b181112582d34e0942004d4cb0}{get\+String\+Multimap}} (void) noexcept
+\begin{DoxyCompactList}\small\item\em Get the String Multimap\textquotesingle{}s reference. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a339aac279d709cfa16148ad073500fc1}{String\+Multimap}} \& \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_af1ee1c1e6a882a605407683341e32a8f}{get\+String\+Multimap}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Get the String Multimap\textquotesingle{}s constant reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 The \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p}{H\+T\+TP}} \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header}{Header}} is a simple map of string used to store header values. 
 
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_a509c1ea8f5b221246e6e49c01a115d69}\label{classo_z_1_1_h_t_t_p_1_1_header_a509c1ea8f5b221246e6e49c01a115d69}} 
+\index{oZ::HTTP::Header@{oZ::HTTP::Header}!ConstIterator@{ConstIterator}}
+\index{ConstIterator@{ConstIterator}!oZ::HTTP::Header@{oZ::HTTP::Header}}
+\subsubsection{\texorpdfstring{ConstIterator}{ConstIterator}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a509c1ea8f5b221246e6e49c01a115d69}{o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::\+Const\+Iterator}} =  String\+Multimap\+::const\+\_\+iterator}
+
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_a0823c7353e93de315929c96457563c3d}\label{classo_z_1_1_h_t_t_p_1_1_header_a0823c7353e93de315929c96457563c3d}} 
+\index{oZ::HTTP::Header@{oZ::HTTP::Header}!ConstIteratorRange@{ConstIteratorRange}}
+\index{ConstIteratorRange@{ConstIteratorRange}!oZ::HTTP::Header@{oZ::HTTP::Header}}
+\subsubsection{\texorpdfstring{ConstIteratorRange}{ConstIteratorRange}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a0823c7353e93de315929c96457563c3d}{o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::\+Const\+Iterator\+Range}} =  std\+::pair$<$\mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a509c1ea8f5b221246e6e49c01a115d69}{Const\+Iterator}}, \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a509c1ea8f5b221246e6e49c01a115d69}{Const\+Iterator}}$>$}
+
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_a572d529cae124a02fb68df9c3e51c576}\label{classo_z_1_1_h_t_t_p_1_1_header_a572d529cae124a02fb68df9c3e51c576}} 
+\index{oZ::HTTP::Header@{oZ::HTTP::Header}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!oZ::HTTP::Header@{oZ::HTTP::Header}}
+\subsubsection{\texorpdfstring{Iterator}{Iterator}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a572d529cae124a02fb68df9c3e51c576}{o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::\+Iterator}} =  String\+Multimap\+::iterator}
+
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_a226f04d25adf24d2a683f82ef8327812}\label{classo_z_1_1_h_t_t_p_1_1_header_a226f04d25adf24d2a683f82ef8327812}} 
+\index{oZ::HTTP::Header@{oZ::HTTP::Header}!IteratorRange@{IteratorRange}}
+\index{IteratorRange@{IteratorRange}!oZ::HTTP::Header@{oZ::HTTP::Header}}
+\subsubsection{\texorpdfstring{IteratorRange}{IteratorRange}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a226f04d25adf24d2a683f82ef8327812}{o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::\+Iterator\+Range}} =  std\+::pair$<$\mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a572d529cae124a02fb68df9c3e51c576}{Iterator}}, \mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a572d529cae124a02fb68df9c3e51c576}{Iterator}}$>$}
+
+
+
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_a6981daf90cda100da0e23a516991d35b}\label{classo_z_1_1_h_t_t_p_1_1_header_a6981daf90cda100da0e23a516991d35b}} 
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_a59d2eb480ab72b94240e8eb87cf7aee2}\label{classo_z_1_1_h_t_t_p_1_1_header_a59d2eb480ab72b94240e8eb87cf7aee2}} 
+\index{oZ::HTTP::Header@{oZ::HTTP::Header}!count@{count}}
+\index{count@{count}!oZ::HTTP::Header@{oZ::HTTP::Header}}
+\subsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily template$<$typename Literal $>$ \\
+std\+::uint32\+\_\+t o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::count (\begin{DoxyParamCaption}\item[{const Literal \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Count occurences of matching key. 
+
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_aac91315b9984871e672845f8a69cf1ef}\label{classo_z_1_1_h_t_t_p_1_1_header_aac91315b9984871e672845f8a69cf1ef}} 
 \index{oZ::HTTP::Header@{oZ::HTTP::Header}!exists@{exists}}
 \index{exists@{exists}!oZ::HTTP::Header@{oZ::HTTP::Header}}
 \subsubsection{\texorpdfstring{exists()}{exists()}}
-{\footnotesize\ttfamily bool o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily template$<$typename Literal $>$ \\
+bool o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::exists (\begin{DoxyParamCaption}\item[{const Literal \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
 Check existence of a value in the header. 
 
-\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_aeedea8bfa094294f0f5892bc9736c48e}\label{classo_z_1_1_h_t_t_p_1_1_header_aeedea8bfa094294f0f5892bc9736c48e}} 
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_ad09c489218fdd63493dd5ce7b025265e}\label{classo_z_1_1_h_t_t_p_1_1_header_ad09c489218fdd63493dd5ce7b025265e}} 
 \index{oZ::HTTP::Header@{oZ::HTTP::Header}!get@{get}}
 \index{get@{get}!oZ::HTTP::Header@{oZ::HTTP::Header}}
 \subsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily std\+::string\& o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Literal $>$ \\
+std\+::string \& o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::get (\begin{DoxyParamCaption}\item[{const Literal \&}]{key,  }\item[{const std\+::uint32\+\_\+t}]{index = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 
 
-Get a value in the header, and insert it if not found. 
+Get a value in the header matching a key and an index, and throw if not found. 
 
-\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_acb0cba9e469ca227411584a4d5485b91}\label{classo_z_1_1_h_t_t_p_1_1_header_acb0cba9e469ca227411584a4d5485b91}} 
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_abad6705f4eff158eec13825b3419d265}\label{classo_z_1_1_h_t_t_p_1_1_header_abad6705f4eff158eec13825b3419d265}} 
 \index{oZ::HTTP::Header@{oZ::HTTP::Header}!get@{get}}
 \index{get@{get}!oZ::HTTP::Header@{oZ::HTTP::Header}}
 \subsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily const std\+::string \& Header\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily template$<$typename Literal $>$ \\
+const std\+::string \& o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::get (\begin{DoxyParamCaption}\item[{const Literal \&}]{key,  }\item[{const std\+::uint32\+\_\+t}]{index = {\ttfamily 0} }\end{DoxyParamCaption}) const}
 
 
 
-Get a value in the header, and throw if not found. 
+Get a value in the header matching a key and an index, and throw if not found. 
 
-\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_a00466b7e626925b15b650733bab543f6}\label{classo_z_1_1_h_t_t_p_1_1_header_a00466b7e626925b15b650733bab543f6}} 
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_ae20764876b35b2185394eafcb007454b}\label{classo_z_1_1_h_t_t_p_1_1_header_ae20764876b35b2185394eafcb007454b}} 
+\index{oZ::HTTP::Header@{oZ::HTTP::Header}!getIterator@{getIterator}}
+\index{getIterator@{getIterator}!oZ::HTTP::Header@{oZ::HTTP::Header}}
+\subsubsection{\texorpdfstring{getIterator()}{getIterator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Literal $>$ \\
+\mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a572d529cae124a02fb68df9c3e51c576}{Iterator}} o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::get\+Iterator (\begin{DoxyParamCaption}\item[{const Literal \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the iterator of matching key. 
+
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_a43a6b9a03c9a46c4eeee0df3c3990d63}\label{classo_z_1_1_h_t_t_p_1_1_header_a43a6b9a03c9a46c4eeee0df3c3990d63}} 
+\index{oZ::HTTP::Header@{oZ::HTTP::Header}!getIterator@{getIterator}}
+\index{getIterator@{getIterator}!oZ::HTTP::Header@{oZ::HTTP::Header}}
+\subsubsection{\texorpdfstring{getIterator()}{getIterator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Literal $>$ \\
+\mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a509c1ea8f5b221246e6e49c01a115d69}{Const\+Iterator}} o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::get\+Iterator (\begin{DoxyParamCaption}\item[{const Literal \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the iterator of matching key. 
+
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_ae30e471f7d522477cf022531a84e727a}\label{classo_z_1_1_h_t_t_p_1_1_header_ae30e471f7d522477cf022531a84e727a}} 
+\index{oZ::HTTP::Header@{oZ::HTTP::Header}!getIteratorRange@{getIteratorRange}}
+\index{getIteratorRange@{getIteratorRange}!oZ::HTTP::Header@{oZ::HTTP::Header}}
+\subsubsection{\texorpdfstring{getIteratorRange()}{getIteratorRange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Literal $>$ \\
+\mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a226f04d25adf24d2a683f82ef8327812}{Iterator\+Range}} o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::get\+Iterator\+Range (\begin{DoxyParamCaption}\item[{const Literal \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the iterator range of matching key. 
+
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_acecb2a9ed8e432a4a3ab9c6170d73793}\label{classo_z_1_1_h_t_t_p_1_1_header_acecb2a9ed8e432a4a3ab9c6170d73793}} 
+\index{oZ::HTTP::Header@{oZ::HTTP::Header}!getIteratorRange@{getIteratorRange}}
+\index{getIteratorRange@{getIteratorRange}!oZ::HTTP::Header@{oZ::HTTP::Header}}
+\subsubsection{\texorpdfstring{getIteratorRange()}{getIteratorRange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Literal $>$ \\
+\mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_header_a0823c7353e93de315929c96457563c3d}{Const\+Iterator\+Range}} o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::get\+Iterator\+Range (\begin{DoxyParamCaption}\item[{const Literal \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the iterator range of matching key. 
+
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_a915a52b181112582d34e0942004d4cb0}\label{classo_z_1_1_h_t_t_p_1_1_header_a915a52b181112582d34e0942004d4cb0}} 
+\index{oZ::HTTP::Header@{oZ::HTTP::Header}!getStringMultimap@{getStringMultimap}}
+\index{getStringMultimap@{getStringMultimap}!oZ::HTTP::Header@{oZ::HTTP::Header}}
+\subsubsection{\texorpdfstring{getStringMultimap()}{getStringMultimap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a339aac279d709cfa16148ad073500fc1}{String\+Multimap}}\& o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::get\+String\+Multimap (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the String Multimap\textquotesingle{}s reference. 
+
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_af1ee1c1e6a882a605407683341e32a8f}\label{classo_z_1_1_h_t_t_p_1_1_header_af1ee1c1e6a882a605407683341e32a8f}} 
+\index{oZ::HTTP::Header@{oZ::HTTP::Header}!getStringMultimap@{getStringMultimap}}
+\index{getStringMultimap@{getStringMultimap}!oZ::HTTP::Header@{oZ::HTTP::Header}}
+\subsubsection{\texorpdfstring{getStringMultimap()}{getStringMultimap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespaceo_z_1_1_h_t_t_p_a339aac279d709cfa16148ad073500fc1}{String\+Multimap}}\& o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::get\+String\+Multimap (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the String Multimap\textquotesingle{}s constant reference. 
+
+\mbox{\Hypertarget{classo_z_1_1_h_t_t_p_1_1_header_a3063660c3eb22844296e83807b8a62e1}\label{classo_z_1_1_h_t_t_p_1_1_header_a3063660c3eb22844296e83807b8a62e1}} 
 \index{oZ::HTTP::Header@{oZ::HTTP::Header}!set@{set}}
 \index{set@{set}!oZ::HTTP::Header@{oZ::HTTP::Header}}
 \subsubsection{\texorpdfstring{set()}{set()}}
-{\footnotesize\ttfamily template$<$typename Literal $>$ \\
-void o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::set (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{Literal \&\&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Literal , typename Literal2 $>$ \\
+void o\+Z\+::\+H\+T\+T\+P\+::\+Header\+::set (\begin{DoxyParamCaption}\item[{const Literal \&}]{key,  }\item[{Literal2 \&\&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -72,4 +202,4 @@ Get a value in the header.
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 /home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_header_h_t_t_p_8hpp}{Header\+H\+T\+T\+P.\+hpp}}\item 
-/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_header_h_t_t_p_8cpp}{Header\+H\+T\+T\+P.\+cpp}}\end{DoxyCompactItemize}
+/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_header_h_t_t_p_8ipp}{Header\+H\+T\+T\+P.\+ipp}}\end{DoxyCompactItemize}

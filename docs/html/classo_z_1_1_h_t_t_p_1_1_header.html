@@ -69,6 +69,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classo_z_1_1_h_t_t_p_1_1_header-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -81,30 +82,159 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="_header_h_t_t_p_8hpp_source.html">HeaderHTTP.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a572d529cae124a02fb68df9c3e51c576"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a572d529cae124a02fb68df9c3e51c576">Iterator</a> = StringMultimap::iterator</td></tr>
+<tr class="separator:a572d529cae124a02fb68df9c3e51c576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a509c1ea8f5b221246e6e49c01a115d69"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a509c1ea8f5b221246e6e49c01a115d69">ConstIterator</a> = StringMultimap::const_iterator</td></tr>
+<tr class="separator:a509c1ea8f5b221246e6e49c01a115d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a226f04d25adf24d2a683f82ef8327812"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a226f04d25adf24d2a683f82ef8327812">IteratorRange</a> = std::pair&lt; <a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a572d529cae124a02fb68df9c3e51c576">Iterator</a>, <a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a572d529cae124a02fb68df9c3e51c576">Iterator</a> &gt;</td></tr>
+<tr class="separator:a226f04d25adf24d2a683f82ef8327812"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0823c7353e93de315929c96457563c3d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a0823c7353e93de315929c96457563c3d">ConstIteratorRange</a> = std::pair&lt; <a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a509c1ea8f5b221246e6e49c01a115d69">ConstIterator</a>, <a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a509c1ea8f5b221246e6e49c01a115d69">ConstIterator</a> &gt;</td></tr>
+<tr class="separator:a0823c7353e93de315929c96457563c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6981daf90cda100da0e23a516991d35b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a6981daf90cda100da0e23a516991d35b">exists</a> (const std::string &amp;key) const noexcept</td></tr>
-<tr class="memdesc:a6981daf90cda100da0e23a516991d35b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check existence of a value in the header.  <a href="#a6981daf90cda100da0e23a516991d35b">More...</a><br /></td></tr>
-<tr class="separator:a6981daf90cda100da0e23a516991d35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeedea8bfa094294f0f5892bc9736c48e"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#aeedea8bfa094294f0f5892bc9736c48e">get</a> (const std::string &amp;key)</td></tr>
-<tr class="memdesc:aeedea8bfa094294f0f5892bc9736c48e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a value in the header, and insert it if not found.  <a href="#aeedea8bfa094294f0f5892bc9736c48e">More...</a><br /></td></tr>
-<tr class="separator:aeedea8bfa094294f0f5892bc9736c48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb0cba9e469ca227411584a4d5485b91"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#acb0cba9e469ca227411584a4d5485b91">get</a> (const std::string &amp;key) const</td></tr>
-<tr class="memdesc:acb0cba9e469ca227411584a4d5485b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a value in the header, and throw if not found.  <a href="#acb0cba9e469ca227411584a4d5485b91">More...</a><br /></td></tr>
-<tr class="separator:acb0cba9e469ca227411584a4d5485b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00466b7e626925b15b650733bab543f6"><td class="memTemplParams" colspan="2">template&lt;typename Literal &gt; </td></tr>
-<tr class="memitem:a00466b7e626925b15b650733bab543f6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a00466b7e626925b15b650733bab543f6">set</a> (const std::string &amp;key, Literal &amp;&amp;value)</td></tr>
-<tr class="memdesc:a00466b7e626925b15b650733bab543f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a value in the header.  <a href="#a00466b7e626925b15b650733bab543f6">More...</a><br /></td></tr>
-<tr class="separator:a00466b7e626925b15b650733bab543f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac91315b9984871e672845f8a69cf1ef"><td class="memTemplParams" colspan="2">template&lt;typename Literal &gt; </td></tr>
+<tr class="memitem:aac91315b9984871e672845f8a69cf1ef"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#aac91315b9984871e672845f8a69cf1ef">exists</a> (const Literal &amp;key) const noexcept</td></tr>
+<tr class="memdesc:aac91315b9984871e672845f8a69cf1ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check existence of a value in the header.  <a href="#aac91315b9984871e672845f8a69cf1ef">More...</a><br /></td></tr>
+<tr class="separator:aac91315b9984871e672845f8a69cf1ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad09c489218fdd63493dd5ce7b025265e"><td class="memTemplParams" colspan="2">template&lt;typename Literal &gt; </td></tr>
+<tr class="memitem:ad09c489218fdd63493dd5ce7b025265e"><td class="memTemplItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#ad09c489218fdd63493dd5ce7b025265e">get</a> (const Literal &amp;key, const std::uint32_t index=0)</td></tr>
+<tr class="memdesc:ad09c489218fdd63493dd5ce7b025265e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a value in the header matching a key and an index, and throw if not found.  <a href="#ad09c489218fdd63493dd5ce7b025265e">More...</a><br /></td></tr>
+<tr class="separator:ad09c489218fdd63493dd5ce7b025265e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abad6705f4eff158eec13825b3419d265"><td class="memTemplParams" colspan="2">template&lt;typename Literal &gt; </td></tr>
+<tr class="memitem:abad6705f4eff158eec13825b3419d265"><td class="memTemplItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#abad6705f4eff158eec13825b3419d265">get</a> (const Literal &amp;key, const std::uint32_t index=0) const</td></tr>
+<tr class="memdesc:abad6705f4eff158eec13825b3419d265"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a value in the header matching a key and an index, and throw if not found.  <a href="#abad6705f4eff158eec13825b3419d265">More...</a><br /></td></tr>
+<tr class="separator:abad6705f4eff158eec13825b3419d265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3063660c3eb22844296e83807b8a62e1"><td class="memTemplParams" colspan="2">template&lt;typename Literal , typename Literal2 &gt; </td></tr>
+<tr class="memitem:a3063660c3eb22844296e83807b8a62e1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a3063660c3eb22844296e83807b8a62e1">set</a> (const Literal &amp;key, Literal2 &amp;&amp;value)</td></tr>
+<tr class="memdesc:a3063660c3eb22844296e83807b8a62e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a value in the header.  <a href="#a3063660c3eb22844296e83807b8a62e1">More...</a><br /></td></tr>
+<tr class="separator:a3063660c3eb22844296e83807b8a62e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59d2eb480ab72b94240e8eb87cf7aee2"><td class="memTemplParams" colspan="2">template&lt;typename Literal &gt; </td></tr>
+<tr class="memitem:a59d2eb480ab72b94240e8eb87cf7aee2"><td class="memTemplItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a59d2eb480ab72b94240e8eb87cf7aee2">count</a> (const Literal &amp;key) const noexcept</td></tr>
+<tr class="memdesc:a59d2eb480ab72b94240e8eb87cf7aee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count occurences of matching key.  <a href="#a59d2eb480ab72b94240e8eb87cf7aee2">More...</a><br /></td></tr>
+<tr class="separator:a59d2eb480ab72b94240e8eb87cf7aee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae20764876b35b2185394eafcb007454b"><td class="memTemplParams" colspan="2">template&lt;typename Literal &gt; </td></tr>
+<tr class="memitem:ae20764876b35b2185394eafcb007454b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a572d529cae124a02fb68df9c3e51c576">Iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#ae20764876b35b2185394eafcb007454b">getIterator</a> (const Literal &amp;key)</td></tr>
+<tr class="memdesc:ae20764876b35b2185394eafcb007454b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the iterator of matching key.  <a href="#ae20764876b35b2185394eafcb007454b">More...</a><br /></td></tr>
+<tr class="separator:ae20764876b35b2185394eafcb007454b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43a6b9a03c9a46c4eeee0df3c3990d63"><td class="memTemplParams" colspan="2">template&lt;typename Literal &gt; </td></tr>
+<tr class="memitem:a43a6b9a03c9a46c4eeee0df3c3990d63"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a509c1ea8f5b221246e6e49c01a115d69">ConstIterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a43a6b9a03c9a46c4eeee0df3c3990d63">getIterator</a> (const Literal &amp;key) const</td></tr>
+<tr class="memdesc:a43a6b9a03c9a46c4eeee0df3c3990d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the iterator of matching key.  <a href="#a43a6b9a03c9a46c4eeee0df3c3990d63">More...</a><br /></td></tr>
+<tr class="separator:a43a6b9a03c9a46c4eeee0df3c3990d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae30e471f7d522477cf022531a84e727a"><td class="memTemplParams" colspan="2">template&lt;typename Literal &gt; </td></tr>
+<tr class="memitem:ae30e471f7d522477cf022531a84e727a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a226f04d25adf24d2a683f82ef8327812">IteratorRange</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#ae30e471f7d522477cf022531a84e727a">getIteratorRange</a> (const Literal &amp;key)</td></tr>
+<tr class="memdesc:ae30e471f7d522477cf022531a84e727a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the iterator range of matching key.  <a href="#ae30e471f7d522477cf022531a84e727a">More...</a><br /></td></tr>
+<tr class="separator:ae30e471f7d522477cf022531a84e727a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acecb2a9ed8e432a4a3ab9c6170d73793"><td class="memTemplParams" colspan="2">template&lt;typename Literal &gt; </td></tr>
+<tr class="memitem:acecb2a9ed8e432a4a3ab9c6170d73793"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a0823c7353e93de315929c96457563c3d">ConstIteratorRange</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#acecb2a9ed8e432a4a3ab9c6170d73793">getIteratorRange</a> (const Literal &amp;key) const</td></tr>
+<tr class="memdesc:acecb2a9ed8e432a4a3ab9c6170d73793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the iterator range of matching key.  <a href="#acecb2a9ed8e432a4a3ab9c6170d73793">More...</a><br /></td></tr>
+<tr class="separator:acecb2a9ed8e432a4a3ab9c6170d73793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a915a52b181112582d34e0942004d4cb0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceo_z_1_1_h_t_t_p.html#a339aac279d709cfa16148ad073500fc1">StringMultimap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a915a52b181112582d34e0942004d4cb0">getStringMultimap</a> (void) noexcept</td></tr>
+<tr class="memdesc:a915a52b181112582d34e0942004d4cb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the String Multimap's reference.  <a href="#a915a52b181112582d34e0942004d4cb0">More...</a><br /></td></tr>
+<tr class="separator:a915a52b181112582d34e0942004d4cb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1ee1c1e6a882a605407683341e32a8f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceo_z_1_1_h_t_t_p.html#a339aac279d709cfa16148ad073500fc1">StringMultimap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#af1ee1c1e6a882a605407683341e32a8f">getStringMultimap</a> (void) const noexcept</td></tr>
+<tr class="memdesc:af1ee1c1e6a882a605407683341e32a8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the String Multimap's constant reference.  <a href="#af1ee1c1e6a882a605407683341e32a8f">More...</a><br /></td></tr>
+<tr class="separator:af1ee1c1e6a882a605407683341e32a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="namespaceo_z_1_1_h_t_t_p.html">HTTP</a> <a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html" title="The HTTP Header is a simple map of string used to store header values.">Header</a> is a simple map of string used to store header values. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6981daf90cda100da0e23a516991d35b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6981daf90cda100da0e23a516991d35b">&#9670;&nbsp;</a></span>exists()</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a509c1ea8f5b221246e6e49c01a115d69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a509c1ea8f5b221246e6e49c01a115d69">&#9670;&nbsp;</a></span>ConstIterator</h2>
 
 <div class="memitem">
 <div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a509c1ea8f5b221246e6e49c01a115d69">oZ::HTTP::Header::ConstIterator</a> =  StringMultimap::const_iterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0823c7353e93de315929c96457563c3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0823c7353e93de315929c96457563c3d">&#9670;&nbsp;</a></span>ConstIteratorRange</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a0823c7353e93de315929c96457563c3d">oZ::HTTP::Header::ConstIteratorRange</a> =  std::pair&lt;<a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a509c1ea8f5b221246e6e49c01a115d69">ConstIterator</a>, <a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a509c1ea8f5b221246e6e49c01a115d69">ConstIterator</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a572d529cae124a02fb68df9c3e51c576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a572d529cae124a02fb68df9c3e51c576">&#9670;&nbsp;</a></span>Iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a572d529cae124a02fb68df9c3e51c576">oZ::HTTP::Header::Iterator</a> =  StringMultimap::iterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a226f04d25adf24d2a683f82ef8327812"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a226f04d25adf24d2a683f82ef8327812">&#9670;&nbsp;</a></span>IteratorRange</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a226f04d25adf24d2a683f82ef8327812">oZ::HTTP::Header::IteratorRange</a> =  std::pair&lt;<a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a572d529cae124a02fb68df9c3e51c576">Iterator</a>, <a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a572d529cae124a02fb68df9c3e51c576">Iterator</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a59d2eb480ab72b94240e8eb87cf7aee2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59d2eb480ab72b94240e8eb87cf7aee2">&#9670;&nbsp;</a></span>count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Literal &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::uint32_t oZ::HTTP::Header::count </td>
+          <td>(</td>
+          <td class="paramtype">const Literal &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Count occurences of matching key. </p>
+
+</div>
+</div>
+<a id="aac91315b9984871e672845f8a69cf1ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac91315b9984871e672845f8a69cf1ef">&#9670;&nbsp;</a></span>exists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Literal &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -112,7 +242,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">bool oZ::HTTP::Header::exists </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">const Literal &amp;&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -128,19 +258,85 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aeedea8bfa094294f0f5892bc9736c48e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeedea8bfa094294f0f5892bc9736c48e">&#9670;&nbsp;</a></span>get() <span class="overload">[1/2]</span></h2>
+<a id="ad09c489218fdd63493dd5ce7b025265e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad09c489218fdd63493dd5ce7b025265e">&#9670;&nbsp;</a></span>get() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Literal &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string &amp; oZ::HTTP::Header::get </td>
+          <td>(</td>
+          <td class="paramtype">const Literal &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::uint32_t&#160;</td>
+          <td class="paramname"><em>index</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a value in the header matching a key and an index, and throw if not found. </p>
+
+</div>
+</div>
+<a id="abad6705f4eff158eec13825b3419d265"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abad6705f4eff158eec13825b3419d265">&#9670;&nbsp;</a></span>get() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Literal &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; oZ::HTTP::Header::get </td>
+          <td>(</td>
+          <td class="paramtype">const Literal &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::uint32_t&#160;</td>
+          <td class="paramname"><em>index</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a value in the header matching a key and an index, and throw if not found. </p>
+
+</div>
+</div>
+<a id="ae20764876b35b2185394eafcb007454b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae20764876b35b2185394eafcb007454b">&#9670;&nbsp;</a></span>getIterator() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Literal &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string&amp; oZ::HTTP::Header::get </td>
+          <td class="memname"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a572d529cae124a02fb68df9c3e51c576">Iterator</a> oZ::HTTP::Header::getIterator </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">const Literal &amp;&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
           <td></td>
         </tr>
@@ -152,32 +348,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get a value in the header, and insert it if not found. </p>
+<p>Get the iterator of matching key. </p>
 
 </div>
 </div>
-<a id="acb0cba9e469ca227411584a4d5485b91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb0cba9e469ca227411584a4d5485b91">&#9670;&nbsp;</a></span>get() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string &amp; Header::get </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>key</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get a value in the header, and throw if not found. </p>
-
-</div>
-</div>
-<a id="a00466b7e626925b15b650733bab543f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00466b7e626925b15b650733bab543f6">&#9670;&nbsp;</a></span>set()</h2>
+<a id="a43a6b9a03c9a46c4eeee0df3c3990d63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43a6b9a03c9a46c4eeee0df3c3990d63">&#9670;&nbsp;</a></span>getIterator() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -188,15 +364,161 @@ template&lt;typename Literal &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
+          <td class="memname"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a509c1ea8f5b221246e6e49c01a115d69">ConstIterator</a> oZ::HTTP::Header::getIterator </td>
+          <td>(</td>
+          <td class="paramtype">const Literal &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the iterator of matching key. </p>
+
+</div>
+</div>
+<a id="ae30e471f7d522477cf022531a84e727a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae30e471f7d522477cf022531a84e727a">&#9670;&nbsp;</a></span>getIteratorRange() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Literal &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a226f04d25adf24d2a683f82ef8327812">IteratorRange</a> oZ::HTTP::Header::getIteratorRange </td>
+          <td>(</td>
+          <td class="paramtype">const Literal &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the iterator range of matching key. </p>
+
+</div>
+</div>
+<a id="acecb2a9ed8e432a4a3ab9c6170d73793"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acecb2a9ed8e432a4a3ab9c6170d73793">&#9670;&nbsp;</a></span>getIteratorRange() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Literal &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a0823c7353e93de315929c96457563c3d">ConstIteratorRange</a> oZ::HTTP::Header::getIteratorRange </td>
+          <td>(</td>
+          <td class="paramtype">const Literal &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the iterator range of matching key. </p>
+
+</div>
+</div>
+<a id="a915a52b181112582d34e0942004d4cb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a915a52b181112582d34e0942004d4cb0">&#9670;&nbsp;</a></span>getStringMultimap() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceo_z_1_1_h_t_t_p.html#a339aac279d709cfa16148ad073500fc1">StringMultimap</a>&amp; oZ::HTTP::Header::getStringMultimap </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the String Multimap's reference. </p>
+
+</div>
+</div>
+<a id="af1ee1c1e6a882a605407683341e32a8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1ee1c1e6a882a605407683341e32a8f">&#9670;&nbsp;</a></span>getStringMultimap() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespaceo_z_1_1_h_t_t_p.html#a339aac279d709cfa16148ad073500fc1">StringMultimap</a>&amp; oZ::HTTP::Header::getStringMultimap </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the String Multimap's constant reference. </p>
+
+</div>
+</div>
+<a id="a3063660c3eb22844296e83807b8a62e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3063660c3eb22844296e83807b8a62e1">&#9670;&nbsp;</a></span>set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Literal , typename Literal2 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
           <td class="memname">void oZ::HTTP::Header::set </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">const Literal &amp;&#160;</td>
           <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Literal &amp;&amp;&#160;</td>
+          <td class="paramtype">Literal2 &amp;&amp;&#160;</td>
           <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
@@ -218,7 +540,7 @@ template&lt;typename Literal &gt; </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/mmoinvaziri/Epitech/CPP_zia_2019/External/openZia/openZia/<a class="el" href="_header_h_t_t_p_8hpp_source.html">HeaderHTTP.hpp</a></li>
-<li>/home/mmoinvaziri/Epitech/CPP_zia_2019/External/openZia/openZia/<a class="el" href="_header_h_t_t_p_8cpp.html">HeaderHTTP.cpp</a></li>
+<li>/home/mmoinvaziri/Epitech/CPP_zia_2019/External/openZia/openZia/<a class="el" href="_header_h_t_t_p_8ipp.html">HeaderHTTP.ipp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
