@@ -55,10 +55,19 @@ set_property(TARGET ${PROJECT_NAME} PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 # GCC < 9 requires explicit link to filesystem library
 if (UNIX)
-    target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} stdc++fs)
+    target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS})
     target_compile_options(${PROJECT_NAME} PRIVATE
 #        -Werror # Stop on any error !
-        -pedantic -Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy
+        -Wall -Wextra
+    )
+endif ()
+
+if (UNIX AND NOT APPLE)
+    target_link_libraries(${PROJECT_NAME} stdc++fs)
+
+    target_compile_options(${PROJECT_NAME} PRIVATE
+#        -Werror # Stop on any error !
+        -pedantic -Wcast-align -Wcast-qual -Wctor-dtor-privacy
         -Wdisabled-optimization -Wformat=2 -Winit-self -Wlogical-op -Wmissing-declarations
         -Wmissing-include-dirs -Wnoexcept -Wold-style-cast -Woverloaded-virtual
         -Wredundant-decls -Wshadow -Wsign-conversion -Wsign-promo -Wstrict-null-sentinel

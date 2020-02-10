@@ -19,7 +19,7 @@ DynamicLoader::~DynamicLoader()
 void *DynamicLoader::getFunction(DynamicHandler handler, const std::string &name)
 {
     void *function = nullptr;
-#if defined(SYSTEM_LINUX)
+#if defined(SYSTEM_LINUX) || defined(SYSTEM_DARWIN)
     function = ::dlsym(handler, name.c_str());
 #elif defined(SYSTEM_WINDOWS)
     function = ::GetProcAddress(handler, name.c_str());
@@ -33,7 +33,7 @@ DynamicHandler DynamicLoader::load(const std::string &path)
 {
     DynamicHandler handler = nullptr;
 
-#if defined(SYSTEM_LINUX)
+#if defined(SYSTEM_LINUX) || defined(SYSTEM_DARWIN)
     handler = ::dlopen(path.c_str(), RTLD_LAZY);
 #elif defined(SYSTEM_WINDOWS)
     handler = ::LoadLibrary(path.c_str());
@@ -47,7 +47,7 @@ DynamicHandler DynamicLoader::load(const std::string &path)
 void DynamicLoader::release(void)
 {
     for (auto &pair : _handlers) {
-#if defined(SYSTEM_LINUX)
+#if defined(SYSTEM_LINUX) || defined(SYSTEM_DARWIN)
         ::dlclose(pair.first);
 #elif defined(SYSTEM_WINDOWS)
         ::FreeLibrary(pair.first);
@@ -58,7 +58,7 @@ void DynamicLoader::release(void)
 
 std::string DynamicLoader::getLastError(void) const noexcept
 {
-#if defined(SYSTEM_LINUX)
+#if defined(SYSTEM_LINUX) || defined(SYSTEM_DARWIN)
     return ::dlerror();
 #elif defined(SYSTEM_WINDOWS)
     DWORD id = ::GetLastError();
