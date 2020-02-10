@@ -67,7 +67,7 @@ public:
 private:
 	bool onInterpret(oZ::Context &context) {
 		oZ::Log(oZ::Information) << "Module 'Hello' wrote successfully its message";
-		context.getResponse().getHeader().get("Content-Type") = "text/plain";
+		context.getResponse().getHeader().set("Content-Type", "text/plain");
 		context.getResponse().getBody() += "Hello";
 		return true;
 	}
