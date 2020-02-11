@@ -31,8 +31,6 @@ void MyServer::onReceiveEncryptedNetworkPacket(oZ::Packet &&packet)
 
 	// Set the encryption flag in the context
 	context.getPacket().setEncryption(true);
-	// Store yourself previous client keys not to store them directly in your encryption module !
-	context.getEncryptionKey() = this->findClientEncryptionKey(packet.getEndpoint());
 	// Run the pipeline with this new context and send its response to the client
 	_pipeline.runPipeline(context);
 	sendResponseToClient(context);
