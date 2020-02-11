@@ -137,6 +137,16 @@ public:
     template<typename Type = IModule>
     [[nodiscard]] std::shared_ptr<Type> findModule(void) const;
 
+    /**
+     * @brief This function will trigger every module's 'onConnection' callback
+     */
+    void onConnection(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption = false);
+
+    /**
+     * @brief This function will trigger every module's 'onDisconnection' callback
+     */
+    void onDisconnection(const FileDescriptor fd, const Endpoint endpoint);
+
 protected:
     /**
      * @brief Callback which should load a set of module at runtime

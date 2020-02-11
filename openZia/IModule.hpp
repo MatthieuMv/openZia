@@ -107,4 +107,14 @@ public:
      *  This function is not pure virtual because you may not need it
      */
     virtual void onLoadConfigurationFile(const std::string &directory);
+
+    /**
+     * @brief Callback used to intercept client connections
+     */
+    virtual void onConnection(const FileDescriptor fd, const Endpoint endpoint, bool useEncryption = false);
+
+    /**
+     * @brief Callback used to intercept client disconnections
+     */
+    virtual void onDisconnection(const FileDescriptor fd, const Endpoint endpoint);
 };

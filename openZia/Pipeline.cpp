@@ -48,6 +48,18 @@ ModulePtr Pipeline::findModule(const char *name) const
     return nullptr;
 }
 
+void Pipeline::onConnection(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption)
+{
+    for (auto &module : _modules)
+        module->onConnection(fd, endpoint, useEncryption);
+}
+
+void Pipeline::onDisconnection(const FileDescriptor fd, const Endpoint endpoint)
+{
+    for (auto &module : _modules)
+        module->onDisconnection(fd, endpoint);
+}
+
 void Pipeline::onLoadModules(const std::string &directoryPath)
 {
     fs::path path(directoryPath);
