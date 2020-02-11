@@ -86,8 +86,14 @@ void Pipeline::runPipeline(Context &context)
 void Pipeline::triggerContextStateCallbacks(Context &context)
 {
     for (const auto &callback : _pipeline[context.getState()]) {
-        if (!callback.second(context))
-            break;
+        try {
+            if (!callback.second(context))
+                break;
+        } catch(const std::exception& e) {
+            context.setState(Error);
+            context.getResponse().setCode(HTTP::Code::InternalServerError);
+            context.getResponse().getReason() = "Exception: "s + e.what();
+        }
     }
 }
 
