@@ -20,9 +20,19 @@ private:
 	/* ... Your members ... */
 	Pipeline _pipeline; // Pipeline loads module
 
+	// Callback when server accept a new client
+	void onClientConnected(const oZ::FileDescriptor fd, const oZ::Endpoit endpoint, bool useEncryption) {
+		_pipeline.onConnection(fd, endpoint, useEncryption);
+	}
+
+	// Callback when server receive disconnection
+	void onClientDisconnected(const oZ::FileDescriptor fd, const oZ::Endpoit endpoint) {
+		_pipeline.onDisconnection(fd, endpoint);
+	}
+
 	// Callback when server receives a message
-	void onPacketReceived(oZ::ByteArray &&buffer, const oZ::Endpoint endpoint) {
-		oZ::Context context(oZ::Packet(std::move(buffer), endpoint));
+	void onPacketReceived(const oZ::FileDescriptor fd, oZ::ByteArray &&buffer, const oZ::Endpoint endpoint) {
+		oZ::Context context(oZ::Packet(std::move(buffer), endpoint, fd));
 		_pipeline.runPipeline(context);
 		sendResponseToClient(context);
 	}
@@ -43,6 +53,8 @@ Now you need to create your first module. Let's create two of them as a demonstr
 /* --- Hello.hpp --- */
 #pragma once
 
+#include <iostream>
+
 #include <openZia/IModule.hpp>
 #include <openZia/Pipeline.hpp> // Not defined in IModule.hpp
 
@@ -54,6 +66,14 @@ public:
 
 	virtual const char *getName(void) const { return "Hello"; }
 	virtual Dependencies getDependencies(void) const noexcept { return { "World" }; }
+	
+	virtual void onConnection(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption) {
+		std::cout << "New client connected: " << endpoint.getAdrress() << std::endl;
+	}
+	
+	virtual void onDisconnection(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption) {
+		std::cout << "Client diconnected: " << endpoint.getAdrress() << std::endl;
+	}
 
 	// Register your callback to the pipeline
 	virtual void onRegisterCallbacks(oZ::Pipeline &pipeline) {
