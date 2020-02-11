@@ -22,6 +22,8 @@ void MyServer::onReceiveNetworkPacket(oZ::Packet &&packet)
 As you may know, HTTP uses default port 80. However, if you want to add encryption to your server exchanges, you must use the default HTTPS port 443.
 Thus, the context need a way to store an encryption flag (to know if the client uses HTTPS) and an encryption key. This data is contained in the **oZ::Packet** class.
 
+If you use openSSL for the encryption, you may need to use **Pipeline::onConnection**, **Pipeline::onDisconnection**, **IModule::onConnection** and **IModule::onDisconnection** to implement it as a standalone module.
+
 ```C++
 // Callback triggered when receiving messages from clients on default HTTPS port
 void MyServer::onReceiveEncryptedNetworkPacket(oZ::Packet &&packet)
