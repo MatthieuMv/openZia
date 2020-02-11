@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['loggerlist',['LoggerList',['../classo_z_1_1_pipeline.html#aa1f26badb603f054e554e3ddf8b846b0',1,'oZ::Pipeline::LoggerList()'],['../namespaceo_z.html#a2d18a70272709242e8e7ebffc3f1806c',1,'oZ::LoggerList()']]],
-  ['loggerptr',['LoggerPtr',['../namespaceo_z.html#aaa2fbabbfafc6616a7e69651b62a3d4e',1,'oZ']]]
+  ['ip',['IP',['../namespaceo_z.html#ace55c2d0182a14ceea9649d0d0cf9c4a',1,'oZ']]],
+  ['iterator',['Iterator',['../classo_z_1_1_h_t_t_p_1_1_header.html#a572d529cae124a02fb68df9c3e51c576',1,'oZ::HTTP::Header']]],
+  ['iteratorrange',['IteratorRange',['../classo_z_1_1_h_t_t_p_1_1_header.html#a226f04d25adf24d2a683f82ef8327812',1,'oZ::HTTP::Header']]]
 ];

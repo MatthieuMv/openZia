@@ -43,6 +43,8 @@ void \mbox{\hyperlink{classo_z_1_1_pipeline_a90bddc5511acce66f2aa780c3bba29b4}{r
 \begin{DoxyCompactList}\small\item\em Get internal loaded modules. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{classo_z_1_1_pipeline_a3bb478d291a83763b269d8d27e186a47}{Module\+List}} \& \mbox{\hyperlink{classo_z_1_1_pipeline_a84358c4166a67aabc0d5811608727da9}{get\+Modules}} (void) const noexcept
 \begin{DoxyCompactList}\small\item\em Get internal loaded modules (const) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classo_z_1_1_pipeline_aa96f1ef3faeb41c9966d6b5a103fa3a5}{add\+Module}} (\mbox{\hyperlink{namespaceo_z_af5a56aaaee027504979038f38991adcf}{Module\+Ptr}} \&\&module)
+\begin{DoxyCompactList}\small\item\em Emplaces a new module in the pipeline. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Type , typename ... Args$>$ }\\void \mbox{\hyperlink{classo_z_1_1_pipeline_a797f98947aace930fbb15cd6b2d9f726}{add\+Module}} (Args \&\&...args)
 \begin{DoxyCompactList}\small\item\em Emplaces a new module in the pipeline. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespaceo_z_af5a56aaaee027504979038f38991adcf}{Module\+Ptr}} \mbox{\hyperlink{classo_z_1_1_pipeline_aa8aa56af891b2d889e7c21198daa1451}{find\+Module}} (const char $\ast$name) const
@@ -158,10 +160,20 @@ Destroy the \mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} object.
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classo_z_1_1_pipeline_aa96f1ef3faeb41c9966d6b5a103fa3a5}\label{classo_z_1_1_pipeline_aa96f1ef3faeb41c9966d6b5a103fa3a5}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!addModule@{addModule}}
+\index{addModule@{addModule}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{addModule()}{addModule()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Pipeline\+::add\+Module (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_af5a56aaaee027504979038f38991adcf}{Module\+Ptr}} \&\&}]{module }\end{DoxyParamCaption})}
+
+
+
+Emplaces a new module in the pipeline. 
+
 \mbox{\Hypertarget{classo_z_1_1_pipeline_a797f98947aace930fbb15cd6b2d9f726}\label{classo_z_1_1_pipeline_a797f98947aace930fbb15cd6b2d9f726}} 
 \index{oZ::Pipeline@{oZ::Pipeline}!addModule@{addModule}}
 \index{addModule@{addModule}!oZ::Pipeline@{oZ::Pipeline}}
-\subsubsection{\texorpdfstring{addModule()}{addModule()}}
+\subsubsection{\texorpdfstring{addModule()}{addModule()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename Type , typename ... Args$>$ \\
 void o\+Z\+::\+Pipeline\+::add\+Module (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args }\end{DoxyParamCaption})}
 

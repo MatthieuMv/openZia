@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['packet',['Packet',['../classo_z_1_1_packet.html',1,'oZ::Packet'],['../classo_z_1_1_packet.html#a5c96f8d5db686e035b199e8aeb0e0cea',1,'oZ::Packet::Packet(void)=default'],['../classo_z_1_1_packet.html#a0d77934c04128b52f1dae887ca198051',1,'oZ::Packet::Packet(ByteArray &amp;&amp;byteArray, const Endpoint endpoint)']]],
+  ['packet',['Packet',['../classo_z_1_1_packet.html',1,'oZ::Packet'],['../classo_z_1_1_packet.html#a5c96f8d5db686e035b199e8aeb0e0cea',1,'oZ::Packet::Packet(void)=default'],['../classo_z_1_1_packet.html#a4affbe387050c6b67f4604f9eaadc074',1,'oZ::Packet::Packet(ByteArray &amp;&amp;byteArray, const Endpoint endpoint, const FileDescriptor fd=-1)']]],
   ['packet_2ehpp',['Packet.hpp',['../_packet_8hpp.html',1,'']]],
   ['parse',['Parse',['../namespaceo_z.html#a356b278f7c65def0cae75fca8cae268eae6600f994575c8175501f2f8843ebd31',1,'oZ']]],
   ['partialcontent',['PartialContent',['../namespaceo_z_1_1_h_t_t_p.html#acd43703151305f79b1e2f42e98ee8199a750de7eda10d780b3bbaefb57128c24b',1,'oZ::HTTP']]],
