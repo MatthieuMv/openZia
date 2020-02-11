@@ -53,7 +53,7 @@ Test(Context, Basics)
     cr_assert_not(context.getPacket().hasEncryption());
     context.getPacket().setEncryption(true);
     cr_assert(context.getPacket().hasEncryption());
-    cr_assert(ctx.getPacket().getEncryptionKey().empty());
-    context.getPacket().getEncryptionKey() = "123";
-    cr_assert_eq(ctx.getPacket().getEncryptionKey(), "123");
+    cr_assert(ctx.getPacket().getFileDescriptor() == -1);
+    context.getPacket().setFileDescriptor(42);
+    cr_assert_eq(ctx.getPacket().getFileDescriptor(), 42);
 }

@@ -16,8 +16,8 @@ namespace oZ
     class Endpoint;
 
     using IP = std::uint32_t;
-
     using Port = std::uint16_t;
+    using FileDescriptor = std::int32_t;
 }
 
 class oZ::Endpoint

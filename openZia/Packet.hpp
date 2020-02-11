@@ -23,8 +23,8 @@ public:
     /**
      * @brief Construct a new Packet object using byteArray and an endpoint
      */
-    Packet(ByteArray &&byteArray, const Endpoint endpoint)
-        : _byteArray(std::move(byteArray)), _endpoint(endpoint), _encryptionKey() {}
+    Packet(ByteArray &&byteArray, const Endpoint endpoint, const FileDescriptor fd = -1)
+        : _byteArray(std::move(byteArray)), _endpoint(endpoint), _fd(fd) {}
 
     /**
      * @brief Destroy the Packet object
@@ -42,7 +42,7 @@ public:
     [[nodiscard]] const ByteArray getByteArray(void) const noexcept { return _byteArray; }
 
     /**
-     * @brief Get the current context' state
+     * @brief Get the current context's endpoint
      */
     [[nodiscard]] Endpoint getEndpoint(void) const noexcept { return _endpoint; }
 
@@ -52,17 +52,17 @@ public:
     void setEndpoint(const Endpoint endpoint) noexcept { _endpoint = endpoint; }
 
     /**
-     * @brief Get the Encryption Key
+     * @brief Get the context's file descriptor
      */
-    [[nodiscard]] std::string &getEncryptionKey(void) noexcept { return _encryptionKey; }
+    [[nodiscard]] FileDescriptor getFileDescriptor(void) const noexcept { return _fd; }
 
     /**
-     * @brief Get the Encryption Key (constant)
+     * @brief Set the context's file descriptor
      */
-    [[nodiscard]] const std::string &getEncryptionKey(void) const noexcept { return _encryptionKey; }
+    void setFileDescriptor(const FileDescriptor fd) noexcept { _fd = fd; }
 
     /**
-     * @brief Check the usage of encryption port (default HTTPS is 443)
+     * @brief Check the usage of encryption port (used for HTTPS)
      */
     [[nodiscard]] bool hasEncryption(void) const noexcept { return _useEncryption; }
 
@@ -74,6 +74,6 @@ public:
 private:
     ByteArray _byteArray {};
     Endpoint _endpoint {};
-    std::string _encryptionKey {};
+    FileDescriptor _fd { -1 };
     bool _useEncryption = false;
 };
