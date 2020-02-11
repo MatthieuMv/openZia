@@ -6,36 +6,36 @@ As the pipeline is already implemented, you will not need a lot of work to get a
 I assume you have already setup your sever basic's routine (listen, accept, read ...).
 Let's say you have a class **Server**.
 ```C++
-	#include <openZia/Pipeline.hpp>
-	class Server {
-	public:
-		// Set the pipeline module and configuration paths and load modules
-		Server(void) : _pipeline("ModuleDir", "ConfigDir") {
-			_pipeline.loadModules();
-		}
+#include <openZia/Pipeline.hpp>
+class Server {
+public:
+	// Set the pipeline module and configuration paths and load modules
+	Server(void) : _pipeline("ModuleDir", "ConfigDir") {
+		_pipeline.loadModules();
+	}
 
-		/* ... Your routines functions ... */
+	/* ... Your routines functions ... */
 
-	private:
-		/* ... Your members ... */
-		Pipeline _pipeline; // Pipeline loads module
+private:
+	/* ... Your members ... */
+	Pipeline _pipeline; // Pipeline loads module
 
-		// Callback when server receives a message
-		void onPacketReceived(oZ::ByteArray &&buffer, const oZ::Endpoint endpoint) {
-			oZ::Context context(oZ::Packet(std::move(buffer), endpoint));
-			_pipeline.runPipeline(context);
-			sendResponseToClient(context);
-		}
+	// Callback when server receives a message
+	void onPacketReceived(oZ::ByteArray &&buffer, const oZ::Endpoint endpoint) {
+		oZ::Context context(oZ::Packet(std::move(buffer), endpoint));
+		_pipeline.runPipeline(context);
+		sendResponseToClient(context);
+	}
 
-		// Send the HTTP response to the client
-		void sendResponseToClient(const Context &context) {
-			/* You may use the following methods:
-				context.hasError() // Fast error checking
-				context.getEndpoint() // Get the endpoint of target client
-				context.getResponse() // Get the response result of the pipeline
-			*/
-		}
-	};
+	// Send the HTTP response to the client
+	void sendResponseToClient(const Context &context) {
+		/* You may use the following methods:
+			context.hasError() // Fast error checking
+			context.getEndpoint() // Get the endpoint of target client
+			context.getResponse() // Get the response result of the pipeline
+		*/
+	}
+};
 ```
 
 Now you need to create your first module. Let's create two of them as a demonstration of dependency handling :
@@ -44,6 +44,7 @@ Now you need to create your first module. Let's create two of them as a demonstr
 #pragma once
 
 #include <openZia/IModule.hpp>
+#include <openZia/Pipeline.hpp> // Not defined in IModule.hpp
 
 class Hello : public oZ::IModule
 {
@@ -55,7 +56,7 @@ public:
 	virtual Dependencies getDependencies(void) const noexcept { return { "World" }; }
 
 	// Register your callback to the pipeline
-	virtual void onRegisterCallbacks(Pipeline &pipeline) {
+	virtual void onRegisterCallbacks(oZ::Pipeline &pipeline) {
 		pipeline.registerCallback(
 			oZ::State::Interpret, // Call at response creation time
 			oZ::Priority::Medium + 1, // With medium priority but higher than 'World' module
@@ -66,7 +67,7 @@ public:
 private:
 	bool onInterpret(oZ::Context &context) {
 		oZ::Log(oZ::Information) << "Module 'Hello' wrote successfully its message";
-		context.getResponse().getHeader().get("Content-Type") = "text/plain";
+		context.getResponse().getHeader().set("Content-Type", "text/plain");
 		context.getResponse().getBody() += "Hello";
 		return true;
 	}
@@ -83,6 +84,7 @@ extern "C" oZ::IModule *CreateModule(void) { return new Hello(); }
 #pragma once
 
 #include <openZia/IModule.hpp>
+#include <openZia/Pipeline.hpp> // Not defined in IModule.hpp
 
 // Second module 'World'
 class World : public oZ::IModule
@@ -95,14 +97,14 @@ public:
 	virtual Dependencies getDependencies(void) const noexcept { return { "Hello" }; }
 
 	// Register your callback to the pipeline
-	virtual void onRegisterCallbacks(Pipeline &pipeline) {
+	virtual void onRegisterCallbacks(oZ::Pipeline &pipeline) {
 		pipeline.registerCallback(
 			oZ::State::Interpret, // Call at response creation time
 			oZ::Priority::Medium, // With medium priority
 			[](oZ::Context &context) { // Lambda function style
 				context.getResponse().getBody() += " World";
 				return true;
-			})
+			}
 		);
 	}
 
