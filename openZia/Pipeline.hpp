@@ -115,6 +115,11 @@ public:
 
     /**
      * @brief Emplaces a new module in the pipeline.
+     */
+    void addModule(ModulePtr &&module);
+
+    /**
+     * @brief Emplaces a new module in the pipeline.
      *
      *  This function should be called by the onLoadModules callback of your derived pipeline.
      */

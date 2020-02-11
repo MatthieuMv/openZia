@@ -18,6 +18,7 @@
 #include <cstring>
 
 #include "Pipeline.hpp"
+#include "Log.hpp"
 
 using namespace std::string_literals;
 using namespace oZ;
@@ -60,7 +61,7 @@ void Pipeline::onLoadModules(const std::string &directoryPath)
             continue;
         auto handler = _dynamicLoader.load(file.path().string());
         auto function = _dynamicLoader.getFunction<ModuleInstanceFunction>(handler, "CreateModule");
-        _modules.emplace_back((*function)());
+        addModule(ModulePtr((*function)()));
     }
 }
 
@@ -81,6 +82,13 @@ void Pipeline::runPipeline(Context &context)
     } while (context.nextState());
     if (context.hasError())
         triggerContextStateCallbacks(context);
+}
+
+void Pipeline::addModule(ModulePtr &&module)
+{
+    if (auto log = std::dynamic_pointer_cast<ILogger>(module); log)
+        Log::AddLogger(log);
+    _modules.emplace_back(std::move(module));
 }
 
 void Pipeline::triggerContextStateCallbacks(Context &context)

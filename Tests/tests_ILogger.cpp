@@ -6,33 +6,36 @@
 */
 
 #include <criterion/criterion.h>
+#include <criterion/redirect.h>
 
-#include <openZia/ILogger.hpp>
+#include <iostream>
+
+#include <openZia/Log.hpp>
 #include <openZia/Pipeline.hpp>
 
 using namespace oZ;
-
-class MyPipeline : public Pipeline
-{
-public:
-    virtual void onLoadModules(const std::string &) override {}
-};
 
 class BasicLogger : public ILogger
 {
 public:
     virtual ~BasicLogger(void) = default;
 
-    virtual void onLog(Level, const std::string &) {}
+    virtual void onLog(Level, const std::string &str) { std::cout << str << std::endl; }
 
     virtual const char *getName(void) const { return "BasicLogger"; }
 };
 
-Test(ILogger, Basics)
+class MyPipeline : public Pipeline
+{
+public:
+    virtual void onLoadModules(const std::string &) override { addModule<BasicLogger>(); }
+};
+
+Test(ILogger, Basics, .init=cr_redirect_stdout)
 {
     MyPipeline pipeline;
-    BasicLogger logger;
 
     pipeline.loadModules();
-    logger.onRegisterCallbacks(pipeline);
+    oZ::Log() << "Hello";
+    cr_assert_stdout_eq_str("Hello\n");
 }
