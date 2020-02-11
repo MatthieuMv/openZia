@@ -34,7 +34,11 @@ virtual \mbox{\hyperlink{classo_z_1_1_i_module_ac13210556cb2a65d186bfbe5208c666c
 virtual void \mbox{\hyperlink{classo_z_1_1_i_module_af183d3711ef7d7a6966ac078b63a7685}{on\+Retreive\+Dependencies}} (\mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} \&pipeline)
 \begin{DoxyCompactList}\small\item\em This function is called once module registered their callbacks. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classo_z_1_1_i_module_a61a2cc76594401ed2f50931a6a6b76f3}{on\+Load\+Configuration\+File}} (const std\+::string \&directory)
-\begin{DoxyCompactList}\small\item\em This function is called after module retreived its dependencies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function is called after module retreived its dependencies. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classo_z_1_1_i_module_a8acf56655f9e59a8a04afd8b0adf79d6}{on\+Connection}} (const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}} fd, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint, bool use\+Encryption=false)
+\begin{DoxyCompactList}\small\item\em Callback used to intercept client connections. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classo_z_1_1_i_module_aa178220a4e7ba0cca50a131403e04847}{on\+Disconnection}} (const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}} fd, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint)
+\begin{DoxyCompactList}\small\item\em Callback used to intercept client disconnections. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -100,6 +104,26 @@ By default a module has no dependencies \mbox{\Hypertarget{classo_z_1_1_i_module
 
 
 Get the module name. 
+
+\mbox{\Hypertarget{classo_z_1_1_i_module_a8acf56655f9e59a8a04afd8b0adf79d6}\label{classo_z_1_1_i_module_a8acf56655f9e59a8a04afd8b0adf79d6}} 
+\index{oZ::IModule@{oZ::IModule}!onConnection@{onConnection}}
+\index{onConnection@{onConnection}!oZ::IModule@{oZ::IModule}}
+\subsubsection{\texorpdfstring{onConnection()}{onConnection()}}
+{\footnotesize\ttfamily void I\+Module\+::on\+Connection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}}}]{fd,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint,  }\item[{bool}]{use\+Encryption = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callback used to intercept client connections. 
+
+\mbox{\Hypertarget{classo_z_1_1_i_module_aa178220a4e7ba0cca50a131403e04847}\label{classo_z_1_1_i_module_aa178220a4e7ba0cca50a131403e04847}} 
+\index{oZ::IModule@{oZ::IModule}!onDisconnection@{onDisconnection}}
+\index{onDisconnection@{onDisconnection}!oZ::IModule@{oZ::IModule}}
+\subsubsection{\texorpdfstring{onDisconnection()}{onDisconnection()}}
+{\footnotesize\ttfamily void I\+Module\+::on\+Disconnection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}}}]{fd,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callback used to intercept client disconnections. 
 
 \mbox{\Hypertarget{classo_z_1_1_i_module_a61a2cc76594401ed2f50931a6a6b76f3}\label{classo_z_1_1_i_module_a61a2cc76594401ed2f50931a6a6b76f3}} 
 \index{oZ::IModule@{oZ::IModule}!onLoadConfigurationFile@{onLoadConfigurationFile}}

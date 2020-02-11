@@ -50,7 +50,11 @@ void \mbox{\hyperlink{classo_z_1_1_pipeline_aa96f1ef3faeb41c9966d6b5a103fa3a5}{a
 \mbox{\hyperlink{namespaceo_z_af5a56aaaee027504979038f38991adcf}{Module\+Ptr}} \mbox{\hyperlink{classo_z_1_1_pipeline_aa8aa56af891b2d889e7c21198daa1451}{find\+Module}} (const char $\ast$name) const
 \begin{DoxyCompactList}\small\item\em Find a module of given name in internal module list returning it as a shared pointer. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Type  = I\+Module$>$ }\\std\+::shared\+\_\+ptr$<$ Type $>$ \mbox{\hyperlink{classo_z_1_1_pipeline_a4f1abc0f7c0985dbc859cd5b20082998}{find\+Module}} (void) const
-\begin{DoxyCompactList}\small\item\em Find a module of Type in internal module list returning it as a shared pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Find a module of Type in internal module list returning it as a shared pointer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classo_z_1_1_pipeline_a7cfbdda27bd9ef9919400ce598846731}{on\+Connection}} (const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}} fd, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint, const bool use\+Encryption=false)
+\begin{DoxyCompactList}\small\item\em This function will trigger every module\textquotesingle{}s \textquotesingle{}on\+Connection\textquotesingle{} callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classo_z_1_1_pipeline_afd035df19d82c10b55af51e727e08407}{on\+Disconnection}} (const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}} fd, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint)
+\begin{DoxyCompactList}\small\item\em This function will trigger every module\textquotesingle{}s \textquotesingle{}on\+Disconnection\textquotesingle{} callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -231,6 +235,26 @@ Get internal loaded modules (const)
 
 
 Find modules and load them into the pipeline. This function will \+: 1) Trigger the on\+Load\+Modules callback that you should implement yourself 2) Check if modules dependencies are avaible 3) Build the internal pipeline with it. 4) Load configuration files of each modules. 
+
+\mbox{\Hypertarget{classo_z_1_1_pipeline_a7cfbdda27bd9ef9919400ce598846731}\label{classo_z_1_1_pipeline_a7cfbdda27bd9ef9919400ce598846731}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!onConnection@{onConnection}}
+\index{onConnection@{onConnection}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{onConnection()}{onConnection()}}
+{\footnotesize\ttfamily void Pipeline\+::on\+Connection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}}}]{fd,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint,  }\item[{const bool}]{use\+Encryption = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+This function will trigger every module\textquotesingle{}s \textquotesingle{}on\+Connection\textquotesingle{} callback. 
+
+\mbox{\Hypertarget{classo_z_1_1_pipeline_afd035df19d82c10b55af51e727e08407}\label{classo_z_1_1_pipeline_afd035df19d82c10b55af51e727e08407}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!onDisconnection@{onDisconnection}}
+\index{onDisconnection@{onDisconnection}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{onDisconnection()}{onDisconnection()}}
+{\footnotesize\ttfamily void Pipeline\+::on\+Disconnection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}}}]{fd,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint }\end{DoxyParamCaption})}
+
+
+
+This function will trigger every module\textquotesingle{}s \textquotesingle{}on\+Disconnection\textquotesingle{} callback. 
 
 \mbox{\Hypertarget{classo_z_1_1_pipeline_a0265d90a5540e69b25069d5d96973c53}\label{classo_z_1_1_pipeline_a0265d90a5540e69b25069d5d96973c53}} 
 \index{oZ::Pipeline@{oZ::Pipeline}!onLoadModules@{onLoadModules}}

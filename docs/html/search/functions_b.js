@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['onconnection',['onConnection',['../classo_z_1_1_i_module.html#a8acf56655f9e59a8a04afd8b0adf79d6',1,'oZ::IModule::onConnection()'],['../classo_z_1_1_pipeline.html#a7cfbdda27bd9ef9919400ce598846731',1,'oZ::Pipeline::onConnection()']]],
+  ['ondisconnection',['onDisconnection',['../classo_z_1_1_i_module.html#aa178220a4e7ba0cca50a131403e04847',1,'oZ::IModule::onDisconnection()'],['../classo_z_1_1_pipeline.html#afd035df19d82c10b55af51e727e08407',1,'oZ::Pipeline::onDisconnection()']]],
   ['onloadconfigurationfile',['onLoadConfigurationFile',['../classo_z_1_1_i_module.html#a61a2cc76594401ed2f50931a6a6b76f3',1,'oZ::IModule']]],
   ['onloadmodules',['onLoadModules',['../classo_z_1_1_pipeline.html#a0265d90a5540e69b25069d5d96973c53',1,'oZ::Pipeline']]],
   ['onlog',['onLog',['../classo_z_1_1_i_logger.html#a2e0e168c9218055e41bdd5b57177cba1',1,'oZ::ILogger']]],
