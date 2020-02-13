@@ -11,6 +11,7 @@
 #include <vector>
 
 #include "Context.hpp"
+#include "EntryPoint.hpp"
 
 namespace oZ
 {

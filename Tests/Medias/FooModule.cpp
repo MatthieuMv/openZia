@@ -7,4 +7,4 @@
 
 #include "FooModule.hpp"
 
-extern "C" oZ::IModule *CreateModule(void) { return new FooModule(); }
+OPEN_ZIA_MAKE_ENTRY_POINT(FooModule);

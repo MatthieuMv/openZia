@@ -72,7 +72,7 @@ void Pipeline::onLoadModules(const std::string &directoryPath)
         else if (auto ext = file.path().extension().string(); ext != std::string(SHARED_LIB_EXT))
             continue;
         auto handler = _dynamicLoader.load(file.path().string());
-        auto function = _dynamicLoader.getFunction<ModuleInstanceFunction>(handler, "CreateModule");
+        auto function = _dynamicLoader.getFunction<ModuleInstanceFunction>(handler, OPEN_ZIA_ENTRY_POINT_AS_STRING);
         addModule(ModulePtr((*function)()));
     }
 }
