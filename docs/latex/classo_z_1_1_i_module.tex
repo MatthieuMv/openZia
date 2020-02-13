@@ -11,7 +11,7 @@ This class is the interface of every module.
 
 
 
-Inherited by \mbox{\hyperlink{classo_z_1_1_i_logger}{o\+Z\+::\+I\+Logger}}.
+Inherited by \mbox{\hyperlink{class_a}{A}}, \mbox{\hyperlink{class_b}{B}}, \mbox{\hyperlink{class_c}{C}}, \mbox{\hyperlink{class_foo_module}{Foo\+Module}}, and \mbox{\hyperlink{classo_z_1_1_i_logger}{o\+Z\+::\+I\+Logger}}.
 
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
@@ -95,7 +95,11 @@ Destroy the \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}} object.
 
 Get the module dependencies. 
 
-By default a module has no dependencies \mbox{\Hypertarget{classo_z_1_1_i_module_af41d45158fd28e1bd86a34e25f5282d6}\label{classo_z_1_1_i_module_af41d45158fd28e1bd86a34e25f5282d6}} 
+By default a module has no dependencies 
+
+Reimplemented in \mbox{\hyperlink{class_abis_a20476073293d54658c3891decbb4a725}{Abis}}, and \mbox{\hyperlink{class_a_a2220cafae67f880a553d6219dfcf8581}{A}}.
+
+\mbox{\Hypertarget{classo_z_1_1_i_module_af41d45158fd28e1bd86a34e25f5282d6}\label{classo_z_1_1_i_module_af41d45158fd28e1bd86a34e25f5282d6}} 
 \index{oZ::IModule@{oZ::IModule}!getName@{getName}}
 \index{getName@{getName}!oZ::IModule@{oZ::IModule}}
 \subsubsection{\texorpdfstring{getName()}{getName()}}
@@ -104,6 +108,10 @@ By default a module has no dependencies \mbox{\Hypertarget{classo_z_1_1_i_module
 
 
 Get the module name. 
+
+
+
+Implemented in \mbox{\hyperlink{class_c_ad5f4b90909e9c14fc2601adc54ffdfa6}{C}}, \mbox{\hyperlink{class_b_ae304625cf30ffd9574cc71682558cf2e}{B}}, \mbox{\hyperlink{class_a_a2d19f0df2a97d6c3ad2c763f9134af82}{A}}, \mbox{\hyperlink{class_test_logger_a4e3ad3222ab7495cf30bb5b1a5270795}{Test\+Logger}}, \mbox{\hyperlink{class_basic_logger_a832838fa70c5910babd911b767a5f6f7}{Basic\+Logger}}, and \mbox{\hyperlink{class_foo_module_ac71d5e6de92ab9c804cc708528f052d2}{Foo\+Module}}.
 
 \mbox{\Hypertarget{classo_z_1_1_i_module_a8acf56655f9e59a8a04afd8b0adf79d6}\label{classo_z_1_1_i_module_a8acf56655f9e59a8a04afd8b0adf79d6}} 
 \index{oZ::IModule@{oZ::IModule}!onConnection@{onConnection}}
@@ -115,6 +123,10 @@ Get the module name.
 
 Callback used to intercept client connections. 
 
+
+
+Reimplemented in \mbox{\hyperlink{class_c_a9d2de0b00320ee2011d7e326346d00cb}{C}}.
+
 \mbox{\Hypertarget{classo_z_1_1_i_module_aa178220a4e7ba0cca50a131403e04847}\label{classo_z_1_1_i_module_aa178220a4e7ba0cca50a131403e04847}} 
 \index{oZ::IModule@{oZ::IModule}!onDisconnection@{onDisconnection}}
 \index{onDisconnection@{onDisconnection}!oZ::IModule@{oZ::IModule}}
@@ -124,6 +136,10 @@ Callback used to intercept client connections.
 
 
 Callback used to intercept client disconnections. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_c_ab9bef2875c2d19d674aa592f63a21bc1}{C}}.
 
 \mbox{\Hypertarget{classo_z_1_1_i_module_a61a2cc76594401ed2f50931a6a6b76f3}\label{classo_z_1_1_i_module_a61a2cc76594401ed2f50931a6a6b76f3}} 
 \index{oZ::IModule@{oZ::IModule}!onLoadConfigurationFile@{onLoadConfigurationFile}}
@@ -137,7 +153,11 @@ This function is called after module retreived its dependencies.
 
 The given directory is the path to configuration files
 
-This function is not pure virtual because you may not need it \mbox{\Hypertarget{classo_z_1_1_i_module_a3dc905faa6df5e22eecc6ffbc923fd95}\label{classo_z_1_1_i_module_a3dc905faa6df5e22eecc6ffbc923fd95}} 
+This function is not pure virtual because you may not need it 
+
+Reimplemented in \mbox{\hyperlink{class_a_aa096a581a39df500ec97e2d48c24fbef}{A}}.
+
+\mbox{\Hypertarget{classo_z_1_1_i_module_a3dc905faa6df5e22eecc6ffbc923fd95}\label{classo_z_1_1_i_module_a3dc905faa6df5e22eecc6ffbc923fd95}} 
 \index{oZ::IModule@{oZ::IModule}!onRegisterCallbacks@{onRegisterCallbacks}}
 \index{onRegisterCallbacks@{onRegisterCallbacks}!oZ::IModule@{oZ::IModule}}
 \subsubsection{\texorpdfstring{onRegisterCallbacks()}{onRegisterCallbacks()}}
@@ -149,7 +169,7 @@ Register module\textquotesingle{}s callbacks in the pipeline.
 
 
 
-Implemented in \mbox{\hyperlink{classo_z_1_1_i_logger_a10732b6da6e8f085c6fe5fa154d361ef}{o\+Z\+::\+I\+Logger}}.
+Implemented in \mbox{\hyperlink{class_c_ae55c5d0571aadf7e48cae4d1e4fcf591}{C}}, \mbox{\hyperlink{class_b_a681f13a5b7d401fe80a18b63f90b0f89}{B}}, \mbox{\hyperlink{classo_z_1_1_i_logger_a10732b6da6e8f085c6fe5fa154d361ef}{o\+Z\+::\+I\+Logger}}, \mbox{\hyperlink{class_a_ac82f8db798576ee2eff8b6b91b77c239}{A}}, \mbox{\hyperlink{class_test_logger_a0ee94278a66b189ca55f04e40192b5d1}{Test\+Logger}}, and \mbox{\hyperlink{class_foo_module_a34a4cc51ff4c493a981d61e9d9eeeb1a}{Foo\+Module}}.
 
 \mbox{\Hypertarget{classo_z_1_1_i_module_af183d3711ef7d7a6966ac078b63a7685}\label{classo_z_1_1_i_module_af183d3711ef7d7a6966ac078b63a7685}} 
 \index{oZ::IModule@{oZ::IModule}!onRetreiveDependencies@{onRetreiveDependencies}}
@@ -165,7 +185,11 @@ There you should (if needed) implement dependencies search Be careful, at this p
 
 This function is not pure virtual because you may not need it 
 
+Reimplemented in \mbox{\hyperlink{class_a_a968473c1dcccfee5502df74229fb263b}{A}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_i_module_8hpp}{I\+Module.\+hpp}}\item 
-/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_i_module_8cpp}{I\+Module.\+cpp}}\end{DoxyCompactItemize}
+open\+Zia/\mbox{\hyperlink{_i_module_8hpp}{I\+Module.\+hpp}}\item 
+open\+Zia/\mbox{\hyperlink{_i_module_8cpp}{I\+Module.\+cpp}}\end{DoxyCompactItemize}

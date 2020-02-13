@@ -9,6 +9,10 @@ The pileline abstracts the pipeline of modules.
 
 {\ttfamily \#include $<$Pipeline.\+hpp$>$}
 
+
+
+Inherited by \mbox{\hyperlink{class_a_b_c_pipeline}{A\+B\+C\+Pipeline}}, \mbox{\hyperlink{class_abis_pipeline}{Abis\+Pipeline}}, and \mbox{\hyperlink{class_my_pipeline}{My\+Pipeline}}.
+
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -266,7 +270,11 @@ This function will trigger every module\textquotesingle{}s \textquotesingle{}on\
 
 Callback which should load a set of module at runtime. 
 
-This callback can be redefined to implement a custom loader. \mbox{\Hypertarget{classo_z_1_1_pipeline_a869b02b2b8953993ccfb882a3e1f3a0f}\label{classo_z_1_1_pipeline_a869b02b2b8953993ccfb882a3e1f3a0f}} 
+This callback can be redefined to implement a custom loader. 
+
+Reimplemented in \mbox{\hyperlink{class_a_b_c_pipeline_a1a476cf5b64733b13b709ad0d8fbd3a7}{A\+B\+C\+Pipeline}}, and \mbox{\hyperlink{class_my_pipeline_ad6606d59165345cc508ae896d8cd10e8}{My\+Pipeline}}.
+
+\mbox{\Hypertarget{classo_z_1_1_pipeline_a869b02b2b8953993ccfb882a3e1f3a0f}\label{classo_z_1_1_pipeline_a869b02b2b8953993ccfb882a3e1f3a0f}} 
 \index{oZ::Pipeline@{oZ::Pipeline}!registerCallback@{registerCallback}}
 \index{registerCallback@{registerCallback}!oZ::Pipeline@{oZ::Pipeline}}
 \subsubsection{\texorpdfstring{registerCallback()}{registerCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -310,6 +318,6 @@ This function is thread-\/safe as long as modules are thread safe so keep it in 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_pipeline_8hpp}{Pipeline.\+hpp}}\item 
-/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_pipeline_8cpp}{Pipeline.\+cpp}}\item 
-/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_pipeline_8ipp}{Pipeline.\+ipp}}\end{DoxyCompactItemize}
+open\+Zia/\mbox{\hyperlink{_pipeline_8hpp}{Pipeline.\+hpp}}\item 
+open\+Zia/\mbox{\hyperlink{_pipeline_8cpp}{Pipeline.\+cpp}}\item 
+open\+Zia/\mbox{\hyperlink{_pipeline_8ipp}{Pipeline.\+ipp}}\end{DoxyCompactItemize}

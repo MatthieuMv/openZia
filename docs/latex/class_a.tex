@@ -1,0 +1,164 @@
+\hypertarget{class_a}{}\section{A Class Reference}
+\label{class_a}\index{A@{A}}
+
+
+Inherits \mbox{\hyperlink{classo_z_1_1_i_module}{o\+Z\+::\+I\+Module}}.
+
+
+
+Inherited by \mbox{\hyperlink{class_abis}{Abis}}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const char $\ast$ \mbox{\hyperlink{class_a_a2d19f0df2a97d6c3ad2c763f9134af82}{get\+Name}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the module name. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_ac82f8db798576ee2eff8b6b91b77c239}{on\+Register\+Callbacks}} (\mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} \&pipeline)
+\begin{DoxyCompactList}\small\item\em Register module\textquotesingle{}s callbacks in the pipeline. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_a968473c1dcccfee5502df74229fb263b}{on\+Retreive\+Dependencies}} (\mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} \&pipeline)
+\begin{DoxyCompactList}\small\item\em This function is called once module registered their callbacks. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_aa096a581a39df500ec97e2d48c24fbef}{on\+Load\+Configuration\+File}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em This function is called after module retreived its dependencies. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classo_z_1_1_i_module_ac13210556cb2a65d186bfbe5208c666c}{Dependencies}} \mbox{\hyperlink{class_a_a2220cafae67f880a553d6219dfcf8581}{get\+Dependencies}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Get the module dependencies. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_a_a7cda350ed54b9810f6e1bfdb6c7189d6}{foo}} (\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_a_ac88449f5677bb5bf7923a9127979a200}{x}} = 0
+\item 
+bool \mbox{\hyperlink{class_a_abbe7bfef380b5ba2aa123bcc96cb0785}{registered}} = false
+\item 
+bool \mbox{\hyperlink{class_a_a56277b5454bbb3d64c068c3c86161a3f}{configured}} = false
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_b}{B}} $>$ \mbox{\hyperlink{class_a_a8bd74753f3d363c7f249ef6d6b55bc31}{b}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_c}{C}} $>$ \mbox{\hyperlink{class_a_aade577263852e9bb04be26d377f990da}{c}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a7cda350ed54b9810f6e1bfdb6c7189d6}\label{class_a_a7cda350ed54b9810f6e1bfdb6c7189d6}} 
+\index{A@{A}!foo@{foo}}
+\index{foo@{foo}!A@{A}}
+\subsubsection{\texorpdfstring{foo()}{foo()}}
+{\footnotesize\ttfamily bool A\+::foo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_a_a2220cafae67f880a553d6219dfcf8581}\label{class_a_a2220cafae67f880a553d6219dfcf8581}} 
+\index{A@{A}!getDependencies@{getDependencies}}
+\index{getDependencies@{getDependencies}!A@{A}}
+\subsubsection{\texorpdfstring{getDependencies()}{getDependencies()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classo_z_1_1_i_module_ac13210556cb2a65d186bfbe5208c666c}{Dependencies}} A\+::get\+Dependencies (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Get the module dependencies. 
+
+By default a module has no dependencies 
+
+Reimplemented from \mbox{\hyperlink{classo_z_1_1_i_module_a720a329e6ebcbecbc150d8b0bbee6e37}{o\+Z\+::\+I\+Module}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_abis_a20476073293d54658c3891decbb4a725}{Abis}}.
+
+\mbox{\Hypertarget{class_a_a2d19f0df2a97d6c3ad2c763f9134af82}\label{class_a_a2d19f0df2a97d6c3ad2c763f9134af82}} 
+\index{A@{A}!getName@{getName}}
+\index{getName@{getName}!A@{A}}
+\subsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily virtual const char$\ast$ A\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the module name. 
+
+
+
+Implements \mbox{\hyperlink{classo_z_1_1_i_module_af41d45158fd28e1bd86a34e25f5282d6}{o\+Z\+::\+I\+Module}}.
+
+\mbox{\Hypertarget{class_a_aa096a581a39df500ec97e2d48c24fbef}\label{class_a_aa096a581a39df500ec97e2d48c24fbef}} 
+\index{A@{A}!onLoadConfigurationFile@{onLoadConfigurationFile}}
+\index{onLoadConfigurationFile@{onLoadConfigurationFile}!A@{A}}
+\subsubsection{\texorpdfstring{onLoadConfigurationFile()}{onLoadConfigurationFile()}}
+{\footnotesize\ttfamily virtual void A\+::on\+Load\+Configuration\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{directory }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function is called after module retreived its dependencies. 
+
+The given directory is the path to configuration files
+
+This function is not pure virtual because you may not need it 
+
+Reimplemented from \mbox{\hyperlink{classo_z_1_1_i_module_a61a2cc76594401ed2f50931a6a6b76f3}{o\+Z\+::\+I\+Module}}.
+
+\mbox{\Hypertarget{class_a_ac82f8db798576ee2eff8b6b91b77c239}\label{class_a_ac82f8db798576ee2eff8b6b91b77c239}} 
+\index{A@{A}!onRegisterCallbacks@{onRegisterCallbacks}}
+\index{onRegisterCallbacks@{onRegisterCallbacks}!A@{A}}
+\subsubsection{\texorpdfstring{onRegisterCallbacks()}{onRegisterCallbacks()}}
+{\footnotesize\ttfamily virtual void A\+::on\+Register\+Callbacks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Register module\textquotesingle{}s callbacks in the pipeline. 
+
+
+
+Implements \mbox{\hyperlink{classo_z_1_1_i_module_a3dc905faa6df5e22eecc6ffbc923fd95}{o\+Z\+::\+I\+Module}}.
+
+\mbox{\Hypertarget{class_a_a968473c1dcccfee5502df74229fb263b}\label{class_a_a968473c1dcccfee5502df74229fb263b}} 
+\index{A@{A}!onRetreiveDependencies@{onRetreiveDependencies}}
+\index{onRetreiveDependencies@{onRetreiveDependencies}!A@{A}}
+\subsubsection{\texorpdfstring{onRetreiveDependencies()}{onRetreiveDependencies()}}
+{\footnotesize\ttfamily virtual void A\+::on\+Retreive\+Dependencies (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} \&}]{pipeline }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function is called once module registered their callbacks. 
+
+There you should (if needed) implement dependencies search Be careful, at this point other modules may not have retreived their dependencies ! Use the pipeline only to find your dependencies and store their shared\+\_\+ptr instances
+
+This function is not pure virtual because you may not need it 
+
+Reimplemented from \mbox{\hyperlink{classo_z_1_1_i_module_af183d3711ef7d7a6966ac078b63a7685}{o\+Z\+::\+I\+Module}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_a_a8bd74753f3d363c7f249ef6d6b55bc31}\label{class_a_a8bd74753f3d363c7f249ef6d6b55bc31}} 
+\index{A@{A}!b@{b}}
+\index{b@{b}!A@{A}}
+\subsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_b}{B}}$>$ A\+::b}
+
+\mbox{\Hypertarget{class_a_aade577263852e9bb04be26d377f990da}\label{class_a_aade577263852e9bb04be26d377f990da}} 
+\index{A@{A}!c@{c}}
+\index{c@{c}!A@{A}}
+\subsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_c}{C}}$>$ A\+::c}
+
+\mbox{\Hypertarget{class_a_a56277b5454bbb3d64c068c3c86161a3f}\label{class_a_a56277b5454bbb3d64c068c3c86161a3f}} 
+\index{A@{A}!configured@{configured}}
+\index{configured@{configured}!A@{A}}
+\subsubsection{\texorpdfstring{configured}{configured}}
+{\footnotesize\ttfamily bool A\+::configured = false}
+
+\mbox{\Hypertarget{class_a_abbe7bfef380b5ba2aa123bcc96cb0785}\label{class_a_abbe7bfef380b5ba2aa123bcc96cb0785}} 
+\index{A@{A}!registered@{registered}}
+\index{registered@{registered}!A@{A}}
+\subsubsection{\texorpdfstring{registered}{registered}}
+{\footnotesize\ttfamily bool A\+::registered = false}
+
+\mbox{\Hypertarget{class_a_ac88449f5677bb5bf7923a9127979a200}\label{class_a_ac88449f5677bb5bf7923a9127979a200}} 
+\index{A@{A}!x@{x}}
+\index{x@{x}!A@{A}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int A\+::x = 0}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tests/\mbox{\hyperlink{tests___pipeline_8cpp}{tests\+\_\+\+Pipeline.\+cpp}}\end{DoxyCompactItemize}

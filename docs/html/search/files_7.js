@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['messagehttp_2ehpp',['MessageHTTP.hpp',['../_message_h_t_t_p_8hpp.html',1,'']]]
+  ['ilogger_2ehpp',['ILogger.hpp',['../_i_logger_8hpp.html',1,'']]],
+  ['imodule_2ecpp',['IModule.cpp',['../_i_module_8cpp.html',1,'']]],
+  ['imodule_2ehpp',['IModule.hpp',['../_i_module_8hpp.html',1,'']]]
 ];

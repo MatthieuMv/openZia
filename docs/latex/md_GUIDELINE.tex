@@ -1,0 +1,47 @@
+open\+Zia uses the \href{https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization}{\texttt{ R\+A\+II idiom}} for memory managment. It also prefer {\bfseries{std\+::unique\+\_\+ptr}} and {\bfseries{std\+::shared\+\_\+ptr}} instead of ugly raw pointers.
+
+\section*{Naming}
+
+open\+Zia uses the camel\+Case naming convention.
+
+Notable C++ naming rules followed are \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{C++\}}
+\DoxyCodeLine{   constexpr int MyConstantInt = 42; // Global constants}
+\DoxyCodeLine{}
+\DoxyCodeLine{   Foo GetSomeFoo(void); // Global scoped functions}
+\DoxyCodeLine{}
+\DoxyCodeLine{   class Foo \{ // Classes}
+\DoxyCodeLine{   public:}
+\DoxyCodeLine{       int myInt; // Public members}
+\DoxyCodeLine{}
+\DoxyCodeLine{       void bar(void); // Member functions}
+\DoxyCodeLine{}
+\DoxyCodeLine{       static void Bar(void); // Static functions}
+\DoxyCodeLine{}
+\DoxyCodeLine{   private:}
+\DoxyCodeLine{       int \_myInt; // Private members}
+\DoxyCodeLine{}
+\DoxyCodeLine{       static int \_MyStaticInt; // Private static members}
+\DoxyCodeLine{   \};}
+\end{DoxyCode}
+
+
+\section*{Getter / Setters}
+
+If the concerned type is scalar (can be cheaply copied) then get/set functions look like \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{Type getType(void) const noexcept; // Constant getter}
+\DoxyCodeLine{void setType(void) noexcept; // Setter}
+\end{DoxyCode}
+
+
+If the concerned type isn\textquotesingle{}t scalar (can\textquotesingle{}t be cheaply copied) then get/set functions look like \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{// This allows end-user to choose how to deal with the memory. Best example is copy vs move semantics.}
+\DoxyCodeLine{Type \&getType(void) noexcept; // Mutable reference getter}
+\DoxyCodeLine{const Type \&getType(void) const noexcept; // Constant reference getter}
+\end{DoxyCode}
+ 

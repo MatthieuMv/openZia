@@ -1,0 +1,145 @@
+As the pipeline is already implemented, you will not need a lot of work to get a first \char`\"{}\+Hello World\char`\"{} example running (meaning more time to develop great modules !).
+
+{\itshape Please note that this example is very straightforward and not using advantages of a multithreaded server.}
+
+I assume you have already setup your sever basic\textquotesingle{}s routine (listen, accept, read ...). Let\textquotesingle{}s say you have a class {\bfseries{Server}}. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{\#include <openZia/Pipeline.hpp>}
+\DoxyCodeLine{class Server \{}
+\DoxyCodeLine{public:}
+\DoxyCodeLine{    // Set the pipeline module and configuration paths and load modules}
+\DoxyCodeLine{    Server(void) : \_pipeline("ModuleDir", "ConfigDir") \{}
+\DoxyCodeLine{        \_pipeline.loadModules();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    /* ... Your routines functions ... */}
+\DoxyCodeLine{}
+\DoxyCodeLine{private:}
+\DoxyCodeLine{    /* ... Your members ... */}
+\DoxyCodeLine{    Pipeline \_pipeline; // Pipeline loads module}
+\DoxyCodeLine{}
+\DoxyCodeLine{    // Callback when server accept a new client}
+\DoxyCodeLine{    void onClientConnected(const oZ::FileDescriptor fd, const oZ::Endpoit endpoint, bool useEncryption) \{}
+\DoxyCodeLine{        \_pipeline.onConnection(fd, endpoint, useEncryption);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    // Callback when server receive disconnection}
+\DoxyCodeLine{    void onClientDisconnected(const oZ::FileDescriptor fd, const oZ::Endpoit endpoint) \{}
+\DoxyCodeLine{        \_pipeline.onDisconnection(fd, endpoint);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    // Callback when server receives a message}
+\DoxyCodeLine{    void onPacketReceived(const oZ::FileDescriptor fd, oZ::ByteArray \&\&buffer, const oZ::Endpoint endpoint) \{}
+\DoxyCodeLine{        oZ::Context context(oZ::Packet(std::move(buffer), endpoint, fd));}
+\DoxyCodeLine{        \_pipeline.runPipeline(context);}
+\DoxyCodeLine{        sendResponseToClient(context);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    // Send the HTTP response to the client}
+\DoxyCodeLine{    void sendResponseToClient(const Context \&context) \{}
+\DoxyCodeLine{        /* You may use the following methods:}
+\DoxyCodeLine{            context.hasError() // Fast error checking}
+\DoxyCodeLine{            context.getEndpoint() // Get the endpoint of target client}
+\DoxyCodeLine{            context.getResponse() // Get the response result of the pipeline}
+\DoxyCodeLine{        */}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+
+
+Now you need to create your first module. Let\textquotesingle{}s create two of them as a demonstration of dependency handling \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{/* --- Hello.hpp --- */}
+\DoxyCodeLine{\#pragma once}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#include <iostream>}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#include <openZia/IModule.hpp>}
+\DoxyCodeLine{\#include <openZia/Pipeline.hpp> // Not defined in IModule.hpp}
+\DoxyCodeLine{}
+\DoxyCodeLine{class Hello : public oZ::IModule}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{public:}
+\DoxyCodeLine{    Hello(void) = default;}
+\DoxyCodeLine{    virtual ~Hello(void) = default;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    virtual const char *getName(void) const \{ return "Hello"; \}}
+\DoxyCodeLine{    virtual Dependencies getDependencies(void) const noexcept \{ return \{ "World" \}; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    virtual void onConnection(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption) \{}
+\DoxyCodeLine{        std::cout << "New client connected: " << endpoint.getAdrress() << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    virtual void onDisconnection(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption) \{}
+\DoxyCodeLine{        std::cout << "Client diconnected: " << endpoint.getAdrress() << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    // Register your callback to the pipeline}
+\DoxyCodeLine{    virtual void onRegisterCallbacks(oZ::Pipeline \&pipeline) \{}
+\DoxyCodeLine{        pipeline.registerCallback(}
+\DoxyCodeLine{            oZ::State::Interpret, // Call at response creation time}
+\DoxyCodeLine{            oZ::Priority::Medium + 1, // With medium priority but higher than 'World' module}
+\DoxyCodeLine{            this, \&Hello::onInterpret // Member function style}
+\DoxyCodeLine{        );}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{private:}
+\DoxyCodeLine{    bool onInterpret(oZ::Context \&context) \{}
+\DoxyCodeLine{        oZ::Log(oZ::Information) << "Module 'Hello' wrote successfully its message";}
+\DoxyCodeLine{        context.getResponse().getHeader().set("Content-Type", "text/plain");}
+\DoxyCodeLine{        context.getResponse().getBody() += "Hello";}
+\DoxyCodeLine{        return true;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{/* --- Hello.cpp --- */}
+\DoxyCodeLine{\#include "Hello.hpp"}
+\DoxyCodeLine{}
+\DoxyCodeLine{OPEN\_ZIA\_MAKE\_ENTRY\_POINT(Hello);}
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{/* --- World.hpp --- */}
+\DoxyCodeLine{\#pragma once}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#include <openZia/IModule.hpp>}
+\DoxyCodeLine{\#include <openZia/Pipeline.hpp> // Not defined in IModule.hpp}
+\DoxyCodeLine{}
+\DoxyCodeLine{// Second module 'World'}
+\DoxyCodeLine{class World : public oZ::IModule}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{public:}
+\DoxyCodeLine{    World(void) = default;}
+\DoxyCodeLine{    virtual ~World(void) = default;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    virtual const char *getName(void) const \{ return "World"; \}}
+\DoxyCodeLine{    virtual Dependencies getDependencies(void) const noexcept \{ return \{ "Hello" \}; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    // Register your callback to the pipeline}
+\DoxyCodeLine{    virtual void onRegisterCallbacks(oZ::Pipeline \&pipeline) \{}
+\DoxyCodeLine{        pipeline.registerCallback(}
+\DoxyCodeLine{            oZ::State::Interpret, // Call at response creation time}
+\DoxyCodeLine{            oZ::Priority::Medium, // With medium priority}
+\DoxyCodeLine{            [](oZ::Context \&context) \{ // Lambda function style}
+\DoxyCodeLine{                context.getResponse().getBody() += " World";}
+\DoxyCodeLine{                return true;}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{        );}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    virtual void onLoadConfigurationFile(const std::string \&directory) \{}
+\DoxyCodeLine{        /* Load module's configuration if needed, using your own configuration loader */}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{/* --- World.cpp --- */}
+\DoxyCodeLine{\#include "World.hpp"}
+\DoxyCodeLine{}
+\DoxyCodeLine{OPEN\_ZIA\_MAKE\_ENTRY\_POINT(World);}
+\end{DoxyCode}
+ 

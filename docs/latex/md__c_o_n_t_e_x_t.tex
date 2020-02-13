@@ -1,0 +1,47 @@
+Each module of the pipeline implement various callbacks that parse and transform an {\bfseries{\mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_request}{o\+Z\+::\+H\+T\+T\+P\+::\+Request}}}} to create an {\bfseries{\mbox{\hyperlink{classo_z_1_1_h_t_t_p_1_1_response}{o\+Z\+::\+H\+T\+T\+P\+::\+Response}}}}. Thus, the pipeline need a way to store each information though the various modules\+: {\bfseries{\mbox{\hyperlink{classo_z_1_1_context}{o\+Z\+::\+Context}}}}.
+
+\subsection*{Context creation}
+
+The context can be default created but to make it process-\/able, you must specify a {\bfseries{\mbox{\hyperlink{classo_z_1_1_packet}{o\+Z\+::\+Packet}}}} containing a client endpoint and its message buffer. At this point, you can run the {\bfseries{\mbox{\hyperlink{classo_z_1_1_pipeline_a90bddc5511acce66f2aa780c3bba29b4}{o\+Z\+::\+Pipeline\+::run\+Pipeline}}}} function to process the context and create a response out of it. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{// Callback triggered when receiving messages from clients on default HTTP port}
+\DoxyCodeLine{void MyServer::onReceiveNetworkPacket(oZ::Packet \&\&packet)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    // Create a context out of a network Packet}
+\DoxyCodeLine{    oZ::Context context(std::move(packet));}
+\DoxyCodeLine{}
+\DoxyCodeLine{    // Run the pipeline with this new context and send its response to the client}
+\DoxyCodeLine{    \_pipeline.runPipeline(context);}
+\DoxyCodeLine{    sendResponseToClient(context);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+\subsection*{Encryption}
+
+As you may know, H\+T\+TP uses default port 80. However, if you want to add encryption to your server exchanges, you must use the default H\+T\+T\+PS port 443. Thus, the context need a way to store an encryption flag (to know if the client uses H\+T\+T\+PS) and an encryption key. This data is contained in the {\bfseries{\mbox{\hyperlink{classo_z_1_1_packet}{o\+Z\+::\+Packet}}}} class.
+
+If you use open\+S\+SL for the encryption, you may need to use {\bfseries{Pipeline\+::on\+Connection}}, {\bfseries{Pipeline\+::on\+Disconnection}}, {\bfseries{I\+Module\+::on\+Connection}} and {\bfseries{I\+Module\+::on\+Disconnection}} to implement it as a standalone module.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{// Callback triggered when receiving messages from clients on default HTTPS port}
+\DoxyCodeLine{void MyServer::onReceiveEncryptedNetworkPacket(oZ::Packet \&\&packet)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    // Create a context out of a network Packet}
+\DoxyCodeLine{    oZ::Context context(std::move(packet));}
+\DoxyCodeLine{}
+\DoxyCodeLine{    // Set the encryption flag in the context}
+\DoxyCodeLine{    context.getPacket().setEncryption(true);}
+\DoxyCodeLine{    // Run the pipeline with this new context and send its response to the client}
+\DoxyCodeLine{    \_pipeline.runPipeline(context);}
+\DoxyCodeLine{    sendResponseToClient(context);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+\subsection*{Cache handling}
+
+In this section we will see how caching can be achieved if you really wish to go for performances. The {\bfseries{\mbox{\hyperlink{classo_z_1_1_context}{o\+Z\+::\+Context}}}} class has a {\bfseries{\mbox{\hyperlink{classo_z_1_1_context_a748147258019436983fdbbf6ed51c0b6}{o\+Z\+::\+Context\+::is\+Constant}}}} function that tells if the current context is constant, and thus can be cached. If some of your modules aren\textquotesingle{}t supporting cache for specific H\+T\+TP methods, you can use the {\bfseries{\mbox{\hyperlink{classo_z_1_1_context_ada521ec57fbc2febfd61177e8bbc0128}{o\+Z\+::\+Context\+::not\+Constant}}}} function to set the constant state to false. It\textquotesingle{}s up to you to implement caching. You can accomplish in by creating a module or by handling it directly in the server. 

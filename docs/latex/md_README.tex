@@ -1,0 +1,96 @@
+\href{https://travis-ci.org/MatthieuMv/openZia}{\texttt{ }}
+
+\href{https://codecov.io/gh/MatthieuMv/openZia}{\texttt{ }}
+
+\href{https://matthieumv.github.io/openZia}{\texttt{ {\bfseries{open\+Zia\textquotesingle{}s documentation page}}}}
+
+For any specific question (not convenient for an issue)\+: \href{mailto:matthieu.moinvaziri@epitech.eu}{\texttt{ matthieu.\+moinvaziri@epitech.\+eu}}
+
+\section*{open.. what ?}
+
+open\+Zia is a C++ 17 cross-\/platform A\+PI for the 3rd year Epitech project {\bfseries{Zia}}.
+
+This library is intended to be used to build a {\bfseries{robust and modular H\+T\+TP server}}.
+
+\section*{Why open\+Zia ?}
+
+This A\+PI was designed with a strict philosophy guideline \+:
+
+\begin{quote}
+{\bfseries{Rigor}} $>$ {\bfseries{Maintenability}} $>$ {\bfseries{Efficiency}} $>$ {\bfseries{Simplicity}} \end{quote}
+
+
+Thus, open\+Zia will exploit the best of {\bfseries{C++}} language, avoiding risky design patterns and opting for {\bfseries{best practises}}.
+
+You still don\textquotesingle{}t understand why you should use open\+Zia but you want the best for your H\+T\+TP server ?
+\begin{DoxyItemize}
+\item High performance module pipeline designed for intense {\bfseries{multithreading}} purposes;
+\item Intuitive module implementation;
+\item Easy to use H\+T\+TP classes;
+\item As any good piece of code on the internet, open\+Zia is heavily unit tested;
+\item Simply because you want the best and the best is {\bfseries{open\+Zia}} !
+\end{DoxyItemize}
+
+\section*{Dealing with the A\+PI}
+
+First of all, you should check open\+Zia\textquotesingle{}s \mbox{\hyperlink{md_GUIDELINE}{C++ Guideline}} to better read its code.
+
+\subsection*{Pipeline}
+
+The A\+PI is based on a {\bfseries{Fixed Pipeline}} that is composed of various {\bfseries{callbacks}}.
+
+\begin{quote}
+A fixed pipeline means that you can\textquotesingle{}t change it while it is running. However, you can still stop and change it at run-\/time by reloading modules. \end{quote}
+
+
+The {\bfseries{o\+Z\+::\+Pipeline}} class abstract module loading and pipeline creation on both windows and linux. {\bfseries{o\+Z\+::\+Pipeline\+::load\+Modules}} function will search dynamic libraries in the module directory provided in pipeline\textquotesingle{}s constructor.
+
+The {\bfseries{o\+Z\+::\+Context}} class stores the current pipeline {\bfseries{state}}, network client {\bfseries{buffer}} and its {\bfseries{endpoint}}, H\+T\+TP {\bfseries{request}} / {\bfseries{response}} and an {\bfseries{encryption key}} if used by the client (to implement S\+SL efficiently). This class is described in details in the \mbox{\hyperlink{md_CONTEXT}{Context guide}}.
+
+{\bfseries{o\+Z\+::\+Pipeline}} and {\bfseries{o\+Z\+::\+Context}} are intended to be used in a \href{https://en.wikipedia.org/wiki/State_pattern}{\texttt{ State Pattern}} where the context hold the current state and get changed while being processed.
+
+\subsection*{Modules}
+
+To implement a module you must think about {\bfseries{when}} you need to add its {\bfseries{behavior}} to the pipeline. Please check the detailed \mbox{\hyperlink{md_MODULE}{Module Guide}} for more information.
+
+{\bfseries{Here is a quick recap \+:}}
+
+\subsubsection*{Initialization}
+
+Override the virtual {\bfseries{o\+Z\+::\+I\+Module\+::on\+Register\+Callbacks}} to register your callbacks into the pipeline.
+
+\subsubsection*{H\+T\+TP Basics}
+
+open\+Zia doesn\textquotesingle{}t implement an H\+T\+TP parser, you must implement a specific module for that task.
+
+You should use the different callbacks to build a {\bfseries{o\+Z\+::\+H\+T\+T\+P\+::\+Request}} out of the network packet {\bfseries{o\+Z\+::\+Buffer}}.
+
+\begin{quote}
+When the packet is successfully parsed, use the different interpret callbacks to build your response from other modules. \end{quote}
+
+
+\subsubsection*{Dependencies}
+
+Each module have a callback to explicitly tell its dependencies, and another to retrieve instances to them (instead of querying them at each pipeline run), see {\bfseries{o\+Z\+::\+I\+Module\+::on\+Retreive\+Dependencies}}.
+
+\subsubsection*{Configuration file}
+
+There are no configuration abstraction classes let you freely choose how to implement it for your needs. That said, you can easily share module with independent configuration system.
+
+\subsubsection*{Logging messages}
+
+Take uses of the {\bfseries{I\+Logger}} interface create specific modules that, once loaded, will have his {\bfseries{o\+Z\+::\+I\+Logger\+::on\+Log}} callback triggered each time a log is emitted.
+
+\begin{quote}
+To emit a log, use the global helper class {\bfseries{o\+Z\+::\+Log}}. \end{quote}
+
+
+\section*{More examples !}
+
+\subsection*{Hello world}
+
+Please take a look at the very straightforward \mbox{\hyperlink{md_HELLO}{Hello World Example}} file to follow a quick introduction guide.
+
+\subsection*{Compilation}
+
+If you are lost with cmake and don\textquotesingle{}t know how to add the library to your project, follow this detailled \mbox{\hyperlink{md_COMPILATION}{Compilation Guide}}. 

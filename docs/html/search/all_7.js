@@ -7,7 +7,7 @@ var searchData=
   ['getbody',['getBody',['../classo_z_1_1_h_t_t_p_1_1_message.html#aed4d82d784cf503dbbfa1180f9b3434f',1,'oZ::HTTP::Message::getBody(void) noexcept'],['../classo_z_1_1_h_t_t_p_1_1_message.html#ad06f3f586945dad61b206607f340f4e1',1,'oZ::HTTP::Message::getBody(void) const noexcept']]],
   ['getbytearray',['getByteArray',['../classo_z_1_1_packet.html#a8a5d791e4675a3f065928884b64fe7bf',1,'oZ::Packet::getByteArray(void) noexcept'],['../classo_z_1_1_packet.html#a4919e1356309ad8c9d7595052d0ca498',1,'oZ::Packet::getByteArray(void) const noexcept']]],
   ['getcode',['getCode',['../classo_z_1_1_h_t_t_p_1_1_response.html#aa2191a167fe53e8f0a8c2e64393cede0',1,'oZ::HTTP::Response']]],
-  ['getdependencies',['getDependencies',['../classo_z_1_1_i_module.html#a720a329e6ebcbecbc150d8b0bbee6e37',1,'oZ::IModule']]],
+  ['getdependencies',['getDependencies',['../classo_z_1_1_i_module.html#a720a329e6ebcbecbc150d8b0bbee6e37',1,'oZ::IModule::getDependencies()'],['../class_a.html#a2220cafae67f880a553d6219dfcf8581',1,'A::getDependencies()'],['../class_abis.html#a20476073293d54658c3891decbb4a725',1,'Abis::getDependencies()']]],
   ['getendpoint',['getEndpoint',['../classo_z_1_1_packet.html#a89367cc491fdfdb6bf88eda9bc4eb219',1,'oZ::Packet']]],
   ['getfiledescriptor',['getFileDescriptor',['../classo_z_1_1_packet.html#a65cfd7021de4eaf78f716143b82cd4a1',1,'oZ::Packet']]],
   ['getfunction',['getFunction',['../classo_z_1_1_dynamic_loader.html#a136f9d35245f4e3d556d7f4eae951cdf',1,'oZ::DynamicLoader::getFunction(DynamicHandler handler, const std::string &amp;name)'],['../classo_z_1_1_dynamic_loader.html#ad5c090a613bec9cf397a479bf3257cfa',1,'oZ::DynamicLoader::getFunction(DynamicHandler handler, const std::string &amp;name)']]],
@@ -19,7 +19,7 @@ var searchData=
   ['getloggerlist',['GetLoggerList',['../classo_z_1_1_log.html#aa1c737e66220f5f6f2f557c054b44e48',1,'oZ::Log']]],
   ['getmethod',['getMethod',['../classo_z_1_1_h_t_t_p_1_1_request.html#ab8c06f60e7d3b17c2ad03c7b9cb046d7',1,'oZ::HTTP::Request']]],
   ['getmodules',['getModules',['../classo_z_1_1_pipeline.html#a3886c29b903d2e359a853ea76711661b',1,'oZ::Pipeline::getModules(void) noexcept'],['../classo_z_1_1_pipeline.html#a84358c4166a67aabc0d5811608727da9',1,'oZ::Pipeline::getModules(void) const noexcept']]],
-  ['getname',['getName',['../classo_z_1_1_i_module.html#af41d45158fd28e1bd86a34e25f5282d6',1,'oZ::IModule']]],
+  ['getname',['getName',['../classo_z_1_1_i_module.html#af41d45158fd28e1bd86a34e25f5282d6',1,'oZ::IModule::getName()'],['../class_foo_module.html#ac71d5e6de92ab9c804cc708528f052d2',1,'FooModule::getName()'],['../class_basic_logger.html#a832838fa70c5910babd911b767a5f6f7',1,'BasicLogger::getName()'],['../class_test_logger.html#a4e3ad3222ab7495cf30bb5b1a5270795',1,'TestLogger::getName()'],['../class_a.html#a2d19f0df2a97d6c3ad2c763f9134af82',1,'A::getName()'],['../class_b.html#ae304625cf30ffd9574cc71682558cf2e',1,'B::getName()'],['../class_c.html#ad5f4b90909e9c14fc2601adc54ffdfa6',1,'C::getName()']]],
   ['getpacket',['getPacket',['../classo_z_1_1_context.html#ad2814c8e2b850cb4c5a70a964dbd3d58',1,'oZ::Context::getPacket(void) noexcept'],['../classo_z_1_1_context.html#a25918977b74de5fc3874d38a2f235ba2',1,'oZ::Context::getPacket(void) const noexcept']]],
   ['getport',['getPort',['../classo_z_1_1_endpoint.html#aad983948594b295187d6117f99b1988d',1,'oZ::Endpoint']]],
   ['getreason',['getReason',['../classo_z_1_1_h_t_t_p_1_1_response.html#a72ccc6e4aa64f1bf2c54218436631a26',1,'oZ::HTTP::Response::getReason(void) noexcept'],['../classo_z_1_1_h_t_t_p_1_1_response.html#a9b05303e7b76a04d3ab4ed8960de130c',1,'oZ::HTTP::Response::getReason(void) const noexcept']]],
@@ -29,5 +29,6 @@ var searchData=
   ['getstringmultimap',['getStringMultimap',['../classo_z_1_1_h_t_t_p_1_1_header.html#a915a52b181112582d34e0942004d4cb0',1,'oZ::HTTP::Header::getStringMultimap(void) noexcept'],['../classo_z_1_1_h_t_t_p_1_1_header.html#af1ee1c1e6a882a605407683341e32a8f',1,'oZ::HTTP::Header::getStringMultimap(void) const noexcept']]],
   ['geturi',['getURI',['../classo_z_1_1_h_t_t_p_1_1_request.html#aaec3f19cb4ee6a18878166049df3253a',1,'oZ::HTTP::Request::getURI(void) noexcept'],['../classo_z_1_1_h_t_t_p_1_1_request.html#afe1db07c464e1b708187108cbef952fa',1,'oZ::HTTP::Request::getURI(void) const noexcept']]],
   ['getversion',['getVersion',['../classo_z_1_1_h_t_t_p_1_1_message.html#a6041a3ba343c0115c79c233e5c322d0b',1,'oZ::HTTP::Message']]],
-  ['gone',['Gone',['../namespaceo_z_1_1_h_t_t_p.html#acd43703151305f79b1e2f42e98ee8199a0b497b33b1a05057bc1634e607170bf6',1,'oZ::HTTP']]]
+  ['gone',['Gone',['../namespaceo_z_1_1_h_t_t_p.html#acd43703151305f79b1e2f42e98ee8199a0b497b33b1a05057bc1634e607170bf6',1,'oZ::HTTP']]],
+  ['guideline_2emd',['GUIDELINE.md',['../_g_u_i_d_e_l_i_n_e_8md.html',1,'']]]
 ];

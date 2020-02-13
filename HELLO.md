@@ -66,11 +66,11 @@ public:
 
 	virtual const char *getName(void) const { return "Hello"; }
 	virtual Dependencies getDependencies(void) const noexcept { return { "World" }; }
-	
+
 	virtual void onConnection(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption) {
 		std::cout << "New client connected: " << endpoint.getAdrress() << std::endl;
 	}
-	
+
 	virtual void onDisconnection(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption) {
 		std::cout << "Client diconnected: " << endpoint.getAdrress() << std::endl;
 	}
@@ -96,7 +96,7 @@ private:
 /* --- Hello.cpp --- */
 #include "Hello.hpp"
 
-extern "C" oZ::IModule *CreateModule(void) { return new Hello(); }
+OPEN_ZIA_MAKE_ENTRY_POINT(Hello);
 ```
 
 ```C++
@@ -136,5 +136,5 @@ public:
 /* --- World.cpp --- */
 #include "World.hpp"
 
-extern "C" oZ::IModule *CreateModule(void) { return new World(); }
+OPEN_ZIA_MAKE_ENTRY_POINT(World);
 ```
