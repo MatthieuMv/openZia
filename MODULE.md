@@ -6,6 +6,9 @@ For that you must implement your modules deriving from **oZ::IModule** interface
 Last, you will need an instantiation function:
 ```C++
 extern "C" IModule *CreateModule(void) { return MyModule(); }
+
+// you may want to use the OPEN_ZIA_MAKE_ENTRY_POINT macro:
+OPEN_ZIA_MAKE_ENTRY_POINT(MyModule);
 ```
 The API already does the dynamic library loading for you so you can focus more on creating modules.
 

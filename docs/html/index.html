@@ -63,11 +63,70 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
 <div class="title">openZia Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a href="https://travis-ci.org/MatthieuMv/openZia"><img src="https://travis-ci.org/MatthieuMv/openZia.svg?branch=master" alt="Build Status" class="inline"/>
+</a></p>
+<p><a href="https://codecov.io/gh/MatthieuMv/openZia"><object type="image/svg+xml" data="https://codecov.io/gh/MatthieuMv/openZia/branch/master/graph/badge.svg" alt="codecov"></object>
+/>
+</a></p>
+<p><a href="https://matthieumv.github.io/openZia"><b>openZia's documentation page</b></a></p>
+<p>For any specific question (not convenient for an issue): <a href="#" onclick="location.href='mai'+'lto:'+'mat'+'th'+'ieu'+'.m'+'oin'+'va'+'zir'+'i@'+'epi'+'te'+'ch.'+'eu'; return false;">matth<span style="display: none;">.nosp@m.</span>ieu.<span style="display: none;">.nosp@m.</span>moinv<span style="display: none;">.nosp@m.</span>azir<span style="display: none;">.nosp@m.</span>i@epi<span style="display: none;">.nosp@m.</span>tech<span style="display: none;">.nosp@m.</span>.eu</a></p>
+<h1>open.. what ?</h1>
+<p>openZia is a C++ 17 cross-platform API for the 3rd year Epitech project <b>Zia</b>.</p>
+<p>This library is intended to be used to build a <b>robust and modular HTTP server</b>.</p>
+<h1>Why openZia ?</h1>
+<p>This API was designed with a strict philosophy guideline :</p>
+<blockquote class="doxtable">
+<p><b>Rigor</b> &gt; <b>Maintenability</b> &gt; <b>Efficiency</b> &gt; <b>Simplicity</b> </p>
+</blockquote>
+<p>Thus, openZia will exploit the best of <b>C++</b> language, avoiding risky design patterns and opting for <b>best practises</b>.</p>
+<p>You still don't understand why you should use openZia but you want the best for your HTTP server ?</p><ul>
+<li>High performance module pipeline designed for intense <b>multithreading</b> purposes;</li>
+<li>Intuitive module implementation;</li>
+<li>Easy to use HTTP classes;</li>
+<li>As any good piece of code on the internet, openZia is heavily unit tested;</li>
+<li>Simply because you want the best and the best is <b>openZia</b> !</li>
+</ul>
+<h1>Dealing with the API</h1>
+<p>First of all, you should check openZia's <a class="el" href="md__g_u_i_d_e_l_i_n_e.html">C++ Guideline</a> to better read its code.</p>
+<h2>Pipeline</h2>
+<p>The API is based on a <b>Fixed Pipeline</b> that is composed of various <b>callbacks</b>.</p>
+<blockquote class="doxtable">
+<p><a class="el" href="class_a.html">A</a> fixed pipeline means that you can't change it while it is running. However, you can still stop and change it at run-time by reloading modules. </p>
+</blockquote>
+<p>The <b><a class="el" href="classo_z_1_1_pipeline.html" title="The pileline abstracts the pipeline of modules.">oZ::Pipeline</a></b> class abstract module loading and pipeline creation on both windows and linux. <b><a class="el" href="classo_z_1_1_pipeline.html#a2815743412c13100c68fee0d87283417" title="Find modules and load them into the pipeline. This function will : 1) Trigger the onLoadModules callb...">oZ::Pipeline::loadModules</a></b> function will search dynamic libraries in the module directory provided in pipeline's constructor.</p>
+<p>The <b><a class="el" href="classo_z_1_1_context.html" title="The context class uses different concepts : 1) State is a state-machine code which indicates where th...">oZ::Context</a></b> class stores the current pipeline <b>state</b>, network client <b>buffer</b> and its <b>endpoint</b>, HTTP <b>request</b> / <b>response</b> and an <b>encryption key</b> if used by the client (to implement SSL efficiently). This class is described in details in the <a class="el" href="md__c_o_n_t_e_x_t.html">Context guide</a>.</p>
+<p><b><a class="el" href="classo_z_1_1_pipeline.html" title="The pileline abstracts the pipeline of modules.">oZ::Pipeline</a></b> and <b><a class="el" href="classo_z_1_1_context.html" title="The context class uses different concepts : 1) State is a state-machine code which indicates where th...">oZ::Context</a></b> are intended to be used in a <a href="https://en.wikipedia.org/wiki/State_pattern">State Pattern</a> where the context hold the current state and get changed while being processed.</p>
+<h2>Modules</h2>
+<p>To implement a module you must think about <b>when</b> you need to add its <b>behavior</b> to the pipeline. Please check the detailed <a class="el" href="md__m_o_d_u_l_e.html">Module Guide</a> for more information.</p>
+<p><b>Here is a quick recap :</b></p>
+<h3>Initialization</h3>
+<p>Override the virtual <b><a class="el" href="classo_z_1_1_i_module.html#a3dc905faa6df5e22eecc6ffbc923fd95" title="Register module&#39;s callbacks in the pipeline.">oZ::IModule::onRegisterCallbacks</a></b> to register your callbacks into the pipeline.</p>
+<h3>HTTP Basics</h3>
+<p>openZia doesn't implement an HTTP parser, you must implement a specific module for that task.</p>
+<p>You should use the different callbacks to build a <b><a class="el" href="classo_z_1_1_h_t_t_p_1_1_request.html">oZ::HTTP::Request</a></b> out of the network packet <b>oZ::Buffer</b>.</p>
+<blockquote class="doxtable">
+<p>When the packet is successfully parsed, use the different interpret callbacks to build your response from other modules. </p>
+</blockquote>
+<h3>Dependencies</h3>
+<p>Each module have a callback to explicitly tell its dependencies, and another to retrieve instances to them (instead of querying them at each pipeline run), see <b><a class="el" href="classo_z_1_1_i_module.html#af183d3711ef7d7a6966ac078b63a7685" title="This function is called once module registered their callbacks.">oZ::IModule::onRetreiveDependencies</a></b>.</p>
+<h3>Configuration file</h3>
+<p>There are no configuration abstraction classes let you freely choose how to implement it for your needs. That said, you can easily share module with independent configuration system.</p>
+<h3>Logging messages</h3>
+<p>Take uses of the <b>ILogger</b> interface create specific modules that, once loaded, will have his <b><a class="el" href="classo_z_1_1_i_logger.html#a2e0e168c9218055e41bdd5b57177cba1" title="Log a single message of given level.">oZ::ILogger::onLog</a></b> callback triggered each time a log is emitted.</p>
+<blockquote class="doxtable">
+<p>To emit a log, use the global helper class <b><a class="el" href="classo_z_1_1_log.html">oZ::Log</a></b>. </p>
+</blockquote>
+<h1>More examples !</h1>
+<h2>Hello world</h2>
+<p>Please take a look at the very straightforward <a class="el" href="md__h_e_l_l_o.html">Hello World Example</a> file to follow a quick introduction guide.</p>
+<h2>Compilation</h2>
+<p>If you are lost with cmake and don't know how to add the library to your project, follow this detailled <a class="el" href="md__c_o_m_p_i_l_a_t_i_o_n.html">Compilation Guide</a>. </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

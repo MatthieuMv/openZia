@@ -1,0 +1,171 @@
+A Module is a dynamic library which contains a single class loaded at runtime. It means that you must compile every module independently. For that you must implement your modules deriving from {\bfseries{o\+Z\+::\+I\+Module}} interface. Last, you will need an instantiation function\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{extern "C" IModule *CreateModule(void) \{ return MyModule(); \}}
+\DoxyCodeLine{// you may want to use the OPEN\_ZIA\_MAKE\_ENTRY\_POINT macro}
+\end{DoxyCode}
+ The A\+PI already does the dynamic library loading for you so you can focus more on creating modules.
+
+\subsection*{Module}
+
+In this section we will take a closer look at the interface class {\bfseries{o\+Z\+::\+I\+Module}}, and all its components. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{// Module interface}
+\DoxyCodeLine{class IModule;}
+\DoxyCodeLine{// Module polymorphic instance}
+\DoxyCodeLine{using ModulePtr = std::shared\_ptr<IModule>}
+\end{DoxyCode}
+ We use shared pointers to store instantiated modules. This allows holding a reference to a module while asserting its existence.
+
+\subsection*{Modules callbacks}
+
+Each module can register multiple callback functions at any state of the pipeline. The enumeration of each callback is {\bfseries{o\+Z\+::\+State}}.
+
+Use the different states and the {\bfseries{o\+Z\+::\+Priority}} enumeration to sort modules callback. Each state of the pipeline are triggered in this order\+: \begin{quote}
+Before\+Parse -\/$>$ Parse -\/$>$ After\+Parse -\/$>$ Before\+Interpret -\/$>$ Interpret -\/$>$ After\+Interpret -\/$>$ Completed \end{quote}
+
+
+Each callback must take a {\bfseries{o\+Z\+::\+Context}} in parameter and return a boolean. If you {\bfseries{return false}} from the callback, the pipeline will {\bfseries{not trigger}} other modules\textquotesingle{} callbacks from the current {\bfseries{o\+Z\+::\+State}} and go straight for the next one. At any time, you if an error is set using {\bfseries{o\+Z\+::\+Context\+::set\+Error\+State}}, the pipeline will trigger the special {\bfseries{o\+Z\+::\+State\+::\+Error}} sate callback.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{bool MyModule::myCallback(oZ::Context \&context)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    if (hasError(context)) \{}
+\DoxyCodeLine{        context.setErrorState();}
+\DoxyCodeLine{        return false; // If you return true here, the pipeline will finish to trigger every callback of the current state and not immediatly call Error callbacks}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    return true;}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+\subsection*{Must have functions}
+
+Each module have a set of virtual function to be override. Actually, only 2 of them are pure virtual \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{// Get the raw string name of module instance}
+\DoxyCodeLine{virtual const char *getName(void) const = 0;}
+\DoxyCodeLine{}
+\DoxyCodeLine{// Register module's callbacks to the pipeline}
+\DoxyCodeLine{virtual void onRegisterCallbacks(Pipeline \&pipeline) = 0;}
+\end{DoxyCode}
+
+
+\subsubsection*{How\+To\+: H\+T\+TP module}
+
+Let\textquotesingle{}s see a simple example with an independent H\+T\+TP Module\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{class HTTPModule : public oZ::IModule}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{public:}
+\DoxyCodeLine{    // Get the raw string name of module instance}
+\DoxyCodeLine{    virtual const char *getName(void) const \{ return "HTTPModule"; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    // Register module's callbacks to the pipeline}
+\DoxyCodeLine{    virtual void onRegisterCallbacks(oZ::Pipeline \&pipeline) \{}
+\DoxyCodeLine{        pipeline.registerCallback(}
+\DoxyCodeLine{            oZ::State::Parse, // Callback triggered when parsing the HTTP request}
+\DoxyCodeLine{            oZ::Priority::ASAP, // As soon as possible}
+\DoxyCodeLine{            this, \&HTTPModule::onParseHeader // Actual function callback}
+\DoxyCodeLine{        );}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    bool onParseHeader(oZ::Context \&context) \{}
+\DoxyCodeLine{        const auto \&byteArray = context.getByteArray();}
+\DoxyCodeLine{        auto \&request = context.getRequest();}
+\DoxyCodeLine{        auto \&header = request.getHeader();}
+\DoxyCodeLine{        // Parse 'byteArray' to fill 'header' and 'request' data}
+\DoxyCodeLine{        return true; // Tell the pipeline we continue to process this state}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+ And that\textquotesingle{}s it ! You don\textquotesingle{}t have to implement anything else to create an independent module.
+
+\subsection*{Optional functions}
+
+However, there are more virtual functions for more complex needs. These functions are default-\/implemented to let you the choice of using them or not. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{// Callback triggered when a client is connected}
+\DoxyCodeLine{virtual void onConnected(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption);}
+\DoxyCodeLine{}
+\DoxyCodeLine{// Callback triggered when a client is disconnected}
+\DoxyCodeLine{virtual void onDisconnected(const FileDescriptor fd, const Endpoint endpoint);}
+\DoxyCodeLine{}
+\DoxyCodeLine{// Get the list of dependencies (as a vector of raw string, see function getName above)}
+\DoxyCodeLine{virtual Dependencies getDependencies(void) const noexcept;}
+\DoxyCodeLine{}
+\DoxyCodeLine{// Given a pipeline reference, find each dependent module to store them internally}
+\DoxyCodeLine{virtual void onRetreiveDependencies(Pipeline \&pipeline);}
+\DoxyCodeLine{}
+\DoxyCodeLine{// Given a directory path (where all configs are), load module's configuration file}
+\DoxyCodeLine{virtual void onLoadConfigurationFile(const std::string \&directory);}
+\end{DoxyCode}
+
+
+\subsubsection*{How\+To\+: Dependencies}
+
+Let\textquotesingle{}s first see how dependencies are handled given a short example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{class ChildModule : public oZ::IModule}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{public:}
+\DoxyCodeLine{    virtual const char *getName(void) const \{ return "Child"; \}}
+\DoxyCodeLine{    virtual void onRegisterCallbacks(oZ::Pipeline \&pipeline) \{ ... \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{class RootModule : public oZ::IModule}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{public:}
+\DoxyCodeLine{    virtual const char *getName(void) const \{ return "Root"; \}}
+\DoxyCodeLine{    virtual void onRegisterCallbacks(oZ::Pipeline \&pipeline) \{ ... \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    // Return the list of dependencies}
+\DoxyCodeLine{    virtual Dependencies getDependencies(void) const noexcept \{ return \{ "Child" \}; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    // Find dependencies and store them before any process for performance reasons}
+\DoxyCodeLine{    virtual void onRetreiveDependencies(oZ::Pipeline \&pipeline) \{}
+\DoxyCodeLine{        \_child = pipeline.findModule<ChildModule>();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{private:}
+\DoxyCodeLine{    std::shared\_ptr<ChildModule> \_child;}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+
+
+\subsubsection*{How\+To\+: Configuration file}
+
+Let\textquotesingle{}s see how simple it is to add a configuration file to setup a module. Please note that the configuration file language is totally up to you, in this example it is named {\itshape My\+Custom\+Config\+Loader}. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{// Import your own config loader}
+\DoxyCodeLine{\#include "MyCustomConfigLoader.hpp"}
+\DoxyCodeLine{}
+\DoxyCodeLine{class MyModule : public oZ::IModule}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{public:}
+\DoxyCodeLine{    static const auto *FileName = "MyModule.conf";}
+\DoxyCodeLine{}
+\DoxyCodeLine{    virtual const char *getName(void) const \{ return "My" \};}
+\DoxyCodeLine{    virtual void onRegisterCallbacks(oZ::Pipeline \&pipeline) \{ ... \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    // Open configuration file and load some properties using MyCustomConfigLoader}
+\DoxyCodeLine{    virtual void onLoadConfigurationFile(const std::string \&directory) \{}
+\DoxyCodeLine{        auto config = MyCustomConfigLoader::Parse(directory + FileName);}
+\DoxyCodeLine{        \_x = config["x"].toInt();}
+\DoxyCodeLine{        \_y = config["y"].toInt();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{private:}
+\DoxyCodeLine{    int \_x = 0, \_y = 0;}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+ 

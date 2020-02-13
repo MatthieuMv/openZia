@@ -82,7 +82,7 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="_i_module_8hpp_source.html">IModule.hpp</a>&gt;</code></p>
 
-<p>Inherited by <a class="el" href="classo_z_1_1_i_logger.html">oZ::ILogger</a>.</p>
+<p>Inherited by <a class="el" href="class_a.html">A</a>, <a class="el" href="class_b.html">B</a>, <a class="el" href="class_c.html">C</a>, <a class="el" href="class_foo_module.html">FooModule</a>, and <a class="el" href="classo_z_1_1_i_logger.html">oZ::ILogger</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -226,6 +226,8 @@ Public Member Functions</h2></td></tr>
 <p>Get the module dependencies. </p>
 <p>By default a module has no dependencies </p>
 
+<p>Reimplemented in <a class="el" href="class_abis.html#a20476073293d54658c3891decbb4a725">Abis</a>, and <a class="el" href="class_a.html#a2220cafae67f880a553d6219dfcf8581">A</a>.</p>
+
 </div>
 </div>
 <a id="af41d45158fd28e1bd86a34e25f5282d6"></a>
@@ -253,6 +255,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the module name. </p>
+
+<p>Implemented in <a class="el" href="class_c.html#ad5f4b90909e9c14fc2601adc54ffdfa6">C</a>, <a class="el" href="class_b.html#ae304625cf30ffd9574cc71682558cf2e">B</a>, <a class="el" href="class_a.html#a2d19f0df2a97d6c3ad2c763f9134af82">A</a>, <a class="el" href="class_test_logger.html#a4e3ad3222ab7495cf30bb5b1a5270795">TestLogger</a>, <a class="el" href="class_basic_logger.html#a832838fa70c5910babd911b767a5f6f7">BasicLogger</a>, and <a class="el" href="class_foo_module.html#ac71d5e6de92ab9c804cc708528f052d2">FooModule</a>.</p>
 
 </div>
 </div>
@@ -298,6 +302,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Callback used to intercept client connections. </p>
 
+<p>Reimplemented in <a class="el" href="class_c.html#a9d2de0b00320ee2011d7e326346d00cb">C</a>.</p>
+
 </div>
 </div>
 <a id="aa178220a4e7ba0cca50a131403e04847"></a>
@@ -336,6 +342,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Callback used to intercept client disconnections. </p>
 
+<p>Reimplemented in <a class="el" href="class_c.html#ab9bef2875c2d19d674aa592f63a21bc1">C</a>.</p>
+
 </div>
 </div>
 <a id="a61a2cc76594401ed2f50931a6a6b76f3"></a>
@@ -366,6 +374,8 @@ Public Member Functions</h2></td></tr>
 <p>The given directory is the path to configuration files</p>
 <p>This function is not pure virtual because you may not need it </p>
 
+<p>Reimplemented in <a class="el" href="class_a.html#aa096a581a39df500ec97e2d48c24fbef">A</a>.</p>
+
 </div>
 </div>
 <a id="a3dc905faa6df5e22eecc6ffbc923fd95"></a>
@@ -394,7 +404,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Register module's callbacks in the pipeline. </p>
 
-<p>Implemented in <a class="el" href="classo_z_1_1_i_logger.html#a10732b6da6e8f085c6fe5fa154d361ef">oZ::ILogger</a>.</p>
+<p>Implemented in <a class="el" href="class_c.html#ae55c5d0571aadf7e48cae4d1e4fcf591">C</a>, <a class="el" href="class_b.html#a681f13a5b7d401fe80a18b63f90b0f89">B</a>, <a class="el" href="classo_z_1_1_i_logger.html#a10732b6da6e8f085c6fe5fa154d361ef">oZ::ILogger</a>, <a class="el" href="class_a.html#ac82f8db798576ee2eff8b6b91b77c239">A</a>, <a class="el" href="class_test_logger.html#a0ee94278a66b189ca55f04e40192b5d1">TestLogger</a>, and <a class="el" href="class_foo_module.html#a34a4cc51ff4c493a981d61e9d9eeeb1a">FooModule</a>.</p>
 
 </div>
 </div>
@@ -426,11 +436,13 @@ Public Member Functions</h2></td></tr>
 <p>There you should (if needed) implement dependencies search Be careful, at this point other modules may not have retreived their dependencies ! Use the pipeline only to find your dependencies and store their shared_ptr instances</p>
 <p>This function is not pure virtual because you may not need it </p>
 
+<p>Reimplemented in <a class="el" href="class_a.html#a968473c1dcccfee5502df74229fb263b">A</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/mmoinvaziri/Epitech/CPP_zia_2019/External/openZia/openZia/<a class="el" href="_i_module_8hpp_source.html">IModule.hpp</a></li>
-<li>/home/mmoinvaziri/Epitech/CPP_zia_2019/External/openZia/openZia/<a class="el" href="_i_module_8cpp.html">IModule.cpp</a></li>
+<li>openZia/<a class="el" href="_i_module_8hpp_source.html">IModule.hpp</a></li>
+<li>openZia/<a class="el" href="_i_module_8cpp.html">IModule.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

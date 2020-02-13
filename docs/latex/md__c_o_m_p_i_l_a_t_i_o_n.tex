@@ -1,0 +1,91 @@
+In this section we will cover the compilation part of open\+Zia. We will see how to compile it independently, how to add it to your actual C\+Make project and how to automate module compilation.
+
+\subsection*{Independent compilation}
+
+You may first want to assert that open\+Zia compiles well in your system. The first dependency is to check your C++ compiler, it must be able to support {\bfseries{all C++17 features}}. You must also have {\bfseries{C\+Make}} installed with a lower build system like {\bfseries{Makefiles}} or {\bfseries{Visual studio solutions}}. If you wish to start unit tests, you must install {\bfseries{Criterion}} unit-\/testing library. For the coverage, you will need {\bfseries{gcovr}}.
+
+First, you need to clone the repository and create a build directory\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone git https://github.com/MatthieuMv/openZia.git}
+\DoxyCodeLine{cd openZia \&\& mkdir Build \&\& cd Build}
+\end{DoxyCode}
+
+
+Then, for a simple library build use the following commands 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake ..}
+\DoxyCodeLine{cmake --build .}
+\end{DoxyCode}
+ If you want to run test or see coverage please watch below.
+
+\subsection*{Add open\+Zia to your C\+Make project}
+
+First you need add open\+Zia\textquotesingle{}s repository to your submodules. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git submodule add https://github.com/MatthieuMv/openZia.git}
+\end{DoxyCode}
+
+
+Next you need to {\bfseries{automate compilation}} of open\+Zia in your {\bfseries{C\+Make\+Lists.\+txt}}, and link your program to it. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# CMakeLists.txt}
+\DoxyCodeLine{cmake\_minimum\_required(VERSION 3.0)}
+\DoxyCodeLine{project(Server)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Include directly the openZia.cmake to your CMake build}
+\DoxyCodeLine{\# This include gives 'openZiaLibs' and 'openZiaIncludes' variables.}
+\DoxyCodeLine{include(openZia/openZia/openZia.cmake)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Create the executable and link openZia library to it}
+\DoxyCodeLine{add\_executable(Server main.cpp)}
+\DoxyCodeLine{target\_link\_libraries(Server \$\{openZiaLibs\})}
+\DoxyCodeLine{target\_include\_directories(Server PRIVATE \$\{openZiaIncludes\}))}
+\end{DoxyCode}
+
+
+\subsection*{Automate module compilation}
+
+\mbox{\hyperlink{class_a}{A}} good practice is to create a directory for each module, and include their $\ast$$\ast$.cmake$\ast$$\ast$ file individually. I assume you already included {\bfseries{open\+Zia.\+cmake}} in your {\bfseries{C\+Make\+Lists.\+txt}} and that you have created a directory named {\bfseries{Template}} which contains the following {\bfseries{Template.\+cmake}}, {\bfseries{Template.\+hpp}} and {\bfseries{Template.\+cpp}}. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# Template.cmake}
+\DoxyCodeLine{project(Template)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Save this directory as TemplateSourcesDir}
+\DoxyCodeLine{get\_filename\_component(TemplateSourcesDir \$\{CMAKE\_CURRENT\_LIST\_FILE\}  PATH)}
+\DoxyCodeLine{}
+\DoxyCodeLine{set(TemplateSources}
+\DoxyCodeLine{    \$\{TemplateSourcesDir\}/Template.hpp}
+\DoxyCodeLine{    \$\{TemplateSourcesDir\}/Template.cpp}
+\DoxyCodeLine{)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Compile the module, and link it to openZia}
+\DoxyCodeLine{add\_library(\$\{PROJECT\_NAME\} SHARED \$\{TemplateSources\})}
+\DoxyCodeLine{target\_link\_libraries(\$\{PROJECT\_NAME\} \$\{openZiaLibs\})}
+\DoxyCodeLine{target\_include\_directories(\$\{PROJECT\_NAME\} PRIVATE \$\{openZiaIncludes\})}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Copy the library into the binary modules directory}
+\DoxyCodeLine{set\_target\_properties(\$\{PROJECT\_NAME\} PROPERTIES}
+\DoxyCodeLine{    LIBRARY\_OUTPUT\_DIRECTORY  \$\{CMAKE\_BINARY\_DIR\}/Modules\}}
+\DoxyCodeLine{)}
+\end{DoxyCode}
+
+
+\subsection*{Unit tests and code coverage}
+
+If you want to start unit tests replace independent build instruction by\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake .. -DOPENZIA\_TESTS=TRUE}
+\DoxyCodeLine{cmake --build .}
+\DoxyCodeLine{./openZiaTests}
+\end{DoxyCode}
+
+
+If you want code coverage then\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake .. -DOPENZIA\_TESTS=TRUE -DOPENZIA\_COVERAGE=TRUE}
+\DoxyCodeLine{cmake --build .}
+\DoxyCodeLine{./openZiaTests}
+\DoxyCodeLine{cd ..}
+\DoxyCodeLine{gcovr --exclude Tests}
+\end{DoxyCode}
+ 
