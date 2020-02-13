@@ -19,7 +19,7 @@ Test(DynamicLoader, Basics)
     auto handler = loader.load("./libFoo" + std::string(SHARED_LIB_EXT));
     cr_assert(handler);
 
-    auto function = loader.getFunction<oZ::ModuleInstanceFunction>(handler, "CreateModule");
+    auto function = loader.getFunction<oZ::ModuleInstanceFunction>(handler, OPEN_ZIA_ENTRY_POINT_AS_STRING);
     cr_assert(function);
 
     oZ::ModulePtr module { (*function)() };
