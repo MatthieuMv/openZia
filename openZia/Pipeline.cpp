@@ -52,7 +52,7 @@ void Pipeline::onLoadModules(const std::string &directoryPath)
     fs::path path(directoryPath);
 
     if (!fs::exists(path))
-        throw std::logic_error("Pipeline::onLoadModules: Inexisting module directory '" + directoryPath + '\'');
+        return;
     for (const auto &file : fs::directory_iterator(path)) {
         if (!file.path().has_extension())
             continue;
