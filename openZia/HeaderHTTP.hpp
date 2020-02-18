@@ -46,7 +46,7 @@ public:
      * @brief Check existence of a value in the header
      */
     template<typename Literal>
-    [[nodiscard]] bool exists(const Literal &key) const noexcept { return _mmap.find(key) != _mmap.end(); }
+    [[nodiscard]] inline bool exists(const Literal &key) const noexcept { return _mmap.find(key) != _mmap.end(); }
 
     /**
      * @brief Get a value in the header matching a key and an index, and throw if not found
@@ -64,47 +64,47 @@ public:
      * @brief Get a value in the header
      */
     template<typename Literal, typename Literal2>
-    void set(const Literal &key, Literal2 &&value) { _mmap.emplace(key, std::forward<Literal2>(value)); }
+    void inline set(const Literal &key, Literal2 &&value) { _mmap.emplace(key, std::forward<Literal2>(value)); }
 
     /**
      * @brief Count occurences of matching key
      */
     template<typename Literal>
-    [[nodiscard]] std::uint32_t count(const Literal &key) const noexcept { return _mmap.count(key); }
+    [[nodiscard]] inline std::uint32_t count(const Literal &key) const noexcept { return _mmap.count(key); }
 
     /**
      * @brief Get the iterator of matching key
      */
     template<typename Literal>
-    [[nodiscard]] Iterator getIterator(const Literal &key) { return _mmap.find(key); }
+    [[nodiscard]] inline Iterator getIterator(const Literal &key) { return _mmap.find(key); }
 
     /**
      * @brief Get the iterator of matching key
      */
     template<typename Literal>
-    [[nodiscard]] ConstIterator getIterator(const Literal &key) const { return _mmap.find(key); }
+    [[nodiscard]] inline ConstIterator getIterator(const Literal &key) const { return _mmap.find(key); }
 
     /**
      * @brief Get the iterator range of matching key
      */
     template<typename Literal>
-    [[nodiscard]] IteratorRange getIteratorRange(const Literal &key) { return _mmap.equal_range(key); }
+    [[nodiscard]] inline IteratorRange getIteratorRange(const Literal &key) { return _mmap.equal_range(key); }
 
     /**
      * @brief Get the iterator range of matching key
      */
     template<typename Literal>
-    [[nodiscard]] ConstIteratorRange getIteratorRange(const Literal &key) const { return _mmap.equal_range(key); }
+    [[nodiscard]] inline ConstIteratorRange getIteratorRange(const Literal &key) const { return _mmap.equal_range(key); }
 
     /**
      * @brief Get the String Multimap's reference
      */
-    [[nodiscard]] StringMultimap &getStringMultimap(void) noexcept { return _mmap; }
+    [[nodiscard]] inline StringMultimap &getStringMultimap(void) noexcept { return _mmap; }
 
     /**
      * @brief Get the String Multimap's constant reference
      */
-    [[nodiscard]] const StringMultimap &getStringMultimap(void) const noexcept { return _mmap; }
+    [[nodiscard]] inline const StringMultimap &getStringMultimap(void) const noexcept { return _mmap; }
 
 private:
     StringMultimap _mmap {};

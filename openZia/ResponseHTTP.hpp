@@ -26,22 +26,22 @@ public:
     /**
      * @brief Get request's code
      */
-    [[nodiscard]] Code getCode(void) const noexcept { return _code; }
+    [[nodiscard]] inline Code getCode(void) const noexcept { return _code; }
 
     /**
      * @brief Set request's code
      */
-    void setCode(const Code code) noexcept { _code = code; }
+    inline void setCode(const Code code) noexcept { _code = code; }
 
     /**
      * @brief Get request's Reason reference
      */
-    [[nodiscard]] Reason &getReason(void) noexcept { return _reason; }
+    [[nodiscard]] inline Reason &getReason(void) noexcept { return _reason; }
 
     /**
      * @brief Get request's Reason constant reference
      */
-    [[nodiscard]] const Reason &getReason(void) const noexcept { return _reason; }
+    [[nodiscard]] inline const Reason &getReason(void) const noexcept { return _reason; }
 
 private:
     Reason _reason {};

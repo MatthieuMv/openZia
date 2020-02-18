@@ -13,9 +13,10 @@
 #include "OperatingSystem.hpp"
 
 #if defined(SYSTEM_LINUX) || defined(SYSTEM_DARWIN)
-#include <dlfcn.h>
+# include <dlfcn.h>
 #elif defined(SYSTEM_WINDOWS)
-#include <Windows.h>
+# include <winsock2.h>
+# include <Windows.h>
 #endif
 
 namespace oZ
@@ -56,7 +57,8 @@ public:
      * @brief Get a function of handler library, returning custom Signature
      */
     template<typename Signature>
-    [[nodiscard]] Signature getFunction(DynamicHandler handler, const std::string &name) { return reinterpret_cast<Signature>(getFunction(handler, name)); }
+    [[nodiscard]] inline Signature getFunction(DynamicHandler handler, const std::string &name)
+        { return reinterpret_cast<Signature>(getFunction(handler, name)); }
 
     /**
      * @brief Release loaded libraries.

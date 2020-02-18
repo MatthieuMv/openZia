@@ -56,7 +56,7 @@ public:
     /**
      * @brief Equality operator
      */
-    bool operator==(const Endpoint &other) const noexcept { return _ip == other._ip && _port == other._port; }
+    inline bool operator==(const Endpoint &other) const noexcept { return _ip == other._ip && _port == other._port; }
 
     /**
      * @brief Get internal address as formated string
@@ -68,7 +68,7 @@ public:
     /**
      * @brief Retreive internal ip in 4 bytes
      */
-    IP getAddressValue(void) const noexcept { return _ip; }
+    inline IP getAddressValue(void) const noexcept { return _ip; }
 
     /**
      * @brief Set the Address object using a string
@@ -78,17 +78,17 @@ public:
     /**
      * @brief Set the Address object using a 4 byte value
      */
-    void setAddress(const IP ip) { _ip = ip; }
+    inline void setAddress(const IP ip) { _ip = ip; }
 
     /**
      * @brief Get internal port
      */
-    Port getPort(void) const noexcept { return _port; }
+    inline Port getPort(void) const noexcept { return _port; }
 
     /**
      * @brief Set internal port
      */
-    void setPort(const Port port) noexcept { _port = port; }
+    inline void setPort(const Port port) noexcept { _port = port; }
 
 private:
     IP _ip = 0;

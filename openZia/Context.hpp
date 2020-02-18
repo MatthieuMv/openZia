@@ -80,42 +80,42 @@ public:
     /**
      * @brief Get the network Packet of the context
      */
-    [[nodiscard]] Packet &getPacket(void) noexcept { return _packet; }
+    [[nodiscard]] inline Packet &getPacket(void) noexcept { return _packet; }
 
     /**
      * @brief Get the network Packet of the context (constant)
      */
-    [[nodiscard]] const Packet &getPacket(void) const noexcept { return _packet; }
+    [[nodiscard]] inline const Packet &getPacket(void) const noexcept { return _packet; }
 
     /**
      * @brief Get the Request of the HTTP context
      */
-    [[nodiscard]] HTTP::Request &getRequest(void) noexcept { return _request; }
+    [[nodiscard]] inline HTTP::Request &getRequest(void) noexcept { return _request; }
 
     /**
      * @brief Get the Request of the HTTP context (constant)
      */
-    [[nodiscard]] const HTTP::Request &getRequest(void) const noexcept { return _request; }
+    [[nodiscard]] inline const HTTP::Request &getRequest(void) const noexcept { return _request; }
 
     /**
      * @brief Get the Response of the HTTP context
      */
-    [[nodiscard]] HTTP::Response &getResponse(void) noexcept { return _response; }
+    [[nodiscard]] inline HTTP::Response &getResponse(void) noexcept { return _response; }
 
     /**
      * @brief Get the Response of the HTTP context (constant)
      */
-    [[nodiscard]] const HTTP::Response &getResponse(void) const noexcept { return _response; }
+    [[nodiscard]] inline const HTTP::Response &getResponse(void) const noexcept { return _response; }
 
     /**
      * @brief Get the current context' state
      */
-    [[nodiscard]] State getState(void) const noexcept { return _state; }
+    [[nodiscard]] inline State getState(void) const noexcept { return _state; }
 
     /**
      * @brief Set the current context' state
      */
-    void setState(const State state) noexcept { _state = state; }
+    inline void setState(const State state) noexcept { _state = state; }
 
     /**
      * @brief Set internal state to the next one
@@ -126,27 +126,27 @@ public:
     /**
      * @brief Set nternal state to Error
      */
-    void setErrorState(void) { _state = State::Error; }
+    inline void setErrorState(void) noexcept { _state = State::Error; }
 
     /**
      * @brief Fast error check
      */
-    [[nodiscard]] bool hasError(void) const noexcept { return getState() == State::Error; }
+    [[nodiscard]] inline bool hasError(void) const noexcept { return getState() == State::Error; }
 
     /**
      * @brief Fast completion check
      */
-    [[nodiscard]] bool isCompleted(void) const noexcept { return getState() == State::Completed; }
+    [[nodiscard]] inline bool isCompleted(void) const noexcept { return getState() == State::Completed; }
 
     /**
      * @brief Tell that the Context is not constant and thus can't be cached
      */
-    void notConstant(void) noexcept { _constant = false; }
+    inline void notConstant(void) noexcept { _constant = false; }
 
     /**
      * @brief Check if the current Context's state is constant (and if it can be cached)
      */
-    [[nodiscard]] bool isConstant(void) const noexcept { return _constant; }
+    [[nodiscard]] inline bool isConstant(void) const noexcept { return _constant; }
 
 private:
     Packet _packet {};

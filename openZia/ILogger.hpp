@@ -61,5 +61,5 @@ public:
     /**
      * @brief The callback register handler is defaulted because your logger may not need it
      */
-    virtual void onRegisterCallbacks(Pipeline &) {}
+    virtual inline void onRegisterCallbacks(Pipeline &) {}
 };

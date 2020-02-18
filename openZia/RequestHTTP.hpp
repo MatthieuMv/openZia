@@ -31,33 +31,32 @@ public:
     /**
      * @brief Get request's URI reference
      */
-    [[nodiscard]] URI &getURI(void) noexcept { return _uri; }
+    [[nodiscard]] inline URI &getURI(void) noexcept { return _uri; }
 
     /**
      * @brief Get request's URI constant reference
      */
-    [[nodiscard]] const URI &getURI(void) const noexcept { return _uri; }
+    [[nodiscard]] inline const URI &getURI(void) const noexcept { return _uri; }
 
     /**
      * @brief Get request's QueryParameters reference
      */
-    [[nodiscard]] QueryParameters &getQueryParameters(void) noexcept { return _queryParameters; }
+    [[nodiscard]] inline QueryParameters &getQueryParameters(void) noexcept { return _queryParameters; }
 
     /**
      * @brief Get request's QueryParameters constant reference
      */
-    [[nodiscard]] const QueryParameters &getQueryParameters(void) const noexcept { return _queryParameters; }
-
+    [[nodiscard]] inline const QueryParameters &getQueryParameters(void) const noexcept { return _queryParameters; }
 
     /**
      * @brief Get request's method
      */
-    [[nodiscard]] Method getMethod(void) const noexcept { return _method; }
+    [[nodiscard]] inline Method getMethod(void) const noexcept { return _method; }
 
     /**
      * @brief Set request's method
      */
-    void setMethod(const Method method) noexcept { _method = method; }
+    inline void setMethod(const Method method) noexcept { _method = method; }
 
 private:
     URI _uri {};

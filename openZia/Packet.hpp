@@ -34,42 +34,42 @@ public:
     /**
      * @brief Get the ByteArray of the context
      */
-    [[nodiscard]] ByteArray &getByteArray(void) noexcept { return _byteArray; }
+    [[nodiscard]] inline ByteArray &getByteArray(void) noexcept { return _byteArray; }
 
     /**
      * @brief Get the ByteArray of the context (constant)
      */
-    [[nodiscard]] const ByteArray getByteArray(void) const noexcept { return _byteArray; }
+    [[nodiscard]] inline const ByteArray getByteArray(void) const noexcept { return _byteArray; }
 
     /**
      * @brief Get the current context's endpoint
      */
-    [[nodiscard]] Endpoint getEndpoint(void) const noexcept { return _endpoint; }
+    [[nodiscard]] inline Endpoint getEndpoint(void) const noexcept { return _endpoint; }
 
     /**
      * @brief Set the Endpoint target
      */
-    void setEndpoint(const Endpoint endpoint) noexcept { _endpoint = endpoint; }
+    inline void setEndpoint(const Endpoint endpoint) noexcept { _endpoint = endpoint; }
 
     /**
      * @brief Get the context's file descriptor
      */
-    [[nodiscard]] FileDescriptor getFileDescriptor(void) const noexcept { return _fd; }
+    [[nodiscard]] inline FileDescriptor getFileDescriptor(void) const noexcept { return _fd; }
 
     /**
      * @brief Set the context's file descriptor
      */
-    void setFileDescriptor(const FileDescriptor fd) noexcept { _fd = fd; }
+    inline void setFileDescriptor(const FileDescriptor fd) noexcept { _fd = fd; }
 
     /**
      * @brief Check the usage of encryption port (used for HTTPS)
      */
-    [[nodiscard]] bool hasEncryption(void) const noexcept { return _useEncryption; }
+    [[nodiscard]] inline bool hasEncryption(void) const noexcept { return _useEncryption; }
 
     /**
      * @brief Set the encryption state
      */
-    void setEncryption(const bool value) noexcept { _useEncryption = value; }
+    inline void setEncryption(const bool value) noexcept { _useEncryption = value; }
 
 private:
     ByteArray _byteArray {};

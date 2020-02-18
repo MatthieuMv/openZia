@@ -87,7 +87,7 @@ public:
      *
      *  By default a module has no dependencies
      */
-    virtual Dependencies getDependencies(void) const noexcept { return Dependencies(); }
+    virtual inline Dependencies getDependencies(void) const noexcept { return {}; }
 
     /**
      * @brief This function is called once module registered their callbacks

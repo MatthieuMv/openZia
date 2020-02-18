@@ -106,12 +106,12 @@ public:
     /**
      * @brief Get internal loaded modules
      */
-    [[nodiscard]] ModuleList &getModules(void) noexcept { return _modules; }
+    [[nodiscard]] inline ModuleList &getModules(void) noexcept { return _modules; }
 
     /**
      * @brief Get internal loaded modules (const)
      */
-    [[nodiscard]] const ModuleList &getModules(void) const noexcept { return _modules; }
+    [[nodiscard]] inline const ModuleList &getModules(void) const noexcept { return _modules; }
 
     /**
      * @brief Emplaces a new module in the pipeline.

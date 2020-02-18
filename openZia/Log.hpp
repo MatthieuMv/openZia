@@ -45,7 +45,7 @@ public:
     /**
      * @brief Add a new logger into the list
      */
-    static void AddLogger(LoggerPtr logger) { GetLoggerList().emplace_back(std::move(logger)); }
+    static inline void AddLogger(LoggerPtr logger) { GetLoggerList().emplace_back(std::move(logger)); }
 
     /**
      * @brief Get the global logger list

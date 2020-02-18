@@ -21,32 +21,32 @@ public:
     /**
      * @brief Get the response's header reference
      */
-    [[nodiscard]] Header &getHeader(void) noexcept { return _header; }
+    [[nodiscard]] inline Header &getHeader(void) noexcept { return _header; }
 
     /**
      * @brief Get the response's header constant reference
      */
-    [[nodiscard]] const Header &getHeader(void) const noexcept { return _header; }
+    [[nodiscard]] inline const Header &getHeader(void) const noexcept { return _header; }
 
     /**
      * @brief Get request's Body reference
      */
-    [[nodiscard]] Body &getBody(void) noexcept { return _body; }
+    [[nodiscard]] inline Body &getBody(void) noexcept { return _body; }
 
     /**
      * @brief Get request's Body constant reference
      */
-    [[nodiscard]] const Body &getBody(void) const noexcept { return _body; }
+    [[nodiscard]] inline const Body &getBody(void) const noexcept { return _body; }
 
     /**
      * @brief Get request's version
      */
-    [[nodiscard]] Version getVersion(void) const noexcept { return _version; }
+    [[nodiscard]] inline Version getVersion(void) const noexcept { return _version; }
 
     /**
      * @brief Set request's version
      */
-    void setVersion(const Version version) noexcept { _version = version; }
+    inline void setVersion(const Version version) noexcept { _version = version; }
 
 private:
     Header _header {};
