@@ -83,6 +83,8 @@ $(function() {
  <a href="classo_z_1_1_pipeline.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_pipeline_8hpp_source.html">Pipeline.hpp</a>&gt;</code></p>
+
+<p>Inherited by <a class="el" href="class_a_b_c_pipeline.html">ABCPipeline</a>, <a class="el" href="class_abis_pipeline.html">AbisPipeline</a>, and <a class="el" href="class_my_pipeline.html">MyPipeline</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -132,6 +134,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a84358c4166a67aabc0d5811608727da9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classo_z_1_1_pipeline.html#a3bb478d291a83763b269d8d27e186a47">ModuleList</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a84358c4166a67aabc0d5811608727da9">getModules</a> (void) const noexcept</td></tr>
 <tr class="memdesc:a84358c4166a67aabc0d5811608727da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get internal loaded modules (const)  <a href="#a84358c4166a67aabc0d5811608727da9">More...</a><br /></td></tr>
 <tr class="separator:a84358c4166a67aabc0d5811608727da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa96f1ef3faeb41c9966d6b5a103fa3a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#aa96f1ef3faeb41c9966d6b5a103fa3a5">addModule</a> (<a class="el" href="namespaceo_z.html#af5a56aaaee027504979038f38991adcf">ModulePtr</a> &amp;&amp;module)</td></tr>
+<tr class="memdesc:aa96f1ef3faeb41c9966d6b5a103fa3a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emplaces a new module in the pipeline.  <a href="#aa96f1ef3faeb41c9966d6b5a103fa3a5">More...</a><br /></td></tr>
+<tr class="separator:aa96f1ef3faeb41c9966d6b5a103fa3a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a797f98947aace930fbb15cd6b2d9f726"><td class="memTemplParams" colspan="2">template&lt;typename Type , typename ... Args&gt; </td></tr>
 <tr class="memitem:a797f98947aace930fbb15cd6b2d9f726"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a797f98947aace930fbb15cd6b2d9f726">addModule</a> (Args &amp;&amp;...args)</td></tr>
 <tr class="memdesc:a797f98947aace930fbb15cd6b2d9f726"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emplaces a new module in the pipeline.  <a href="#a797f98947aace930fbb15cd6b2d9f726">More...</a><br /></td></tr>
@@ -143,6 +148,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4f1abc0f7c0985dbc859cd5b20082998"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a4f1abc0f7c0985dbc859cd5b20082998">findModule</a> (void) const</td></tr>
 <tr class="memdesc:a4f1abc0f7c0985dbc859cd5b20082998"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a module of Type in internal module list returning it as a shared pointer.  <a href="#a4f1abc0f7c0985dbc859cd5b20082998">More...</a><br /></td></tr>
 <tr class="separator:a4f1abc0f7c0985dbc859cd5b20082998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cfbdda27bd9ef9919400ce598846731"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a7cfbdda27bd9ef9919400ce598846731">onConnection</a> (const <a class="el" href="namespaceo_z.html#acbb8d05709257b6414b3979597f88c0c">FileDescriptor</a> fd, const <a class="el" href="classo_z_1_1_endpoint.html">Endpoint</a> endpoint, const bool useEncryption=false)</td></tr>
+<tr class="memdesc:a7cfbdda27bd9ef9919400ce598846731"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will trigger every module's 'onConnection' callback.  <a href="#a7cfbdda27bd9ef9919400ce598846731">More...</a><br /></td></tr>
+<tr class="separator:a7cfbdda27bd9ef9919400ce598846731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd035df19d82c10b55af51e727e08407"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#afd035df19d82c10b55af51e727e08407">onDisconnection</a> (const <a class="el" href="namespaceo_z.html#acbb8d05709257b6414b3979597f88c0c">FileDescriptor</a> fd, const <a class="el" href="classo_z_1_1_endpoint.html">Endpoint</a> endpoint)</td></tr>
+<tr class="memdesc:afd035df19d82c10b55af51e727e08407"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will trigger every module's 'onDisconnection' callback.  <a href="#afd035df19d82c10b55af51e727e08407">More...</a><br /></td></tr>
+<tr class="separator:afd035df19d82c10b55af51e727e08407"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -346,8 +357,28 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa96f1ef3faeb41c9966d6b5a103fa3a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa96f1ef3faeb41c9966d6b5a103fa3a5">&#9670;&nbsp;</a></span>addModule() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pipeline::addModule </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceo_z.html#af5a56aaaee027504979038f38991adcf">ModulePtr</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>module</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Emplaces a new module in the pipeline. </p>
+
+</div>
+</div>
 <a id="a797f98947aace930fbb15cd6b2d9f726"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a797f98947aace930fbb15cd6b2d9f726">&#9670;&nbsp;</a></span>addModule()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a797f98947aace930fbb15cd6b2d9f726">&#9670;&nbsp;</a></span>addModule() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -487,6 +518,72 @@ template&lt;typename Type &gt; </div>
 
 </div>
 </div>
+<a id="a7cfbdda27bd9ef9919400ce598846731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cfbdda27bd9ef9919400ce598846731">&#9670;&nbsp;</a></span>onConnection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pipeline::onConnection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceo_z.html#acbb8d05709257b6414b3979597f88c0c">FileDescriptor</a>&#160;</td>
+          <td class="paramname"><em>fd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classo_z_1_1_endpoint.html">Endpoint</a>&#160;</td>
+          <td class="paramname"><em>endpoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>useEncryption</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function will trigger every module's 'onConnection' callback. </p>
+
+</div>
+</div>
+<a id="afd035df19d82c10b55af51e727e08407"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd035df19d82c10b55af51e727e08407">&#9670;&nbsp;</a></span>onDisconnection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pipeline::onDisconnection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceo_z.html#acbb8d05709257b6414b3979597f88c0c">FileDescriptor</a>&#160;</td>
+          <td class="paramname"><em>fd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classo_z_1_1_endpoint.html">Endpoint</a>&#160;</td>
+          <td class="paramname"><em>endpoint</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function will trigger every module's 'onDisconnection' callback. </p>
+
+</div>
+</div>
 <a id="a0265d90a5540e69b25069d5d96973c53"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0265d90a5540e69b25069d5d96973c53">&#9670;&nbsp;</a></span>onLoadModules()</h2>
 
@@ -513,6 +610,8 @@ template&lt;typename Type &gt; </div>
 
 <p>Callback which should load a set of module at runtime. </p>
 <p>This callback can be redefined to implement a custom loader. </p>
+
+<p>Reimplemented in <a class="el" href="class_a_b_c_pipeline.html#a1a476cf5b64733b13b709ad0d8fbd3a7">ABCPipeline</a>, and <a class="el" href="class_my_pipeline.html#ad6606d59165345cc508ae896d8cd10e8">MyPipeline</a>.</p>
 
 </div>
 </div>
@@ -642,9 +741,9 @@ template&lt;typename ModuleType &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/mmoinvaziri/Epitech/CPP_zia_2019/External/openZia/openZia/<a class="el" href="_pipeline_8hpp_source.html">Pipeline.hpp</a></li>
-<li>/home/mmoinvaziri/Epitech/CPP_zia_2019/External/openZia/openZia/<a class="el" href="_pipeline_8cpp.html">Pipeline.cpp</a></li>
-<li>/home/mmoinvaziri/Epitech/CPP_zia_2019/External/openZia/openZia/<a class="el" href="_pipeline_8ipp.html">Pipeline.ipp</a></li>
+<li>openZia/<a class="el" href="_pipeline_8hpp_source.html">Pipeline.hpp</a></li>
+<li>openZia/<a class="el" href="_pipeline_8cpp.html">Pipeline.cpp</a></li>
+<li>openZia/<a class="el" href="_pipeline_8ipp.html">Pipeline.ipp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

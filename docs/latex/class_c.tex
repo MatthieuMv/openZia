@@ -1,0 +1,104 @@
+\hypertarget{class_c}{}\section{C Class Reference}
+\label{class_c}\index{C@{C}}
+
+
+Inherits \mbox{\hyperlink{classo_z_1_1_i_module}{o\+Z\+::\+I\+Module}}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const char $\ast$ \mbox{\hyperlink{class_c_ad5f4b90909e9c14fc2601adc54ffdfa6}{get\+Name}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the module name. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_ae55c5d0571aadf7e48cae4d1e4fcf591}{on\+Register\+Callbacks}} (\mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} \&pipeline)
+\begin{DoxyCompactList}\small\item\em Register module\textquotesingle{}s callbacks in the pipeline. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_a9d2de0b00320ee2011d7e326346d00cb}{on\+Connection}} (const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}} fd\+\_\+, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}, const bool)
+\begin{DoxyCompactList}\small\item\em Callback used to intercept client connections. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_ab9bef2875c2d19d674aa592f63a21bc1}{on\+Disconnection}} (const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}}, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}})
+\begin{DoxyCompactList}\small\item\em Callback used to intercept client disconnections. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_c_a644bc4405a602578b65e83d317a2f3eb}{x}} = 0
+\item 
+int \mbox{\hyperlink{class_c_a7d63b9c907f2a1200cd3e173cee9751e}{fd}} = -\/1
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_ad5f4b90909e9c14fc2601adc54ffdfa6}\label{class_c_ad5f4b90909e9c14fc2601adc54ffdfa6}} 
+\index{C@{C}!getName@{getName}}
+\index{getName@{getName}!C@{C}}
+\subsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily virtual const char$\ast$ C\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the module name. 
+
+
+
+Implements \mbox{\hyperlink{classo_z_1_1_i_module_af41d45158fd28e1bd86a34e25f5282d6}{o\+Z\+::\+I\+Module}}.
+
+\mbox{\Hypertarget{class_c_a9d2de0b00320ee2011d7e326346d00cb}\label{class_c_a9d2de0b00320ee2011d7e326346d00cb}} 
+\index{C@{C}!onConnection@{onConnection}}
+\index{onConnection@{onConnection}!C@{C}}
+\subsubsection{\texorpdfstring{onConnection()}{onConnection()}}
+{\footnotesize\ttfamily virtual void C\+::on\+Connection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}}}]{fd,  }\item[{const}]{endpoint,  }\item[{const bool}]{use\+Encryption }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Callback used to intercept client connections. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classo_z_1_1_i_module_a8acf56655f9e59a8a04afd8b0adf79d6}{o\+Z\+::\+I\+Module}}.
+
+\mbox{\Hypertarget{class_c_ab9bef2875c2d19d674aa592f63a21bc1}\label{class_c_ab9bef2875c2d19d674aa592f63a21bc1}} 
+\index{C@{C}!onDisconnection@{onDisconnection}}
+\index{onDisconnection@{onDisconnection}!C@{C}}
+\subsubsection{\texorpdfstring{onDisconnection()}{onDisconnection()}}
+{\footnotesize\ttfamily virtual void C\+::on\+Disconnection (\begin{DoxyParamCaption}\item[{const}]{fd,  }\item[{const}]{endpoint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Callback used to intercept client disconnections. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classo_z_1_1_i_module_aa178220a4e7ba0cca50a131403e04847}{o\+Z\+::\+I\+Module}}.
+
+\mbox{\Hypertarget{class_c_ae55c5d0571aadf7e48cae4d1e4fcf591}\label{class_c_ae55c5d0571aadf7e48cae4d1e4fcf591}} 
+\index{C@{C}!onRegisterCallbacks@{onRegisterCallbacks}}
+\index{onRegisterCallbacks@{onRegisterCallbacks}!C@{C}}
+\subsubsection{\texorpdfstring{onRegisterCallbacks()}{onRegisterCallbacks()}}
+{\footnotesize\ttfamily virtual void C\+::on\+Register\+Callbacks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Register module\textquotesingle{}s callbacks in the pipeline. 
+
+
+
+Implements \mbox{\hyperlink{classo_z_1_1_i_module_a3dc905faa6df5e22eecc6ffbc923fd95}{o\+Z\+::\+I\+Module}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_c_a7d63b9c907f2a1200cd3e173cee9751e}\label{class_c_a7d63b9c907f2a1200cd3e173cee9751e}} 
+\index{C@{C}!fd@{fd}}
+\index{fd@{fd}!C@{C}}
+\subsubsection{\texorpdfstring{fd}{fd}}
+{\footnotesize\ttfamily int C\+::fd = -\/1}
+
+\mbox{\Hypertarget{class_c_a644bc4405a602578b65e83d317a2f3eb}\label{class_c_a644bc4405a602578b65e83d317a2f3eb}} 
+\index{C@{C}!x@{x}}
+\index{x@{x}!C@{C}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int C\+::x = 0}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tests/\mbox{\hyperlink{tests___pipeline_8cpp}{tests\+\_\+\+Pipeline.\+cpp}}\end{DoxyCompactItemize}

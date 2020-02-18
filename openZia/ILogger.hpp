@@ -14,7 +14,7 @@
 namespace oZ
 {
     class ILogger;
-    
+
     /**
      * @brief Levels of log messages
      */

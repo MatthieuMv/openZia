@@ -44,7 +44,7 @@ set(OpenZiaSources
     ${OpenZiaSourcesDir}/BaseHTTP.hpp
     ${OpenZiaSourcesDir}/HTTP.hpp
     ${OpenZiaSourcesDir}/HeaderHTTP.hpp
-    ${OpenZiaSourcesDir}/HeaderHTTP.cpp
+    ${OpenZiaSourcesDir}/HeaderHTTP.ipp
     ${OpenZiaSourcesDir}/RequestHTTP.hpp
     ${OpenZiaSourcesDir}/ResponseHTTP.hpp
 )

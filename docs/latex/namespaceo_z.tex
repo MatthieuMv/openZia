@@ -35,13 +35,15 @@ using \mbox{\hyperlink{namespaceo_z_ace55c2d0182a14ceea9649d0d0cf9c4a}{IP}} = st
 \item 
 using \mbox{\hyperlink{namespaceo_z_afeccb82d451972ba3b7d2a32b066b30b}{Port}} = std\+::uint16\+\_\+t
 \item 
+using \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}} = std\+::int32\+\_\+t
+\item 
 using \mbox{\hyperlink{namespaceo_z_aaa2fbabbfafc6616a7e69651b62a3d4e}{Logger\+Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classo_z_1_1_i_logger}{I\+Logger}} $>$
 \begin{DoxyCompactList}\small\item\em Logger pointer type, using shared\+\_\+ptr like \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}}. \end{DoxyCompactList}\item 
 using \mbox{\hyperlink{namespaceo_z_a2d18a70272709242e8e7ebffc3f1806c}{Logger\+List}} = std\+::vector$<$ \mbox{\hyperlink{namespaceo_z_aaa2fbabbfafc6616a7e69651b62a3d4e}{Logger\+Ptr}} $>$
 \begin{DoxyCompactList}\small\item\em Simple vector of logger interfaces. \end{DoxyCompactList}\item 
 using \mbox{\hyperlink{namespaceo_z_af5a56aaaee027504979038f38991adcf}{Module\+Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}} $>$
 \begin{DoxyCompactList}\small\item\em Module pointer type, using shared\+\_\+ptr as backend. \end{DoxyCompactList}\item 
-using \mbox{\hyperlink{namespaceo_z_ac1fa0fdab4bd08a5e127651d1f4150a2}{Module\+Instance\+Function}} = \mbox{\hyperlink{namespaceo_z_af5a56aaaee027504979038f38991adcf}{Module\+Ptr}}($\ast$)(void)
+using \mbox{\hyperlink{namespaceo_z_a4a57aab20c0fd966b24214712c9d4827}{Module\+Instance\+Function}} = \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}} $\ast$($\ast$)(void)
 \begin{DoxyCompactList}\small\item\em Function signature that each module should respect to get detected and instantied. It musts uses the name \textquotesingle{}create\+Module\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -98,6 +100,12 @@ Simple vector of byte used as network buffer.
 \subsubsection{\texorpdfstring{DynamicHandler}{DynamicHandler}}
 {\footnotesize\ttfamily using \mbox{\hyperlink{namespaceo_z_acbfabf71824b5fc6a3beb64e397afc19}{o\+Z\+::\+Dynamic\+Handler}} = typedef void$\ast$}
 
+\mbox{\Hypertarget{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}\label{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}} 
+\index{oZ@{oZ}!FileDescriptor@{FileDescriptor}}
+\index{FileDescriptor@{FileDescriptor}!oZ@{oZ}}
+\subsubsection{\texorpdfstring{FileDescriptor}{FileDescriptor}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{o\+Z\+::\+File\+Descriptor}} = typedef std\+::int32\+\_\+t}
+
 \mbox{\Hypertarget{namespaceo_z_ace55c2d0182a14ceea9649d0d0cf9c4a}\label{namespaceo_z_ace55c2d0182a14ceea9649d0d0cf9c4a}} 
 \index{oZ@{oZ}!IP@{IP}}
 \index{IP@{IP}!oZ@{oZ}}
@@ -124,17 +132,17 @@ Simple vector of logger interfaces.
 
 Logger pointer type, using shared\+\_\+ptr like \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}}. 
 
-\mbox{\Hypertarget{namespaceo_z_ac1fa0fdab4bd08a5e127651d1f4150a2}\label{namespaceo_z_ac1fa0fdab4bd08a5e127651d1f4150a2}} 
+\mbox{\Hypertarget{namespaceo_z_a4a57aab20c0fd966b24214712c9d4827}\label{namespaceo_z_a4a57aab20c0fd966b24214712c9d4827}} 
 \index{oZ@{oZ}!ModuleInstanceFunction@{ModuleInstanceFunction}}
 \index{ModuleInstanceFunction@{ModuleInstanceFunction}!oZ@{oZ}}
 \subsubsection{\texorpdfstring{ModuleInstanceFunction}{ModuleInstanceFunction}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceo_z_ac1fa0fdab4bd08a5e127651d1f4150a2}{o\+Z\+::\+Module\+Instance\+Function}} = typedef \mbox{\hyperlink{namespaceo_z_af5a56aaaee027504979038f38991adcf}{Module\+Ptr}}($\ast$)(void)}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceo_z_a4a57aab20c0fd966b24214712c9d4827}{o\+Z\+::\+Module\+Instance\+Function}} = typedef \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}}$\ast$($\ast$)(void)}
 
 
 
 Function signature that each module should respect to get detected and instantied. It musts uses the name \textquotesingle{}create\+Module\textquotesingle{}. 
 
-Example \+: Module\+Ptr Create\+Module(void) \{ return std\+::make\+\_\+shared$<$\+My\+Module$>$(); \} \mbox{\Hypertarget{namespaceo_z_af5a56aaaee027504979038f38991adcf}\label{namespaceo_z_af5a56aaaee027504979038f38991adcf}} 
+Example \+: \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}} $\ast$\+Create\+Module(void) \{ return My\+Module(); \} \mbox{\Hypertarget{namespaceo_z_af5a56aaaee027504979038f38991adcf}\label{namespaceo_z_af5a56aaaee027504979038f38991adcf}} 
 \index{oZ@{oZ}!ModulePtr@{ModulePtr}}
 \index{ModulePtr@{ModulePtr}!oZ@{oZ}}
 \subsubsection{\texorpdfstring{ModulePtr}{ModulePtr}}

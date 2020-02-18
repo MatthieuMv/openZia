@@ -14,6 +14,7 @@ using namespace oZ::HTTP;
 Test(Request, Basics)
 {
     Request base;
+    const auto &cbase(base);
 
     base.setMethod(Method::Get);
     base.getURI() = "index.html";
@@ -33,4 +34,7 @@ Test(Request, Basics)
     cr_assert_eq(base.getVersion(), Version(1, 0));
 
     cr_assert_not(base.getHeader().exists("abc"));
+
+    base.getQueryParameters()["abc"] = "42";
+    cr_assert_eq(base.getQueryParameters().at("abc"), "42");
 }

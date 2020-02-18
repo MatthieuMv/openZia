@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uri',['URI',['../namespaceo_z_1_1_h_t_t_p.html#a6d47156e2eac27750983fc1b54bd2ff8',1,'oZ::HTTP']]]
+  ['queryparameters',['QueryParameters',['../namespaceo_z_1_1_h_t_t_p.html#adf31e2c29997ec6637f36d62ab8944d6',1,'oZ::HTTP']]]
 ];

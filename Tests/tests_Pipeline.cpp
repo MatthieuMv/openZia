@@ -87,7 +87,16 @@ public:
         pipeline.registerCallback(State::Interpret, Priority::Independent, [this](Context &) { ++x; return true; });
     }
 
+    virtual void onConnection(const FileDescriptor fd_, const Endpoint, const bool) {
+        fd = fd_;
+    }
+
+    virtual void onDisconnection(const FileDescriptor, const Endpoint) {
+        fd = -1;
+    }
+
     int x = 0;
+    int fd = -1;
 };
 
 class ABCPipeline : public Pipeline
@@ -112,11 +121,16 @@ Test(Pipeline, ABC)
     cr_assert(a->configured);
     cr_assert(a->b);
     cr_assert(a->c);
+    cr_assert_eq(a->c->fd, -1);
+    pipeline.onConnection(42, Endpoint());
+    cr_assert_eq(a->c->fd, 42);
     pipeline.runPipeline(ctx);
     cr_assert_eq(ctx.getState(), State::Error);
     cr_assert_eq(a->x, 1);
     cr_assert_eq(a->b->x, 1);
     cr_assert_eq(a->c->x, 1);
+    pipeline.onDisconnection(42, Endpoint());
+    cr_assert_eq(a->c->fd, -1);
 }
 
 

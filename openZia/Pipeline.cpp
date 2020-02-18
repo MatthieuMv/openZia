@@ -18,6 +18,7 @@
 #include <cstring>
 
 #include "Pipeline.hpp"
+#include "Log.hpp"
 
 using namespace std::string_literals;
 using namespace oZ;
@@ -47,6 +48,18 @@ ModulePtr Pipeline::findModule(const char *name) const
     return nullptr;
 }
 
+void Pipeline::onConnection(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption)
+{
+    for (auto &module : _modules)
+        module->onConnection(fd, endpoint, useEncryption);
+}
+
+void Pipeline::onDisconnection(const FileDescriptor fd, const Endpoint endpoint)
+{
+    for (auto &module : _modules)
+        module->onDisconnection(fd, endpoint);
+}
+
 void Pipeline::onLoadModules(const std::string &directoryPath)
 {
     fs::path path(directoryPath);
@@ -59,8 +72,8 @@ void Pipeline::onLoadModules(const std::string &directoryPath)
         else if (auto ext = file.path().extension().string(); ext != std::string(SHARED_LIB_EXT))
             continue;
         auto handler = _dynamicLoader.load(file.path().string());
-        auto function = _dynamicLoader.getFunction<ModuleInstanceFunction>(handler, "CreateModule");
-        _modules.emplace_back((*function)());
+        auto function = _dynamicLoader.getFunction<ModuleInstanceFunction>(handler, OPEN_ZIA_ENTRY_POINT_AS_STRING);
+        addModule(ModulePtr((*function)()));
     }
 }
 
@@ -81,6 +94,13 @@ void Pipeline::runPipeline(Context &context)
     } while (context.nextState());
     if (context.hasError())
         triggerContextStateCallbacks(context);
+}
+
+void Pipeline::addModule(ModulePtr &&module)
+{
+    if (auto log = std::dynamic_pointer_cast<ILogger>(module); log)
+        Log::AddLogger(log);
+    _modules.emplace_back(std::move(module));
 }
 
 void Pipeline::triggerContextStateCallbacks(Context &context)

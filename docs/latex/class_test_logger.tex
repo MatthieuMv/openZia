@@ -1,0 +1,85 @@
+\hypertarget{class_test_logger}{}\section{Test\+Logger Class Reference}
+\label{class_test_logger}\index{TestLogger@{TestLogger}}
+
+
+Inherits \mbox{\hyperlink{classo_z_1_1_i_logger}{o\+Z\+::\+I\+Logger}}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_logger_a001a08d4352b92db12ba738668c00acc}{Test\+Logger}} (std\+::string \&content)
+\item 
+virtual \mbox{\hyperlink{class_test_logger_a15d754f02edaf2ccc77d647864d02603}{$\sim$\+Test\+Logger}} (void)=default
+\item 
+virtual void \mbox{\hyperlink{class_test_logger_ae7b96502995c416dd4d4e7541f1ade80}{on\+Log}} (\mbox{\hyperlink{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfa}{Level}}, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Log a single message of given level. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \mbox{\hyperlink{class_test_logger_a4e3ad3222ab7495cf30bb5b1a5270795}{get\+Name}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the module name. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_test_logger_a0ee94278a66b189ca55f04e40192b5d1}{on\+Register\+Callbacks}} (\mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} \&)
+\begin{DoxyCompactList}\small\item\em The callback register handler is defaulted because your logger may not need it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_test_logger_a001a08d4352b92db12ba738668c00acc}\label{class_test_logger_a001a08d4352b92db12ba738668c00acc}} 
+\index{TestLogger@{TestLogger}!TestLogger@{TestLogger}}
+\index{TestLogger@{TestLogger}!TestLogger@{TestLogger}}
+\subsubsection{\texorpdfstring{TestLogger()}{TestLogger()}}
+{\footnotesize\ttfamily Test\+Logger\+::\+Test\+Logger (\begin{DoxyParamCaption}\item[{std\+::string \&}]{content }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_test_logger_a15d754f02edaf2ccc77d647864d02603}\label{class_test_logger_a15d754f02edaf2ccc77d647864d02603}} 
+\index{TestLogger@{TestLogger}!````~TestLogger@{$\sim$TestLogger}}
+\index{````~TestLogger@{$\sim$TestLogger}!TestLogger@{TestLogger}}
+\subsubsection{\texorpdfstring{$\sim$TestLogger()}{~TestLogger()}}
+{\footnotesize\ttfamily virtual Test\+Logger\+::$\sim$\+Test\+Logger (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_test_logger_a4e3ad3222ab7495cf30bb5b1a5270795}\label{class_test_logger_a4e3ad3222ab7495cf30bb5b1a5270795}} 
+\index{TestLogger@{TestLogger}!getName@{getName}}
+\index{getName@{getName}!TestLogger@{TestLogger}}
+\subsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily virtual const char$\ast$ Test\+Logger\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the module name. 
+
+
+
+Implements \mbox{\hyperlink{classo_z_1_1_i_module_af41d45158fd28e1bd86a34e25f5282d6}{o\+Z\+::\+I\+Module}}.
+
+\mbox{\Hypertarget{class_test_logger_ae7b96502995c416dd4d4e7541f1ade80}\label{class_test_logger_ae7b96502995c416dd4d4e7541f1ade80}} 
+\index{TestLogger@{TestLogger}!onLog@{onLog}}
+\index{onLog@{onLog}!TestLogger@{TestLogger}}
+\subsubsection{\texorpdfstring{onLog()}{onLog()}}
+{\footnotesize\ttfamily virtual void Test\+Logger\+::on\+Log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_a72fc7662d5f07391ac6f0a5699014bfa}{Level}}}]{level,  }\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Log a single message of given level. 
+
+
+
+Implements \mbox{\hyperlink{classo_z_1_1_i_logger_a2e0e168c9218055e41bdd5b57177cba1}{o\+Z\+::\+I\+Logger}}.
+
+\mbox{\Hypertarget{class_test_logger_a0ee94278a66b189ca55f04e40192b5d1}\label{class_test_logger_a0ee94278a66b189ca55f04e40192b5d1}} 
+\index{TestLogger@{TestLogger}!onRegisterCallbacks@{onRegisterCallbacks}}
+\index{onRegisterCallbacks@{onRegisterCallbacks}!TestLogger@{TestLogger}}
+\subsubsection{\texorpdfstring{onRegisterCallbacks()}{onRegisterCallbacks()}}
+{\footnotesize\ttfamily virtual void Test\+Logger\+::on\+Register\+Callbacks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+The callback register handler is defaulted because your logger may not need it. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classo_z_1_1_i_logger_a10732b6da6e8f085c6fe5fa154d361ef}{o\+Z\+::\+I\+Logger}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tests/\mbox{\hyperlink{tests___log_8cpp}{tests\+\_\+\+Log.\+cpp}}\end{DoxyCompactItemize}

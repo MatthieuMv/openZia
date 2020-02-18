@@ -6,6 +6,9 @@ For that you must implement your modules deriving from **oZ::IModule** interface
 Last, you will need an instantiation function:
 ```C++
 extern "C" IModule *CreateModule(void) { return MyModule(); }
+
+// you may want to use the OPEN_ZIA_MAKE_ENTRY_POINT macro:
+OPEN_ZIA_MAKE_ENTRY_POINT(MyModule);
 ```
 The API already does the dynamic library loading for you so you can focus more on creating modules.
 
@@ -87,6 +90,12 @@ And that's it ! You don't have to implement anything else to create an independe
 
 However, there are more virtual functions for more complex needs. These functions are default-implemented to let you the choice of using them or not.
 ```C++
+// Callback triggered when a client is connected
+virtual void onConnected(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption);
+
+// Callback triggered when a client is disconnected
+virtual void onDisconnected(const FileDescriptor fd, const Endpoint endpoint);
+
 // Get the list of dependencies (as a vector of raw string, see function getName above)
 virtual Dependencies getDependencies(void) const noexcept;
 

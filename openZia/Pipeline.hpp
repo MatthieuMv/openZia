@@ -115,6 +115,11 @@ public:
 
     /**
      * @brief Emplaces a new module in the pipeline.
+     */
+    void addModule(ModulePtr &&module);
+
+    /**
+     * @brief Emplaces a new module in the pipeline.
      *
      *  This function should be called by the onLoadModules callback of your derived pipeline.
      */
@@ -131,6 +136,16 @@ public:
      */
     template<typename Type = IModule>
     [[nodiscard]] std::shared_ptr<Type> findModule(void) const;
+
+    /**
+     * @brief This function will trigger every module's 'onConnection' callback
+     */
+    void onConnection(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption = false);
+
+    /**
+     * @brief This function will trigger every module's 'onDisconnection' callback
+     */
+    void onDisconnection(const FileDescriptor fd, const Endpoint endpoint);
 
 protected:
     /**

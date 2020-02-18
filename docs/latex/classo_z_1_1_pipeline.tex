@@ -9,6 +9,10 @@ The pileline abstracts the pipeline of modules.
 
 {\ttfamily \#include $<$Pipeline.\+hpp$>$}
 
+
+
+Inherited by \mbox{\hyperlink{class_a_b_c_pipeline}{A\+B\+C\+Pipeline}}, \mbox{\hyperlink{class_abis_pipeline}{Abis\+Pipeline}}, and \mbox{\hyperlink{class_my_pipeline}{My\+Pipeline}}.
+
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -43,12 +47,18 @@ void \mbox{\hyperlink{classo_z_1_1_pipeline_a90bddc5511acce66f2aa780c3bba29b4}{r
 \begin{DoxyCompactList}\small\item\em Get internal loaded modules. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{classo_z_1_1_pipeline_a3bb478d291a83763b269d8d27e186a47}{Module\+List}} \& \mbox{\hyperlink{classo_z_1_1_pipeline_a84358c4166a67aabc0d5811608727da9}{get\+Modules}} (void) const noexcept
 \begin{DoxyCompactList}\small\item\em Get internal loaded modules (const) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classo_z_1_1_pipeline_aa96f1ef3faeb41c9966d6b5a103fa3a5}{add\+Module}} (\mbox{\hyperlink{namespaceo_z_af5a56aaaee027504979038f38991adcf}{Module\+Ptr}} \&\&module)
+\begin{DoxyCompactList}\small\item\em Emplaces a new module in the pipeline. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Type , typename ... Args$>$ }\\void \mbox{\hyperlink{classo_z_1_1_pipeline_a797f98947aace930fbb15cd6b2d9f726}{add\+Module}} (Args \&\&...args)
 \begin{DoxyCompactList}\small\item\em Emplaces a new module in the pipeline. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespaceo_z_af5a56aaaee027504979038f38991adcf}{Module\+Ptr}} \mbox{\hyperlink{classo_z_1_1_pipeline_aa8aa56af891b2d889e7c21198daa1451}{find\+Module}} (const char $\ast$name) const
 \begin{DoxyCompactList}\small\item\em Find a module of given name in internal module list returning it as a shared pointer. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Type  = I\+Module$>$ }\\std\+::shared\+\_\+ptr$<$ Type $>$ \mbox{\hyperlink{classo_z_1_1_pipeline_a4f1abc0f7c0985dbc859cd5b20082998}{find\+Module}} (void) const
-\begin{DoxyCompactList}\small\item\em Find a module of Type in internal module list returning it as a shared pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Find a module of Type in internal module list returning it as a shared pointer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classo_z_1_1_pipeline_a7cfbdda27bd9ef9919400ce598846731}{on\+Connection}} (const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}} fd, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint, const bool use\+Encryption=false)
+\begin{DoxyCompactList}\small\item\em This function will trigger every module\textquotesingle{}s \textquotesingle{}on\+Connection\textquotesingle{} callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classo_z_1_1_pipeline_afd035df19d82c10b55af51e727e08407}{on\+Disconnection}} (const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}} fd, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint)
+\begin{DoxyCompactList}\small\item\em This function will trigger every module\textquotesingle{}s \textquotesingle{}on\+Disconnection\textquotesingle{} callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -158,10 +168,20 @@ Destroy the \mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} object.
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classo_z_1_1_pipeline_aa96f1ef3faeb41c9966d6b5a103fa3a5}\label{classo_z_1_1_pipeline_aa96f1ef3faeb41c9966d6b5a103fa3a5}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!addModule@{addModule}}
+\index{addModule@{addModule}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{addModule()}{addModule()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Pipeline\+::add\+Module (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_af5a56aaaee027504979038f38991adcf}{Module\+Ptr}} \&\&}]{module }\end{DoxyParamCaption})}
+
+
+
+Emplaces a new module in the pipeline. 
+
 \mbox{\Hypertarget{classo_z_1_1_pipeline_a797f98947aace930fbb15cd6b2d9f726}\label{classo_z_1_1_pipeline_a797f98947aace930fbb15cd6b2d9f726}} 
 \index{oZ::Pipeline@{oZ::Pipeline}!addModule@{addModule}}
 \index{addModule@{addModule}!oZ::Pipeline@{oZ::Pipeline}}
-\subsubsection{\texorpdfstring{addModule()}{addModule()}}
+\subsubsection{\texorpdfstring{addModule()}{addModule()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename Type , typename ... Args$>$ \\
 void o\+Z\+::\+Pipeline\+::add\+Module (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args }\end{DoxyParamCaption})}
 
@@ -220,6 +240,26 @@ Get internal loaded modules (const)
 
 Find modules and load them into the pipeline. This function will \+: 1) Trigger the on\+Load\+Modules callback that you should implement yourself 2) Check if modules dependencies are avaible 3) Build the internal pipeline with it. 4) Load configuration files of each modules. 
 
+\mbox{\Hypertarget{classo_z_1_1_pipeline_a7cfbdda27bd9ef9919400ce598846731}\label{classo_z_1_1_pipeline_a7cfbdda27bd9ef9919400ce598846731}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!onConnection@{onConnection}}
+\index{onConnection@{onConnection}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{onConnection()}{onConnection()}}
+{\footnotesize\ttfamily void Pipeline\+::on\+Connection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}}}]{fd,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint,  }\item[{const bool}]{use\+Encryption = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+This function will trigger every module\textquotesingle{}s \textquotesingle{}on\+Connection\textquotesingle{} callback. 
+
+\mbox{\Hypertarget{classo_z_1_1_pipeline_afd035df19d82c10b55af51e727e08407}\label{classo_z_1_1_pipeline_afd035df19d82c10b55af51e727e08407}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!onDisconnection@{onDisconnection}}
+\index{onDisconnection@{onDisconnection}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{onDisconnection()}{onDisconnection()}}
+{\footnotesize\ttfamily void Pipeline\+::on\+Disconnection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}}}]{fd,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint }\end{DoxyParamCaption})}
+
+
+
+This function will trigger every module\textquotesingle{}s \textquotesingle{}on\+Disconnection\textquotesingle{} callback. 
+
 \mbox{\Hypertarget{classo_z_1_1_pipeline_a0265d90a5540e69b25069d5d96973c53}\label{classo_z_1_1_pipeline_a0265d90a5540e69b25069d5d96973c53}} 
 \index{oZ::Pipeline@{oZ::Pipeline}!onLoadModules@{onLoadModules}}
 \index{onLoadModules@{onLoadModules}!oZ::Pipeline@{oZ::Pipeline}}
@@ -230,7 +270,11 @@ Find modules and load them into the pipeline. This function will \+: 1) Trigger 
 
 Callback which should load a set of module at runtime. 
 
-This callback can be redefined to implement a custom loader. \mbox{\Hypertarget{classo_z_1_1_pipeline_a869b02b2b8953993ccfb882a3e1f3a0f}\label{classo_z_1_1_pipeline_a869b02b2b8953993ccfb882a3e1f3a0f}} 
+This callback can be redefined to implement a custom loader. 
+
+Reimplemented in \mbox{\hyperlink{class_a_b_c_pipeline_a1a476cf5b64733b13b709ad0d8fbd3a7}{A\+B\+C\+Pipeline}}, and \mbox{\hyperlink{class_my_pipeline_ad6606d59165345cc508ae896d8cd10e8}{My\+Pipeline}}.
+
+\mbox{\Hypertarget{classo_z_1_1_pipeline_a869b02b2b8953993ccfb882a3e1f3a0f}\label{classo_z_1_1_pipeline_a869b02b2b8953993ccfb882a3e1f3a0f}} 
 \index{oZ::Pipeline@{oZ::Pipeline}!registerCallback@{registerCallback}}
 \index{registerCallback@{registerCallback}!oZ::Pipeline@{oZ::Pipeline}}
 \subsubsection{\texorpdfstring{registerCallback()}{registerCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -274,6 +318,6 @@ This function is thread-\/safe as long as modules are thread safe so keep it in 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_pipeline_8hpp}{Pipeline.\+hpp}}\item 
-/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_pipeline_8cpp}{Pipeline.\+cpp}}\item 
-/home/mmoinvaziri/\+Epitech/\+C\+P\+P\+\_\+zia\+\_\+2019/\+External/open\+Zia/open\+Zia/\mbox{\hyperlink{_pipeline_8ipp}{Pipeline.\+ipp}}\end{DoxyCompactItemize}
+open\+Zia/\mbox{\hyperlink{_pipeline_8hpp}{Pipeline.\+hpp}}\item 
+open\+Zia/\mbox{\hyperlink{_pipeline_8cpp}{Pipeline.\+cpp}}\item 
+open\+Zia/\mbox{\hyperlink{_pipeline_8ipp}{Pipeline.\+ipp}}\end{DoxyCompactItemize}

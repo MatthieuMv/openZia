@@ -16,7 +16,7 @@ void oZ::Pipeline::registerCallback(State state, Priority priority, ModuleType *
 template<typename Type, typename ...Args>
 void oZ::Pipeline::addModule(Args &&...args)
 {
-    _modules.emplace_back(std::make_shared<Type>(std::forward<Args>(args)...));
+    addModule(std::make_shared<Type>(std::forward<Args>(args)...));
 }
 
 template<typename Type>
