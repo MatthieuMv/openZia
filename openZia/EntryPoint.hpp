@@ -18,7 +18,7 @@
 #  endif
 # endif
 
-# if defined(SYSTEM_LINUX)
+# if defined(SYSTEM_LINUX) || defined(SYSTEM_DARWIN)
 #  define OPEN_ZIA_EXPORT
 # elif defined(SYSTEM_WINDOWS)
 #  define OPEN_ZIA_EXPORT __declspec(dllexport)
