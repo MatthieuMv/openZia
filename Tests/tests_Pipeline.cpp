@@ -23,6 +23,14 @@ Test(Pipeline, Basics)
     cr_assert(pipeline.findModule("Foo"));
 }
 
+Test(Pipeline, InexistingModuleDir)
+{
+    Pipeline pipeline("azerty");
+
+    pipeline.loadModules();
+    cr_assert_eq(pipeline.getModules().size(), 0);
+}
+
 /*
   Test hierarchy
 0:    A
