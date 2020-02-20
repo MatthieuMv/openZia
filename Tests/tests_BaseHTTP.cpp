@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** CPP_zia_2019
 ** File description:
-** HTTP Abstraction Base 
+** HTTP Abstraction Base
 */
 
 #include <criterion/criterion.h>
@@ -11,10 +11,18 @@
 
 using namespace oZ::HTTP;
 
+Test(BaseHTTP, Version)
+{
+    oZ::HTTP::Version v(1, 0);
+
+    cr_assert_eq(v.majorVersion, 1);
+    cr_assert_eq(v.majorVersion, 0);
+}
+
 /**
  * @brief Assert that we can cast the code to its actual scalar type.
- * 
- *  This is needed to convert the Code enum-class to an actual http code 
+ *
+ *  This is needed to convert the Code enum-class to an actual http code
  */
 Test(BaseHTTP, Code)
 {

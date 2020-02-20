@@ -17,14 +17,9 @@ class oZ::Log
 {
 public:
     /**
-     * @brief Construct a new Log object
-     */
-    Log(void) = default;
-
-    /**
      * @brief Construct a new Log object using a log level
      */
-    Log(Level level) : _level(level) {}
+    Log(Level level = Level::Information) : _level(level) {}
 
     /**
      * @brief Destroy the Log object and flush stream

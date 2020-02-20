@@ -63,11 +63,6 @@ public:
     using Dependencies = std::vector<const char *>;
 
     /**
-     * @brief Construct a new IModule object
-     */
-    IModule(void) = default;
-
-    /**
      * @brief Destroy the IModule object
      */
     virtual ~IModule(void) = default;
