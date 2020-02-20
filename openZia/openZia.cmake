@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(openZia)
+set(LIB_NAME openZia)
 
 # This modules builds the API library
 # It can be imported to easily add the API to an existing CMake project
@@ -12,7 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED 17 ON)
 get_filename_component(OpenZiaSourcesDir ${CMAKE_CURRENT_LIST_FILE} PATH)
 
 # Define external variables in order to link with ease
-set(openZiaLibs openZia)
+set(openZiaLibs ${LIB_NAME})
 set(openZiaIncludes ${OpenZiaSourcesDir}/..)
 
 # Library sources
@@ -50,22 +50,22 @@ set(OpenZiaSources
 )
 
 # Create openZia library
-add_library(${PROJECT_NAME} ${OpenZiaSources})
-set_property(TARGET ${PROJECT_NAME} PROPERTY POSITION_INDEPENDENT_CODE ON)
+add_library(${LIB_NAME} ${OpenZiaSources})
+set_property(TARGET ${LIB_NAME} PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 # GCC < 9 requires explicit link to filesystem library
 if (UNIX)
-    target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS})
-    target_compile_options(${PROJECT_NAME} PRIVATE
+    target_link_libraries(${LIB_NAME} ${CMAKE_DL_LIBS})
+    target_compile_options(${LIB_NAME} PRIVATE
 #        -Werror # Stop on any error !
         -Wall -Wextra
     )
 endif ()
 
 if (UNIX AND NOT APPLE)
-    target_link_libraries(${PROJECT_NAME} stdc++fs)
+    target_link_libraries(${LIB_NAME} stdc++fs)
 
-    target_compile_options(${PROJECT_NAME} PRIVATE
+    target_compile_options(${LIB_NAME} PRIVATE
 #        -Werror # Stop on any error !
         -pedantic -Wcast-align -Wcast-qual -Wctor-dtor-privacy
         -Wdisabled-optimization -Wformat=2 -Winit-self -Wlogical-op -Wmissing-declarations
