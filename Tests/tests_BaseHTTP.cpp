@@ -16,7 +16,7 @@ Test(BaseHTTP, Version)
     oZ::HTTP::Version v(1, 0);
 
     cr_assert_eq(v.majorVersion, 1);
-    cr_assert_eq(v.majorVersion, 0);
+    cr_assert_eq(v.minorVersion, 0);
 }
 
 /**
