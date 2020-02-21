@@ -72,6 +72,22 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 )
 ```
 
+## Windows and the winsock version
+Even if the API uses windows only for dynamic load, you may need the following configuration :
+```C++
+// Windows socket version
+#include <winsock2.h> // or <winsock.h>
+// Include windows header after selecting a winsock version !
+#include <Windows.h>
+```
+In that case, you can define a macro named **OPENZIA_PRE_WINDOWS_INCLUDE** to your build system to import a custom header.
+
+For example you can add the following line into your cmake module.
+```cmake
+# Please note that quotes matters /!\
+target_compile_definitions(${PROJECT_NAME} PUBLIC OPENZIA_PRE_WINDOWS_INCLUDE="winsock2.h")
+```
+
 ## Unit tests and code coverage
 
 If you want to start unit tests replace independent build instruction by:

@@ -10,11 +10,8 @@
 #include <cstring>
 #include <string>
 #include <cinttypes>
-#include "OperatingSystem.hpp"
 
-#if defined(SYSTEM_WINDOWS)
-    #include <winsock.h>
-#endif
+#include "OperatingSystem.hpp"
 
 namespace oZ
 {
@@ -25,8 +22,10 @@ namespace oZ
 
     #if defined(SYSTEM_LINUX) || defined(SYSTEM_DARWIN)
         using FileDescriptor = std::int32_t;
+        constexpr oZ::FileDescriptor DefaultFileDescriptor = -1;
     #elif defined(SYSTEM_WINDOWS)
         using FileDescriptor = SOCKET;
+        constexpr oZ::FileDescriptor DefaultFileDescriptor = INVALID_SOCKET;
     #endif
 }
 
