@@ -18,11 +18,7 @@
 
 #if defined(SYSTEM_LINUX) || defined(SYSTEM_DARWIN)
 # include <dlfcn.h>
-#elif defined(SYSTEM_WINDOWS)
-# ifdef OPENZIA_PRE_WINDOWS_INCLUDE
-#  include OPENZIA_PRE_WINDOWS_INCLUDE
-# endif
-# include <Windows.h>
+# include "Window.hpp"
 #endif
 
 namespace oZ
