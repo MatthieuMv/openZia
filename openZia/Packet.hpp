@@ -74,6 +74,12 @@ public:
 private:
     ByteArray _byteArray {};
     Endpoint _endpoint {};
-    FileDescriptor _fd { -1 };
+
+    #if defined(SYSTEM_LINUX) || defined(SYSTEM_DARWIN)
+        FileDescriptor _fd { -1 };
+    #elif defined(SYSTEM_WINDOWS)
+        FileDescriptor _fd = INVALID_SOCKET;
+    #endif
+
     bool _useEncryption = false;
 };
