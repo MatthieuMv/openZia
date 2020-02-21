@@ -12,6 +12,12 @@
 
 namespace oZ { class Packet; }
 
+#if defined(SYSTEM_LINUX) || defined(SYSTEM_DARWIN)
+    const oZ::FileDescriptor DEFAULT_FD = -1;
+#elif defined(SYSTEM_WINDOWS)
+    const oZ::FileDescriptor DEFAULT_FD = INVALID_SOCKET;
+#endif
+
 class oZ::Packet
 {
 public:
@@ -23,7 +29,7 @@ public:
     /**
      * @brief Construct a new Packet object using byteArray and an endpoint
      */
-    Packet(ByteArray &&byteArray, const Endpoint endpoint, const FileDescriptor fd = -1)
+    Packet(ByteArray &&byteArray, const Endpoint endpoint, const FileDescriptor fd = DEFAULT_FD)
         : _byteArray(std::move(byteArray)), _endpoint(endpoint), _fd(fd) {}
 
     /**
@@ -74,12 +80,6 @@ public:
 private:
     ByteArray _byteArray {};
     Endpoint _endpoint {};
-
-    #if defined(SYSTEM_LINUX) || defined(SYSTEM_DARWIN)
-        FileDescriptor _fd { -1 };
-    #elif defined(SYSTEM_WINDOWS)
-        FileDescriptor _fd = INVALID_SOCKET;
-    #endif
-
+    FileDescriptor _fd = DEFAULT_FD;
     bool _useEncryption = false;
 };

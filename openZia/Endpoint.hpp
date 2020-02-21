@@ -12,6 +12,10 @@
 #include <cinttypes>
 #include "OperatingSystem.hpp"
 
+#if defined(SYSTEM_WINDOWS)
+    #include <winsock.h>
+#endif
+
 namespace oZ
 {
     class Endpoint;
