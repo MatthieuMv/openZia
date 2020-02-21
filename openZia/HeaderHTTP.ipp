@@ -5,6 +5,8 @@
 ** HeaderHTTP
 */
 
+#pragma once
+
 #include <stdexcept>
 
 template<typename Literal>

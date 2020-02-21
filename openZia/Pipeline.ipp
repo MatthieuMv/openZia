@@ -5,6 +5,8 @@
 ** Pipeline Abstraction
 */
 
+#pragma once
+
 template<typename ModuleType>
 void oZ::Pipeline::registerCallback(State state, Priority priority, ModuleType *target, bool(ModuleType::*callback)(Context &))
 {
