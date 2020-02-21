@@ -22,10 +22,10 @@ namespace oZ
 
     #if defined(SYSTEM_LINUX) || defined(SYSTEM_DARWIN)
         using FileDescriptor = std::int32_t;
-        constexpr oZ::FileDescriptor DefaultFileDescriptor = -1;
+        constexpr FileDescriptor DefaultFileDescriptor = -1;
     #elif defined(SYSTEM_WINDOWS)
         using FileDescriptor = SOCKET;
-        constexpr oZ::FileDescriptor DefaultFileDescriptor = INVALID_SOCKET;
+        constexpr FileDescriptor DefaultFileDescriptor = INVALID_SOCKET;
     #endif
 }
 
