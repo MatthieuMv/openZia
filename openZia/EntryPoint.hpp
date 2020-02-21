@@ -5,8 +5,7 @@
 ** EntryPoint
 */
 
-#ifndef ENTRYPOINT_HPP_
-# define ENTRYPOINT_HPP_
+#pragma once
 
 # include "OperatingSystem.hpp"
 
@@ -39,4 +38,3 @@
         return new class();                                         \
     }                                                               \
 
-#endif /* !ENTRYPOINT_HPP_ */
