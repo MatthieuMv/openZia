@@ -1,28 +1,43 @@
-dist: xenial
+os: linux and windows
 language: cpp
-compiler: g++
 
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-7
-      - lcov
+jobs:
+  include:
+    - os: linux
+      dist: xenial
+      compiler: gcc
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-7
+            - lcov
 
-before_install:
-  - export CC=gcc-7
-  - export CXX=g++-7
+      before_install:
+        - export CC=gcc-7
+        - export CXX=g++-7
 
-install:
-  - sudo add-apt-repository -y ppa:snaipewastaken/ppa
-  - sudo apt-get update
-  - sudo apt-get -y install criterion-dev
+      install:
+        - sudo add-apt-repository -y ppa:snaipewastaken/ppa
+        - sudo apt-get update
+        - sudo apt-get -y install criterion-dev
 
-script:
-  - cmake . -DOPENZIA_TESTS=TRUE -DOPENZIA_COVERAGE=TRUE
-  - cmake --build .
-  - ./openZiaTests
+      script:
+        - cmake . -DOPENZIA_TESTS=TRUE -DOPENZIA_COVERAGE=TRUE
+        - cmake --build .
+        - ./openZiaTests
 
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+      after_success:
+        - bash <(curl -s https://codecov.io/bash)
+
+    - os: windows
+      compiler: msvc
+
+      install:
+        - choco install -y visualstudio2019community visualstudio2019-workload-nativedesktop
+
+      script:
+        - cmake . -DOPENZIA_TESTS=FALSE -DOPENZIA_COVERAGE=TRUE
+        - cmake --build .
+
