@@ -10,6 +10,7 @@
 #include <cstring>
 #include <string>
 #include <cinttypes>
+#include "OperatingSystem.hpp"
 
 namespace oZ
 {
@@ -17,7 +18,12 @@ namespace oZ
 
     using IP = std::uint32_t;
     using Port = std::uint16_t;
-    using FileDescriptor = std::int32_t;
+
+    #if defined(SYSTEM_LINUX) || defined(SYSTEM_DARWIN)
+        using FileDescriptor = std::int32_t;
+    #elif defined(SYSTEM_WINDOWS)
+        using FileDescriptor = SOCKET;
+    #endif
 }
 
 class oZ::Endpoint
