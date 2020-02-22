@@ -57,3 +57,15 @@ Test(Context, Basics)
     context.getPacket().setFileDescriptor(42);
     cr_assert_eq(ctx.getPacket().getFileDescriptor(), 42);
 }
+
+Test(Context, Metadatas)
+{
+    Context context;
+
+    cr_assert_eq(context.hasMetadata("meta"), false);
+    context.setMetadata("meta", "helloworld");
+    cr_assert_eq(context.hasMetadata("meta"), true);
+    cr_assert_eq(context.getMetadata<std::string>("meta"), "helloworld");
+    context.removeMetadata("meta");
+    cr_assert_eq(context.hasMetadata("meta"), false);
+}
