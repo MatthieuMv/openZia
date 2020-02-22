@@ -5,6 +5,8 @@
 ** HTTP Base definitions
 */
 
+#pragma once
+
 #include <cinttypes>
 #include <string>
 

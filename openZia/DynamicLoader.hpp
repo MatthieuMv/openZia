@@ -16,7 +16,6 @@
 # include <dlfcn.h>
 #elif defined(SYSTEM_WINDOWS)
 # include "Windows.hpp"
-# include <dlfcn.h>
 #endif
 
 namespace oZ

@@ -64,7 +64,8 @@ endif ()
 if (UNIX AND NOT APPLE)
     target_link_libraries(${LIB_NAME} stdc++fs)
 
-    if (${OPENZIA_WARNINGS_AS_ERRORS})
+    if (${OPENZIA_WERROR})
+        message(WARNING "You are compiling with -Werror enabled !")
         target_compile_definitions(${LIB_NAME} PRIVATE
             -Werror
         )
