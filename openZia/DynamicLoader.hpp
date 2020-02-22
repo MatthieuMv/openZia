@@ -18,8 +18,9 @@
 
 #if defined(SYSTEM_LINUX) || defined(SYSTEM_DARWIN)
 # include <dlfcn.h>
-# include "Window.hpp"
 #endif
+
+#include "Windows.hpp"
 
 namespace oZ
 {
