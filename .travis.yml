@@ -24,7 +24,7 @@ jobs:
         - sudo apt-get -y install criterion-dev
 
       script:
-        - cmake . -DOPENZIA_TESTS=TRUE -DOPENZIA_COVERAGE=TRUE
+        - cmake . -DOPENZIA_TESTS=TRUE -DOPENZIA_COVERAGE=TRUE -DOPENZIA_WERROR=TRUE
         - cmake --build .
         - ./openZiaTests
 

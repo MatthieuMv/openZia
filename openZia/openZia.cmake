@@ -66,7 +66,7 @@ if (UNIX AND NOT APPLE)
 
     if (${OPENZIA_WERROR})
         message(WARNING "You are compiling with -Werror enabled !")
-        target_compile_definitions(${LIB_NAME} PRIVATE
+        target_compile_options(${LIB_NAME} PRIVATE
             -Werror
         )
     endif ()
