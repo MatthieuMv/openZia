@@ -12,13 +12,16 @@
 
 #include "OperatingSystem.hpp"
 
-# ifdef OPENZIA_PRE_WINDOWS_INCLUDE
-#  include OPENZIA_PRE_WINDOWS_INCLUDE
-# endif
-
 #if defined(SYSTEM_LINUX) || defined(SYSTEM_DARWIN)
 # include <dlfcn.h>
 # include "Window.hpp"
+#endif
+
+#if defined(SYSTEM_LINUX) || defined(SYSTEM_DARWIN)
+# include <dlfcn.h>
+#elif defined(SYSTEM_WINDOWS)
+# include "Windows.hpp"
+# include <dlfcn.h>
 #endif
 
 namespace oZ
