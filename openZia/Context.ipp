@@ -6,7 +6,7 @@
 */
 
 template<typename Type>
-void oZ::Context::setMetadata(const std::string &key, Type &value)
+void oZ::Context::setMetadata(const std::string &key, Type value)
 {
     _metadata.insert(std::make_pair(key, value));
 }

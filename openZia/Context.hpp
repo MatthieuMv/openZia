@@ -161,7 +161,7 @@ public:
      * @brief This function sets a metadata to be used by any module
      */
     template<typename Type>
-    void setMetadata(const std::string &key, Type &value);
+    void setMetadata(const std::string &key, Type value);
 
     /**
      * @brief This function remove a metadata (if present)

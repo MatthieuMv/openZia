@@ -63,9 +63,9 @@ Test(Context, Metadatas)
     Context context;
 
     cr_assert_eq(context.hasMetadata("meta"), false);
-    context.setMetadata("meta", "helloworld");
+    context.setMetadata("meta", std::string("helloworld"));
     cr_assert_eq(context.hasMetadata("meta"), true);
-    cr_assert_eq(context.getMetadata<std::string>("meta"), "helloworld");
+    cr_assert_eq(context.getMetadata<std::string &>("meta"), "helloworld");
     context.removeMetadata("meta");
     cr_assert_eq(context.hasMetadata("meta"), false);
 }
