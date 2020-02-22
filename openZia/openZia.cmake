@@ -57,7 +57,6 @@ set_property(TARGET ${LIB_NAME} PROPERTY POSITION_INDEPENDENT_CODE ON)
 if (UNIX)
     target_link_libraries(${LIB_NAME} ${CMAKE_DL_LIBS})
     target_compile_options(${LIB_NAME} PRIVATE
-#        -Werror # Stop on any error !
         -Wall -Wextra
     )
 endif ()
@@ -65,14 +64,19 @@ endif ()
 if (UNIX AND NOT APPLE)
     target_link_libraries(${LIB_NAME} stdc++fs)
 
+    if (${OPENZIA_WARNINGS_AS_ERRORS})
+        target_compile_definitions(${LIB_NAME} PRIVATE
+            -Werror
+        )
+    endif ()
+
     target_compile_options(${LIB_NAME} PRIVATE
-#        -Werror # Stop on any error !
         -pedantic -Wcast-align -Wcast-qual -Wctor-dtor-privacy
         -Wdisabled-optimization -Wformat=2 -Winit-self -Wlogical-op -Wmissing-declarations
         -Wmissing-include-dirs -Wnoexcept -Wold-style-cast -Woverloaded-virtual
         -Wredundant-decls -Wshadow -Wsign-conversion -Wsign-promo -Wstrict-null-sentinel
         -Wstrict-overflow=5 -Wswitch-default -Wundef -Wno-unused
-        -Weffc++ -pedantic-errors -Wconversion -Wfloat-equal
+        -Weffc++ -Wconversion -Wfloat-equal
         -Wformat-nonliteral -Wformat-security -Wformat-y2k -Wimport -Winline
         -Winvalid-pch -Wlong-long -Wmissing-field-initializers -Wmissing-format-attribute
         -Wmissing-noreturn -Wpacked -Wpointer-arith -Wstack-protector

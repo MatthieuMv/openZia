@@ -12,7 +12,7 @@
 #include <cinttypes>
 
 #include "OperatingSystem.hpp"
-#include "Window.hpp"
+#include "Windows.hpp"
 
 namespace oZ
 {
