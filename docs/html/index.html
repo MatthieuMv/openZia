@@ -96,7 +96,7 @@ $(function() {
 <h2>Pipeline</h2>
 <p>The API is based on a <b>Fixed Pipeline</b> that is composed of various <b>callbacks</b>.</p>
 <blockquote class="doxtable">
-<p><a class="el" href="class_a.html">A</a> fixed pipeline means that you can't change it while it is running. However, you can still stop and change it at run-time by reloading modules. </p>
+<p>A fixed pipeline means that you can't change it while it is running. However, you can still stop and change it at run-time by reloading modules. </p>
 </blockquote>
 <p>The <b><a class="el" href="classo_z_1_1_pipeline.html" title="The pileline abstracts the pipeline of modules.">oZ::Pipeline</a></b> class abstract module loading and pipeline creation on both windows and linux. <b><a class="el" href="classo_z_1_1_pipeline.html#a2815743412c13100c68fee0d87283417" title="Find modules and load them into the pipeline. This function will : 1) Trigger the onLoadModules callb...">oZ::Pipeline::loadModules</a></b> function will search dynamic libraries in the module directory provided in pipeline's constructor.</p>
 <p>The <b><a class="el" href="classo_z_1_1_context.html" title="The context class uses different concepts : 1) State is a state-machine code which indicates where th...">oZ::Context</a></b> class stores the current pipeline <b>state</b>, network client <b>buffer</b> and its <b>endpoint</b>, HTTP <b>request</b> / <b>response</b> and an <b>encryption key</b> if used by the client (to implement SSL efficiently). This class is described in details in the <a class="el" href="md__c_o_n_t_e_x_t.html">Context guide</a>.</p>

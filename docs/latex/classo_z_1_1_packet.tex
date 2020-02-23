@@ -9,7 +9,7 @@
 \item 
 \mbox{\hyperlink{classo_z_1_1_packet_a5c96f8d5db686e035b199e8aeb0e0cea}{Packet}} (void)=default
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_packet}{Packet}} object. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classo_z_1_1_packet_a4affbe387050c6b67f4604f9eaadc074}{Packet}} (\mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} \&\&byte\+Array, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint, const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}} fd=-\/1)
+\mbox{\hyperlink{classo_z_1_1_packet_af319d110c50b2f639e97b521ab28dc05}{Packet}} (\mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} \&\&byte\+Array, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint, const File\+Descriptor fd=Default\+File\+Descriptor)
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_packet}{Packet}} object using byte\+Array and an endpoint. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classo_z_1_1_packet_a01d80a0c452b1e07dfd160f494be2af5}{$\sim$\+Packet}} (void)=default
 \begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classo_z_1_1_packet}{Packet}} object. \end{DoxyCompactList}\item 
@@ -21,9 +21,9 @@ const \mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Arr
 \begin{DoxyCompactList}\small\item\em Get the current context\textquotesingle{}s endpoint. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classo_z_1_1_packet_a2bcd9f2d612cbc1b59a8b7c99d706908}{set\+Endpoint}} (const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint) noexcept
 \begin{DoxyCompactList}\small\item\em Set the \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} target. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}} \mbox{\hyperlink{classo_z_1_1_packet_a65cfd7021de4eaf78f716143b82cd4a1}{get\+File\+Descriptor}} (void) const noexcept
+File\+Descriptor \mbox{\hyperlink{classo_z_1_1_packet_a65cfd7021de4eaf78f716143b82cd4a1}{get\+File\+Descriptor}} (void) const noexcept
 \begin{DoxyCompactList}\small\item\em Get the context\textquotesingle{}s file descriptor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classo_z_1_1_packet_abf619a065ca7321c05fdcacc6353d47d}{set\+File\+Descriptor}} (const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}} fd) noexcept
+void \mbox{\hyperlink{classo_z_1_1_packet_abf619a065ca7321c05fdcacc6353d47d}{set\+File\+Descriptor}} (const File\+Descriptor fd) noexcept
 \begin{DoxyCompactList}\small\item\em Set the context\textquotesingle{}s file descriptor. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classo_z_1_1_packet_abf9bd4979afb439272832d5a90f7d556}{has\+Encryption}} (void) const noexcept
 \begin{DoxyCompactList}\small\item\em Check the usage of encryption port (used for H\+T\+T\+PS) \end{DoxyCompactList}\item 
@@ -42,11 +42,11 @@ void \mbox{\hyperlink{classo_z_1_1_packet_a7c6fc3f9ca25adf83be8e7c1f5ae5b70}{set
 
 Construct a new \mbox{\hyperlink{classo_z_1_1_packet}{Packet}} object. 
 
-\mbox{\Hypertarget{classo_z_1_1_packet_a4affbe387050c6b67f4604f9eaadc074}\label{classo_z_1_1_packet_a4affbe387050c6b67f4604f9eaadc074}} 
+\mbox{\Hypertarget{classo_z_1_1_packet_af319d110c50b2f639e97b521ab28dc05}\label{classo_z_1_1_packet_af319d110c50b2f639e97b521ab28dc05}} 
 \index{oZ::Packet@{oZ::Packet}!Packet@{Packet}}
 \index{Packet@{Packet}!oZ::Packet@{oZ::Packet}}
 \subsubsection{\texorpdfstring{Packet()}{Packet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily o\+Z\+::\+Packet\+::\+Packet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} \&\&}]{byte\+Array,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint,  }\item[{const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}}}]{fd = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily o\+Z\+::\+Packet\+::\+Packet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceo_z_abfa3f5a46e5c7584615dc1dd33fcafb6}{Byte\+Array}} \&\&}]{byte\+Array,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint,  }\item[{const File\+Descriptor}]{fd = {\ttfamily DefaultFileDescriptor} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -99,7 +99,7 @@ Get the current context\textquotesingle{}s endpoint.
 \index{oZ::Packet@{oZ::Packet}!getFileDescriptor@{getFileDescriptor}}
 \index{getFileDescriptor@{getFileDescriptor}!oZ::Packet@{oZ::Packet}}
 \subsubsection{\texorpdfstring{getFileDescriptor()}{getFileDescriptor()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}} o\+Z\+::\+Packet\+::get\+File\+Descriptor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily File\+Descriptor o\+Z\+::\+Packet\+::get\+File\+Descriptor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -139,7 +139,7 @@ Set the \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} target.
 \index{oZ::Packet@{oZ::Packet}!setFileDescriptor@{setFileDescriptor}}
 \index{setFileDescriptor@{setFileDescriptor}!oZ::Packet@{oZ::Packet}}
 \subsubsection{\texorpdfstring{setFileDescriptor()}{setFileDescriptor()}}
-{\footnotesize\ttfamily void o\+Z\+::\+Packet\+::set\+File\+Descriptor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}}}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily void o\+Z\+::\+Packet\+::set\+File\+Descriptor (\begin{DoxyParamCaption}\item[{const File\+Descriptor}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 

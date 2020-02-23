@@ -21,10 +21,15 @@ void IModule::onLoadConfigurationFile(const std::string &)
 {
 }
 
-void IModule::onConnection(const FileDescriptor, const Endpoint, bool)
+void IModule::onConnection(const FileDescriptor, const Endpoint, const bool)
 {
 }
 
 void IModule::onDisconnection(const FileDescriptor, const Endpoint)
 {
+}
+
+bool IModule::onMessageAvaible(Context &)
+{
+    return false;
 }

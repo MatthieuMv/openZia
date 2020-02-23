@@ -60,6 +60,17 @@ void Pipeline::onDisconnection(const FileDescriptor fd, const Endpoint endpoint)
         module->onDisconnection(fd, endpoint);
 }
 
+bool Pipeline::onMessageAvaible(Context &context)
+{
+    for (auto &module : _modules) {
+        if (!module->onMessageAvaible(context))
+            continue;
+        runPipeline(context);
+        return true;
+    }
+    return false;
+}
+
 void Pipeline::onLoadModules(const std::string &directoryPath)
 {
     fs::path path(directoryPath);

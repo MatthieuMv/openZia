@@ -9,10 +9,6 @@ The pileline abstracts the pipeline of modules.
 
 {\ttfamily \#include $<$Pipeline.\+hpp$>$}
 
-
-
-Inherited by \mbox{\hyperlink{class_a_b_c_pipeline}{A\+B\+C\+Pipeline}}, \mbox{\hyperlink{class_abis_pipeline}{Abis\+Pipeline}}, and \mbox{\hyperlink{class_my_pipeline}{My\+Pipeline}}.
-
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -55,10 +51,12 @@ void \mbox{\hyperlink{classo_z_1_1_pipeline_aa96f1ef3faeb41c9966d6b5a103fa3a5}{a
 \begin{DoxyCompactList}\small\item\em Find a module of given name in internal module list returning it as a shared pointer. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Type  = I\+Module$>$ }\\std\+::shared\+\_\+ptr$<$ Type $>$ \mbox{\hyperlink{classo_z_1_1_pipeline_a4f1abc0f7c0985dbc859cd5b20082998}{find\+Module}} (void) const
 \begin{DoxyCompactList}\small\item\em Find a module of Type in internal module list returning it as a shared pointer. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classo_z_1_1_pipeline_a7cfbdda27bd9ef9919400ce598846731}{on\+Connection}} (const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}} fd, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint, const bool use\+Encryption=false)
+virtual void \mbox{\hyperlink{classo_z_1_1_pipeline_a7cfbdda27bd9ef9919400ce598846731}{on\+Connection}} (const File\+Descriptor fd, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint, const bool use\+Encryption=false)
 \begin{DoxyCompactList}\small\item\em This function will trigger every module\textquotesingle{}s \textquotesingle{}on\+Connection\textquotesingle{} callback. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classo_z_1_1_pipeline_afd035df19d82c10b55af51e727e08407}{on\+Disconnection}} (const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}} fd, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint)
-\begin{DoxyCompactList}\small\item\em This function will trigger every module\textquotesingle{}s \textquotesingle{}on\+Disconnection\textquotesingle{} callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual void \mbox{\hyperlink{classo_z_1_1_pipeline_afd035df19d82c10b55af51e727e08407}{on\+Disconnection}} (const File\+Descriptor fd, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint)
+\begin{DoxyCompactList}\small\item\em This function will trigger every module\textquotesingle{}s \textquotesingle{}on\+Disconnection\textquotesingle{} callback. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classo_z_1_1_pipeline_a5dc5181a699312bc35384ad706668e3c}{on\+Message\+Avaible}} (\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&context)
+\begin{DoxyCompactList}\small\item\em This function will trigger every module\textquotesingle{}s \textquotesingle{}on\+Message\+Avaible\textquotesingle{} callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -244,7 +242,7 @@ Find modules and load them into the pipeline. This function will \+: 1) Trigger 
 \index{oZ::Pipeline@{oZ::Pipeline}!onConnection@{onConnection}}
 \index{onConnection@{onConnection}!oZ::Pipeline@{oZ::Pipeline}}
 \subsubsection{\texorpdfstring{onConnection()}{onConnection()}}
-{\footnotesize\ttfamily void Pipeline\+::on\+Connection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}}}]{fd,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint,  }\item[{const bool}]{use\+Encryption = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Pipeline\+::on\+Connection (\begin{DoxyParamCaption}\item[{const File\+Descriptor}]{fd,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint,  }\item[{const bool}]{use\+Encryption = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -254,7 +252,7 @@ This function will trigger every module\textquotesingle{}s \textquotesingle{}on\
 \index{oZ::Pipeline@{oZ::Pipeline}!onDisconnection@{onDisconnection}}
 \index{onDisconnection@{onDisconnection}!oZ::Pipeline@{oZ::Pipeline}}
 \subsubsection{\texorpdfstring{onDisconnection()}{onDisconnection()}}
-{\footnotesize\ttfamily void Pipeline\+::on\+Disconnection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}}}]{fd,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Pipeline\+::on\+Disconnection (\begin{DoxyParamCaption}\item[{const File\+Descriptor}]{fd,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -270,10 +268,19 @@ This function will trigger every module\textquotesingle{}s \textquotesingle{}on\
 
 Callback which should load a set of module at runtime. 
 
-This callback can be redefined to implement a custom loader. 
+This callback can be redefined to implement a custom loader. \mbox{\Hypertarget{classo_z_1_1_pipeline_a5dc5181a699312bc35384ad706668e3c}\label{classo_z_1_1_pipeline_a5dc5181a699312bc35384ad706668e3c}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!onMessageAvaible@{onMessageAvaible}}
+\index{onMessageAvaible@{onMessageAvaible}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{onMessageAvaible()}{onMessageAvaible()}}
+{\footnotesize\ttfamily bool Pipeline\+::on\+Message\+Avaible (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Reimplemented in \mbox{\hyperlink{class_a_b_c_pipeline_a1a476cf5b64733b13b709ad0d8fbd3a7}{A\+B\+C\+Pipeline}}, and \mbox{\hyperlink{class_my_pipeline_ad6606d59165345cc508ae896d8cd10e8}{My\+Pipeline}}.
 
+
+This function will trigger every module\textquotesingle{}s \textquotesingle{}on\+Message\+Avaible\textquotesingle{} callback. 
+
+\begin{DoxyReturn}{Returns}
+True if the message has been read and pipeline runned the context 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classo_z_1_1_pipeline_a869b02b2b8953993ccfb882a3e1f3a0f}\label{classo_z_1_1_pipeline_a869b02b2b8953993ccfb882a3e1f3a0f}} 
 \index{oZ::Pipeline@{oZ::Pipeline}!registerCallback@{registerCallback}}
 \index{registerCallback@{registerCallback}!oZ::Pipeline@{oZ::Pipeline}}

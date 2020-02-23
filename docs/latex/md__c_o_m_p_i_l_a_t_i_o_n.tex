@@ -45,7 +45,7 @@ Next you need to {\bfseries{automate compilation}} of open\+Zia in your {\bfseri
 
 \subsection*{Automate module compilation}
 
-\mbox{\hyperlink{class_a}{A}} good practice is to create a directory for each module, and include their $\ast$$\ast$.cmake$\ast$$\ast$ file individually. I assume you already included {\bfseries{open\+Zia.\+cmake}} in your {\bfseries{C\+Make\+Lists.\+txt}} and that you have created a directory named {\bfseries{Template}} which contains the following {\bfseries{Template.\+cmake}}, {\bfseries{Template.\+hpp}} and {\bfseries{Template.\+cpp}}. 
+A good practice is to create a directory for each module, and include their $\ast$$\ast$.cmake$\ast$$\ast$ file individually. I assume you already included {\bfseries{open\+Zia.\+cmake}} in your {\bfseries{C\+Make\+Lists.\+txt}} and that you have created a directory named {\bfseries{Template}} which contains the following {\bfseries{Template.\+cmake}}, {\bfseries{Template.\+hpp}} and {\bfseries{Template.\+cpp}}. 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\# Template.cmake}
 \DoxyCodeLine{project(Template)}
@@ -67,6 +67,25 @@ Next you need to {\bfseries{automate compilation}} of open\+Zia in your {\bfseri
 \DoxyCodeLine{set\_target\_properties(\$\{PROJECT\_NAME\} PROPERTIES}
 \DoxyCodeLine{    LIBRARY\_OUTPUT\_DIRECTORY  \$\{CMAKE\_BINARY\_DIR\}/Modules\}}
 \DoxyCodeLine{)}
+\end{DoxyCode}
+
+
+\subsection*{Windows and the winsock version}
+
+Even if the A\+PI uses windows only for dynamic load, you may need the following configuration \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{// Windows socket version}
+\DoxyCodeLine{\#include <winsock2.h> // or <winsock.h>}
+\DoxyCodeLine{// Include windows header after selecting a winsock version !}
+\DoxyCodeLine{\#include <Windows.h>}
+\end{DoxyCode}
+ In that case, you can define a macro named {\bfseries{O\+P\+E\+N\+Z\+I\+A\+\_\+\+P\+R\+E\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+I\+N\+C\+L\+U\+DE}} to your build system to import a custom header.
+
+For example you can add the following line into your cmake module. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# Please note that quotes matters /!\(\backslash\)}
+\DoxyCodeLine{target\_compile\_definitions(\$\{PROJECT\_NAME\} PUBLIC OPENZIA\_PRE\_WINDOWS\_INCLUDE="winsock2.h")}
 \end{DoxyCode}
 
 

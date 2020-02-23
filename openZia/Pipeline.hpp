@@ -140,12 +140,19 @@ public:
     /**
      * @brief This function will trigger every module's 'onConnection' callback
      */
-    void onConnection(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption = false);
+    virtual void onConnection(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption = false);
 
     /**
      * @brief This function will trigger every module's 'onDisconnection' callback
      */
-    void onDisconnection(const FileDescriptor fd, const Endpoint endpoint);
+    virtual void onDisconnection(const FileDescriptor fd, const Endpoint endpoint);
+
+    /**
+     * @brief This function will trigger every module's 'onMessageAvaible' callback
+     *
+     * @return True if the message has been read and pipeline runned the context
+     */
+    virtual bool onMessageAvaible(Context &context);
 
 protected:
     /**

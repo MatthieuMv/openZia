@@ -107,10 +107,17 @@ public:
     /**
      * @brief Callback used to intercept client connections
      */
-    virtual void onConnection(const FileDescriptor fd, const Endpoint endpoint, bool useEncryption = false);
+    virtual void onConnection(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption);
 
     /**
      * @brief Callback used to intercept client disconnections
      */
     virtual void onDisconnection(const FileDescriptor fd, const Endpoint endpoint);
+
+    /**
+     * @brief Callback used to read client message and prepare a given context with the data
+     *
+     * @return Returns true if the message has been read and the pipeline can be runned
+     */
+    virtual bool onMessageAvaible(Context &context);
 };

@@ -39,6 +39,48 @@ void MyServer::onReceiveEncryptedNetworkPacket(oZ::Packet &&packet)
 }
 ```
 
+## Networking modules
+The pipeline was first designed to be implemented as a computational pipeline (and thus without doing any networking).
+In fact, multithreading and caching can be way more efficient if your pipeline is made with the less side effects possibles.
+With time I realized how hard it can be to implement standalone networking modules such as secure connection with this constraints.
+Here I propose you an alternative to the current pipeline's process that let you add way more side effects to your pipeline.
+Keep in mind that a constant pipeline without side effects will **always** be more efficient but less modular.
+
+```C++
+// Client structure
+struct Client
+{
+	oZ::Context context {}; // Client's reusable context
+};
+
+void MyServer::onClientConnected(Client &client)
+{
+	_pipeline.onConnection(
+		client.getPacket().getFileDescriptor(),
+		client.getPacket().getEndpoint(),
+		client.getEncryption()
+	);
+}
+
+void MyServer::onClientDisconnected(Client &client)
+{
+	_pipeline.onDisconnection(
+		client.getPacket().getFileDescriptor(),
+		client.getPacket().getEndpoint()
+	);
+}
+
+void MyServer::onClientReadable(Client &client)
+{
+	client.context.reset();
+	if (!_pipeline.onMessageAvaible(client.context)) {
+		// No module processed it, you can either throw or read it yourself before running pipeline
+		throw ...;
+	}
+	// onMessageAvaible returned true, the message has been read and ran into the pipeline
+}
+```
+
 ## Cache handling
 In this section we will see how caching can be achieved if you really wish to go for performances.
 The **oZ::Context** class has a **oZ::Context::isConstant** function that tells if the current context is constant, and thus can be cached.

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['message',['Message',['../classo_z_1_1_h_t_t_p_1_1_message.html',1,'oZ::HTTP']]],
-  ['mypipeline',['MyPipeline',['../class_my_pipeline.html',1,'']]]
+  ['version',['Version',['../structo_z_1_1_h_t_t_p_1_1_version.html',1,'oZ::HTTP']]]
 ];

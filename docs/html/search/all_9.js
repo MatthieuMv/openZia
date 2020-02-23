@@ -2,7 +2,7 @@ var searchData=
 [
   ['ilogger',['ILogger',['../classo_z_1_1_i_logger.html',1,'oZ::ILogger'],['../classo_z_1_1_i_logger.html#a1ef3d8ab6931286af8f13e161520544b',1,'oZ::ILogger::ILogger()']]],
   ['ilogger_2ehpp',['ILogger.hpp',['../_i_logger_8hpp.html',1,'']]],
-  ['imodule',['IModule',['../classo_z_1_1_i_module.html',1,'oZ::IModule'],['../classo_z_1_1_i_module.html#a21fdd98fb701ae6f7f0e0de14beb72de',1,'oZ::IModule::IModule()']]],
+  ['imodule',['IModule',['../classo_z_1_1_i_module.html',1,'oZ']]],
   ['imodule_2ecpp',['IModule.cpp',['../_i_module_8cpp.html',1,'']]],
   ['imodule_2ehpp',['IModule.hpp',['../_i_module_8hpp.html',1,'']]],
   ['independent',['Independent',['../namespaceo_z.html#af05a92eb185d18369e9b4acdcd9dcd12a0bf10abb7e9da477f36b2e69fdae8745',1,'oZ']]],

@@ -90,9 +90,9 @@ Macros</h2></td></tr>
 <tr class="separator:a65b699d5aa57e00be641bc9d29f1d2ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0277d42f3765b981fff55d57f11b5ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_entry_point_8hpp.html#ac0277d42f3765b981fff55d57f11b5ae">OPEN_ZIA_ENTRY_POINT_AS_STRING</a>&#160;&#160;&#160;<a class="el" href="_entry_point_8hpp.html#ae3d3f38ea197e21911d475fc7ca6678a">FUNCTION_NAME</a>(<a class="el" href="_entry_point_8hpp.html#a65b699d5aa57e00be641bc9d29f1d2ec">OPEN_ZIA_ENTRY_POINT</a>)</td></tr>
 <tr class="separator:ac0277d42f3765b981fff55d57f11b5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ee142a57009ef7058342bb372cd0910"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_entry_point_8hpp.html#a7ee142a57009ef7058342bb372cd0910">OPEN_ZIA_MAKE_ENTRY_POINT</a>(class)</td></tr>
-<tr class="memdesc:a7ee142a57009ef7058342bb372cd0910"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shortcut to create a function entry point of your module.  <a href="#a7ee142a57009ef7058342bb372cd0910">More...</a><br /></td></tr>
-<tr class="separator:a7ee142a57009ef7058342bb372cd0910"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a689279f7cff36e8c6b1d27a474212b6d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_entry_point_8hpp.html#a689279f7cff36e8c6b1d27a474212b6d">OPEN_ZIA_MAKE_ENTRY_POINT</a>(T)&#160;&#160;&#160;<a class="el" href="_entry_point_8hpp.html#abbaccfbed35b945162c27ef6d3748e77">EXTERN_C</a> OPEN_ZIA_EXPORT <a class="el" href="classo_z_1_1_i_module.html">oZ::IModule</a> *<a class="el" href="_entry_point_8hpp.html#a65b699d5aa57e00be641bc9d29f1d2ec">OPEN_ZIA_ENTRY_POINT</a>() { return new T(); }</td></tr>
+<tr class="memdesc:a689279f7cff36e8c6b1d27a474212b6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shortcut to create a function entry point of your module.  <a href="#a689279f7cff36e8c6b1d27a474212b6d">More...</a><br /></td></tr>
+<tr class="separator:a689279f7cff36e8c6b1d27a474212b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="abbaccfbed35b945162c27ef6d3748e77"></a>
@@ -155,8 +155,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a7ee142a57009ef7058342bb372cd0910"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ee142a57009ef7058342bb372cd0910">&#9670;&nbsp;</a></span>OPEN_ZIA_MAKE_ENTRY_POINT</h2>
+<a id="a689279f7cff36e8c6b1d27a474212b6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a689279f7cff36e8c6b1d27a474212b6d">&#9670;&nbsp;</a></span>OPEN_ZIA_MAKE_ENTRY_POINT</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -165,15 +165,12 @@ Macros</h2></td></tr>
           <td class="memname">#define OPEN_ZIA_MAKE_ENTRY_POINT</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">class</td><td>)</td>
-          <td></td>
+          <td class="paramname">T</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="_entry_point_8hpp.html#abbaccfbed35b945162c27ef6d3748e77">EXTERN_C</a> OPEN_ZIA_EXPORT <a class="el" href="classo_z_1_1_i_module.html">oZ::IModule</a> *<a class="el" href="_entry_point_8hpp.html#a65b699d5aa57e00be641bc9d29f1d2ec">OPEN_ZIA_ENTRY_POINT</a>() { return new T(); }</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="_entry_point_8hpp.html#abbaccfbed35b945162c27ef6d3748e77">EXTERN_C</a> OPEN_ZIA_EXPORT <a class="code" href="classo_z_1_1_i_module.html">oZ::IModule</a> *<a class="code" href="_entry_point_8hpp.html#a65b699d5aa57e00be641bc9d29f1d2ec">OPEN_ZIA_ENTRY_POINT</a>()    \</div><div class="line">    {                                                               \</div><div class="line">        return <span class="keyword">new</span> <span class="keyword">class</span>();                                         \</div><div class="line">    }                                                               \</div><div class="ttc" id="classo_z_1_1_i_module_html"><div class="ttname"><a href="classo_z_1_1_i_module.html">oZ::IModule</a></div><div class="ttdoc">This class is the interface of every module.</div><div class="ttdef"><b>Definition:</b> IModule.hpp:57</div></div>
-<div class="ttc" id="_entry_point_8hpp_html_abbaccfbed35b945162c27ef6d3748e77"><div class="ttname"><a href="_entry_point_8hpp.html#abbaccfbed35b945162c27ef6d3748e77">EXTERN_C</a></div><div class="ttdeci">#define EXTERN_C</div><div class="ttdef"><b>Definition:</b> EntryPoint.hpp:17</div></div>
-<div class="ttc" id="_entry_point_8hpp_html_a65b699d5aa57e00be641bc9d29f1d2ec"><div class="ttname"><a href="_entry_point_8hpp.html#a65b699d5aa57e00be641bc9d29f1d2ec">OPEN_ZIA_ENTRY_POINT</a></div><div class="ttdeci">#define OPEN_ZIA_ENTRY_POINT</div><div class="ttdef"><b>Definition:</b> EntryPoint.hpp:30</div></div>
-</div><!-- fragment -->
+
 <p>Shortcut to create a function entry point of your module. </p>
 
 </div>
