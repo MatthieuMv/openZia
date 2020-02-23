@@ -47,6 +47,18 @@ Here I propose you an alternative to the current pipeline's process that let you
 Keep in mind that a constant pipeline without side effects will **always** be more efficient but less modular.
 
 ```C++
+// Networking module
+class NetModule
+{
+public:
+	// ...
+	virtual bool onMessageAvaible(oZ::Context &context) {
+		// Fill 'context.getPacket().getByteArray()', reading is socket
+		return true; // Returns true to tell pipeline that you filled the context
+	}
+	// ...
+};
+
 // Client structure
 struct Client
 {

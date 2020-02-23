@@ -49,6 +49,18 @@ The pipeline was first designed to be implemented as a computational pipeline (a
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{// Networking module}
+\DoxyCodeLine{class NetModule}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{public:}
+\DoxyCodeLine{    // ...}
+\DoxyCodeLine{    virtual bool onMessageAvaible(oZ::Context \&context) \{}
+\DoxyCodeLine{        // Fill 'context.getPacket().getByteArray()', reading is socket}
+\DoxyCodeLine{        return true; // Returns true to tell pipeline that you filled the context}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    // ...}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
 \DoxyCodeLine{// Client structure}
 \DoxyCodeLine{struct Client}
 \DoxyCodeLine{\{}
