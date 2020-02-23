@@ -148,6 +148,11 @@ public:
      */
     [[nodiscard]] bool isConstant(void) const noexcept { return _constant; }
 
+    /**
+     * @brief Prepare the context to be used again with the same client
+     */
+    void clear(void);
+
 private:
     Packet _packet {};
     HTTP::Request _request {};

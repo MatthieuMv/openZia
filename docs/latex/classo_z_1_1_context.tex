@@ -49,7 +49,9 @@ bool \mbox{\hyperlink{classo_z_1_1_context_ac5dd957a1f76f466b86a179ed3146967}{is
 void \mbox{\hyperlink{classo_z_1_1_context_ada521ec57fbc2febfd61177e8bbc0128}{not\+Constant}} (void) noexcept
 \begin{DoxyCompactList}\small\item\em Tell that the \mbox{\hyperlink{classo_z_1_1_context}{Context}} is not constant and thus can\textquotesingle{}t be cached. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classo_z_1_1_context_a748147258019436983fdbbf6ed51c0b6}{is\+Constant}} (void) const noexcept
-\begin{DoxyCompactList}\small\item\em Check if the current \mbox{\hyperlink{classo_z_1_1_context}{Context}}\textquotesingle{}s state is constant (and if it can be cached) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Check if the current \mbox{\hyperlink{classo_z_1_1_context}{Context}}\textquotesingle{}s state is constant (and if it can be cached) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classo_z_1_1_context_ade0f49a6468ea81eec1e97ace81b926e}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Prepare the context to be used again with the same client. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -109,6 +111,16 @@ Destroy the \mbox{\hyperlink{classo_z_1_1_context}{Context}} object.
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classo_z_1_1_context_ade0f49a6468ea81eec1e97ace81b926e}\label{classo_z_1_1_context_ade0f49a6468ea81eec1e97ace81b926e}} 
+\index{oZ::Context@{oZ::Context}!clear@{clear}}
+\index{clear@{clear}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Context\+::clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Prepare the context to be used again with the same client. 
+
 \mbox{\Hypertarget{classo_z_1_1_context_ad2814c8e2b850cb4c5a70a964dbd3d58}\label{classo_z_1_1_context_ad2814c8e2b850cb4c5a70a964dbd3d58}} 
 \index{oZ::Context@{oZ::Context}!getPacket@{getPacket}}
 \index{getPacket@{getPacket}!oZ::Context@{oZ::Context}}

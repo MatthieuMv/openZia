@@ -43,6 +43,15 @@ public:
      */
     [[nodiscard]] const Reason &getReason(void) const noexcept { return _reason; }
 
+    /**
+     * @brief Clear internals
+     */
+    void clear(void) override {
+        Message::clear();
+        _reason.clear();
+        _code = Code::Undefined;
+    }
+
 private:
     Reason _reason {};
     Code _code = Code::Undefined;

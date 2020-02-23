@@ -140,6 +140,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a748147258019436983fdbbf6ed51c0b6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_context.html#a748147258019436983fdbbf6ed51c0b6">isConstant</a> (void) const noexcept</td></tr>
 <tr class="memdesc:a748147258019436983fdbbf6ed51c0b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the current <a class="el" href="classo_z_1_1_context.html" title="The context class uses different concepts : 1) State is a state-machine code which indicates where th...">Context</a>'s state is constant (and if it can be cached)  <a href="#a748147258019436983fdbbf6ed51c0b6">More...</a><br /></td></tr>
 <tr class="separator:a748147258019436983fdbbf6ed51c0b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade0f49a6468ea81eec1e97ace81b926e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_context.html#ade0f49a6468ea81eec1e97ace81b926e">clear</a> (void)</td></tr>
+<tr class="memdesc:ade0f49a6468ea81eec1e97ace81b926e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare the context to be used again with the same client.  <a href="#ade0f49a6468ea81eec1e97ace81b926e">More...</a><br /></td></tr>
+<tr class="separator:ade0f49a6468ea81eec1e97ace81b926e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The context class uses different concepts : 1) State is a state-machine code which indicates where the context 2) Constant property should be set when an <a class="el" href="classo_z_1_1_i_module.html" title="This class is the interface of every module.">IModule</a> want to specify that his process is constant and thus can be cached. 3) <a class="el" href="classo_z_1_1_endpoint.html">Endpoint</a> is the client who sent a message. </p>
@@ -277,6 +280,26 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ade0f49a6468ea81eec1e97ace81b926e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade0f49a6468ea81eec1e97ace81b926e">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Context::clear </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prepare the context to be used again with the same client. </p>
+
+</div>
+</div>
 <a id="ad2814c8e2b850cb4c5a70a964dbd3d58"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad2814c8e2b850cb4c5a70a964dbd3d58">&#9670;&nbsp;</a></span>getPacket() <span class="overload">[1/2]</span></h2>
 

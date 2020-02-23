@@ -71,6 +71,11 @@ public:
      */
     void setEncryption(const bool value) noexcept { _useEncryption = value; }
 
+    /**
+     * @brief Clear array without changing client parameters
+     */
+    void clear(void) { _byteArray.clear(); }
+
 private:
     ByteArray _byteArray {};
     Endpoint _endpoint {};

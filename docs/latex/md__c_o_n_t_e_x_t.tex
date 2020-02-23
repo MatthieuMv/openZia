@@ -86,7 +86,7 @@ The pipeline was first designed to be implemented as a computational pipeline (a
 \DoxyCodeLine{}
 \DoxyCodeLine{void MyServer::onClientReadable(Client \&client)}
 \DoxyCodeLine{\{}
-\DoxyCodeLine{    client.context.reset();}
+\DoxyCodeLine{    client.context.clear();}
 \DoxyCodeLine{    if (!\_pipeline.onMessageAvaible(client.context)) \{}
 \DoxyCodeLine{        // No module processed it, you can either throw or read it yourself before running pipeline}
 \DoxyCodeLine{        throw ...;}

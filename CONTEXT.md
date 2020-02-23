@@ -84,7 +84,7 @@ void MyServer::onClientDisconnected(Client &client)
 
 void MyServer::onClientReadable(Client &client)
 {
-	client.context.reset();
+	client.context.clear();
 	if (!_pipeline.onMessageAvaible(client.context)) {
 		// No module processed it, you can either throw or read it yourself before running pipeline
 		throw ...;

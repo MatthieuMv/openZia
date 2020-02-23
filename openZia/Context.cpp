@@ -27,3 +27,12 @@ bool Context::nextState(void) noexcept
         return true;
     }
 }
+
+void Context::clear(void)
+{
+    _packet.clear();
+    _request.clear();
+    _response.clear();
+    _state = State::BeforeParse;
+    _constant = true;
+}
