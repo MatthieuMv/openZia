@@ -59,6 +59,16 @@ public:
      */
     void setMethod(const Method method) noexcept { _method = method; }
 
+    /**
+     * @brief Clear internals
+     */
+    void clear(void) override {
+        Message::clear();
+        _uri.clear();
+        _queryParameters.clear();
+        _method = Method::NullMethod;
+    }
+
 private:
     URI _uri {};
     QueryParameters _queryParameters {};

@@ -40,3 +40,12 @@ bool Context::hasMetadata(const std::string &key) const
 {
     return _metadata.find(key) != _metadata.end();
 }
+
+void Context::clear(void)
+{
+    _packet.clear();
+    _request.clear();
+    _response.clear();
+    _state = State::BeforeParse;
+    _constant = true;
+}

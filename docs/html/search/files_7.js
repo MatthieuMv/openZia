@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ilogger_2ehpp',['ILogger.hpp',['../_i_logger_8hpp.html',1,'']]],
-  ['imodule_2ecpp',['IModule.cpp',['../_i_module_8cpp.html',1,'']]],
-  ['imodule_2ehpp',['IModule.hpp',['../_i_module_8hpp.html',1,'']]]
+  ['log_2ecpp',['Log.cpp',['../_log_8cpp.html',1,'']]],
+  ['log_2ehpp',['Log.hpp',['../_log_8hpp.html',1,'']]],
+  ['log_2eipp',['Log.ipp',['../_log_8ipp.html',1,'']]]
 ];

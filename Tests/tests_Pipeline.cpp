@@ -124,6 +124,7 @@ Test(Pipeline, ABC)
     cr_assert_eq(a->c->fd, -1);
     pipeline.onConnection(42, Endpoint());
     cr_assert_eq(a->c->fd, 42);
+    cr_assert_not(pipeline.onMessageAvaible(ctx));
     pipeline.runPipeline(ctx);
     cr_assert_eq(ctx.getState(), State::Error);
     cr_assert_eq(a->x, 1);
@@ -155,4 +156,33 @@ Test(Pipeline, Abis)
 
     cr_assert(CrashTest([&pipeline] { pipeline.loadModules(); }));
     cr_assert_not(pipeline.findModule<C>());
+}
+
+class X : public IModule
+{
+public:
+    virtual const char *getName(void) const { return "X"; }
+
+    virtual void onRegisterCallbacks(Pipeline &pipeline) {
+    }
+
+    virtual bool onMessageAvaible(oZ::Context &) {
+        return true;
+    }
+};
+
+class MsgPipeline : public Pipeline
+{
+    virtual void onLoadModules(const std::string &) override {
+        addModule<X>();
+    }
+};
+
+Test(Pipeline, Message)
+{
+    MsgPipeline pipeline;
+    oZ::Context ctx;
+
+    pipeline.loadModules();
+    cr_assert(pipeline.onMessageAvaible(ctx));
 }

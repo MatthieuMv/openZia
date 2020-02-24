@@ -17,6 +17,5 @@ var searchData=
   ['modulelist',['ModuleList',['../classo_z_1_1_pipeline.html#a3bb478d291a83763b269d8d27e186a47',1,'oZ::Pipeline']]],
   ['moduleptr',['ModulePtr',['../namespaceo_z.html#af5a56aaaee027504979038f38991adcf',1,'oZ']]],
   ['movedpermanently',['MovedPermanently',['../namespaceo_z_1_1_h_t_t_p.html#acd43703151305f79b1e2f42e98ee8199a32638c25f4c913fce6214c2c4afff9dc',1,'oZ::HTTP']]],
-  ['multiplechoices',['MultipleChoices',['../namespaceo_z_1_1_h_t_t_p.html#acd43703151305f79b1e2f42e98ee8199aa589749d075c3423333bdc93e3b4e774',1,'oZ::HTTP']]],
-  ['mypipeline',['MyPipeline',['../class_my_pipeline.html',1,'']]]
+  ['multiplechoices',['MultipleChoices',['../namespaceo_z_1_1_h_t_t_p.html#acd43703151305f79b1e2f42e98ee8199aa589749d075c3423333bdc93e3b4e774',1,'oZ::HTTP']]]
 ];

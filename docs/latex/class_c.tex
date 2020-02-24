@@ -11,9 +11,9 @@ virtual const char $\ast$ \mbox{\hyperlink{class_c_ad5f4b90909e9c14fc2601adc54ff
 \begin{DoxyCompactList}\small\item\em Get the module name. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_c_ae55c5d0571aadf7e48cae4d1e4fcf591}{on\+Register\+Callbacks}} (\mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} \&pipeline)
 \begin{DoxyCompactList}\small\item\em Register module\textquotesingle{}s callbacks in the pipeline. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{class_c_a9d2de0b00320ee2011d7e326346d00cb}{on\+Connection}} (const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}} fd\+\_\+, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}, const bool)
+virtual void \mbox{\hyperlink{class_c_a9d2de0b00320ee2011d7e326346d00cb}{on\+Connection}} (const File\+Descriptor fd\+\_\+, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}, const bool)
 \begin{DoxyCompactList}\small\item\em Callback used to intercept client connections. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{class_c_ab9bef2875c2d19d674aa592f63a21bc1}{on\+Disconnection}} (const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}}, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}})
+virtual void \mbox{\hyperlink{class_c_ab9bef2875c2d19d674aa592f63a21bc1}{on\+Disconnection}} (const File\+Descriptor, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}})
 \begin{DoxyCompactList}\small\item\em Callback used to intercept client disconnections. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -44,7 +44,7 @@ Implements \mbox{\hyperlink{classo_z_1_1_i_module_af41d45158fd28e1bd86a34e25f528
 \index{C@{C}!onConnection@{onConnection}}
 \index{onConnection@{onConnection}!C@{C}}
 \subsubsection{\texorpdfstring{onConnection()}{onConnection()}}
-{\footnotesize\ttfamily virtual void C\+::on\+Connection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceo_z_acbb8d05709257b6414b3979597f88c0c}{File\+Descriptor}}}]{fd,  }\item[{const}]{endpoint,  }\item[{const bool}]{use\+Encryption }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual void C\+::on\+Connection (\begin{DoxyParamCaption}\item[{const File\+Descriptor}]{fd,  }\item[{const}]{endpoint,  }\item[{const bool}]{use\+Encryption }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
@@ -52,7 +52,7 @@ Callback used to intercept client connections.
 
 
 
-Reimplemented from \mbox{\hyperlink{classo_z_1_1_i_module_a8acf56655f9e59a8a04afd8b0adf79d6}{o\+Z\+::\+I\+Module}}.
+Reimplemented from \mbox{\hyperlink{classo_z_1_1_i_module_aab3baca66d6f5447376a4d1031f6cc72}{o\+Z\+::\+I\+Module}}.
 
 \mbox{\Hypertarget{class_c_ab9bef2875c2d19d674aa592f63a21bc1}\label{class_c_ab9bef2875c2d19d674aa592f63a21bc1}} 
 \index{C@{C}!onDisconnection@{onDisconnection}}

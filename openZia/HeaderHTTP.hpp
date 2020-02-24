@@ -106,6 +106,11 @@ public:
      */
     [[nodiscard]] const StringMultimap &getStringMultimap(void) const noexcept { return _mmap; }
 
+    /**
+     * @brief Clear internals
+     */
+    void clear(void) { _mmap.clear(); }
+
 private:
     StringMultimap _mmap {};
 };

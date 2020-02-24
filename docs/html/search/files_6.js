@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['headerhttp_2ehpp',['HeaderHTTP.hpp',['../_header_h_t_t_p_8hpp.html',1,'']]],
-  ['headerhttp_2eipp',['HeaderHTTP.ipp',['../_header_h_t_t_p_8ipp.html',1,'']]],
-  ['hello_2emd',['HELLO.md',['../_h_e_l_l_o_8md.html',1,'']]],
-  ['http_2ehpp',['HTTP.hpp',['../_h_t_t_p_8hpp.html',1,'']]]
+  ['ilogger_2ehpp',['ILogger.hpp',['../_i_logger_8hpp.html',1,'']]],
+  ['imodule_2ecpp',['IModule.cpp',['../_i_module_8cpp.html',1,'']]],
+  ['imodule_2ehpp',['IModule.hpp',['../_i_module_8hpp.html',1,'']]]
 ];

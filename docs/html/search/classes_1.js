@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['b',['B',['../class_b.html',1,'']]],
-  ['basiclogger',['BasicLogger',['../class_basic_logger.html',1,'']]]
+  ['dynamicloader',['DynamicLoader',['../classo_z_1_1_dynamic_loader.html',1,'oZ']]]
 ];

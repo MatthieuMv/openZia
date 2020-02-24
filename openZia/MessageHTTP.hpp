@@ -48,6 +48,14 @@ public:
      */
     void setVersion(const Version version) noexcept { _version = version; }
 
+    /**
+     * @brief Clear internals
+     */
+    virtual void clear(void) {
+        _header.clear();
+        _body.clear();
+    }
+
 private:
     Header _header {};
     Body _body {};

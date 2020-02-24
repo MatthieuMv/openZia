@@ -82,7 +82,7 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="_i_module_8hpp_source.html">IModule.hpp</a>&gt;</code></p>
 
-<p>Inherited by <a class="el" href="class_a.html">A</a>, <a class="el" href="class_b.html">B</a>, <a class="el" href="class_c.html">C</a>, <a class="el" href="class_foo_module.html">FooModule</a>, and <a class="el" href="classo_z_1_1_i_logger.html">oZ::ILogger</a>.</p>
+<p>Inherited by <a class="el" href="classo_z_1_1_i_logger.html">oZ::ILogger</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -92,9 +92,6 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a21fdd98fb701ae6f7f0e0de14beb72de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#a21fdd98fb701ae6f7f0e0de14beb72de">IModule</a> (void)=default</td></tr>
-<tr class="memdesc:a21fdd98fb701ae6f7f0e0de14beb72de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classo_z_1_1_i_module.html" title="This class is the interface of every module.">IModule</a> object.  <a href="#a21fdd98fb701ae6f7f0e0de14beb72de">More...</a><br /></td></tr>
-<tr class="separator:a21fdd98fb701ae6f7f0e0de14beb72de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ac6f3edf9fe885b2510dc01379a951c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#a6ac6f3edf9fe885b2510dc01379a951c">~IModule</a> (void)=default</td></tr>
 <tr class="memdesc:a6ac6f3edf9fe885b2510dc01379a951c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classo_z_1_1_i_module.html" title="This class is the interface of every module.">IModule</a> object.  <a href="#a6ac6f3edf9fe885b2510dc01379a951c">More...</a><br /></td></tr>
 <tr class="separator:a6ac6f3edf9fe885b2510dc01379a951c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,12 +110,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a61a2cc76594401ed2f50931a6a6b76f3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#a61a2cc76594401ed2f50931a6a6b76f3">onLoadConfigurationFile</a> (const std::string &amp;directory)</td></tr>
 <tr class="memdesc:a61a2cc76594401ed2f50931a6a6b76f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called after module retreived its dependencies.  <a href="#a61a2cc76594401ed2f50931a6a6b76f3">More...</a><br /></td></tr>
 <tr class="separator:a61a2cc76594401ed2f50931a6a6b76f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8acf56655f9e59a8a04afd8b0adf79d6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#a8acf56655f9e59a8a04afd8b0adf79d6">onConnection</a> (const <a class="el" href="namespaceo_z.html#acbb8d05709257b6414b3979597f88c0c">FileDescriptor</a> fd, const <a class="el" href="classo_z_1_1_endpoint.html">Endpoint</a> endpoint, bool useEncryption=false)</td></tr>
-<tr class="memdesc:a8acf56655f9e59a8a04afd8b0adf79d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback used to intercept client connections.  <a href="#a8acf56655f9e59a8a04afd8b0adf79d6">More...</a><br /></td></tr>
-<tr class="separator:a8acf56655f9e59a8a04afd8b0adf79d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa178220a4e7ba0cca50a131403e04847"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#aa178220a4e7ba0cca50a131403e04847">onDisconnection</a> (const <a class="el" href="namespaceo_z.html#acbb8d05709257b6414b3979597f88c0c">FileDescriptor</a> fd, const <a class="el" href="classo_z_1_1_endpoint.html">Endpoint</a> endpoint)</td></tr>
+<tr class="memitem:aab3baca66d6f5447376a4d1031f6cc72"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#aab3baca66d6f5447376a4d1031f6cc72">onConnection</a> (const FileDescriptor fd, const <a class="el" href="classo_z_1_1_endpoint.html">Endpoint</a> endpoint, const bool useEncryption)</td></tr>
+<tr class="memdesc:aab3baca66d6f5447376a4d1031f6cc72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback used to intercept client connections.  <a href="#aab3baca66d6f5447376a4d1031f6cc72">More...</a><br /></td></tr>
+<tr class="separator:aab3baca66d6f5447376a4d1031f6cc72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa178220a4e7ba0cca50a131403e04847"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#aa178220a4e7ba0cca50a131403e04847">onDisconnection</a> (const FileDescriptor fd, const <a class="el" href="classo_z_1_1_endpoint.html">Endpoint</a> endpoint)</td></tr>
 <tr class="memdesc:aa178220a4e7ba0cca50a131403e04847"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback used to intercept client disconnections.  <a href="#aa178220a4e7ba0cca50a131403e04847">More...</a><br /></td></tr>
 <tr class="separator:aa178220a4e7ba0cca50a131403e04847"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7f25d557f48e4117979818ec89b9e12"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#ae7f25d557f48e4117979818ec89b9e12">onMessageAvaible</a> (<a class="el" href="classo_z_1_1_context.html">Context</a> &amp;context)</td></tr>
+<tr class="memdesc:ae7f25d557f48e4117979818ec89b9e12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback used to read client message and prepare a given context with the data.  <a href="#ae7f25d557f48e4117979818ec89b9e12">More...</a><br /></td></tr>
+<tr class="separator:ae7f25d557f48e4117979818ec89b9e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class is the interface of every module. </p>
@@ -142,34 +142,6 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a21fdd98fb701ae6f7f0e0de14beb72de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21fdd98fb701ae6f7f0e0de14beb72de">&#9670;&nbsp;</a></span>IModule()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">oZ::IModule::IModule </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Construct a new <a class="el" href="classo_z_1_1_i_module.html" title="This class is the interface of every module.">IModule</a> object. </p>
-
-</div>
-</div>
 <a id="a6ac6f3edf9fe885b2510dc01379a951c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6ac6f3edf9fe885b2510dc01379a951c">&#9670;&nbsp;</a></span>~IModule()</h2>
 
@@ -226,8 +198,6 @@ Public Member Functions</h2></td></tr>
 <p>Get the module dependencies. </p>
 <p>By default a module has no dependencies </p>
 
-<p>Reimplemented in <a class="el" href="class_abis.html#a20476073293d54658c3891decbb4a725">Abis</a>, and <a class="el" href="class_a.html#a2220cafae67f880a553d6219dfcf8581">A</a>.</p>
-
 </div>
 </div>
 <a id="af41d45158fd28e1bd86a34e25f5282d6"></a>
@@ -256,12 +226,10 @@ Public Member Functions</h2></td></tr>
 
 <p>Get the module name. </p>
 
-<p>Implemented in <a class="el" href="class_c.html#ad5f4b90909e9c14fc2601adc54ffdfa6">C</a>, <a class="el" href="class_b.html#ae304625cf30ffd9574cc71682558cf2e">B</a>, <a class="el" href="class_a.html#a2d19f0df2a97d6c3ad2c763f9134af82">A</a>, <a class="el" href="class_test_logger.html#a4e3ad3222ab7495cf30bb5b1a5270795">TestLogger</a>, <a class="el" href="class_basic_logger.html#a832838fa70c5910babd911b767a5f6f7">BasicLogger</a>, and <a class="el" href="class_foo_module.html#ac71d5e6de92ab9c804cc708528f052d2">FooModule</a>.</p>
-
 </div>
 </div>
-<a id="a8acf56655f9e59a8a04afd8b0adf79d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8acf56655f9e59a8a04afd8b0adf79d6">&#9670;&nbsp;</a></span>onConnection()</h2>
+<a id="aab3baca66d6f5447376a4d1031f6cc72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab3baca66d6f5447376a4d1031f6cc72">&#9670;&nbsp;</a></span>onConnection()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -272,7 +240,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void IModule::onConnection </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceo_z.html#acbb8d05709257b6414b3979597f88c0c">FileDescriptor</a>&#160;</td>
+          <td class="paramtype">const FileDescriptor&#160;</td>
           <td class="paramname"><em>fd</em>, </td>
         </tr>
         <tr>
@@ -284,8 +252,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>useEncryption</em> = <code>false</code>&#160;</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>useEncryption</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -302,8 +270,6 @@ Public Member Functions</h2></td></tr>
 
 <p>Callback used to intercept client connections. </p>
 
-<p>Reimplemented in <a class="el" href="class_c.html#a9d2de0b00320ee2011d7e326346d00cb">C</a>.</p>
-
 </div>
 </div>
 <a id="aa178220a4e7ba0cca50a131403e04847"></a>
@@ -318,7 +284,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void IModule::onDisconnection </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceo_z.html#acbb8d05709257b6414b3979597f88c0c">FileDescriptor</a>&#160;</td>
+          <td class="paramtype">const FileDescriptor&#160;</td>
           <td class="paramname"><em>fd</em>, </td>
         </tr>
         <tr>
@@ -341,8 +307,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Callback used to intercept client disconnections. </p>
-
-<p>Reimplemented in <a class="el" href="class_c.html#ab9bef2875c2d19d674aa592f63a21bc1">C</a>.</p>
 
 </div>
 </div>
@@ -374,7 +338,34 @@ Public Member Functions</h2></td></tr>
 <p>The given directory is the path to configuration files</p>
 <p>This function is not pure virtual because you may not need it </p>
 
-<p>Reimplemented in <a class="el" href="class_a.html#aa096a581a39df500ec97e2d48c24fbef">A</a>.</p>
+</div>
+</div>
+<a id="ae7f25d557f48e4117979818ec89b9e12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7f25d557f48e4117979818ec89b9e12">&#9670;&nbsp;</a></span>onMessageAvaible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool IModule::onMessageAvaible </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classo_z_1_1_context.html">Context</a> &amp;&#160;</td>
+          <td class="paramname"><em>context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback used to read client message and prepare a given context with the data. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the message has been read and the pipeline can be runned </dd></dl>
 
 </div>
 </div>
@@ -404,7 +395,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Register module's callbacks in the pipeline. </p>
 
-<p>Implemented in <a class="el" href="class_c.html#ae55c5d0571aadf7e48cae4d1e4fcf591">C</a>, <a class="el" href="class_b.html#a681f13a5b7d401fe80a18b63f90b0f89">B</a>, <a class="el" href="classo_z_1_1_i_logger.html#a10732b6da6e8f085c6fe5fa154d361ef">oZ::ILogger</a>, <a class="el" href="class_a.html#ac82f8db798576ee2eff8b6b91b77c239">A</a>, <a class="el" href="class_test_logger.html#a0ee94278a66b189ca55f04e40192b5d1">TestLogger</a>, and <a class="el" href="class_foo_module.html#a34a4cc51ff4c493a981d61e9d9eeeb1a">FooModule</a>.</p>
+<p>Implemented in <a class="el" href="classo_z_1_1_i_logger.html#a10732b6da6e8f085c6fe5fa154d361ef">oZ::ILogger</a>.</p>
 
 </div>
 </div>
@@ -435,8 +426,6 @@ Public Member Functions</h2></td></tr>
 <p>This function is called once module registered their callbacks. </p>
 <p>There you should (if needed) implement dependencies search Be careful, at this point other modules may not have retreived their dependencies ! Use the pipeline only to find your dependencies and store their shared_ptr instances</p>
 <p>This function is not pure virtual because you may not need it </p>
-
-<p>Reimplemented in <a class="el" href="class_a.html#a968473c1dcccfee5502df74229fb263b">A</a>.</p>
 
 </div>
 </div>

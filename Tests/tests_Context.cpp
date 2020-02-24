@@ -56,6 +56,9 @@ Test(Context, Basics)
     cr_assert(ctx.getPacket().getFileDescriptor() == -1);
     context.getPacket().setFileDescriptor(42);
     cr_assert_eq(ctx.getPacket().getFileDescriptor(), 42);
+    context.clear();
+    cr_assert(context.getPacket().getByteArray().empty());
+    cr_assert_eq(context.getPacket().getEndpoint(), end2);
 }
 
 Test(Context, Metadatas)
