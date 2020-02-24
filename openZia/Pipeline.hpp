@@ -71,7 +71,7 @@ public:
     /**
      * @brief Destroy the Pipeline object
      */
-    virtual ~Pipeline(void) = default;
+    virtual ~Pipeline(void);
 
     /**
      * @brief Find modules and load them into the pipeline.
@@ -82,6 +82,11 @@ public:
      *      4) Load configuration files of each modules
      */
     void loadModules(void);
+
+    /**
+     * @brief Resets pipeline
+     */
+    void clear(void);
 
     /**
      * @brief Inserts a callback handler into the pipeline with given state and priority

@@ -47,7 +47,6 @@ public:
      */
     static LoggerList &GetLoggerList(void);
 
-
 private:
     Level _level = Level::Information;
     std::ostringstream _os {};

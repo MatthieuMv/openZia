@@ -28,15 +28,26 @@ Pipeline::Pipeline(std::string &&moduleDir, std::string &&configurationDir)
 {
 }
 
+Pipeline::~Pipeline(void)
+{
+    clear();
+}
+
 void Pipeline::loadModules(void)
 {
-    for (auto &state : _pipeline)
-        state.clear();
-    _modules.clear();
-    _dynamicLoader.release();
+    clear();
     onLoadModules(_moduleDir);
     checkModulesDependencies();
     createPipeline();
+}
+
+void Pipeline::clear(void)
+{
+    for (auto &state : _pipeline)
+        state.clear();
+    Log::GetLoggerList().clear();
+    _modules.clear();
+    _dynamicLoader.release();
 }
 
 ModulePtr Pipeline::findModule(const char *name) const
