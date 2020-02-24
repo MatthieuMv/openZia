@@ -23,7 +23,7 @@
 using namespace std::string_literals;
 using namespace oZ;
 
-Pipeline::Pipeline(std::string &&moduleDir, std::string &&configurationDir)
+Pipeline::Pipeline(std::string moduleDir, std::string configurationDir)
     : _moduleDir(std::move(moduleDir)), _configurationDir(std::move(configurationDir))
 {
 }

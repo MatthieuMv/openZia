@@ -56,7 +56,7 @@ public:
      * @param moduleDir Directory containing modules to load
      * @param configurationDir Directory containing configuration files of modules
      */
-    Pipeline(std::string &&moduleDir = "Modules", std::string &&configurationDir = "Modules/Config");
+    Pipeline(std::string moduleDir = "Modules", std::string configurationDir = "Modules/Config");
 
     /**
      * @brief Disable copy constructor to prevent useless huge copies
