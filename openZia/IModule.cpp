@@ -21,11 +21,11 @@ void IModule::onLoadConfigurationFile(const std::string &)
 {
 }
 
-void IModule::onConnection(const FileDescriptor, const Endpoint, const bool)
+void IModule::onConnection(Context &)
 {
 }
 
-void IModule::onDisconnection(const FileDescriptor, const Endpoint)
+void IModule::onDisconnection(Context &)
 {
 }
 

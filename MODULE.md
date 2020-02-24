@@ -91,10 +91,13 @@ And that's it ! You don't have to implement anything else to create an independe
 However, there are more virtual functions for more complex needs. These functions are default-implemented to let you the choice of using them or not.
 ```C++
 // Callback triggered when a client is connected
-virtual void onConnected(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption);
+virtual void onConnected(Context &context);
 
 // Callback triggered when a client is disconnected
-virtual void onDisconnected(const FileDescriptor fd, const Endpoint endpoint);
+virtual void onDisconnected(Context &context);
+
+// Callback triggered when a client sent a message
+virtual bool onMessageAvaible(Context &context);
 
 // Get the list of dependencies (as a vector of raw string, see function getName above)
 virtual Dependencies getDependencies(void) const noexcept;
@@ -104,6 +107,57 @@ virtual void onRetreiveDependencies(Pipeline &pipeline);
 
 // Given a directory path (where all configs are), load module's configuration file
 virtual void onLoadConfigurationFile(const std::string &directory);
+```
+
+## HowTo: Networking
+
+If you implement networking as a standalone module, you need to use **Pipeline::onConnection**, **Pipeline::onDisconnection**, **IModule::onConnection**, **IModule::onDisconnection**, **IModule::onMessageAvaible** to implement it as a standalone module.
+
+```C++
+// Networking module
+class NetModule : public oZ::IModule
+{
+public:
+	virtual void onConnection(oZ::Context &context) {
+		// Do your connection stuff
+	}
+
+	virtual void onDisconnection(oZ::Context &context) {
+		// Do your disconnection stuff
+	}
+
+	virtual bool onMessageAvaible(oZ::Context &context) {
+		// Fill 'context.getPacket().getByteArray()' by reading is socket
+		return true; // Returns true to tell pipeline that you filled the context
+	}
+	// ...
+};
+
+// Client structure
+struct Client
+{
+	oZ::Context context {}; // Client's reusable context
+};
+
+void MyServer::onClientConnected(Client &client)
+{
+	_pipeline.onConnection(client.context);
+}
+
+void MyServer::onClientDisconnected(Client &client)
+{
+	_pipeline.onDisconnection(client.context);
+}
+
+void MyServer::onClientReadable(Client &client)
+{
+	client.context.clear();
+	if (!_pipeline.onMessageAvaible(client.context)) {
+		// No module processed it, you can either throw or read it yourself before running pipeline
+		throw ...;
+	}
+	// onMessageAvaible returned true, the message has been read and ran into the pipeline
+}
 ```
 
 ### HowTo: Dependencies

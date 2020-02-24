@@ -59,16 +59,16 @@ ModulePtr Pipeline::findModule(const char *name) const
     return nullptr;
 }
 
-void Pipeline::onConnection(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption)
+void Pipeline::onConnection(Context &context)
 {
     for (auto &module : _modules)
-        module->onConnection(fd, endpoint, useEncryption);
+        module->onConnection(context);
 }
 
-void Pipeline::onDisconnection(const FileDescriptor fd, const Endpoint endpoint)
+void Pipeline::onDisconnection(Context &context)
 {
     for (auto &module : _modules)
-        module->onDisconnection(fd, endpoint);
+        module->onDisconnection(context);
 }
 
 bool Pipeline::onMessageAvaible(Context &context)

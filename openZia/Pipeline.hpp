@@ -144,13 +144,15 @@ public:
 
     /**
      * @brief This function will trigger every module's 'onConnection' callback
+     * @param Context Context containing client data and metadata
      */
-    virtual void onConnection(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption = false);
+    virtual void onConnection(Context &context);
 
     /**
      * @brief This function will trigger every module's 'onDisconnection' callback
+     * @param Context Context containing client data and metadata
      */
-    virtual void onDisconnection(const FileDescriptor fd, const Endpoint endpoint);
+    virtual void onDisconnection(Context &context);
 
     /**
      * @brief This function will trigger every module's 'onMessageAvaible' callback

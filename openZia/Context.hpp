@@ -52,6 +52,8 @@ namespace oZ
  * 2) Constant property should be set when an IModule want to specify that his process
  *    is constant and thus can be cached.
  * 3) Endpoint is the client who sent a message
+ *
+ *  Please notice that this class is intended to be reused (1 for each client) to store once its data and metadata
  */
 class oZ::Context
 {

@@ -107,12 +107,12 @@ public:
     /**
      * @brief Callback used to intercept client connections
      */
-    virtual void onConnection(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption);
+    virtual void onConnection(Context &context);
 
     /**
      * @brief Callback used to intercept client disconnections
      */
-    virtual void onDisconnection(const FileDescriptor fd, const Endpoint endpoint);
+    virtual void onDisconnection(Context &context);
 
     /**
      * @brief Callback used to read client message and prepare a given context with the data

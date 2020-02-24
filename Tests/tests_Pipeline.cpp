@@ -87,11 +87,11 @@ public:
         pipeline.registerCallback(State::Interpret, Priority::Independent, [this](Context &) { ++x; return true; });
     }
 
-    virtual void onConnection(const FileDescriptor fd_, const Endpoint, const bool) {
-        fd = fd_;
+    virtual void onConnection(oZ::Context &context) {
+        fd = context.getPacket().getFileDescriptor();
     }
 
-    virtual void onDisconnection(const FileDescriptor, const Endpoint) {
+    virtual void onDisconnection(oZ::Context &context) {
         fd = -1;
     }
 
@@ -114,6 +114,7 @@ Test(Pipeline, ABC)
     ABCPipeline pipeline;
     Context ctx;
 
+    ctx.getPacket().setFileDescriptor(42);
     pipeline.loadModules();
     auto a = pipeline.findModule<A>();
     cr_assert(a);
@@ -122,7 +123,7 @@ Test(Pipeline, ABC)
     cr_assert(a->b);
     cr_assert(a->c);
     cr_assert_eq(a->c->fd, -1);
-    pipeline.onConnection(42, Endpoint());
+    pipeline.onConnection(ctx);
     cr_assert_eq(a->c->fd, 42);
     cr_assert_not(pipeline.onMessageAvaible(ctx));
     pipeline.runPipeline(ctx);
@@ -130,7 +131,7 @@ Test(Pipeline, ABC)
     cr_assert_eq(a->x, 1);
     cr_assert_eq(a->b->x, 1);
     cr_assert_eq(a->c->x, 1);
-    pipeline.onDisconnection(42, Endpoint());
+    pipeline.onDisconnection(ctx);
     cr_assert_eq(a->c->fd, -1);
 }
 
