@@ -28,6 +28,19 @@ bool Context::nextState(void) noexcept
     }
 }
 
+void Context::removeMetadata(const std::string &key)
+{
+    const auto &it = _metadata.find(key);
+
+    if (it != _metadata.end())
+        _metadata.erase(it);
+}
+
+bool Context::hasMetadata(const std::string &key) const
+{
+    return _metadata.find(key) != _metadata.end();
+}
+
 void Context::clear(void)
 {
     _packet.clear();

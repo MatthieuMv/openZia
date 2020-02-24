@@ -7,6 +7,10 @@
 
 #pragma once
 
+#include <any>
+#include <unordered_map>
+#include <string>
+
 #include "Packet.hpp"
 #include "HTTP.hpp"
 
@@ -52,6 +56,11 @@ namespace oZ
 class oZ::Context
 {
 public:
+    /**
+     * @brief Map containing implementation-dependant metadatas
+     */
+    using MetadataMap = std::unordered_map<std::string, std::any>;
+
     /**
      * @brief Construct a new Context object
      */
@@ -149,6 +158,34 @@ public:
     [[nodiscard]] bool isConstant(void) const noexcept { return _constant; }
 
     /**
+     * @brief This function sets a metadata to be used by any module
+     */
+    template<typename Type>
+    void setMetadata(const std::string &key, Type value);
+
+    /**
+     * @brief This function remove a metadata (if present)
+     */
+    void removeMetadata(const std::string &key);
+
+    /**
+     * @brief This function retreives a metadata to be used by any module
+     */
+    template<typename Type>
+    Type &getMetadata(const std::string &key);
+
+    /**
+     * @brief This function retreives a metadata to be used by any module
+     */
+    template<typename Type>
+    const Type &getMetadata(const std::string &key) const;
+
+    /**
+     * @brief This function checks if a metadata exist
+     */
+    bool hasMetadata(const std::string &key) const;
+
+    /**
      * @brief Prepare the context to be used again with the same client
      */
     void clear(void);
@@ -159,4 +196,7 @@ private:
     HTTP::Response _response {};
     State _state = State::BeforeParse;
     bool _constant = true;
+    MetadataMap _metadata {};
 };
+
+#include "Context.ipp"
