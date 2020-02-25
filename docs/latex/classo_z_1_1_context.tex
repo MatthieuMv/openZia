@@ -9,6 +9,11 @@ The context class uses different concepts \+: 1) State is a state-\/machine code
 
 {\ttfamily \#include $<$Context.\+hpp$>$}
 
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classo_z_1_1_context_a27f05cdc375f513979a6080896cf9496}{Metadata\+Map}} = std\+::unordered\+\_\+map$<$ std\+::string, std\+::any $>$
+\begin{DoxyCompactList}\small\item\em Map containing implementation-\/dependant metadatas. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -17,11 +22,15 @@ The context class uses different concepts \+: 1) State is a state-\/machine code
 \mbox{\hyperlink{classo_z_1_1_context_aa57df3d21eacc6e149f9c61c0c3f196b}{Context}} (\mbox{\hyperlink{classo_z_1_1_packet}{Packet}} \&\&packet)
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object using a packet. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classo_z_1_1_context_a906eb29f22e89bc121c47096c7a4b601}{Context}} (const \mbox{\hyperlink{classo_z_1_1_context}{Context}} \&other)=default
-\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object by copy (this operation can be very expensive !!) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object by copy (this operation can be very slow !!) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classo_z_1_1_context_ad4a49704266f6e8312b1c9c2ca8ad710}{Context}} (\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&\&other)=default
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object by move. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classo_z_1_1_context_afe2e01a552a7711772e4028f778703e8}{$\sim$\+Context}} (void)=default
 \begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classo_z_1_1_context}{Context}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classo_z_1_1_context}{Context}} \& \mbox{\hyperlink{classo_z_1_1_context_a85f1c7d649bb381f267383360b02b876}{operator=}} (const \mbox{\hyperlink{classo_z_1_1_context}{Context}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Copy assignment (this operation can be very slow !!) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classo_z_1_1_context}{Context}} \& \mbox{\hyperlink{classo_z_1_1_context_a8167016ce7db8d884383b113bb678736}{operator=}} (\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&\&other)=default
+\begin{DoxyCompactList}\small\item\em Move assignment. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classo_z_1_1_packet}{Packet}} \& \mbox{\hyperlink{classo_z_1_1_context_ad2814c8e2b850cb4c5a70a964dbd3d58}{get\+Packet}} (void) noexcept
 \begin{DoxyCompactList}\small\item\em Get the network \mbox{\hyperlink{classo_z_1_1_packet}{Packet}} of the context. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{classo_z_1_1_packet}{Packet}} \& \mbox{\hyperlink{classo_z_1_1_context_a25918977b74de5fc3874d38a2f235ba2}{get\+Packet}} (void) const noexcept
@@ -50,12 +59,37 @@ void \mbox{\hyperlink{classo_z_1_1_context_ada521ec57fbc2febfd61177e8bbc0128}{no
 \begin{DoxyCompactList}\small\item\em Tell that the \mbox{\hyperlink{classo_z_1_1_context}{Context}} is not constant and thus can\textquotesingle{}t be cached. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classo_z_1_1_context_a748147258019436983fdbbf6ed51c0b6}{is\+Constant}} (void) const noexcept
 \begin{DoxyCompactList}\small\item\em Check if the current \mbox{\hyperlink{classo_z_1_1_context}{Context}}\textquotesingle{}s state is constant (and if it can be cached) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Type $>$ }\\void \mbox{\hyperlink{classo_z_1_1_context_a7d5eb616d7daccab1f2cd8b3ae69c99c}{set\+Metadata}} (const std\+::string \&key, Type value)
+\begin{DoxyCompactList}\small\item\em This function sets a metadata to be used by any module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classo_z_1_1_context_a581fb3a0615050358b76f9216d3619e8}{remove\+Metadata}} (const std\+::string \&key)
+\begin{DoxyCompactList}\small\item\em This function remove a metadata (if present) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Type $>$ }\\Type \& \mbox{\hyperlink{classo_z_1_1_context_aea81da5e7f1b69e87f16d660554a1e9c}{get\+Metadata}} (const std\+::string \&key)
+\begin{DoxyCompactList}\small\item\em This function retreives a metadata to be used by any module. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Type $>$ }\\const Type \& \mbox{\hyperlink{classo_z_1_1_context_adc8893fcfcca33f84ad1f14dd41b62ec}{get\+Metadata}} (const std\+::string \&key) const
+\begin{DoxyCompactList}\small\item\em This function retreives a metadata to be used by any module. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classo_z_1_1_context_aac0bec30406ebdb0f41d286d9b42a2ec}{has\+Metadata}} (const std\+::string \&key) const
+\begin{DoxyCompactList}\small\item\em This function checks if a metadata exist. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classo_z_1_1_context_ade0f49a6468ea81eec1e97ace81b926e}{clear}} (void)
 \begin{DoxyCompactList}\small\item\em Prepare the context to be used again with the same client. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 The context class uses different concepts \+: 1) State is a state-\/machine code which indicates where the context 2) Constant property should be set when an \mbox{\hyperlink{classo_z_1_1_i_module}{I\+Module}} want to specify that his process is constant and thus can be cached. 3) \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} is the client who sent a message. 
+
+Please notice that this class is intended to be reused (1 for each client) to store once its data and metadata 
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classo_z_1_1_context_a27f05cdc375f513979a6080896cf9496}\label{classo_z_1_1_context_a27f05cdc375f513979a6080896cf9496}} 
+\index{oZ::Context@{oZ::Context}!MetadataMap@{MetadataMap}}
+\index{MetadataMap@{MetadataMap}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{MetadataMap}{MetadataMap}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classo_z_1_1_context_a27f05cdc375f513979a6080896cf9496}{o\+Z\+::\+Context\+::\+Metadata\+Map}} =  std\+::unordered\+\_\+map$<$std\+::string, std\+::any$>$}
+
+
+
+Map containing implementation-\/dependant metadatas. 
+
+
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classo_z_1_1_context_af3aab1b32d4333320612049bdafb07d7}\label{classo_z_1_1_context_af3aab1b32d4333320612049bdafb07d7}} 
@@ -86,7 +120,7 @@ Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object using a 
 
 
 
-Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object by copy (this operation can be very expensive !!) 
+Construct a new \mbox{\hyperlink{classo_z_1_1_context}{Context}} object by copy (this operation can be very slow !!) 
 
 \mbox{\Hypertarget{classo_z_1_1_context_ad4a49704266f6e8312b1c9c2ca8ad710}\label{classo_z_1_1_context_ad4a49704266f6e8312b1c9c2ca8ad710}} 
 \index{oZ::Context@{oZ::Context}!Context@{Context}}
@@ -120,6 +154,28 @@ Destroy the \mbox{\hyperlink{classo_z_1_1_context}{Context}} object.
 
 
 Prepare the context to be used again with the same client. 
+
+\mbox{\Hypertarget{classo_z_1_1_context_aea81da5e7f1b69e87f16d660554a1e9c}\label{classo_z_1_1_context_aea81da5e7f1b69e87f16d660554a1e9c}} 
+\index{oZ::Context@{oZ::Context}!getMetadata@{getMetadata}}
+\index{getMetadata@{getMetadata}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{getMetadata()}{getMetadata()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+Type \& o\+Z\+::\+Context\+::get\+Metadata (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+
+
+This function retreives a metadata to be used by any module. 
+
+\mbox{\Hypertarget{classo_z_1_1_context_adc8893fcfcca33f84ad1f14dd41b62ec}\label{classo_z_1_1_context_adc8893fcfcca33f84ad1f14dd41b62ec}} 
+\index{oZ::Context@{oZ::Context}!getMetadata@{getMetadata}}
+\index{getMetadata@{getMetadata}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{getMetadata()}{getMetadata()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+const Type \& o\+Z\+::\+Context\+::get\+Metadata (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const}
+
+
+
+This function retreives a metadata to be used by any module. 
 
 \mbox{\Hypertarget{classo_z_1_1_context_ad2814c8e2b850cb4c5a70a964dbd3d58}\label{classo_z_1_1_context_ad2814c8e2b850cb4c5a70a964dbd3d58}} 
 \index{oZ::Context@{oZ::Context}!getPacket@{getPacket}}
@@ -201,6 +257,16 @@ Get the current context\textquotesingle{} state.
 
 Fast error check. 
 
+\mbox{\Hypertarget{classo_z_1_1_context_aac0bec30406ebdb0f41d286d9b42a2ec}\label{classo_z_1_1_context_aac0bec30406ebdb0f41d286d9b42a2ec}} 
+\index{oZ::Context@{oZ::Context}!hasMetadata@{hasMetadata}}
+\index{hasMetadata@{hasMetadata}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{hasMetadata()}{hasMetadata()}}
+{\footnotesize\ttfamily bool Context\+::has\+Metadata (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const}
+
+
+
+This function checks if a metadata exist. 
+
 \mbox{\Hypertarget{classo_z_1_1_context_ac5dd957a1f76f466b86a179ed3146967}\label{classo_z_1_1_context_ac5dd957a1f76f466b86a179ed3146967}} 
 \index{oZ::Context@{oZ::Context}!isCompleted@{isCompleted}}
 \index{isCompleted@{isCompleted}!oZ::Context@{oZ::Context}}
@@ -241,6 +307,36 @@ Set internal state to the next one Return true if the state has changed (and the
 
 Tell that the \mbox{\hyperlink{classo_z_1_1_context}{Context}} is not constant and thus can\textquotesingle{}t be cached. 
 
+\mbox{\Hypertarget{classo_z_1_1_context_a85f1c7d649bb381f267383360b02b876}\label{classo_z_1_1_context_a85f1c7d649bb381f267383360b02b876}} 
+\index{oZ::Context@{oZ::Context}!operator=@{operator=}}
+\index{operator=@{operator=}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classo_z_1_1_context}{Context}}\& o\+Z\+::\+Context\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classo_z_1_1_context}{Context}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy assignment (this operation can be very slow !!) 
+
+\mbox{\Hypertarget{classo_z_1_1_context_a8167016ce7db8d884383b113bb678736}\label{classo_z_1_1_context_a8167016ce7db8d884383b113bb678736}} 
+\index{oZ::Context@{oZ::Context}!operator=@{operator=}}
+\index{operator=@{operator=}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classo_z_1_1_context}{Context}}\& o\+Z\+::\+Context\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Move assignment. 
+
+\mbox{\Hypertarget{classo_z_1_1_context_a581fb3a0615050358b76f9216d3619e8}\label{classo_z_1_1_context_a581fb3a0615050358b76f9216d3619e8}} 
+\index{oZ::Context@{oZ::Context}!removeMetadata@{removeMetadata}}
+\index{removeMetadata@{removeMetadata}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{removeMetadata()}{removeMetadata()}}
+{\footnotesize\ttfamily void Context\+::remove\+Metadata (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+
+
+This function remove a metadata (if present) 
+
 \mbox{\Hypertarget{classo_z_1_1_context_a036d993634650ee8414c2f12d49d0204}\label{classo_z_1_1_context_a036d993634650ee8414c2f12d49d0204}} 
 \index{oZ::Context@{oZ::Context}!setErrorState@{setErrorState}}
 \index{setErrorState@{setErrorState}!oZ::Context@{oZ::Context}}
@@ -250,6 +346,17 @@ Tell that the \mbox{\hyperlink{classo_z_1_1_context}{Context}} is not constant a
 
 
 Set nternal state to Error. 
+
+\mbox{\Hypertarget{classo_z_1_1_context_a7d5eb616d7daccab1f2cd8b3ae69c99c}\label{classo_z_1_1_context_a7d5eb616d7daccab1f2cd8b3ae69c99c}} 
+\index{oZ::Context@{oZ::Context}!setMetadata@{setMetadata}}
+\index{setMetadata@{setMetadata}!oZ::Context@{oZ::Context}}
+\subsubsection{\texorpdfstring{setMetadata()}{setMetadata()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+void o\+Z\+::\+Context\+::set\+Metadata (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{Type}]{value }\end{DoxyParamCaption})}
+
+
+
+This function sets a metadata to be used by any module. 
 
 \mbox{\Hypertarget{classo_z_1_1_context_aa71b839188393f2328ad9f9c5da08004}\label{classo_z_1_1_context_aa71b839188393f2328ad9f9c5da08004}} 
 \index{oZ::Context@{oZ::Context}!setState@{setState}}
@@ -266,4 +373,5 @@ Set the current context\textquotesingle{} state.
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 open\+Zia/\mbox{\hyperlink{_context_8hpp}{Context.\+hpp}}\item 
-open\+Zia/\mbox{\hyperlink{_context_8cpp}{Context.\+cpp}}\end{DoxyCompactItemize}
+open\+Zia/\mbox{\hyperlink{_context_8cpp}{Context.\+cpp}}\item 
+open\+Zia/\mbox{\hyperlink{_context_8ipp}{Context.\+ipp}}\end{DoxyCompactItemize}

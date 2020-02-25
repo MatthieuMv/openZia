@@ -4,6 +4,7 @@ var searchData=
   ['reason',['Reason',['../namespaceo_z_1_1_h_t_t_p.html#afcd8b91e5e8a7b6df0a7b3b298ec3965',1,'oZ::HTTP']]],
   ['registercallback',['registerCallback',['../classo_z_1_1_pipeline.html#a869b02b2b8953993ccfb882a3e1f3a0f',1,'oZ::Pipeline::registerCallback(State state, Priority priority, CallbackHandler &amp;&amp;handler)'],['../classo_z_1_1_pipeline.html#af6d96b2697aa6770a3f1dd205b12c1c3',1,'oZ::Pipeline::registerCallback(State state, Priority priority, ModuleType *target, bool(ModuleType::*)(Context &amp;))']]],
   ['release',['release',['../classo_z_1_1_dynamic_loader.html#a405559cdad1b8eba0bd3bee22fa764f9',1,'oZ::DynamicLoader']]],
+  ['removemetadata',['removeMetadata',['../classo_z_1_1_context.html#a581fb3a0615050358b76f9216d3619e8',1,'oZ::Context']]],
   ['request',['Request',['../classo_z_1_1_h_t_t_p_1_1_request.html',1,'oZ::HTTP']]],
   ['requestedrangenotsatisfiable',['RequestedRangeNotSatisfiable',['../namespaceo_z_1_1_h_t_t_p.html#acd43703151305f79b1e2f42e98ee8199a7779e53fc887ac0429f4ebde5fc0b59f',1,'oZ::HTTP']]],
   ['requestentitytoolarge',['RequestEntityTooLarge',['../namespaceo_z_1_1_h_t_t_p.html#acd43703151305f79b1e2f42e98ee8199a1d2dd18ee1a925e5887cbc2f9202e779',1,'oZ::HTTP']]],

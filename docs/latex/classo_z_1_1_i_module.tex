@@ -33,9 +33,9 @@ virtual void \mbox{\hyperlink{classo_z_1_1_i_module_af183d3711ef7d7a6966ac078b63
 \begin{DoxyCompactList}\small\item\em This function is called once module registered their callbacks. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classo_z_1_1_i_module_a61a2cc76594401ed2f50931a6a6b76f3}{on\+Load\+Configuration\+File}} (const std\+::string \&directory)
 \begin{DoxyCompactList}\small\item\em This function is called after module retreived its dependencies. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{classo_z_1_1_i_module_aab3baca66d6f5447376a4d1031f6cc72}{on\+Connection}} (const File\+Descriptor fd, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint, const bool use\+Encryption)
+virtual void \mbox{\hyperlink{classo_z_1_1_i_module_a41527d4435446ad02f815aa0617c6344}{on\+Connection}} (\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&context)
 \begin{DoxyCompactList}\small\item\em Callback used to intercept client connections. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{classo_z_1_1_i_module_aa178220a4e7ba0cca50a131403e04847}{on\+Disconnection}} (const File\+Descriptor fd, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint)
+virtual void \mbox{\hyperlink{classo_z_1_1_i_module_aa8518b9de8d65dcbbdb383ac6f9ccfc2}{on\+Disconnection}} (\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&context)
 \begin{DoxyCompactList}\small\item\em Callback used to intercept client disconnections. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{classo_z_1_1_i_module_ae7f25d557f48e4117979818ec89b9e12}{on\+Message\+Avaible}} (\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&context)
 \begin{DoxyCompactList}\small\item\em Callback used to read client message and prepare a given context with the data. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -95,21 +95,21 @@ By default a module has no dependencies \mbox{\Hypertarget{classo_z_1_1_i_module
 
 Get the module name. 
 
-\mbox{\Hypertarget{classo_z_1_1_i_module_aab3baca66d6f5447376a4d1031f6cc72}\label{classo_z_1_1_i_module_aab3baca66d6f5447376a4d1031f6cc72}} 
+\mbox{\Hypertarget{classo_z_1_1_i_module_a41527d4435446ad02f815aa0617c6344}\label{classo_z_1_1_i_module_a41527d4435446ad02f815aa0617c6344}} 
 \index{oZ::IModule@{oZ::IModule}!onConnection@{onConnection}}
 \index{onConnection@{onConnection}!oZ::IModule@{oZ::IModule}}
 \subsubsection{\texorpdfstring{onConnection()}{onConnection()}}
-{\footnotesize\ttfamily void I\+Module\+::on\+Connection (\begin{DoxyParamCaption}\item[{const File\+Descriptor}]{fd,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint,  }\item[{const bool}]{use\+Encryption }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void I\+Module\+::on\+Connection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
 Callback used to intercept client connections. 
 
-\mbox{\Hypertarget{classo_z_1_1_i_module_aa178220a4e7ba0cca50a131403e04847}\label{classo_z_1_1_i_module_aa178220a4e7ba0cca50a131403e04847}} 
+\mbox{\Hypertarget{classo_z_1_1_i_module_aa8518b9de8d65dcbbdb383ac6f9ccfc2}\label{classo_z_1_1_i_module_aa8518b9de8d65dcbbdb383ac6f9ccfc2}} 
 \index{oZ::IModule@{oZ::IModule}!onDisconnection@{onDisconnection}}
 \index{onDisconnection@{onDisconnection}!oZ::IModule@{oZ::IModule}}
 \subsubsection{\texorpdfstring{onDisconnection()}{onDisconnection()}}
-{\footnotesize\ttfamily void I\+Module\+::on\+Disconnection (\begin{DoxyParamCaption}\item[{const File\+Descriptor}]{fd,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void I\+Module\+::on\+Disconnection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 

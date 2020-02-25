@@ -110,12 +110,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6f9e61063bafb53108f1058f3de8c56a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a6f9e61063bafb53108f1058f3de8c56a">Pipeline</a> (<a class="el" href="classo_z_1_1_pipeline.html">Pipeline</a> &amp;&amp;other)=default</td></tr>
 <tr class="memdesc:a6f9e61063bafb53108f1058f3de8c56a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classo_z_1_1_pipeline.html" title="The pileline abstracts the pipeline of modules.">Pipeline</a> object by move.  <a href="#a6f9e61063bafb53108f1058f3de8c56a">More...</a><br /></td></tr>
 <tr class="separator:a6f9e61063bafb53108f1058f3de8c56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91969687e5d9dccb384febbce62d5dd9"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a91969687e5d9dccb384febbce62d5dd9">~Pipeline</a> (void)=default</td></tr>
-<tr class="memdesc:a91969687e5d9dccb384febbce62d5dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classo_z_1_1_pipeline.html" title="The pileline abstracts the pipeline of modules.">Pipeline</a> object.  <a href="#a91969687e5d9dccb384febbce62d5dd9">More...</a><br /></td></tr>
-<tr class="separator:a91969687e5d9dccb384febbce62d5dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae273add0ea7490c0ca4c13cb3683ec6f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#ae273add0ea7490c0ca4c13cb3683ec6f">~Pipeline</a> (void)</td></tr>
+<tr class="memdesc:ae273add0ea7490c0ca4c13cb3683ec6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classo_z_1_1_pipeline.html" title="The pileline abstracts the pipeline of modules.">Pipeline</a> object.  <a href="#ae273add0ea7490c0ca4c13cb3683ec6f">More...</a><br /></td></tr>
+<tr class="separator:ae273add0ea7490c0ca4c13cb3683ec6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2815743412c13100c68fee0d87283417"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a2815743412c13100c68fee0d87283417">loadModules</a> (void)</td></tr>
 <tr class="memdesc:a2815743412c13100c68fee0d87283417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find modules and load them into the pipeline. This function will : 1) Trigger the onLoadModules callback that you should implement yourself 2) Check if modules dependencies are avaible 3) Build the internal pipeline with it. 4) Load configuration files of each modules.  <a href="#a2815743412c13100c68fee0d87283417">More...</a><br /></td></tr>
 <tr class="separator:a2815743412c13100c68fee0d87283417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ba573fcba5ea0a749ca1c214bd031f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a7ba573fcba5ea0a749ca1c214bd031f5">clear</a> (void)</td></tr>
+<tr class="memdesc:a7ba573fcba5ea0a749ca1c214bd031f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets pipeline.  <a href="#a7ba573fcba5ea0a749ca1c214bd031f5">More...</a><br /></td></tr>
+<tr class="separator:a7ba573fcba5ea0a749ca1c214bd031f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a869b02b2b8953993ccfb882a3e1f3a0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a869b02b2b8953993ccfb882a3e1f3a0f">registerCallback</a> (<a class="el" href="namespaceo_z.html#a356b278f7c65def0cae75fca8cae268e">State</a> state, <a class="el" href="namespaceo_z.html#af05a92eb185d18369e9b4acdcd9dcd12">Priority</a> priority, <a class="el" href="classo_z_1_1_pipeline.html#a5a71ea2f2d4be5b82589c1b8175722f4">CallbackHandler</a> &amp;&amp;handler)</td></tr>
 <tr class="memdesc:a869b02b2b8953993ccfb882a3e1f3a0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a callback handler into the pipeline with given state and priority.  <a href="#a869b02b2b8953993ccfb882a3e1f3a0f">More...</a><br /></td></tr>
 <tr class="separator:a869b02b2b8953993ccfb882a3e1f3a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,12 +149,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4f1abc0f7c0985dbc859cd5b20082998"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a4f1abc0f7c0985dbc859cd5b20082998">findModule</a> (void) const</td></tr>
 <tr class="memdesc:a4f1abc0f7c0985dbc859cd5b20082998"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a module of Type in internal module list returning it as a shared pointer.  <a href="#a4f1abc0f7c0985dbc859cd5b20082998">More...</a><br /></td></tr>
 <tr class="separator:a4f1abc0f7c0985dbc859cd5b20082998"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cfbdda27bd9ef9919400ce598846731"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a7cfbdda27bd9ef9919400ce598846731">onConnection</a> (const FileDescriptor fd, const <a class="el" href="classo_z_1_1_endpoint.html">Endpoint</a> endpoint, const bool useEncryption=false)</td></tr>
-<tr class="memdesc:a7cfbdda27bd9ef9919400ce598846731"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will trigger every module's 'onConnection' callback.  <a href="#a7cfbdda27bd9ef9919400ce598846731">More...</a><br /></td></tr>
-<tr class="separator:a7cfbdda27bd9ef9919400ce598846731"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd035df19d82c10b55af51e727e08407"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#afd035df19d82c10b55af51e727e08407">onDisconnection</a> (const FileDescriptor fd, const <a class="el" href="classo_z_1_1_endpoint.html">Endpoint</a> endpoint)</td></tr>
-<tr class="memdesc:afd035df19d82c10b55af51e727e08407"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will trigger every module's 'onDisconnection' callback.  <a href="#afd035df19d82c10b55af51e727e08407">More...</a><br /></td></tr>
-<tr class="separator:afd035df19d82c10b55af51e727e08407"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8665c339158428e7e8851bbb0b000ad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#ab8665c339158428e7e8851bbb0b000ad">onConnection</a> (<a class="el" href="classo_z_1_1_context.html">Context</a> &amp;context)</td></tr>
+<tr class="memdesc:ab8665c339158428e7e8851bbb0b000ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will trigger every module's 'onConnection' callback.  <a href="#ab8665c339158428e7e8851bbb0b000ad">More...</a><br /></td></tr>
+<tr class="separator:ab8665c339158428e7e8851bbb0b000ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4245ad0f1fb310cf19986dbaf0bff3d2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a4245ad0f1fb310cf19986dbaf0bff3d2">onDisconnection</a> (<a class="el" href="classo_z_1_1_context.html">Context</a> &amp;context)</td></tr>
+<tr class="memdesc:a4245ad0f1fb310cf19986dbaf0bff3d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will trigger every module's 'onDisconnection' callback.  <a href="#a4245ad0f1fb310cf19986dbaf0bff3d2">More...</a><br /></td></tr>
+<tr class="separator:a4245ad0f1fb310cf19986dbaf0bff3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5dc5181a699312bc35384ad706668e3c"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_pipeline.html#a5dc5181a699312bc35384ad706668e3c">onMessageAvaible</a> (<a class="el" href="classo_z_1_1_context.html">Context</a> &amp;context)</td></tr>
 <tr class="memdesc:a5dc5181a699312bc35384ad706668e3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will trigger every module's 'onMessageAvaible' callback.  <a href="#a5dc5181a699312bc35384ad706668e3c">More...</a><br /></td></tr>
 <tr class="separator:a5dc5181a699312bc35384ad706668e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -329,8 +332,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a91969687e5d9dccb384febbce62d5dd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91969687e5d9dccb384febbce62d5dd9">&#9670;&nbsp;</a></span>~Pipeline()</h2>
+<a id="ae273add0ea7490c0ca4c13cb3683ec6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae273add0ea7490c0ca4c13cb3683ec6f">&#9670;&nbsp;</a></span>~Pipeline()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -339,7 +342,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual oZ::Pipeline::~Pipeline </td>
+          <td class="memname">Pipeline::~Pipeline </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -348,7 +351,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -398,6 +401,26 @@ template&lt;typename Type , typename ... Args&gt; </div>
 
 <p>Emplaces a new module in the pipeline. </p>
 <p>This function should be called by the onLoadModules callback of your derived pipeline. </p>
+
+</div>
+</div>
+<a id="a7ba573fcba5ea0a749ca1c214bd031f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ba573fcba5ea0a749ca1c214bd031f5">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pipeline::clear </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets pipeline. </p>
 
 </div>
 </div>
@@ -519,8 +542,8 @@ template&lt;typename Type &gt; </div>
 
 </div>
 </div>
-<a id="a7cfbdda27bd9ef9919400ce598846731"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cfbdda27bd9ef9919400ce598846731">&#9670;&nbsp;</a></span>onConnection()</h2>
+<a id="ab8665c339158428e7e8851bbb0b000ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8665c339158428e7e8851bbb0b000ad">&#9670;&nbsp;</a></span>onConnection()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -531,25 +554,9 @@ template&lt;typename Type &gt; </div>
         <tr>
           <td class="memname">void Pipeline::onConnection </td>
           <td>(</td>
-          <td class="paramtype">const FileDescriptor&#160;</td>
-          <td class="paramname"><em>fd</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="classo_z_1_1_context.html">Context</a> &amp;&#160;</td>
+          <td class="paramname"><em>context</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classo_z_1_1_endpoint.html">Endpoint</a>&#160;</td>
-          <td class="paramname"><em>endpoint</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>useEncryption</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -560,11 +567,17 @@ template&lt;typename Type &gt; </div>
 </div><div class="memdoc">
 
 <p>This function will trigger every module's 'onConnection' callback. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="classo_z_1_1_context.html" title="The context class uses different concepts : 1) State is a state-machine code which indicates where th...">Context</a></td><td><a class="el" href="classo_z_1_1_context.html" title="The context class uses different concepts : 1) State is a state-machine code which indicates where th...">Context</a> containing client data and metadata </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="afd035df19d82c10b55af51e727e08407"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd035df19d82c10b55af51e727e08407">&#9670;&nbsp;</a></span>onDisconnection()</h2>
+<a id="a4245ad0f1fb310cf19986dbaf0bff3d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4245ad0f1fb310cf19986dbaf0bff3d2">&#9670;&nbsp;</a></span>onDisconnection()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -575,19 +588,9 @@ template&lt;typename Type &gt; </div>
         <tr>
           <td class="memname">void Pipeline::onDisconnection </td>
           <td>(</td>
-          <td class="paramtype">const FileDescriptor&#160;</td>
-          <td class="paramname"><em>fd</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="classo_z_1_1_context.html">Context</a> &amp;&#160;</td>
+          <td class="paramname"><em>context</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classo_z_1_1_endpoint.html">Endpoint</a>&#160;</td>
-          <td class="paramname"><em>endpoint</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -598,6 +601,12 @@ template&lt;typename Type &gt; </div>
 </div><div class="memdoc">
 
 <p>This function will trigger every module's 'onDisconnection' callback. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="classo_z_1_1_context.html" title="The context class uses different concepts : 1) State is a state-machine code which indicates where th...">Context</a></td><td><a class="el" href="classo_z_1_1_context.html" title="The context class uses different concepts : 1) State is a state-machine code which indicates where th...">Context</a> containing client data and metadata </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

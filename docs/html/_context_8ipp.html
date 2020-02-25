@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openZia: Pipeline&#39;s Context class</title>
+<title>openZia: openZia/Context.ipp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,18 +62,16 @@ $(function() {
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_a1be428ee363d5372d58b5f48273f368.html">openZia</a></li>  </ul>
+</div>
 </div><!-- top -->
-<div class="PageDoc"><div class="header">
+<div class="header">
   <div class="headertitle">
-<div class="title">Pipeline's Context class </div>  </div>
+<div class="title">Context.ipp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Each module of the pipeline implement various callbacks that parse and transform an <b><a class="el" href="classo_z_1_1_h_t_t_p_1_1_request.html">oZ::HTTP::Request</a></b> to create an <b><a class="el" href="classo_z_1_1_h_t_t_p_1_1_response.html" title="The HTTP response inherits from the header.">oZ::HTTP::Response</a></b>. Thus, the pipeline need a way to store each information though the various modules: <b><a class="el" href="classo_z_1_1_context.html" title="The context class uses different concepts : 1) State is a state-machine code which indicates where th...">oZ::Context</a></b>.</p>
-<h2>Context creation</h2>
-<p>Thanks to its <a class="el" href="classo_z_1_1_packet.html">oZ::Packet</a> and <a class="el" href="classo_z_1_1_context.html#a27f05cdc375f513979a6080896cf9496" title="Map containing implementation-dependant metadatas.">oZ::Context::MetadataMap</a> members, a context can store a lot of data about a client. Thus, contexts should be stored in a client structure, in order to reuse it in various callbacks. It allows your server to be way more efficient in memory managment !</p>
-<div class="fragment"><div class="line"> {C++}</div><div class="line">// Client structure</div><div class="line">struct Client</div><div class="line">{</div><div class="line">    oZ::Context context {}; // Client&#39;s reusable context</div><div class="line">};</div></div><!-- fragment --><h2>Cache handling</h2>
-<p>In this section we will see how caching can be achieved if you really wish to go for performances. The <b><a class="el" href="classo_z_1_1_context.html" title="The context class uses different concepts : 1) State is a state-machine code which indicates where th...">oZ::Context</a></b> class has a <b><a class="el" href="classo_z_1_1_context.html#a748147258019436983fdbbf6ed51c0b6" title="Check if the current Context&#39;s state is constant (and if it can be cached)">oZ::Context::isConstant</a></b> function that tells if the current context is constant, and thus can be cached. If some of your modules aren't supporting cache for specific HTTP methods, you can use the <b><a class="el" href="classo_z_1_1_context.html#ada521ec57fbc2febfd61177e8bbc0128" title="Tell that the Context is not constant and thus can&#39;t be cached.">oZ::Context::notConstant</a></b> function to set the constant state to false. It's up to you to implement caching. You can accomplish in by creating a module or by handling it directly in the server. </p>
-</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

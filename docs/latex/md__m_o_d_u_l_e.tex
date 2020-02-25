@@ -93,10 +93,13 @@ However, there are more virtual functions for more complex needs. These function
 \begin{DoxyCode}{0}
 \DoxyCodeLine{ \{C++\}}
 \DoxyCodeLine{// Callback triggered when a client is connected}
-\DoxyCodeLine{virtual void onConnected(const FileDescriptor fd, const Endpoint endpoint, const bool useEncryption);}
+\DoxyCodeLine{virtual void onConnected(Context \&context);}
 \DoxyCodeLine{}
 \DoxyCodeLine{// Callback triggered when a client is disconnected}
-\DoxyCodeLine{virtual void onDisconnected(const FileDescriptor fd, const Endpoint endpoint);}
+\DoxyCodeLine{virtual void onDisconnected(Context \&context);}
+\DoxyCodeLine{}
+\DoxyCodeLine{// Callback triggered when a client sent a message}
+\DoxyCodeLine{virtual bool onMessageAvaible(Context \&context);}
 \DoxyCodeLine{}
 \DoxyCodeLine{// Get the list of dependencies (as a vector of raw string, see function getName above)}
 \DoxyCodeLine{virtual Dependencies getDependencies(void) const noexcept;}
@@ -106,6 +109,60 @@ However, there are more virtual functions for more complex needs. These function
 \DoxyCodeLine{}
 \DoxyCodeLine{// Given a directory path (where all configs are), load module's configuration file}
 \DoxyCodeLine{virtual void onLoadConfigurationFile(const std::string \&directory);}
+\end{DoxyCode}
+
+
+\subsection*{How\+To\+: Networking}
+
+If you implement networking as a standalone module, you need to use {\bfseries{Pipeline\+::on\+Connection}}, {\bfseries{Pipeline\+::on\+Disconnection}}, {\bfseries{I\+Module\+::on\+Connection}}, {\bfseries{I\+Module\+::on\+Disconnection}}, {\bfseries{I\+Module\+::on\+Message\+Avaible}} to implement it as a standalone module.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{// Networking module}
+\DoxyCodeLine{class NetModule : public oZ::IModule}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{public:}
+\DoxyCodeLine{    virtual void onConnection(oZ::Context \&context) \{}
+\DoxyCodeLine{        // Do your connection stuff}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    virtual void onDisconnection(oZ::Context \&context) \{}
+\DoxyCodeLine{        // Do your disconnection stuff}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    virtual bool onMessageAvaible(oZ::Context \&context) \{}
+\DoxyCodeLine{        // Fill 'context.getPacket().getByteArray()' by reading is socket}
+\DoxyCodeLine{        return true; // Returns true to tell pipeline that you filled the context}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    // ...}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{// Client structure}
+\DoxyCodeLine{struct Client}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    oZ::Context context \{\}; // Client's reusable context}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{void MyServer::onClientConnected(Client \&client)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \_pipeline.onConnection(client.context);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{void MyServer::onClientDisconnected(Client \&client)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \_pipeline.onDisconnection(client.context);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{void MyServer::onClientReadable(Client \&client)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    client.context.clear();}
+\DoxyCodeLine{    if (!\_pipeline.onMessageAvaible(client.context)) \{}
+\DoxyCodeLine{        // No module processed it, you can either throw or read it yourself before running pipeline}
+\DoxyCodeLine{        throw ...;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    // onMessageAvaible returned true, the message has been read and ran into the pipeline}
+\DoxyCodeLine{\}}
 \end{DoxyCode}
 
 

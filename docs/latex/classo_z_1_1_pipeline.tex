@@ -29,10 +29,12 @@ using \mbox{\hyperlink{classo_z_1_1_pipeline_aa1f26badb603f054e554e3ddf8b846b0}{
 \begin{DoxyCompactList}\small\item\em Disable copy constructor to prevent useless huge copies. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classo_z_1_1_pipeline_a6f9e61063bafb53108f1058f3de8c56a}{Pipeline}} (\mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} \&\&other)=default
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} object by move. \end{DoxyCompactList}\item 
-virtual \mbox{\hyperlink{classo_z_1_1_pipeline_a91969687e5d9dccb384febbce62d5dd9}{$\sim$\+Pipeline}} (void)=default
+virtual \mbox{\hyperlink{classo_z_1_1_pipeline_ae273add0ea7490c0ca4c13cb3683ec6f}{$\sim$\+Pipeline}} (void)
 \begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classo_z_1_1_pipeline_a2815743412c13100c68fee0d87283417}{load\+Modules}} (void)
 \begin{DoxyCompactList}\small\item\em Find modules and load them into the pipeline. This function will \+: 1) Trigger the on\+Load\+Modules callback that you should implement yourself 2) Check if modules dependencies are avaible 3) Build the internal pipeline with it. 4) Load configuration files of each modules. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classo_z_1_1_pipeline_a7ba573fcba5ea0a749ca1c214bd031f5}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Resets pipeline. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classo_z_1_1_pipeline_a869b02b2b8953993ccfb882a3e1f3a0f}{register\+Callback}} (\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268e}{State}} state, \mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12}{Priority}} priority, \mbox{\hyperlink{classo_z_1_1_pipeline_a5a71ea2f2d4be5b82589c1b8175722f4}{Callback\+Handler}} \&\&handler)
 \begin{DoxyCompactList}\small\item\em Inserts a callback handler into the pipeline with given state and priority. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Module\+Type $>$ }\\void \mbox{\hyperlink{classo_z_1_1_pipeline_af6d96b2697aa6770a3f1dd205b12c1c3}{register\+Callback}} (\mbox{\hyperlink{namespaceo_z_a356b278f7c65def0cae75fca8cae268e}{State}} state, \mbox{\hyperlink{namespaceo_z_af05a92eb185d18369e9b4acdcd9dcd12}{Priority}} priority, Module\+Type $\ast$target, bool(Module\+Type\+::$\ast$)(\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&))
@@ -51,9 +53,9 @@ void \mbox{\hyperlink{classo_z_1_1_pipeline_aa96f1ef3faeb41c9966d6b5a103fa3a5}{a
 \begin{DoxyCompactList}\small\item\em Find a module of given name in internal module list returning it as a shared pointer. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Type  = I\+Module$>$ }\\std\+::shared\+\_\+ptr$<$ Type $>$ \mbox{\hyperlink{classo_z_1_1_pipeline_a4f1abc0f7c0985dbc859cd5b20082998}{find\+Module}} (void) const
 \begin{DoxyCompactList}\small\item\em Find a module of Type in internal module list returning it as a shared pointer. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{classo_z_1_1_pipeline_a7cfbdda27bd9ef9919400ce598846731}{on\+Connection}} (const File\+Descriptor fd, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint, const bool use\+Encryption=false)
+virtual void \mbox{\hyperlink{classo_z_1_1_pipeline_ab8665c339158428e7e8851bbb0b000ad}{on\+Connection}} (\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&context)
 \begin{DoxyCompactList}\small\item\em This function will trigger every module\textquotesingle{}s \textquotesingle{}on\+Connection\textquotesingle{} callback. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{classo_z_1_1_pipeline_afd035df19d82c10b55af51e727e08407}{on\+Disconnection}} (const File\+Descriptor fd, const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}} endpoint)
+virtual void \mbox{\hyperlink{classo_z_1_1_pipeline_a4245ad0f1fb310cf19986dbaf0bff3d2}{on\+Disconnection}} (\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&context)
 \begin{DoxyCompactList}\small\item\em This function will trigger every module\textquotesingle{}s \textquotesingle{}on\+Disconnection\textquotesingle{} callback. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{classo_z_1_1_pipeline_a5dc5181a699312bc35384ad706668e3c}{on\+Message\+Avaible}} (\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&context)
 \begin{DoxyCompactList}\small\item\em This function will trigger every module\textquotesingle{}s \textquotesingle{}on\+Message\+Avaible\textquotesingle{} callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -153,11 +155,11 @@ Disable copy constructor to prevent useless huge copies.
 
 Construct a new \mbox{\hyperlink{classo_z_1_1_pipeline}{Pipeline}} object by move. 
 
-\mbox{\Hypertarget{classo_z_1_1_pipeline_a91969687e5d9dccb384febbce62d5dd9}\label{classo_z_1_1_pipeline_a91969687e5d9dccb384febbce62d5dd9}} 
+\mbox{\Hypertarget{classo_z_1_1_pipeline_ae273add0ea7490c0ca4c13cb3683ec6f}\label{classo_z_1_1_pipeline_ae273add0ea7490c0ca4c13cb3683ec6f}} 
 \index{oZ::Pipeline@{oZ::Pipeline}!````~Pipeline@{$\sim$Pipeline}}
 \index{````~Pipeline@{$\sim$Pipeline}!oZ::Pipeline@{oZ::Pipeline}}
 \subsubsection{\texorpdfstring{$\sim$Pipeline()}{~Pipeline()}}
-{\footnotesize\ttfamily virtual o\+Z\+::\+Pipeline\+::$\sim$\+Pipeline (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+{\footnotesize\ttfamily Pipeline\+::$\sim$\+Pipeline (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -187,7 +189,17 @@ void o\+Z\+::\+Pipeline\+::add\+Module (\begin{DoxyParamCaption}\item[{Args \&\&
 
 Emplaces a new module in the pipeline. 
 
-This function should be called by the on\+Load\+Modules callback of your derived pipeline. \mbox{\Hypertarget{classo_z_1_1_pipeline_aa8aa56af891b2d889e7c21198daa1451}\label{classo_z_1_1_pipeline_aa8aa56af891b2d889e7c21198daa1451}} 
+This function should be called by the on\+Load\+Modules callback of your derived pipeline. \mbox{\Hypertarget{classo_z_1_1_pipeline_a7ba573fcba5ea0a749ca1c214bd031f5}\label{classo_z_1_1_pipeline_a7ba573fcba5ea0a749ca1c214bd031f5}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!clear@{clear}}
+\index{clear@{clear}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Pipeline\+::clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Resets pipeline. 
+
+\mbox{\Hypertarget{classo_z_1_1_pipeline_aa8aa56af891b2d889e7c21198daa1451}\label{classo_z_1_1_pipeline_aa8aa56af891b2d889e7c21198daa1451}} 
 \index{oZ::Pipeline@{oZ::Pipeline}!findModule@{findModule}}
 \index{findModule@{findModule}!oZ::Pipeline@{oZ::Pipeline}}
 \subsubsection{\texorpdfstring{findModule()}{findModule()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -238,26 +250,36 @@ Get internal loaded modules (const)
 
 Find modules and load them into the pipeline. This function will \+: 1) Trigger the on\+Load\+Modules callback that you should implement yourself 2) Check if modules dependencies are avaible 3) Build the internal pipeline with it. 4) Load configuration files of each modules. 
 
-\mbox{\Hypertarget{classo_z_1_1_pipeline_a7cfbdda27bd9ef9919400ce598846731}\label{classo_z_1_1_pipeline_a7cfbdda27bd9ef9919400ce598846731}} 
+\mbox{\Hypertarget{classo_z_1_1_pipeline_ab8665c339158428e7e8851bbb0b000ad}\label{classo_z_1_1_pipeline_ab8665c339158428e7e8851bbb0b000ad}} 
 \index{oZ::Pipeline@{oZ::Pipeline}!onConnection@{onConnection}}
 \index{onConnection@{onConnection}!oZ::Pipeline@{oZ::Pipeline}}
 \subsubsection{\texorpdfstring{onConnection()}{onConnection()}}
-{\footnotesize\ttfamily void Pipeline\+::on\+Connection (\begin{DoxyParamCaption}\item[{const File\+Descriptor}]{fd,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint,  }\item[{const bool}]{use\+Encryption = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Pipeline\+::on\+Connection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
 This function will trigger every module\textquotesingle{}s \textquotesingle{}on\+Connection\textquotesingle{} callback. 
 
-\mbox{\Hypertarget{classo_z_1_1_pipeline_afd035df19d82c10b55af51e727e08407}\label{classo_z_1_1_pipeline_afd035df19d82c10b55af51e727e08407}} 
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{classo_z_1_1_context}{Context}}} & \mbox{\hyperlink{classo_z_1_1_context}{Context}} containing client data and metadata \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classo_z_1_1_pipeline_a4245ad0f1fb310cf19986dbaf0bff3d2}\label{classo_z_1_1_pipeline_a4245ad0f1fb310cf19986dbaf0bff3d2}} 
 \index{oZ::Pipeline@{oZ::Pipeline}!onDisconnection@{onDisconnection}}
 \index{onDisconnection@{onDisconnection}!oZ::Pipeline@{oZ::Pipeline}}
 \subsubsection{\texorpdfstring{onDisconnection()}{onDisconnection()}}
-{\footnotesize\ttfamily void Pipeline\+::on\+Disconnection (\begin{DoxyParamCaption}\item[{const File\+Descriptor}]{fd,  }\item[{const \mbox{\hyperlink{classo_z_1_1_endpoint}{Endpoint}}}]{endpoint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Pipeline\+::on\+Disconnection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classo_z_1_1_context}{Context}} \&}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
 This function will trigger every module\textquotesingle{}s \textquotesingle{}on\+Disconnection\textquotesingle{} callback. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{classo_z_1_1_context}{Context}}} & \mbox{\hyperlink{classo_z_1_1_context}{Context}} containing client data and metadata \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classo_z_1_1_pipeline_a0265d90a5540e69b25069d5d96973c53}\label{classo_z_1_1_pipeline_a0265d90a5540e69b25069d5d96973c53}} 
 \index{oZ::Pipeline@{oZ::Pipeline}!onLoadModules@{onLoadModules}}
 \index{onLoadModules@{onLoadModules}!oZ::Pipeline@{oZ::Pipeline}}

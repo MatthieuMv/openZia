@@ -94,6 +94,7 @@ $(function() {
 , <a class="el" href="classo_z_1_1_h_t_t_p_1_1_request.html#ac6611fadb3515ab2667ee96b8d93ef1d">oZ::HTTP::Request</a>
 , <a class="el" href="classo_z_1_1_h_t_t_p_1_1_response.html#a2bce180e3288f0bd78a9fbc2a74b608c">oZ::HTTP::Response</a>
 , <a class="el" href="classo_z_1_1_packet.html#aa7eafcf9801973978216f2de4c09867d">oZ::Packet</a>
+, <a class="el" href="classo_z_1_1_pipeline.html#a7ba573fcba5ea0a749ca1c214bd031f5">oZ::Pipeline</a>
 </li>
 <li>ConstIterator
 : <a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a509c1ea8f5b221246e6e49c01a115d69">oZ::HTTP::Header</a>
@@ -102,7 +103,7 @@ $(function() {
 : <a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a0823c7353e93de315929c96457563c3d">oZ::HTTP::Header</a>
 </li>
 <li>Context()
-: <a class="el" href="classo_z_1_1_context.html#af3aab1b32d4333320612049bdafb07d7">oZ::Context</a>
+: <a class="el" href="classo_z_1_1_context.html#a906eb29f22e89bc121c47096c7a4b601">oZ::Context</a>
 </li>
 <li>count()
 : <a class="el" href="classo_z_1_1_h_t_t_p_1_1_header.html#a59d2eb480ab72b94240e8eb87cf7aee2">oZ::HTTP::Header</a>
@@ -189,6 +190,9 @@ $(function() {
 <li>GetLoggerList()
 : <a class="el" href="classo_z_1_1_log.html#aa1c737e66220f5f6f2f557c054b44e48">oZ::Log</a>
 </li>
+<li>getMetadata()
+: <a class="el" href="classo_z_1_1_context.html#aea81da5e7f1b69e87f16d660554a1e9c">oZ::Context</a>
+</li>
 <li>getMethod()
 : <a class="el" href="classo_z_1_1_h_t_t_p_1_1_request.html#ab8c06f60e7d3b17c2ad03c7b9cb046d7">oZ::HTTP::Request</a>
 </li>
@@ -238,6 +242,9 @@ $(function() {
 <li>hasError()
 : <a class="el" href="classo_z_1_1_context.html#a53afdf1400b5ec8429b09da40662a34d">oZ::Context</a>
 </li>
+<li>hasMetadata()
+: <a class="el" href="classo_z_1_1_context.html#aac0bec30406ebdb0f41d286d9b42a2ec">oZ::Context</a>
+</li>
 </ul>
 
 
@@ -280,6 +287,9 @@ $(function() {
 <li>majorVersion
 : <a class="el" href="structo_z_1_1_h_t_t_p_1_1_version.html#a451d759d7fcdcef197c21140b1e9527e">oZ::HTTP::Version</a>
 </li>
+<li>MetadataMap
+: <a class="el" href="classo_z_1_1_context.html#a27f05cdc375f513979a6080896cf9496">oZ::Context</a>
+</li>
 <li>minorVersion
 : <a class="el" href="structo_z_1_1_h_t_t_p_1_1_version.html#a13e3758802c2b9b974f56d1ea25fafad">oZ::HTTP::Version</a>
 </li>
@@ -301,12 +311,12 @@ $(function() {
 
 <h3><a id="index_o"></a>- o -</h3><ul>
 <li>onConnection()
-: <a class="el" href="classo_z_1_1_i_module.html#aab3baca66d6f5447376a4d1031f6cc72">oZ::IModule</a>
-, <a class="el" href="classo_z_1_1_pipeline.html#a7cfbdda27bd9ef9919400ce598846731">oZ::Pipeline</a>
+: <a class="el" href="classo_z_1_1_i_module.html#a41527d4435446ad02f815aa0617c6344">oZ::IModule</a>
+, <a class="el" href="classo_z_1_1_pipeline.html#ab8665c339158428e7e8851bbb0b000ad">oZ::Pipeline</a>
 </li>
 <li>onDisconnection()
-: <a class="el" href="classo_z_1_1_i_module.html#aa178220a4e7ba0cca50a131403e04847">oZ::IModule</a>
-, <a class="el" href="classo_z_1_1_pipeline.html#afd035df19d82c10b55af51e727e08407">oZ::Pipeline</a>
+: <a class="el" href="classo_z_1_1_i_module.html#aa8518b9de8d65dcbbdb383ac6f9ccfc2">oZ::IModule</a>
+, <a class="el" href="classo_z_1_1_pipeline.html#a4245ad0f1fb310cf19986dbaf0bff3d2">oZ::Pipeline</a>
 </li>
 <li>onLoadConfigurationFile()
 : <a class="el" href="classo_z_1_1_i_module.html#a61a2cc76594401ed2f50931a6a6b76f3">oZ::IModule</a>
@@ -335,7 +345,8 @@ $(function() {
 : <a class="el" href="classo_z_1_1_log.html#a0cb4c3c614b1d5ae6285aecb31554fb4">oZ::Log</a>
 </li>
 <li>operator=()
-: <a class="el" href="classo_z_1_1_endpoint.html#a196bf4aa01c286bc1cf949cd4b68a175">oZ::Endpoint</a>
+: <a class="el" href="classo_z_1_1_context.html#a85f1c7d649bb381f267383360b02b876">oZ::Context</a>
+, <a class="el" href="classo_z_1_1_endpoint.html#a196bf4aa01c286bc1cf949cd4b68a175">oZ::Endpoint</a>
 </li>
 <li>operator==()
 : <a class="el" href="classo_z_1_1_endpoint.html#ab5a405bf455ab2f4e28458b0ba69d399">oZ::Endpoint</a>
@@ -364,6 +375,9 @@ $(function() {
 <li>release()
 : <a class="el" href="classo_z_1_1_dynamic_loader.html#a405559cdad1b8eba0bd3bee22fa764f9">oZ::DynamicLoader</a>
 </li>
+<li>removeMetadata()
+: <a class="el" href="classo_z_1_1_context.html#a581fb3a0615050358b76f9216d3619e8">oZ::Context</a>
+</li>
 <li>runPipeline()
 : <a class="el" href="classo_z_1_1_pipeline.html#a90bddc5511acce66f2aa780c3bba29b4">oZ::Pipeline</a>
 </li>
@@ -391,6 +405,9 @@ $(function() {
 </li>
 <li>setFileDescriptor()
 : <a class="el" href="classo_z_1_1_packet.html#abf619a065ca7321c05fdcacc6353d47d">oZ::Packet</a>
+</li>
+<li>setMetadata()
+: <a class="el" href="classo_z_1_1_context.html#a7d5eb616d7daccab1f2cd8b3ae69c99c">oZ::Context</a>
 </li>
 <li>setMethod()
 : <a class="el" href="classo_z_1_1_h_t_t_p_1_1_request.html#ad38f30d48f4d3f201380ac1e73b26fc8">oZ::HTTP::Request</a>
@@ -440,7 +457,7 @@ $(function() {
 : <a class="el" href="classo_z_1_1_packet.html#a01d80a0c452b1e07dfd160f494be2af5">oZ::Packet</a>
 </li>
 <li>~Pipeline()
-: <a class="el" href="classo_z_1_1_pipeline.html#a91969687e5d9dccb384febbce62d5dd9">oZ::Pipeline</a>
+: <a class="el" href="classo_z_1_1_pipeline.html#ae273add0ea7490c0ca4c13cb3683ec6f">oZ::Pipeline</a>
 </li>
 <li>~Request()
 : <a class="el" href="classo_z_1_1_h_t_t_p_1_1_request.html#a2bc2913d79ffe8ce63a19c480b9cf330">oZ::HTTP::Request</a>

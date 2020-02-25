@@ -2,97 +2,16 @@ Each module of the pipeline implement various callbacks that parse and transform
 
 \subsection*{Context creation}
 
-The context can be default created but to make it process-\/able, you must specify a {\bfseries{\mbox{\hyperlink{classo_z_1_1_packet}{o\+Z\+::\+Packet}}}} containing a client endpoint and its message buffer. At this point, you can run the {\bfseries{\mbox{\hyperlink{classo_z_1_1_pipeline_a90bddc5511acce66f2aa780c3bba29b4}{o\+Z\+::\+Pipeline\+::run\+Pipeline}}}} function to process the context and create a response out of it. 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{ \{C++\}}
-\DoxyCodeLine{// Callback triggered when receiving messages from clients on default HTTP port}
-\DoxyCodeLine{void MyServer::onReceiveNetworkPacket(oZ::Packet \&\&packet)}
-\DoxyCodeLine{\{}
-\DoxyCodeLine{    // Create a context out of a network Packet}
-\DoxyCodeLine{    oZ::Context context(std::move(packet));}
-\DoxyCodeLine{}
-\DoxyCodeLine{    // Run the pipeline with this new context and send its response to the client}
-\DoxyCodeLine{    \_pipeline.runPipeline(context);}
-\DoxyCodeLine{    sendResponseToClient(context);}
-\DoxyCodeLine{\}}
-\end{DoxyCode}
-
-
-\subsection*{Encryption}
-
-As you may know, H\+T\+TP uses default port 80. However, if you want to add encryption to your server exchanges, you must use the default H\+T\+T\+PS port 443. Thus, the context need a way to store an encryption flag (to know if the client uses H\+T\+T\+PS) and an encryption key. This data is contained in the {\bfseries{\mbox{\hyperlink{classo_z_1_1_packet}{o\+Z\+::\+Packet}}}} class.
-
-If you use open\+S\+SL for the encryption, you may need to use {\bfseries{Pipeline\+::on\+Connection}}, {\bfseries{Pipeline\+::on\+Disconnection}}, {\bfseries{I\+Module\+::on\+Connection}} and {\bfseries{I\+Module\+::on\+Disconnection}} to implement it as a standalone module.
+Thanks to its \mbox{\hyperlink{classo_z_1_1_packet}{o\+Z\+::\+Packet}} and \mbox{\hyperlink{classo_z_1_1_context_a27f05cdc375f513979a6080896cf9496}{o\+Z\+::\+Context\+::\+Metadata\+Map}} members, a context can store a lot of data about a client. Thus, contexts should be stored in a client structure, in order to reuse it in various callbacks. It allows your server to be way more efficient in memory managment !
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{ \{C++\}}
-\DoxyCodeLine{// Callback triggered when receiving messages from clients on default HTTPS port}
-\DoxyCodeLine{void MyServer::onReceiveEncryptedNetworkPacket(oZ::Packet \&\&packet)}
-\DoxyCodeLine{\{}
-\DoxyCodeLine{    // Create a context out of a network Packet}
-\DoxyCodeLine{    oZ::Context context(std::move(packet));}
-\DoxyCodeLine{}
-\DoxyCodeLine{    // Set the encryption flag in the context}
-\DoxyCodeLine{    context.getPacket().setEncryption(true);}
-\DoxyCodeLine{    // Run the pipeline with this new context and send its response to the client}
-\DoxyCodeLine{    \_pipeline.runPipeline(context);}
-\DoxyCodeLine{    sendResponseToClient(context);}
-\DoxyCodeLine{\}}
-\end{DoxyCode}
-
-
-\subsection*{Networking modules}
-
-The pipeline was first designed to be implemented as a computational pipeline (and thus without doing any networking). In fact, multithreading and caching can be way more efficient if your pipeline is made with the less side effects possibles. With time I realized how hard it can be to implement standalone networking modules such as secure connection with this constraints. Here I propose you an alternative to the current pipeline\textquotesingle{}s process that let you add way more side effects to your pipeline. Keep in mind that a constant pipeline without side effects will {\bfseries{always}} be more efficient but less modular.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{ \{C++\}}
-\DoxyCodeLine{// Networking module}
-\DoxyCodeLine{class NetModule}
-\DoxyCodeLine{\{}
-\DoxyCodeLine{public:}
-\DoxyCodeLine{    // ...}
-\DoxyCodeLine{    virtual bool onMessageAvaible(oZ::Context \&context) \{}
-\DoxyCodeLine{        // Fill 'context.getPacket().getByteArray()', reading is socket}
-\DoxyCodeLine{        return true; // Returns true to tell pipeline that you filled the context}
-\DoxyCodeLine{    \}}
-\DoxyCodeLine{    // ...}
-\DoxyCodeLine{\};}
-\DoxyCodeLine{}
 \DoxyCodeLine{// Client structure}
 \DoxyCodeLine{struct Client}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{    oZ::Context context \{\}; // Client's reusable context}
 \DoxyCodeLine{\};}
-\DoxyCodeLine{}
-\DoxyCodeLine{void MyServer::onClientConnected(Client \&client)}
-\DoxyCodeLine{\{}
-\DoxyCodeLine{    \_pipeline.onConnection(}
-\DoxyCodeLine{        client.getPacket().getFileDescriptor(),}
-\DoxyCodeLine{        client.getPacket().getEndpoint(),}
-\DoxyCodeLine{        client.getEncryption()}
-\DoxyCodeLine{    );}
-\DoxyCodeLine{\}}
-\DoxyCodeLine{}
-\DoxyCodeLine{void MyServer::onClientDisconnected(Client \&client)}
-\DoxyCodeLine{\{}
-\DoxyCodeLine{    \_pipeline.onDisconnection(}
-\DoxyCodeLine{        client.getPacket().getFileDescriptor(),}
-\DoxyCodeLine{        client.getPacket().getEndpoint()}
-\DoxyCodeLine{    );}
-\DoxyCodeLine{\}}
-\DoxyCodeLine{}
-\DoxyCodeLine{void MyServer::onClientReadable(Client \&client)}
-\DoxyCodeLine{\{}
-\DoxyCodeLine{    client.context.clear();}
-\DoxyCodeLine{    if (!\_pipeline.onMessageAvaible(client.context)) \{}
-\DoxyCodeLine{        // No module processed it, you can either throw or read it yourself before running pipeline}
-\DoxyCodeLine{        throw ...;}
-\DoxyCodeLine{    \}}
-\DoxyCodeLine{    // onMessageAvaible returned true, the message has been read and ran into the pipeline}
-\DoxyCodeLine{\}}
 \end{DoxyCode}
 
 

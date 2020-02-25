@@ -17,6 +17,7 @@ var searchData=
   ['getiteratorrange',['getIteratorRange',['../classo_z_1_1_h_t_t_p_1_1_header.html#ae30e471f7d522477cf022531a84e727a',1,'oZ::HTTP::Header::getIteratorRange(const Literal &amp;key)'],['../classo_z_1_1_h_t_t_p_1_1_header.html#acecb2a9ed8e432a4a3ab9c6170d73793',1,'oZ::HTTP::Header::getIteratorRange(const Literal &amp;key) const']]],
   ['getlasterror',['getLastError',['../classo_z_1_1_dynamic_loader.html#ae822f62c912bfdc978188d22e45798ff',1,'oZ::DynamicLoader']]],
   ['getloggerlist',['GetLoggerList',['../classo_z_1_1_log.html#aa1c737e66220f5f6f2f557c054b44e48',1,'oZ::Log']]],
+  ['getmetadata',['getMetadata',['../classo_z_1_1_context.html#aea81da5e7f1b69e87f16d660554a1e9c',1,'oZ::Context::getMetadata(const std::string &amp;key)'],['../classo_z_1_1_context.html#adc8893fcfcca33f84ad1f14dd41b62ec',1,'oZ::Context::getMetadata(const std::string &amp;key) const']]],
   ['getmethod',['getMethod',['../classo_z_1_1_h_t_t_p_1_1_request.html#ab8c06f60e7d3b17c2ad03c7b9cb046d7',1,'oZ::HTTP::Request']]],
   ['getmodules',['getModules',['../classo_z_1_1_pipeline.html#a3886c29b903d2e359a853ea76711661b',1,'oZ::Pipeline::getModules(void) noexcept'],['../classo_z_1_1_pipeline.html#a84358c4166a67aabc0d5811608727da9',1,'oZ::Pipeline::getModules(void) const noexcept']]],
   ['getname',['getName',['../classo_z_1_1_i_module.html#af41d45158fd28e1bd86a34e25f5282d6',1,'oZ::IModule']]],
