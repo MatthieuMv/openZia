@@ -48,7 +48,7 @@ bool MyModule::myCallback(oZ::Context &context)
 
 ## Must have functions
 
-Each module have a set of virtual function to be override. Actually, only 2 of them are pure virtual :
+Each module have a set of virtual function to be overriden. Actually, only 2 of them are pure virtual :
 ```C++
 // Get the raw string name of module instance
 virtual const char *getName(void) const = 0;
