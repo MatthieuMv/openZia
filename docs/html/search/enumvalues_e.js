@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['readable',['Readable',['../namespaceo_z.html#aca1addfd2374772c2b5db4bc5a96422ca4b8123df4e2b3456270c11394adf7607',1,'oZ']]],
   ['requestedrangenotsatisfiable',['RequestedRangeNotSatisfiable',['../namespaceo_z_1_1_h_t_t_p.html#acd43703151305f79b1e2f42e98ee8199a7779e53fc887ac0429f4ebde5fc0b59f',1,'oZ::HTTP']]],
   ['requestentitytoolarge',['RequestEntityTooLarge',['../namespaceo_z_1_1_h_t_t_p.html#acd43703151305f79b1e2f42e98ee8199a1d2dd18ee1a925e5887cbc2f9202e779',1,'oZ::HTTP']]],
   ['requesttimeout',['RequestTimeOut',['../namespaceo_z_1_1_h_t_t_p.html#acd43703151305f79b1e2f42e98ee8199af9098a9c319f11b44af3e260892063a6',1,'oZ::HTTP']]],

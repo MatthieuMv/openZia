@@ -99,7 +99,7 @@ However, there are more virtual functions for more complex needs. These function
 \DoxyCodeLine{virtual void onDisconnected(Context \&context);}
 \DoxyCodeLine{}
 \DoxyCodeLine{// Callback triggered when a client sent a message}
-\DoxyCodeLine{virtual bool onMessageAvaible(Context \&context);}
+\DoxyCodeLine{virtual MessageState onMessageAvaible(Context \&context);}
 \DoxyCodeLine{}
 \DoxyCodeLine{// Get the list of dependencies (as a vector of raw string, see function getName above)}
 \DoxyCodeLine{virtual Dependencies getDependencies(void) const noexcept;}
@@ -131,9 +131,9 @@ If you implement networking as a standalone module, you need to use {\bfseries{P
 \DoxyCodeLine{        // Do your disconnection stuff}
 \DoxyCodeLine{    \}}
 \DoxyCodeLine{}
-\DoxyCodeLine{    virtual bool onMessageAvaible(oZ::Context \&context) \{}
+\DoxyCodeLine{    virtual MessageState onMessageAvaible(oZ::Context \&context) \{}
 \DoxyCodeLine{        // Fill 'context.getPacket().getByteArray()' by reading is socket}
-\DoxyCodeLine{        return true; // Returns true to tell pipeline that you filled the context}
+\DoxyCodeLine{        return MessageState::Done; // Returns Ready to tell pipeline that you filled the context}
 \DoxyCodeLine{    \}}
 \DoxyCodeLine{    // ...}
 \DoxyCodeLine{\};}
@@ -157,11 +157,17 @@ If you implement networking as a standalone module, you need to use {\bfseries{P
 \DoxyCodeLine{void MyServer::onClientReadable(Client \&client)}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{    client.context.clear();}
-\DoxyCodeLine{    if (!\_pipeline.onMessageAvaible(client.context)) \{}
-\DoxyCodeLine{        // No module processed it, you can either throw or read it yourself before running pipeline}
-\DoxyCodeLine{        throw ...;}
+\DoxyCodeLine{    switch (\_pipeline.onMessageAvaible(client.context)) \{}
+\DoxyCodeLine{    case MessageState::Readable:}
+\DoxyCodeLine{        // The message has not been handled by any module}
+\DoxyCodeLine{        break;}
+\DoxyCodeLine{    case MessageState::Done:}
+\DoxyCodeLine{        // The message has been processed by the pipeline}
+\DoxyCodeLine{        break;}
+\DoxyCodeLine{    case MessageState::Disconnection:}
+\DoxyCodeLine{        // The message was a TCP disconnection}
+\DoxyCodeLine{        break;}
 \DoxyCodeLine{    \}}
-\DoxyCodeLine{    // onMessageAvaible returned true, the message has been read and ran into the pipeline}
 \DoxyCodeLine{\}}
 \end{DoxyCode}
 

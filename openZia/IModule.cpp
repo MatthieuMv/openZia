@@ -29,7 +29,7 @@ void IModule::onDisconnection(Context &)
 {
 }
 
-bool IModule::onMessageAvaible(Context &)
+MessageState IModule::onMessageAvaible(Context &)
 {
-    return false;
+    return MessageState::Readable;
 }

@@ -125,7 +125,7 @@ Test(Pipeline, ABC)
     cr_assert_eq(a->c->fd, -1);
     pipeline.onConnection(ctx);
     cr_assert_eq(a->c->fd, 42);
-    cr_assert_not(pipeline.onMessageAvaible(ctx));
+    cr_assert_eq(pipeline.onMessageAvaible(ctx), oZ::MessageState::Readable);
     pipeline.runPipeline(ctx);
     cr_assert_eq(ctx.getState(), State::Error);
     cr_assert_eq(a->x, 1);
@@ -167,8 +167,12 @@ public:
     virtual void onRegisterCallbacks(Pipeline &pipeline) {
     }
 
-    virtual bool onMessageAvaible(oZ::Context &) {
-        return true;
+    virtual oZ::MessageState onMessageAvaible(oZ::Context &) {
+        static bool x = false;
+        if (x)
+            return oZ::MessageState::Disconnection;
+        x = true;
+        return oZ::MessageState::Done;
     }
 };
 
@@ -185,5 +189,6 @@ Test(Pipeline, Message)
     oZ::Context ctx;
 
     pipeline.loadModules();
-    cr_assert(pipeline.onMessageAvaible(ctx));
+    cr_assert_eq(pipeline.onMessageAvaible(ctx), oZ::MessageState::Done);
+    cr_assert_eq(pipeline.onMessageAvaible(ctx), oZ::MessageState::Disconnection);
 }

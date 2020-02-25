@@ -97,7 +97,7 @@ virtual void onConnected(Context &context);
 virtual void onDisconnected(Context &context);
 
 // Callback triggered when a client sent a message
-virtual bool onMessageAvaible(Context &context);
+virtual MessageState onMessageAvaible(Context &context);
 
 // Get the list of dependencies (as a vector of raw string, see function getName above)
 virtual Dependencies getDependencies(void) const noexcept;
@@ -126,9 +126,9 @@ public:
 		// Do your disconnection stuff
 	}
 
-	virtual bool onMessageAvaible(oZ::Context &context) {
+	virtual MessageState onMessageAvaible(oZ::Context &context) {
 		// Fill 'context.getPacket().getByteArray()' by reading is socket
-		return true; // Returns true to tell pipeline that you filled the context
+		return MessageState::Done; // Returns Ready to tell pipeline that you filled the context
 	}
 	// ...
 };
@@ -152,11 +152,17 @@ void MyServer::onClientDisconnected(Client &client)
 void MyServer::onClientReadable(Client &client)
 {
 	client.context.clear();
-	if (!_pipeline.onMessageAvaible(client.context)) {
-		// No module processed it, you can either throw or read it yourself before running pipeline
-		throw ...;
+	switch (_pipeline.onMessageAvaible(client.context)) {
+	case MessageState::Readable:
+		// The message has not been handled by any module
+		break;
+	case MessageState::Done:
+		// The message has been processed by the pipeline
+		break;
+	case MessageState::Disconnection:
+		// The message was a TCP disconnection
+		break;
 	}
-	// onMessageAvaible returned true, the message has been read and ran into the pipeline
 }
 ```
 

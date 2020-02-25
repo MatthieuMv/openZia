@@ -62,15 +62,20 @@ void Pipeline::onDisconnection(Context &context)
         module->onDisconnection(context);
 }
 
-bool Pipeline::onMessageAvaible(Context &context)
+MessageState Pipeline::onMessageAvaible(Context &context)
 {
     for (auto &module : _modules) {
-        if (!module->onMessageAvaible(context))
+        switch (module->onMessageAvaible(context)) {
+        case MessageState::Readable:
             continue;
-        runPipeline(context);
-        return true;
+        case MessageState::Done:
+            runPipeline(context);
+            return MessageState::Done;
+        default:
+            return MessageState::Disconnection;
+        }
     }
-    return false;
+    return MessageState::Readable;
 }
 
 void Pipeline::onLoadModules(const std::string &directoryPath)

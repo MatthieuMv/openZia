@@ -33,6 +33,12 @@ namespace oZ
         ASAP = 5000
     };
 
+    enum class MessageState {
+        Readable = 0,
+        Done,
+        Disconnection
+    };
+
     /**
      * @brief Module pointer type, using shared_ptr as backend.
      */
@@ -119,5 +125,5 @@ public:
      *
      * @return Returns true if the message has been read and the pipeline can be runned
      */
-    virtual bool onMessageAvaible(Context &context);
+    virtual MessageState onMessageAvaible(Context &context);
 };
