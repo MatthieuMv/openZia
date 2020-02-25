@@ -6,19 +6,19 @@
 */
 
 template<typename Type>
-void oZ::Context::setMetadata(const std::string &key, Type value)
+void oZ::Context::setMetadata(const std::string &key, Type &&value)
 {
-    _metadata.insert(std::make_pair(key, value));
+    _metadata.insert(std::make_pair(key, std::forward<Type>(value)));
 }
 
 template<typename Type>
-Type &oZ::Context::getMetadata(const std::string &key)
+Type oZ::Context::getMetadata(const std::string &key)
 {
     return std::any_cast<Type>(_metadata.find(key)->second);
 }
 
 template<typename Type>
-const Type &oZ::Context::getMetadata(const std::string &key) const
+Type oZ::Context::getMetadata(const std::string &key) const
 {
     return std::any_cast<Type>(_metadata.find(key)->second);
 }

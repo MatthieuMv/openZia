@@ -173,7 +173,7 @@ public:
      * @brief This function sets a metadata to be used by any module
      */
     template<typename Type>
-    void setMetadata(const std::string &key, Type value);
+    void setMetadata(const std::string &key, Type &&value);
 
     /**
      * @brief This function remove a metadata (if present)
@@ -184,13 +184,13 @@ public:
      * @brief This function retreives a metadata to be used by any module
      */
     template<typename Type>
-    Type &getMetadata(const std::string &key);
+    Type getMetadata(const std::string &key);
 
     /**
      * @brief This function retreives a metadata to be used by any module
      */
     template<typename Type>
-    const Type &getMetadata(const std::string &key) const;
+    Type getMetadata(const std::string &key) const;
 
     /**
      * @brief This function checks if a metadata exist
