@@ -171,13 +171,12 @@ protected:
 
 protected:
     DynamicLoader _dynamicLoader {};
-
-private:
     ModuleList _modules {};
     PipelineMap _pipeline {};
     LoggerList _loggers {};
     std::string _moduleDir {}, _configurationDir {};
 
+private:
     /**
      * @brief Check if every modules dependencies are present.
      */

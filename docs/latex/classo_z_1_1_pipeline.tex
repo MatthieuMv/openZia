@@ -68,6 +68,16 @@ virtual void \mbox{\hyperlink{classo_z_1_1_pipeline_a0265d90a5540e69b25069d5d969
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classo_z_1_1_dynamic_loader}{Dynamic\+Loader}} \mbox{\hyperlink{classo_z_1_1_pipeline_a6412859211177d78f0eebcecda79e841}{\+\_\+dynamic\+Loader}} \{\}
+\item 
+\mbox{\hyperlink{classo_z_1_1_pipeline_a3bb478d291a83763b269d8d27e186a47}{Module\+List}} \mbox{\hyperlink{classo_z_1_1_pipeline_a686d6a56339c5e005f9c4a3e7f0e6e2f}{\+\_\+modules}} \{\}
+\item 
+\mbox{\hyperlink{classo_z_1_1_pipeline_ae4082276a9a2bafefab47a1298feec67}{Pipeline\+Map}} \mbox{\hyperlink{classo_z_1_1_pipeline_af47abb7bd1c4b9ac8a855458bb045f91}{\+\_\+pipeline}} \{\}
+\item 
+\mbox{\hyperlink{classo_z_1_1_pipeline_aa1f26badb603f054e554e3ddf8b846b0}{Logger\+List}} \mbox{\hyperlink{classo_z_1_1_pipeline_ad78f1e6302305537f6721e29ece2cc64}{\+\_\+loggers}} \{\}
+\item 
+std\+::string \mbox{\hyperlink{classo_z_1_1_pipeline_a70093c774bc900349b2c55bbb69b9fb6}{\+\_\+module\+Dir}} \{\}
+\item 
+std\+::string \mbox{\hyperlink{classo_z_1_1_pipeline_af10d280dfd529f443a081b6d6498c5b9}{\+\_\+configuration\+Dir}} \{\}
 \end{DoxyCompactItemize}
 
 
@@ -337,11 +347,41 @@ Process a context into the pipeline.
 This function is thread-\/safe as long as modules are thread safe so keep it in mind when implementing your modules. 
 
 \subsection{Member Data Documentation}
+\mbox{\Hypertarget{classo_z_1_1_pipeline_af10d280dfd529f443a081b6d6498c5b9}\label{classo_z_1_1_pipeline_af10d280dfd529f443a081b6d6498c5b9}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!\_configurationDir@{\_configurationDir}}
+\index{\_configurationDir@{\_configurationDir}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{\_configurationDir}{\_configurationDir}}
+{\footnotesize\ttfamily std\+::string o\+Z\+::\+Pipeline\+::\+\_\+configuration\+Dir \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
 \mbox{\Hypertarget{classo_z_1_1_pipeline_a6412859211177d78f0eebcecda79e841}\label{classo_z_1_1_pipeline_a6412859211177d78f0eebcecda79e841}} 
 \index{oZ::Pipeline@{oZ::Pipeline}!\_dynamicLoader@{\_dynamicLoader}}
 \index{\_dynamicLoader@{\_dynamicLoader}!oZ::Pipeline@{oZ::Pipeline}}
 \subsubsection{\texorpdfstring{\_dynamicLoader}{\_dynamicLoader}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classo_z_1_1_dynamic_loader}{Dynamic\+Loader}} o\+Z\+::\+Pipeline\+::\+\_\+dynamic\+Loader \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classo_z_1_1_pipeline_ad78f1e6302305537f6721e29ece2cc64}\label{classo_z_1_1_pipeline_ad78f1e6302305537f6721e29ece2cc64}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!\_loggers@{\_loggers}}
+\index{\_loggers@{\_loggers}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{\_loggers}{\_loggers}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classo_z_1_1_pipeline_aa1f26badb603f054e554e3ddf8b846b0}{Logger\+List}} o\+Z\+::\+Pipeline\+::\+\_\+loggers \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classo_z_1_1_pipeline_a70093c774bc900349b2c55bbb69b9fb6}\label{classo_z_1_1_pipeline_a70093c774bc900349b2c55bbb69b9fb6}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!\_moduleDir@{\_moduleDir}}
+\index{\_moduleDir@{\_moduleDir}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{\_moduleDir}{\_moduleDir}}
+{\footnotesize\ttfamily std\+::string o\+Z\+::\+Pipeline\+::\+\_\+module\+Dir \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classo_z_1_1_pipeline_a686d6a56339c5e005f9c4a3e7f0e6e2f}\label{classo_z_1_1_pipeline_a686d6a56339c5e005f9c4a3e7f0e6e2f}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!\_modules@{\_modules}}
+\index{\_modules@{\_modules}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{\_modules}{\_modules}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classo_z_1_1_pipeline_a3bb478d291a83763b269d8d27e186a47}{Module\+List}} o\+Z\+::\+Pipeline\+::\+\_\+modules \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classo_z_1_1_pipeline_af47abb7bd1c4b9ac8a855458bb045f91}\label{classo_z_1_1_pipeline_af47abb7bd1c4b9ac8a855458bb045f91}} 
+\index{oZ::Pipeline@{oZ::Pipeline}!\_pipeline@{\_pipeline}}
+\index{\_pipeline@{\_pipeline}!oZ::Pipeline@{oZ::Pipeline}}
+\subsubsection{\texorpdfstring{\_pipeline}{\_pipeline}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classo_z_1_1_pipeline_ae4082276a9a2bafefab47a1298feec67}{Pipeline\+Map}} o\+Z\+::\+Pipeline\+::\+\_\+pipeline \{\}\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
