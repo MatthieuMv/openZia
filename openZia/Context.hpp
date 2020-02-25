@@ -74,7 +74,7 @@ public:
     Context(Packet &&packet);
 
     /**
-     * @brief Construct a new Context object by copy (this operation can be very expensive !!)
+     * @brief Construct a new Context object by copy (this operation can be very slow !!)
      */
     Context(const Context &other) = default;
 
@@ -87,6 +87,16 @@ public:
      * @brief Destroy the Context object
      */
     ~Context(void) = default;
+
+    /**
+     * @brief Copy assignment (this operation can be very slow !!)
+     */
+    Context &operator=(const Context &other) = default;
+
+    /**
+     * @brief Move assignment
+     */
+    Context &operator=(Context &&other) = default;
 
     /**
      * @brief Get the network Packet of the context
