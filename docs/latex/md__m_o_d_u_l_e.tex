@@ -157,7 +157,7 @@ If you implement networking as a standalone module, you need to use {\bfseries{P
 \DoxyCodeLine{void MyServer::onClientReadable(Client \&client)}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{    client.context.clear();}
-\DoxyCodeLine{    switch (\_pipeline.onMessageAvaible(client.context)) \{}
+\DoxyCodeLine{    switch (\_pipeline.onMessageAvailable(client.context)) \{}
 \DoxyCodeLine{    case MessageState::Readable:}
 \DoxyCodeLine{        // The message has not been handled by any module}
 \DoxyCodeLine{        break;}
@@ -196,7 +196,7 @@ Let\textquotesingle{}s first see how dependencies are handled given a short exam
 \DoxyCodeLine{    virtual Dependencies getDependencies(void) const noexcept \{ return \{ "Child" \}; \}}
 \DoxyCodeLine{}
 \DoxyCodeLine{    // Find dependencies and store them before any process for performance reasons}
-\DoxyCodeLine{    virtual void onRetreiveDependencies(oZ::Pipeline \&pipeline) \{}
+\DoxyCodeLine{    virtual void onRetrieveDependencies(oZ::Pipeline \&pipeline) \{}
 \DoxyCodeLine{        \_child = pipeline.findModule<ChildModule>();}
 \DoxyCodeLine{    \}}
 \DoxyCodeLine{}
@@ -233,4 +233,3 @@ Let\textquotesingle{}s see how simple it is to add a configuration file to setup
 \DoxyCodeLine{    int \_x = 0, \_y = 0;}
 \DoxyCodeLine{\};}
 \end{DoxyCode}
- 

@@ -110,7 +110,7 @@ $(function() {
 <p>When the packet is successfully parsed, use the different interpret callbacks to build your response from other modules. </p>
 </blockquote>
 <h3>Dependencies</h3>
-<p>Each module have a callback to explicitly tell its dependencies, and another to retrieve instances to them (instead of querying them at each pipeline run), see <b>oZ::IModule::onRetreiveDependencies</b>.</p>
+<p>Each module have a callback to explicitly tell its dependencies, and another to retrieve instances to them (instead of querying them at each pipeline run), see <b>oZ::IModule::onRetrieveDependencies</b>.</p>
 <h3>Configuration file</h3>
 <p>There are no configuration abstraction classes let you freely choose how to implement it for your needs. That said, you can easily share module with independent configuration system.</p>
 <h3>Logging messages</h3>

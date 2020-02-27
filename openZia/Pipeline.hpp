@@ -155,7 +155,7 @@ public:
     virtual void onDisconnection(Context &context);
 
     /**
-     * @brief This function will trigger every module's 'onMessageAvaible' callback
+     * @brief This function will trigger every module's 'onMessageAvailable' callback
      *
      * @return True if the message has been read and pipeline runned the context
      */

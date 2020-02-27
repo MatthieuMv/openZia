@@ -104,7 +104,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a720a329e6ebcbecbc150d8b0bbee6e37"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classo_z_1_1_i_module.html#ac13210556cb2a65d186bfbe5208c666c">Dependencies</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#a720a329e6ebcbecbc150d8b0bbee6e37">getDependencies</a> (void) const noexcept</td></tr>
 <tr class="memdesc:a720a329e6ebcbecbc150d8b0bbee6e37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the module dependencies.  <a href="#a720a329e6ebcbecbc150d8b0bbee6e37">More...</a><br /></td></tr>
 <tr class="separator:a720a329e6ebcbecbc150d8b0bbee6e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af183d3711ef7d7a6966ac078b63a7685"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#af183d3711ef7d7a6966ac078b63a7685">onRetreiveDependencies</a> (<a class="el" href="classo_z_1_1_pipeline.html">Pipeline</a> &amp;pipeline)</td></tr>
+<tr class="memitem:af183d3711ef7d7a6966ac078b63a7685"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#af183d3711ef7d7a6966ac078b63a7685">onRetrieveDependencies</a> (<a class="el" href="classo_z_1_1_pipeline.html">Pipeline</a> &amp;pipeline)</td></tr>
 <tr class="memdesc:af183d3711ef7d7a6966ac078b63a7685"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called once module registered their callbacks.  <a href="#af183d3711ef7d7a6966ac078b63a7685">More...</a><br /></td></tr>
 <tr class="separator:af183d3711ef7d7a6966ac078b63a7685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61a2cc76594401ed2f50931a6a6b76f3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#a61a2cc76594401ed2f50931a6a6b76f3">onLoadConfigurationFile</a> (const std::string &amp;directory)</td></tr>
@@ -116,7 +116,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa8518b9de8d65dcbbdb383ac6f9ccfc2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#aa8518b9de8d65dcbbdb383ac6f9ccfc2">onDisconnection</a> (<a class="el" href="classo_z_1_1_context.html">Context</a> &amp;context)</td></tr>
 <tr class="memdesc:aa8518b9de8d65dcbbdb383ac6f9ccfc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback used to intercept client disconnections.  <a href="#aa8518b9de8d65dcbbdb383ac6f9ccfc2">More...</a><br /></td></tr>
 <tr class="separator:aa8518b9de8d65dcbbdb383ac6f9ccfc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a241ee86ca88d4733ccea5a530fd1bbc9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceo_z.html#aca1addfd2374772c2b5db4bc5a96422c">MessageState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#a241ee86ca88d4733ccea5a530fd1bbc9">onMessageAvaible</a> (<a class="el" href="classo_z_1_1_context.html">Context</a> &amp;context)</td></tr>
+<tr class="memitem:a241ee86ca88d4733ccea5a530fd1bbc9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceo_z.html#aca1addfd2374772c2b5db4bc5a96422c">MessageState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_z_1_1_i_module.html#a241ee86ca88d4733ccea5a530fd1bbc9">onMessageAvailable</a> (<a class="el" href="classo_z_1_1_context.html">Context</a> &amp;context)</td></tr>
 <tr class="memdesc:a241ee86ca88d4733ccea5a530fd1bbc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback used to read client message and prepare a given context with the data.  <a href="#a241ee86ca88d4733ccea5a530fd1bbc9">More...</a><br /></td></tr>
 <tr class="separator:a241ee86ca88d4733ccea5a530fd1bbc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -315,7 +315,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a241ee86ca88d4733ccea5a530fd1bbc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a241ee86ca88d4733ccea5a530fd1bbc9">&#9670;&nbsp;</a></span>onMessageAvaible()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a241ee86ca88d4733ccea5a530fd1bbc9">&#9670;&nbsp;</a></span>onMessageAvailable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -324,7 +324,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceo_z.html#aca1addfd2374772c2b5db4bc5a96422c">MessageState</a> IModule::onMessageAvaible </td>
+          <td class="memname"><a class="el" href="namespaceo_z.html#aca1addfd2374772c2b5db4bc5a96422c">MessageState</a> IModule::onMessageAvailable </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classo_z_1_1_context.html">Context</a> &amp;&#160;</td>
           <td class="paramname"><em>context</em></td><td>)</td>
@@ -374,7 +374,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="af183d3711ef7d7a6966ac078b63a7685"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af183d3711ef7d7a6966ac078b63a7685">&#9670;&nbsp;</a></span>onRetreiveDependencies()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af183d3711ef7d7a6966ac078b63a7685">&#9670;&nbsp;</a></span>onRetrieveDependencies()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -383,7 +383,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void IModule::onRetreiveDependencies </td>
+          <td class="memname">void IModule::onRetrieveDependencies </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classo_z_1_1_pipeline.html">Pipeline</a> &amp;&#160;</td>
           <td class="paramname"><em>pipeline</em></td><td>)</td>

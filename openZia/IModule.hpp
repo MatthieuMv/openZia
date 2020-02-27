@@ -99,7 +99,7 @@ public:
      *
      *  This function is not pure virtual because you may not need it
      */
-    virtual void onRetreiveDependencies(Pipeline &pipeline);
+    virtual void onRetrieveDependencies(Pipeline &pipeline);
 
     /**
      * @brief This function is called after module retreived its dependencies.
@@ -125,5 +125,5 @@ public:
      *
      * @return Returns true if the message has been read and the pipeline can be runned
      */
-    virtual MessageState onMessageAvaible(Context &context);
+    virtual MessageState onMessageAvailable(Context &context);
 };

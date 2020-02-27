@@ -65,7 +65,7 @@ void Pipeline::onDisconnection(Context &context)
 MessageState Pipeline::onMessageAvaible(Context &context)
 {
     for (auto &module : _modules) {
-        switch (module->onMessageAvaible(context)) {
+        switch (module->onMessageAvailable(context)) {
         case MessageState::Readable:
             continue;
         case MessageState::Done:
@@ -150,7 +150,7 @@ void Pipeline::createPipeline(void)
         _configurationDir.push_back('/');
     for (const auto &module : _modules) {
         module->onRegisterCallbacks(*this);
-        module->onRetreiveDependencies(*this);
+        module->onRetrieveDependencies(*this);
         module->onLoadConfigurationFile(_configurationDir);
     }
 }

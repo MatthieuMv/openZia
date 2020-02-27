@@ -97,13 +97,13 @@ virtual void onConnected(Context &context);
 virtual void onDisconnected(Context &context);
 
 // Callback triggered when a client sent a message
-virtual MessageState onMessageAvaible(Context &context);
+virtual MessageState onMessageAvailable(Context &context);
 
 // Get the list of dependencies (as a vector of raw string, see function getName above)
 virtual Dependencies getDependencies(void) const noexcept;
 
 // Given a pipeline reference, find each dependent module to store them internally
-virtual void onRetreiveDependencies(Pipeline &pipeline);
+virtual void onRetrieveDependencies(Pipeline &pipeline);
 
 // Given a directory path (where all configs are), load module's configuration file
 virtual void onLoadConfigurationFile(const std::string &directory);
@@ -111,7 +111,7 @@ virtual void onLoadConfigurationFile(const std::string &directory);
 
 ## HowTo: Networking
 
-If you implement networking as a standalone module, you need to use **Pipeline::onConnection**, **Pipeline::onDisconnection**, **IModule::onConnection**, **IModule::onDisconnection**, **IModule::onMessageAvaible** to implement it as a standalone module.
+If you implement networking as a standalone module, you need to use **Pipeline::onConnection**, **Pipeline::onDisconnection**, **IModule::onConnection**, **IModule::onDisconnection**, **IModule::onMessageAvailable** to implement it as a standalone module.
 
 ```C++
 // Networking module
@@ -126,7 +126,7 @@ public:
 		// Do your disconnection stuff
 	}
 
-	virtual MessageState onMessageAvaible(oZ::Context &context) {
+	virtual MessageState onMessageAvailable(oZ::Context &context) {
 		// Fill 'context.getPacket().getByteArray()' by reading is socket
 		return MessageState::Done; // Returns Ready to tell pipeline that you filled the context
 	}
@@ -152,7 +152,7 @@ void MyServer::onClientDisconnected(Client &client)
 void MyServer::onClientReadable(Client &client)
 {
 	client.context.clear();
-	switch (_pipeline.onMessageAvaible(client.context)) {
+	switch (_pipeline.onMessageAvailable(client.context)) {
 	case MessageState::Readable:
 		// The message has not been handled by any module
 		break;
@@ -188,7 +188,7 @@ public:
 	virtual Dependencies getDependencies(void) const noexcept { return { "Child" }; }
 
 	// Find dependencies and store them before any process for performance reasons
-	virtual void onRetreiveDependencies(oZ::Pipeline &pipeline) {
+	virtual void onRetrieveDependencies(oZ::Pipeline &pipeline) {
 		_child = pipeline.findModule<ChildModule>();
 	}
 

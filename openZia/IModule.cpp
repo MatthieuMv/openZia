@@ -13,7 +13,7 @@
 
 using namespace oZ;
 
-void IModule::onRetreiveDependencies(Pipeline &)
+void IModule::onRetrieveDependencies(Pipeline &)
 {
 }
 
@@ -29,7 +29,7 @@ void IModule::onDisconnection(Context &)
 {
 }
 
-MessageState IModule::onMessageAvaible(Context &)
+MessageState IModule::onMessageAvailable(Context &)
 {
     return MessageState::Readable;
 }

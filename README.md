@@ -65,7 +65,7 @@ You should use the different callbacks to build a **oZ::HTTP::Request** out of t
 
 ### Dependencies
 
-Each module have a callback to explicitly tell its dependencies, and another to retrieve instances to them (instead of querying them at each pipeline run), see **oZ::IModule::onRetreiveDependencies**.
+Each module have a callback to explicitly tell its dependencies, and another to retrieve instances to them (instead of querying them at each pipeline run), see **oZ::IModule::onRetrieveDependencies**.
 
 ### Configuration file
 

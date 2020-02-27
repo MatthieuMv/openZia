@@ -131,7 +131,7 @@ Let\textquotesingle{}s first see how dependencies are handled given a short exam
 \DoxyCodeLine{    virtual Dependencies getDependencies(void) const noexcept \{ return \{ "Child" \}; \}}
 \DoxyCodeLine{}
 \DoxyCodeLine{    // Find dependencies and store them before any process for performance reasons}
-\DoxyCodeLine{    virtual void onRetreiveDependencies(oZ::Pipeline \&pipeline) \{}
+\DoxyCodeLine{    virtual void onRetrieveDependencies(oZ::Pipeline \&pipeline) \{}
 \DoxyCodeLine{        \_child = pipeline.findModule<ChildModule>();}
 \DoxyCodeLine{    \}}
 \DoxyCodeLine{}
@@ -168,4 +168,3 @@ Let\textquotesingle{}s see how simple it is to add a configuration file to setup
 \DoxyCodeLine{    int \_x = 0, \_y = 0;}
 \DoxyCodeLine{\};}
 \end{DoxyCode}
- 
