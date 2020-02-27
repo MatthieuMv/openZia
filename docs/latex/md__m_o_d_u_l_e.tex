@@ -99,13 +99,13 @@ However, there are more virtual functions for more complex needs. These function
 \DoxyCodeLine{virtual void onDisconnected(Context \&context);}
 \DoxyCodeLine{}
 \DoxyCodeLine{// Callback triggered when a client sent a message}
-\DoxyCodeLine{virtual MessageState onMessageAvaible(Context \&context);}
+\DoxyCodeLine{virtual MessageState onMessageAvailable(Context \&context);}
 \DoxyCodeLine{}
 \DoxyCodeLine{// Get the list of dependencies (as a vector of raw string, see function getName above)}
 \DoxyCodeLine{virtual Dependencies getDependencies(void) const noexcept;}
 \DoxyCodeLine{}
 \DoxyCodeLine{// Given a pipeline reference, find each dependent module to store them internally}
-\DoxyCodeLine{virtual void onRetreiveDependencies(Pipeline \&pipeline);}
+\DoxyCodeLine{virtual void onRetrieveDependencies(Pipeline \&pipeline);}
 \DoxyCodeLine{}
 \DoxyCodeLine{// Given a directory path (where all configs are), load module's configuration file}
 \DoxyCodeLine{virtual void onLoadConfigurationFile(const std::string \&directory);}
@@ -131,7 +131,7 @@ If you implement networking as a standalone module, you need to use {\bfseries{P
 \DoxyCodeLine{        // Do your disconnection stuff}
 \DoxyCodeLine{    \}}
 \DoxyCodeLine{}
-\DoxyCodeLine{    virtual MessageState onMessageAvaible(oZ::Context \&context) \{}
+\DoxyCodeLine{    virtual MessageState onMessageAvailable(oZ::Context \&context) \{}
 \DoxyCodeLine{        // Fill 'context.getPacket().getByteArray()' by reading is socket}
 \DoxyCodeLine{        return MessageState::Done; // Returns Ready to tell pipeline that you filled the context}
 \DoxyCodeLine{    \}}

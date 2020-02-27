@@ -62,7 +62,7 @@ void Pipeline::onDisconnection(Context &context)
         module->onDisconnection(context);
 }
 
-MessageState Pipeline::onMessageAvaible(Context &context)
+MessageState Pipeline::onMessageAvailable(Context &context)
 {
     for (auto &module : _modules) {
         switch (module->onMessageAvailable(context)) {

@@ -159,7 +159,7 @@ public:
      *
      * @return True if the message has been read and pipeline runned the context
      */
-    virtual MessageState onMessageAvaible(Context &context);
+    virtual MessageState onMessageAvailable(Context &context);
 
 protected:
     /**
