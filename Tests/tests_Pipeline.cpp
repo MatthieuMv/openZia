@@ -47,7 +47,7 @@ public:
         registered = true;
     }
 
-    virtual void onRetreiveDependencies(Pipeline &pipeline) {
+    virtual void onRetrieveDependencies(Pipeline &pipeline) {
         b = pipeline.findModule<B>();
         c = pipeline.findModule<C>();
     }
@@ -125,7 +125,7 @@ Test(Pipeline, ABC)
     cr_assert_eq(a->c->fd, -1);
     pipeline.onConnection(ctx);
     cr_assert_eq(a->c->fd, 42);
-    cr_assert_eq(pipeline.onMessageAvaible(ctx), oZ::MessageState::Readable);
+    cr_assert_eq(pipeline.onMessageAvailable(ctx), oZ::MessageState::Readable);
     pipeline.runPipeline(ctx);
     cr_assert_eq(ctx.getState(), State::Error);
     cr_assert_eq(a->x, 1);
@@ -167,7 +167,7 @@ public:
     virtual void onRegisterCallbacks(Pipeline &pipeline) {
     }
 
-    virtual oZ::MessageState onMessageAvaible(oZ::Context &) {
+    virtual oZ::MessageState onMessageAvailable(oZ::Context &) {
         static bool x = false;
         if (x)
             return oZ::MessageState::Disconnection;
@@ -189,6 +189,6 @@ Test(Pipeline, Message)
     oZ::Context ctx;
 
     pipeline.loadModules();
-    cr_assert_eq(pipeline.onMessageAvaible(ctx), oZ::MessageState::Done);
-    cr_assert_eq(pipeline.onMessageAvaible(ctx), oZ::MessageState::Disconnection);
+    cr_assert_eq(pipeline.onMessageAvailable(ctx), oZ::MessageState::Done);
+    cr_assert_eq(pipeline.onMessageAvailable(ctx), oZ::MessageState::Disconnection);
 }
